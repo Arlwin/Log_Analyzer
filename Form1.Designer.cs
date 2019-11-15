@@ -34,6 +34,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.txt_Area = new System.Windows.Forms.RichTextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pnl_Filter = new System.Windows.Forms.Panel();
@@ -49,7 +50,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txt_Area = new System.Windows.Forms.RichTextBox();
+            this.tree_FileView = new System.Windows.Forms.TreeView();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -136,6 +137,7 @@
             // tabPage3
             // 
             this.tabPage3.AllowDrop = true;
+            this.tabPage3.Controls.Add(this.tree_FileView);
             this.tabPage3.Controls.Add(this.txt_Area);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -145,6 +147,14 @@
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.DragDrop += new System.Windows.Forms.DragEventHandler(this.tabPage3_DragDrop);
+            // 
+            // txt_Area
+            // 
+            this.txt_Area.Location = new System.Drawing.Point(24, 26);
+            this.txt_Area.Name = "txt_Area";
+            this.txt_Area.Size = new System.Drawing.Size(351, 206);
+            this.txt_Area.TabIndex = 0;
+            this.txt_Area.Text = "";
             // 
             // tabPage4
             // 
@@ -280,13 +290,12 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // txt_Area
+            // tree_FileView
             // 
-            this.txt_Area.Location = new System.Drawing.Point(24, 26);
-            this.txt_Area.Name = "txt_Area";
-            this.txt_Area.Size = new System.Drawing.Size(351, 206);
-            this.txt_Area.TabIndex = 0;
-            this.txt_Area.Text = "";
+            this.tree_FileView.Location = new System.Drawing.Point(414, 26);
+            this.tree_FileView.Name = "tree_FileView";
+            this.tree_FileView.Size = new System.Drawing.Size(288, 206);
+            this.tree_FileView.TabIndex = 1;
             // 
             // Form1
             // 
@@ -342,6 +351,7 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.RichTextBox txt_Area;
+        private System.Windows.Forms.TreeView tree_FileView;
     }
 }
 
