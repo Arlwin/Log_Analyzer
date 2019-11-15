@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO.Compression;
 
 namespace Log_Analyzer
 {
@@ -39,5 +40,17 @@ namespace Log_Analyzer
         {
             DragItem();
         }
+
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            txt_Area.AppendText("File list: ");
+
+            ZipArchive zip = ZipFile.OpenRead("test.zip");
+            foreach (ZipArchiveEntry entry in zip.Entries)
+            {
+                txt_Area.AppendText("\r\n > " + entry.FullName);
+            } 
+        }
+
     }
 }
