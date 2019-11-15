@@ -1,0 +1,9 @@
+C:\Users\Chesmere\source\repos\Log_Analyzer\bin\Debug\Log_Analyzer.exe.config
+C:\Users\Chesmere\source\repos\Log_Analyzer\bin\Debug\Log_Analyzer.exe
+C:\Users\Chesmere\source\repos\Log_Analyzer\bin\Debug\Log_Analyzer.pdb
+C:\Users\Chesmere\source\repos\Log_Analyzer\obj\Debug\Log_Analyzer.csprojAssemblyReference.cache
+C:\Users\Chesmere\source\repos\Log_Analyzer\obj\Debug\Log_Analyzer.Form1.resources
+C:\Users\Chesmere\source\repos\Log_Analyzer\obj\Debug\Log_Analyzer.Properties.Resources.resources
+C:\Users\Chesmere\source\repos\Log_Analyzer\obj\Debug\Log_Analyzer.csproj.GenerateResource.cache
+C:\Users\Chesmere\source\repos\Log_Analyzer\obj\Debug\Log_Analyzer.exe
+C:\Users\Chesmere\source\repos\Log_Analyzer\obj\Debug\Log_Analyzer.pdb
