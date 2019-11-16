@@ -125,9 +125,10 @@ namespace Log_Analyzer
                 nodes.StateImageIndex = 1;
             }
         }
-         
-        private string full_path = "test.zip"; //Location of the file, accessable to anywhere 
-        private string extract_path = ""; //Extraction path
+        //Location of the file, accessable to anywhere 
+        private string full_path = "test.zip";
+        //Extraction path
+        private string extract_path = ""; 
 
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -171,6 +172,12 @@ namespace Log_Analyzer
             {
 
             }
+        }
+
+        private void coalescerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Coaleser Form2 = new Coaleser();
+            Form2.Show();
         }
     }
 }

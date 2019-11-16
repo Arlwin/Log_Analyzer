@@ -31,3 +31,17 @@ C:\Users\Arlwin\Desktop\Log_Anal\Log_Analyzer\bin\Debug\DotNetZip.dll
 C:\Users\Arlwin\Desktop\Log_Anal\Log_Analyzer\bin\Debug\DotNetZip.pdb
 C:\Users\Arlwin\Desktop\Log_Anal\Log_Analyzer\bin\Debug\DotNetZip.xml
 C:\Users\Arlwin\Desktop\Log_Anal\Log_Analyzer\obj\Debug\Log_Analyzer.csproj.CopyComplete
+C:\Users\Chesmere\Documents\Projects\Debug\bin\Debug\Log_Analyzer.exe.config
+C:\Users\Chesmere\Documents\Projects\Debug\bin\Debug\Log_Analyzer.exe
+C:\Users\Chesmere\Documents\Projects\Debug\bin\Debug\Log_Analyzer.pdb
+C:\Users\Chesmere\Documents\Projects\Debug\bin\Debug\DotNetZip.dll
+C:\Users\Chesmere\Documents\Projects\Debug\bin\Debug\DotNetZip.pdb
+C:\Users\Chesmere\Documents\Projects\Debug\bin\Debug\DotNetZip.xml
+C:\Users\Chesmere\Documents\Projects\Debug\obj\Debug\Log_Analyzer.csprojAssemblyReference.cache
+C:\Users\Chesmere\Documents\Projects\Debug\obj\Debug\Log_Analyzer.Form1.resources
+C:\Users\Chesmere\Documents\Projects\Debug\obj\Debug\Log_Analyzer.Properties.Resources.resources
+C:\Users\Chesmere\Documents\Projects\Debug\obj\Debug\Log_Analyzer.csproj.GenerateResource.cache
+C:\Users\Chesmere\Documents\Projects\Debug\obj\Debug\Log_Analyzer.csproj.CopyComplete
+C:\Users\Chesmere\Documents\Projects\Debug\obj\Debug\Log_Analyzer.exe
+C:\Users\Chesmere\Documents\Projects\Debug\obj\Debug\Log_Analyzer.pdb
+C:\Users\Chesmere\Documents\Projects\Debug\obj\Debug\Log_Analyzer.Coaleser.resources
