@@ -67,7 +67,13 @@ namespace Log_Analyzer
                 dest = path.Substring(0, index);
             }
 
-            try
+            using (Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(path))
+            {
+                zip.Password = "trend";
+                zip.ExtractAll(dest, Ionic.Zip.ExtractExistingFileAction.OverwriteSilently);
+            }
+
+            /*try
             {
                 ZipFile.ExtractToDirectory(path, dest);
             }
@@ -75,7 +81,7 @@ namespace Log_Analyzer
             {
                 Directory.Delete(dest, true);
                 ZipFile.ExtractToDirectory(path, dest);
-            }
+            }*/
 
             return dest;
         }

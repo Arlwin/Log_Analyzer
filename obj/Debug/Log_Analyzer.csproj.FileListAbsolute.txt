@@ -27,3 +27,7 @@ C:\Users\Arlwin\Desktop\Log_Anal\Log_Analyzer\obj\Debug\Log_Analyzer.csproj.Gene
 C:\Users\Arlwin\Desktop\Log_Anal\Log_Analyzer\obj\Debug\Log_Analyzer.csproj.CoreCompileInputs.cache
 C:\Users\Arlwin\Desktop\Log_Anal\Log_Analyzer\obj\Debug\Log_Analyzer.exe
 C:\Users\Arlwin\Desktop\Log_Anal\Log_Analyzer\obj\Debug\Log_Analyzer.pdb
+C:\Users\Arlwin\Desktop\Log_Anal\Log_Analyzer\bin\Debug\DotNetZip.dll
+C:\Users\Arlwin\Desktop\Log_Anal\Log_Analyzer\bin\Debug\DotNetZip.pdb
+C:\Users\Arlwin\Desktop\Log_Anal\Log_Analyzer\bin\Debug\DotNetZip.xml
+C:\Users\Arlwin\Desktop\Log_Anal\Log_Analyzer\obj\Debug\Log_Analyzer.csproj.CopyComplete
