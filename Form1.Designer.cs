@@ -39,6 +39,7 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pnl_Filter = new System.Windows.Forms.Panel();
+            this.btnFilter = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txt_Fltr = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -148,7 +149,6 @@
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
-            this.tabPage3.DragDrop += new System.Windows.Forms.DragEventHandler(this.tabPage3_DragDrop);
             // 
             // tree_FileView
             // 
@@ -191,6 +191,7 @@
             this.pnl_Filter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_Filter.BackColor = System.Drawing.Color.Azure;
+            this.pnl_Filter.Controls.Add(this.btnFilter);
             this.pnl_Filter.Controls.Add(this.comboBox1);
             this.pnl_Filter.Controls.Add(this.txt_Fltr);
             this.pnl_Filter.Controls.Add(this.label2);
@@ -199,6 +200,15 @@
             this.pnl_Filter.Name = "pnl_Filter";
             this.pnl_Filter.Size = new System.Drawing.Size(1032, 100);
             this.pnl_Filter.TabIndex = 0;
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.Location = new System.Drawing.Point(365, 15);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(75, 23);
+            this.btnFilter.TabIndex = 4;
+            this.btnFilter.Text = "button1";
+            this.btnFilter.UseVisualStyleBackColor = true;
             // 
             // comboBox1
             // 
@@ -221,6 +231,7 @@
             this.txt_Fltr.Name = "txt_Fltr";
             this.txt_Fltr.Size = new System.Drawing.Size(254, 24);
             this.txt_Fltr.TabIndex = 2;
+            this.txt_Fltr.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Fltr_KeyDown);
             // 
             // label2
             // 
@@ -269,26 +280,26 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.saveAsToolStripMenuItem.Text = "Save as";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // formatToolStripMenuItem
@@ -314,7 +325,7 @@
             // coalescerToolStripMenuItem
             // 
             this.coalescerToolStripMenuItem.Name = "coalescerToolStripMenuItem";
-            this.coalescerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.coalescerToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.coalescerToolStripMenuItem.Text = "Coalescer";
             this.coalescerToolStripMenuItem.Click += new System.EventHandler(this.coalescerToolStripMenuItem_Click);
             // 
@@ -375,6 +386,7 @@
         private System.Windows.Forms.TreeView tree_FileView;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem coalescerToolStripMenuItem;
+        private System.Windows.Forms.Button btnFilter;
     }
 }
 
