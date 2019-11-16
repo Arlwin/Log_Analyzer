@@ -1,0 +1,532 @@
+2019/04/11 09:50:56 - [Upgrade Start Time 6.0] ==  2019/ 4/11   9:50:55
+
+2019/04/11 09:50:56 - [getInstalledClientVersion] Version number = 13.95
+2019/04/11 09:50:56 - [CleanUpgradeLog] Find upgrade status Log [C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\upgrade_20190407015424.log]
+2019/04/11 09:50:56 - [CleanUpgradeLog] From[20190402] Upgrade Time[20190407]
+2019/04/11 09:50:56 - [CleanUpgradeLog] Find upgrade status Log [C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\upgrade_20190408133824.log]
+2019/04/11 09:50:56 - [CleanUpgradeLog] From[20190402] Upgrade Time[20190408]
+2019/04/11 09:50:56 - [CleanUpgradeLog] Find upgrade status Log [C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\upgrade_20190411095055.log]
+2019/04/11 09:50:56 - [CleanUpgradeLog] From[20190402] Upgrade Time[20190411]
+2019/04/11 09:50:56 - [Main] CreateMutex error = 0
+2019/04/11 09:50:56 - [Main] Current TmListen path [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\TmListen.exe]
+2019/04/11 09:50:56 - [Main] Current TmListen Version Info (13.95.1107)
+2019/04/11 09:50:56 - [Main] Hotfix program update!
+2019/04/11 09:50:56 - [SetUpdatingEvent] ==> SetUpdatingEvent(1) 
+2019/04/11 09:50:56 - [SetUpdatingEvent] <== SetUpdatingEvent(1)
+2019/04/11 09:50:56 - [Main] Now szUpdateRoot = C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\, 0, 8
+2019/04/11 09:50:56 - [Main] Parameter First = 0, Second = 8
+2019/04/11 09:50:56 - [UpdateOfficeScanNTModule] Start process .. (8)
+2019/04/11 09:50:58 - [UpdateInit] Begin ...
+2019/04/11 09:50:58 - [UpdateInit] Is Windows XP,stop client...
+2019/04/11 09:51:19 - [UpdateInit] End.
+2019/04/11 09:51:19 - [UpdateOfficeScanNTModule] Need to update HotFix!
+2019/04/11 09:52:18 - [UpdateOfficeScanNTModule] StopRealTimeService FAILED.
+2019/04/11 09:52:52 - [UpdateOfficeScanNTModule] StopListenService OK.
+2019/04/11 09:52:52 - [UpdateOfficeScanNTModule] StopPFWService OK.
+2019/04/11 09:52:52 - [UpdateOfficeScanNTModule] StopTmProxyService OK.
+2019/04/11 09:52:52 - [UpdateOfficeScanNTModule] StopPortBlockDriver OK.
+2019/04/11 09:52:58 - [Process_PSAPI] PSAPI.DLL folder(C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\..\PSAPI.Dll)
+2019/04/11 09:52:58 - [Process_PSAPI] PSAPI.DLL does not exist in client folder
+2019/04/11 09:52:58 - [UpdateOfficeScanNTModule] Find pccntupd ..
+2019/04/11 09:53:00 - [RemoveShellExtension] ===>
+2019/04/11 09:53:00 - [RemoveShellExtension] Success
+2019/04/11 09:53:00 - [RemoveShellExtension] <=== 
+2019/04/11 09:53:00 - [UpdateOfficeScanNTModule] szBackupPath=C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580
+2019/04/11 09:53:00 - [GetApplicationPathFromReg] - Got application path from reg: (C:\Program Files (x86)\Trend Micro\OfficeScan Client\)
+2019/04/11 09:53:00 - [GetApplicationPathFromReg] - Application path (C:\Program Files (x86)\Trend Micro\OfficeScan Client\)
+2019/04/11 09:53:00 - [UnregisteriCrcPerformanceCounter] - App path: C:\Program Files (x86)\Trend Micro\OfficeScan Client\
+2019/04/11 09:53:00 - [UnregisteriCrcPerformanceCounter] - Set current directory to (C:\Program Files (x86)\Trend Micro\OfficeScan Client\)...
+2019/04/11 09:53:00 - [UnregisteriCrcPerformanceCounter] - Execute command: regsvr32.exe /u /s "C:\Program Files (x86)\Trend Micro\OfficeScan Client\perfiCrcPerfMonMgr.dll"
+2019/04/11 09:53:01 - [UnregisteriCrcPerformanceCounter] - Rollback working directory to (C:\Windows\system32)...
+2019/04/11 09:53:01 - [CheckAllUpdateEnvironmentOK] StopRealTimeService OK.
+2019/04/11 09:53:01 - [CheckAllUpdateEnvironmentOK] StopListenService OK.
+2019/04/11 09:53:01 - [CheckAllUpdateEnvironmentOK] StopPFWService OK.
+2019/04/11 09:53:01 - [CheckAllUpdateEnvironmentOK] StopTmProxyService OK.
+2019/04/11 09:53:01 - [CheckAllUpdateEnvironmentOK] bResult = 12019/04/11 09:53:01 - [CheckAllUpdateEnvironmentOK] [PccNTMon] Check PccNTMon Service state...
+2019/04/11 09:53:11 - [CheckAllUpdateEnvironmentOK] [PccNTMon] Find PccNTMon ProcessID[15268] Process Handle[728] process is running...
+2019/04/11 09:53:11 - [CheckAllUpdateEnvironmentOK] [PccNTMon] TerminateProcess OK. PccNTMon ProcessID[15268]
+2019/04/11 09:53:17 - dwTerminateProcessEror = 02019/04/11 09:53:17 - [CheckAllUpdateEnvironmentOK] [PccNTMon] Check PccNTMon Service state...Stopped!
+2019/04/11 09:53:17 - [CheckAllUpdateEnvironmentOK] This OSCE client environment is ready to do upgrade or hotfix.
+2019/04/11 09:53:17 - [Process_PSAPI] PSAPI.DLL folder(C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\..\PSAPI.Dll)
+2019/04/11 09:53:17 - [Process_PSAPI] PSAPI.DLL does not exist in client folder
+2019/04/11 09:53:17 - [getInstalledClientVersion] Version number = 13.95
+2019/04/11 09:53:17 - TryAgainByRenaming: 0
+2019/04/11 09:53:17 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\CCSF_X64.zip] 
+2019/04/11 09:53:17 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\ccsf_x64.zip. 
+2019/04/11 09:53:17 - File - [c:\program files (x86)\trend micro\officescan client\ccsf_x64.zip] , Last Write Time - [01/16/2019  08:23:38]
+2019/04/11 09:53:17 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\ccsf_x64.zip() to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\CCSF_X64.zip success. 
+2019/04/11 09:53:17 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\CCSF_X64.zip] , Last Write Time - [03/20/2019  08:01:30]
+2019/04/11 09:53:17 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\CCSF_X64.zip() to c:\program files (x86)\trend micro\officescan client\ccsf_x64.zip() success. 
+2019/04/11 09:53:17 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\ClientConsole.zip] 
+2019/04/11 09:53:17 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\clientconsole.zip. 
+2019/04/11 09:53:17 - File - [c:\program files (x86)\trend micro\officescan client\clientconsole.zip] , Last Write Time - [12/28/2018  17:22:38]
+2019/04/11 09:53:17 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\clientconsole.zip() to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\ClientConsole.zip success. 
+2019/04/11 09:53:17 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\ClientConsole.zip] , Last Write Time - [03/05/2019  16:03:14]
+2019/04/11 09:53:17 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\ClientConsole.zip() to c:\program files (x86)\trend micro\officescan client\clientconsole.zip() success. 
+2019/04/11 09:53:17 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\fcWofieUI.dll] 
+2019/04/11 09:53:17 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\fcwofieui.dll. 
+2019/04/11 09:53:17 - File - [c:\program files (x86)\trend micro\officescan client\fcwofieui.dll] , Last Write Time - [12/24/2018  15:06:14]
+2019/04/11 09:53:17 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\fcwofieui.dll(13.95.0.1107) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\fcWofieUI.dll success. 
+2019/04/11 09:53:17 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\fcWofieUI.dll] , Last Write Time - [03/05/2019  11:59:04]
+2019/04/11 09:53:17 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\fcWofieUI.dll(13.95.0.1114) to c:\program files (x86)\trend micro\officescan client\fcwofieui.dll(13.95.0.1107) success. 
+2019/04/11 09:53:17 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\hfx_iAC_x64.zip] 
+2019/04/11 09:53:17 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\hfx_iac_x64.zip. 
+2019/04/11 09:53:17 - File - [c:\program files (x86)\trend micro\officescan client\hfx_iac_x64.zip] , Last Write Time - [12/27/2018  13:19:48]
+2019/04/11 09:53:18 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\hfx_iac_x64.zip() to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\hfx_iAC_x64.zip success. 
+2019/04/11 09:53:18 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\hfx_iAC_x64.zip] , Last Write Time - [03/04/2019  20:29:34]
+2019/04/11 09:53:18 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\hfx_iAC_x64.zip() to c:\program files (x86)\trend micro\officescan client\hfx_iac_x64.zip() success. 
+2019/04/11 09:53:18 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\hfx_iVP_x64.zip] 
+2019/04/11 09:53:18 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\hfx_ivp_x64.zip. 
+2019/04/11 09:53:18 - File - [c:\program files (x86)\trend micro\officescan client\hfx_ivp_x64.zip] , Last Write Time - [11/27/2018  15:58:40]
+2019/04/11 09:53:18 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\hfx_ivp_x64.zip() to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\hfx_iVP_x64.zip success. 
+2019/04/11 09:53:18 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\hfx_iVP_x64.zip] , Last Write Time - [02/27/2019  15:13:38]
+2019/04/11 09:53:18 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\hfx_iVP_x64.zip() to c:\program files (x86)\trend micro\officescan client\hfx_ivp_x64.zip() success. 
+2019/04/11 09:53:18 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\hotfix_history.ini] 
+2019/04/11 09:53:18 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\hotfix_history.ini. 
+2019/04/11 09:53:18 - File - [c:\program files (x86)\trend micro\officescan client\hotfix_history.ini] , Last Write Time - [01/16/2019  08:32:46]
+2019/04/11 09:53:18 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\hotfix_history.ini() to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\hotfix_history.ini success. 
+2019/04/11 09:53:18 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\hotfix_history.ini] , Last Write Time - [03/28/2019  08:01:23]
+2019/04/11 09:53:18 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\hotfix_history.ini() to c:\program files (x86)\trend micro\officescan client\hotfix_history.ini() success. 
+2019/04/11 09:53:18 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\instupg_iAC_x64.zip] 
+2019/04/11 09:53:18 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\instupg_iac_x64.zip. 
+2019/04/11 09:53:18 - File - [c:\program files (x86)\trend micro\officescan client\instupg_iac_x64.zip] , Last Write Time - [12/27/2018  13:19:48]
+2019/04/11 09:53:18 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\instupg_iac_x64.zip() to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\instupg_iAC_x64.zip success. 
+2019/04/11 09:53:18 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\instupg_iAC_x64.zip] , Last Write Time - [03/04/2019  20:29:34]
+2019/04/11 09:53:18 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\instupg_iAC_x64.zip() to c:\program files (x86)\trend micro\officescan client\instupg_iac_x64.zip() success. 
+2019/04/11 09:53:18 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\instupg_iES_x64.zip] 
+2019/04/11 09:53:18 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\instupg_ies_x64.zip. 
+2019/04/11 09:53:18 - File - [c:\program files (x86)\trend micro\officescan client\instupg_ies_x64.zip] , Last Write Time - [11/29/2018  19:42:04]
+2019/04/11 09:53:18 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\instupg_ies_x64.zip() to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\instupg_iES_x64.zip success. 
+2019/04/11 09:53:18 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\instupg_iES_x64.zip] , Last Write Time - [01/23/2019  13:32:04]
+2019/04/11 09:53:18 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\instupg_iES_x64.zip() to c:\program files (x86)\trend micro\officescan client\instupg_ies_x64.zip() success. 
+2019/04/11 09:53:18 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\instupg_iVP_x64.zip] 
+2019/04/11 09:53:18 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\instupg_ivp_x64.zip. 
+2019/04/11 09:53:18 - File - [c:\program files (x86)\trend micro\officescan client\instupg_ivp_x64.zip] , Last Write Time - [11/27/2018  15:58:40]
+2019/04/11 09:53:18 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\instupg_ivp_x64.zip() to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\instupg_iVP_x64.zip success. 
+2019/04/11 09:53:18 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\instupg_iVP_x64.zip] , Last Write Time - [02/27/2019  15:13:38]
+2019/04/11 09:53:18 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\instupg_iVP_x64.zip() to c:\program files (x86)\trend micro\officescan client\instupg_ivp_x64.zip() success. 
+2019/04/11 09:53:18 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\iServiceInst.ini] 
+2019/04/11 09:53:18 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\iserviceinst.ini. 
+2019/04/11 09:53:18 - File - [c:\program files (x86)\trend micro\officescan client\iserviceinst.ini] , Last Write Time - [01/16/2019  08:31:34]
+2019/04/11 09:53:18 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\iserviceinst.ini() to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\iServiceInst.ini success. 
+2019/04/11 09:53:18 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\iServiceInst.ini] , Last Write Time - [03/20/2019  08:09:31]
+2019/04/11 09:53:18 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\iServiceInst.ini() to c:\program files (x86)\trend micro\officescan client\iserviceinst.ini() success. 
+2019/04/11 09:53:18 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\iServiceUpd.ini] 
+2019/04/11 09:53:18 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\iserviceupd.ini. 
+2019/04/11 09:53:18 - File - [c:\program files (x86)\trend micro\officescan client\iserviceupd.ini] , Last Write Time - [01/16/2019  08:31:34]
+2019/04/11 09:53:18 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\iserviceupd.ini() to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\iServiceUpd.ini success. 
+2019/04/11 09:53:18 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\iServiceUpd.ini] , Last Write Time - [03/20/2019  08:09:31]
+2019/04/11 09:53:18 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\iServiceUpd.ini() to c:\program files (x86)\trend micro\officescan client\iserviceupd.ini() success. 
+2019/04/11 09:53:18 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\NTRmv.exe] 
+2019/04/11 09:53:18 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\ntrmv.exe. 
+2019/04/11 09:53:18 - File - [c:\program files (x86)\trend micro\officescan client\ntrmv.exe] , Last Write Time - [10/17/2018  03:08:12]
+2019/04/11 09:53:18 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\ntrmv.exe(13.95.0.1029) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\NTRmv.exe success. 
+2019/04/11 09:53:18 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\NTRmv.exe] , Last Write Time - [03/05/2019  12:18:04]
+2019/04/11 09:53:18 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\NTRmv.exe(13.95.0.1114) to c:\program files (x86)\trend micro\officescan client\ntrmv.exe(13.95.0.1029) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\Ntrtscan.exe] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\ntrtscan.exe. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\ntrtscan.exe] , Last Write Time - [12/24/2018  15:11:06]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\ntrtscan.exe(13.95.0.1107) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\Ntrtscan.exe success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\Ntrtscan.exe] , Last Write Time - [03/05/2019  12:04:48]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\Ntrtscan.exe(13.95.0.1114) to c:\program files (x86)\trend micro\officescan client\ntrtscan.exe(13.95.0.1107) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\osfExt_iACClient_x64.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\osfext_iacclient_x64.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\osfext_iacclient_x64.dll] , Last Write Time - [12/27/2018  13:19:48]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\osfext_iacclient_x64.dll(2.95.0.2003) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\osfExt_iACClient_x64.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\osfExt_iACClient_x64.dll] , Last Write Time - [03/04/2019  20:29:34]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\osfExt_iACClient_x64.dll(2.95.0.2007) to c:\program files (x86)\trend micro\officescan client\osfext_iacclient_x64.dll(2.95.0.2003) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\osfExt_iVPClient_x64.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\osfext_ivpclient_x64.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\osfext_ivpclient_x64.dll] , Last Write Time - [11/26/2018  15:54:10]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\osfext_ivpclient_x64.dll(3.0.0.1307) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\osfExt_iVPClient_x64.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\osfExt_iVPClient_x64.dll] , Last Write Time - [02/26/2019  17:30:26]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\osfExt_iVPClient_x64.dll(3.0.0.1312) to c:\program files (x86)\trend micro\officescan client\osfext_ivpclient_x64.dll(3.0.0.1307) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\PccNTMon.exe] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\pccntmon.exe. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\pccntmon.exe] , Last Write Time - [12/24/2018  15:14:30]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\pccntmon.exe(13.95.0.1107) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\PccNTMon.exe success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\PccNTMon.exe] , Last Write Time - [03/05/2019  12:08:12]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\PccNTMon.exe(13.95.0.1114) to c:\program files (x86)\trend micro\officescan client\pccntmon.exe(13.95.0.1107) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\Readme.txt] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\readme.txt. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\readme.txt] , Last Write Time - [01/16/2019  08:32:48]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\readme.txt() to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\Readme.txt success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\Readme.txt] , Last Write Time - [02/20/2019  14:09:46]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\Readme.txt() to c:\program files (x86)\trend micro\officescan client\readme.txt() success. 
+2019/04/11 09:53:19 - is postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmactmon.cat] 
+2019/04/11 09:53:19 - [CopyToPostponedFolder] Copying C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmactmon.cat to postponedInst folder : C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\tmactmon.cat 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmactmon.cat] , Last Write Time - [01/28/2019  22:58:38]
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmactmon.cat] , Last Write Time - [01/28/2019  22:58:38]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmactmon.cat() to C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\tmactmon.cat() success. 
+2019/04/11 09:53:19 - Delete file C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmactmon.cat()
+2019/04/11 09:53:19 - is postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmactmon.inf] 
+2019/04/11 09:53:19 - [CopyToPostponedFolder] Copying C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmactmon.inf to postponedInst folder : C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\tmactmon.inf 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmactmon.inf] , Last Write Time - [01/28/2019  18:51:02]
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmactmon.inf] , Last Write Time - [01/28/2019  18:51:02]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmactmon.inf() to C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\tmactmon.inf() success. 
+2019/04/11 09:53:19 - Delete file C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmactmon.inf()
+2019/04/11 09:53:19 - is postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmactmon.sys] 
+2019/04/11 09:53:19 - [CopyToPostponedFolder] Copying C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmactmon.sys to postponedInst folder : C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\tmactmon.sys 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmactmon.sys] , Last Write Time - [01/28/2019  22:58:40]
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmactmon.sys] , Last Write Time - [01/28/2019  22:58:40]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmactmon.sys(2.98.0.1162) to C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\tmactmon.sys() success. 
+2019/04/11 09:53:19 - Delete file C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmactmon.sys(2.98.0.1162)
+2019/04/11 09:53:19 - is postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TMBMCLI.dll] 
+2019/04/11 09:53:19 - [CopyToPostponedFolder] Copying C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TMBMCLI.dll to postponedInst folder : C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\TMBMCLI.dll 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TMBMCLI.dll] , Last Write Time - [02/19/2019  17:49:14]
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TMBMCLI.dll] , Last Write Time - [02/19/2019  17:49:14]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TMBMCLI.dll(2.98.0.1165) to C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\TMBMCLI.dll() success. 
+2019/04/11 09:53:19 - Delete file C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TMBMCLI.dll(2.98.0.1165)
+2019/04/11 09:53:19 - is postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TMBMSRV.exe] 
+2019/04/11 09:53:19 - [CopyToPostponedFolder] Copying C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TMBMSRV.exe to postponedInst folder : C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\TMBMSRV.exe 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TMBMSRV.exe] , Last Write Time - [02/19/2019  17:51:32]
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TMBMSRV.exe] , Last Write Time - [02/19/2019  17:51:32]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TMBMSRV.exe(2.98.0.1165) to C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\TMBMSRV.exe() success. 
+2019/04/11 09:53:19 - Delete file C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TMBMSRV.exe(2.98.0.1165)
+2019/04/11 09:53:19 - is postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmcomeng.dll] 
+2019/04/11 09:53:19 - [CopyToPostponedFolder] Copying C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmcomeng.dll to postponedInst folder : C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\tmcomeng.dll 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmcomeng.dll] , Last Write Time - [02/19/2019  17:51:04]
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmcomeng.dll] , Last Write Time - [02/19/2019  17:51:04]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmcomeng.dll(2.98.0.1165) to C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\tmcomeng.dll() success. 
+2019/04/11 09:53:19 - Delete file C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmcomeng.dll(2.98.0.1165)
+2019/04/11 09:53:19 - is postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmEngDrv.dll] 
+2019/04/11 09:53:19 - [CopyToPostponedFolder] Copying C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmEngDrv.dll to postponedInst folder : C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\TmEngDrv.dll 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmEngDrv.dll] , Last Write Time - [02/19/2019  17:47:12]
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmEngDrv.dll] , Last Write Time - [02/19/2019  17:47:12]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmEngDrv.dll(2.98.0.1165) to C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\TmEngDrv.dll() success. 
+2019/04/11 09:53:19 - Delete file C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmEngDrv.dll(2.98.0.1165)
+2019/04/11 09:53:19 - is postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmevtmgr.cat] 
+2019/04/11 09:53:19 - [CopyToPostponedFolder] Copying C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmevtmgr.cat to postponedInst folder : C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\tmevtmgr.cat 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmevtmgr.cat] , Last Write Time - [01/28/2019  22:58:42]
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmevtmgr.cat] , Last Write Time - [01/28/2019  22:58:42]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmevtmgr.cat() to C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\tmevtmgr.cat() success. 
+2019/04/11 09:53:19 - Delete file C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmevtmgr.cat()
+2019/04/11 09:53:19 - is postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmevtmgr.inf] 
+2019/04/11 09:53:19 - [CopyToPostponedFolder] Copying C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmevtmgr.inf to postponedInst folder : C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\tmevtmgr.inf 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmevtmgr.inf] , Last Write Time - [01/28/2019  18:51:02]
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmevtmgr.inf] , Last Write Time - [01/28/2019  18:51:02]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmevtmgr.inf() to C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\tmevtmgr.inf() success. 
+2019/04/11 09:53:19 - Delete file C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmevtmgr.inf()
+2019/04/11 09:53:19 - is postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmevtmgr.sys] 
+2019/04/11 09:53:19 - [CopyToPostponedFolder] Copying C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmevtmgr.sys to postponedInst folder : C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\tmevtmgr.sys 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmevtmgr.sys] , Last Write Time - [01/28/2019  22:58:44]
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmevtmgr.sys] , Last Write Time - [01/28/2019  22:58:44]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmevtmgr.sys(2.98.0.1162) to C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\tmevtmgr.sys() success. 
+2019/04/11 09:53:19 - Delete file C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmevtmgr.sys(2.98.0.1162)
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmListen.exe] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmlisten.exe. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmlisten.exe] , Last Write Time - [12/24/2018  15:24:42]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmlisten.exe(13.95.0.1107) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmListen.exe success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmListen.exe] , Last Write Time - [03/05/2019  12:17:50]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmListen.exe(13.95.0.1114) to c:\program files (x86)\trend micro\officescan client\tmlisten.exe(13.95.0.1107) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmListenShare_64x.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmlistenshare_64x.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmlistenshare_64x.dll] , Last Write Time - [10/17/2018  03:04:02]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmlistenshare_64x.dll(13.95.0.1029) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmListenShare_64x.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmListenShare_64x.dll] , Last Write Time - [03/05/2019  12:11:52]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmListenShare_64x.dll(13.95.0.1114) to c:\program files (x86)\trend micro\officescan client\tmlistenshare_64x.dll(13.95.0.1029) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopCfg.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmopcfg.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmopcfg.dll] , Last Write Time - [08/09/2018  02:03:16]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmopcfg.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmopCfg.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopCfg.dll] , Last Write Time - [01/23/2019  11:50:00]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopCfg.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmopcfg.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\Tmopcfscan.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmopcfscan.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmopcfscan.dll] , Last Write Time - [08/09/2018  02:03:20]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmopcfscan.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\Tmopcfscan.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\Tmopcfscan.dll] , Last Write Time - [01/23/2019  11:50:04]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\Tmopcfscan.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmopcfscan.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopCtl.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmopctl.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmopctl.dll] , Last Write Time - [08/09/2018  02:03:24]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmopctl.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmopCtl.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopCtl.dll] , Last Write Time - [01/23/2019  11:50:08]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopCtl.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmopctl.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopDbg.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmopdbg.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmopdbg.dll] , Last Write Time - [08/09/2018  02:03:42]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmopdbg.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmopDbg.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopDbg.dll] , Last Write Time - [01/23/2019  11:50:12]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopDbg.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmopdbg.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppeCertPin.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmoppecertpin.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmoppecertpin.dll] , Last Write Time - [08/09/2018  02:03:46]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmoppecertpin.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmoppeCertPin.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppeCertPin.dll] , Last Write Time - [01/23/2019  11:50:16]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppeCertPin.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmoppecertpin.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppeEvts.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmoppeevts.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmoppeevts.dll] , Last Write Time - [08/09/2018  02:03:54]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmoppeevts.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmoppeEvts.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppeEvts.dll] , Last Write Time - [01/23/2019  11:50:20]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppeEvts.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmoppeevts.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppeHosF.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmoppehosf.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmoppehosf.dll] , Last Write Time - [08/09/2018  02:04:02]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmoppehosf.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmoppeHosF.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppeHosF.dll] , Last Write Time - [01/23/2019  11:50:24]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppeHosF.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmoppehosf.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppePDP.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmoppepdp.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmoppepdp.dll] , Last Write Time - [08/09/2018  02:04:14]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmoppepdp.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmoppePDP.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppePDP.dll] , Last Write Time - [01/23/2019  11:50:26]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppePDP.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmoppepdp.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppeSAL.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmoppesal.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmoppesal.dll] , Last Write Time - [08/09/2018  02:04:20]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmoppesal.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmoppeSAL.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppeSAL.dll] , Last Write Time - [01/23/2019  11:50:32]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppeSAL.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmoppesal.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppeSsF.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmoppessf.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmoppessf.dll] , Last Write Time - [08/09/2018  02:04:24]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmoppessf.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmoppeSsF.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppeSsF.dll] , Last Write Time - [01/23/2019  11:50:36]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppeSsF.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmoppessf.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppeUrlF.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmoppeurlf.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmoppeurlf.dll] , Last Write Time - [08/09/2018  02:04:32]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmoppeurlf.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmoppeUrlF.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppeUrlF.dll] , Last Write Time - [01/23/2019  11:50:40]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppeUrlF.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmoppeurlf.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppeVS.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmoppevs.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmoppevs.dll] , Last Write Time - [08/09/2018  02:04:38]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmoppevs.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmoppeVS.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppeVS.dll] , Last Write Time - [01/23/2019  11:50:44]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmoppeVS.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmoppevs.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopphDns.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmopphdns.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmopphdns.dll] , Last Write Time - [08/09/2018  02:04:44]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmopphdns.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmopphDns.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopphDns.dll] , Last Write Time - [01/23/2019  11:50:46]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopphDns.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmopphdns.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopphHttp.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmopphhttp.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmopphhttp.dll] , Last Write Time - [08/09/2018  02:04:48]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmopphhttp.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmopphHttp.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopphHttp.dll] , Last Write Time - [01/23/2019  11:50:52]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopphHttp.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmopphhttp.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopphHttp2.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmopphhttp2.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmopphhttp2.dll] , Last Write Time - [08/09/2018  02:04:56]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmopphhttp2.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmopphHttp2.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopphHttp2.dll] , Last Write Time - [01/23/2019  11:50:56]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopphHttp2.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmopphhttp2.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopphPop3.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmopphpop3.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmopphpop3.dll] , Last Write Time - [08/09/2018  02:05:06]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmopphpop3.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmopphPop3.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopphPop3.dll] , Last Write Time - [01/23/2019  11:50:58]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopphPop3.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmopphpop3.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopphSmtp.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmopphsmtp.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmopphsmtp.dll] , Last Write Time - [08/09/2018  02:05:10]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmopphsmtp.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmopphSmtp.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopphSmtp.dll] , Last Write Time - [01/23/2019  11:51:04]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopphSmtp.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmopphsmtp.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopphSocks.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmopphsocks.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmopphsocks.dll] , Last Write Time - [08/09/2018  02:05:14]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmopphsocks.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmopphSocks.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopphSocks.dll] , Last Write Time - [01/23/2019  11:51:08]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopphSocks.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmopphsocks.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopphSvrHello.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmopphsvrhello.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmopphsvrhello.dll] , Last Write Time - [08/09/2018  02:05:18]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmopphsvrhello.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmopphSvrHello.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopphSvrHello.dll] , Last Write Time - [01/23/2019  11:51:14]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopphSvrHello.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmopphsvrhello.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopPlgAdp.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmopplgadp.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmopplgadp.dll] , Last Write Time - [08/09/2018  02:05:22]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmopplgadp.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmopPlgAdp.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopPlgAdp.dll] , Last Write Time - [01/23/2019  11:51:18]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopPlgAdp.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmopplgadp.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\Tmopsent.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmopsent.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmopsent.dll] , Last Write Time - [08/09/2018  02:05:26]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmopsent.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\Tmopsent.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\Tmopsent.dll] , Last Write Time - [01/23/2019  11:51:24]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\Tmopsent.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmopsent.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopsmHttp.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmopsmhttp.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmopsmhttp.dll] , Last Write Time - [08/09/2018  02:05:32]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmopsmhttp.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmopsmHttp.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopsmHttp.dll] , Last Write Time - [01/23/2019  11:51:28]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopsmHttp.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmopsmhttp.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopsmMail.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmopsmmail.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmopsmmail.dll] , Last Write Time - [08/09/2018  02:05:36]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmopsmmail.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmopsmMail.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopsmMail.dll] , Last Write Time - [01/23/2019  11:51:32]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopsmMail.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmopsmmail.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopsmProxy.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmopsmproxy.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmopsmproxy.dll] , Last Write Time - [08/09/2018  02:05:40]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmopsmproxy.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmopsmProxy.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopsmProxy.dll] , Last Write Time - [01/23/2019  11:51:38]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopsmProxy.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmopsmproxy.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopsmSvrHello.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmopsmsvrhello.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmopsmsvrhello.dll] , Last Write Time - [08/09/2018  02:05:44]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmopsmsvrhello.dll(3.7.0.1125) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmopsmSvrHello.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopsmSvrHello.dll] , Last Write Time - [01/23/2019  11:51:42]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmopsmSvrHello.dll(3.7.0.1134) to c:\program files (x86)\trend micro\officescan client\tmopsmsvrhello.dll(3.7.0.1125) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmPac_64x.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmpac_64x.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmpac_64x.dll] , Last Write Time - [10/17/2018  03:05:04]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmpac_64x.dll(13.95.0.1029) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmPac_64x.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmPac_64x.dll] , Last Write Time - [03/05/2019  12:13:26]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmPac_64x.dll(13.95.0.1114) to c:\program files (x86)\trend micro\officescan client\tmpac_64x.dll(13.95.0.1029) success. 
+2019/04/11 09:53:19 - is postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TMPEM.dll] 
+2019/04/11 09:53:19 - [CopyToPostponedFolder] Copying C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TMPEM.dll to postponedInst folder : C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\TMPEM.dll 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TMPEM.dll] , Last Write Time - [02/19/2019  17:49:16]
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TMPEM.dll] , Last Write Time - [02/19/2019  17:49:16]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TMPEM.dll(2.98.0.1165) to C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\TMPEM.dll() success. 
+2019/04/11 09:53:19 - Delete file C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TMPEM.dll(2.98.0.1165)
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmSock_64x.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmsock_64x.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmsock_64x.dll] , Last Write Time - [10/17/2018  03:05:14]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmsock_64x.dll(13.95.0.1029) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmSock_64x.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmSock_64x.dll] , Last Write Time - [03/05/2019  12:13:40]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmSock_64x.dll(13.95.0.1114) to c:\program files (x86)\trend micro\officescan client\tmsock_64x.dll(13.95.0.1029) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmufeng.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmufeng.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmufeng.dll] , Last Write Time - [10/12/2018  03:01:10]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmufeng.dll(3.91.0.1018) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\tmufeng.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmufeng.dll] , Last Write Time - [01/13/2019  14:14:30]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmufeng.dll(3.91.0.1021) to c:\program files (x86)\trend micro\officescan client\tmufeng.dll(3.91.0.1018) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmWatchdog.dll] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmwatchdog.dll. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmwatchdog.dll] , Last Write Time - [12/24/2018  15:21:48]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmwatchdog.dll(13.95.0.1107) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmWatchdog.dll success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmWatchdog.dll] , Last Write Time - [03/05/2019  12:14:56]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmWatchdog.dll(13.95.0.1114) to c:\program files (x86)\trend micro\officescan client\tmwatchdog.dll(13.95.0.1107) success. 
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmWatchdog.exe] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\tmwatchdog.exe. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\tmwatchdog.exe] , Last Write Time - [12/24/2018  15:21:54]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\tmwatchdog.exe(13.95.0.1107) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\TmWatchdog.exe success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmWatchdog.exe] , Last Write Time - [03/05/2019  12:15:02]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\TmWatchdog.exe(13.95.0.1114) to c:\program files (x86)\trend micro\officescan client\tmwatchdog.exe(13.95.0.1107) success. 
+2019/04/11 09:53:19 - is postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmwlutil.dll] 
+2019/04/11 09:53:19 - [CopyToPostponedFolder] Copying C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmwlutil.dll to postponedInst folder : C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\tmwlutil.dll 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmwlutil.dll] , Last Write Time - [02/19/2019  17:48:18]
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmwlutil.dll] , Last Write Time - [02/19/2019  17:48:18]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmwlutil.dll(2.98.0.1165) to C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\temp\postponedInst\tmwlutil.dll() success. 
+2019/04/11 09:53:19 - Delete file C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\tmwlutil.dll(2.98.0.1165)
+2019/04/11 09:53:19 - is not postponed file [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\WofieLauncher.exe] 
+2019/04/11 09:53:19 - [CopyAllFile35] Try to Find pccntupd.exe in c:\program files (x86)\trend micro\officescan client\wofielauncher.exe. 
+2019/04/11 09:53:19 - File - [c:\program files (x86)\trend micro\officescan client\wofielauncher.exe] , Last Write Time - [10/17/2018  03:07:44]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from c:\program files (x86)\trend micro\officescan client\wofielauncher.exe(13.95.0.1029) to C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\Backup_1554956580\WofieLauncher.exe success. 
+2019/04/11 09:53:19 - File - [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\WofieLauncher.exe] , Last Write Time - [03/05/2019  12:17:18]
+2019/04/11 09:53:19 - [CopyBackupFile] CopyFile from C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\hotfix\WofieLauncher.exe(13.95.0.1114) to c:\program files (x86)\trend micro\officescan client\wofielauncher.exe(13.95.0.1029) success. 
+2019/04/11 09:53:19 - [UpdateOfficeScanNTModule] HotFix=20190402164059
+2019/04/11 09:53:19 - [InitTmSock] Initializing TmSock... 
+2019/04/11 09:53:19 - [GetApplicationPathFromReg] - Got application path from reg: (C:\Program Files (x86)\Trend Micro\OfficeScan Client\)
+2019/04/11 09:53:19 - [GetApplicationPathFromReg] - Application path (C:\Program Files (x86)\Trend Micro\OfficeScan Client\)
+2019/04/11 09:53:19 - [getInstalledClientVersion] Version number = 13.95
+2019/04/11 09:53:19 - [getInstalledClientVersion] Version number = 13.95
+2019/04/11 09:53:25 - [IsCheckMD5DLLExist] ===>
+2019/04/11 09:53:25 - [IsCheckMD5DLLExist] Checking for C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\Temp\CheckMd5ForUpgrade_X64.DLL 
+2019/04/11 09:53:25 - [IsCheckMD5DLLExist] <=== 
+2019/04/11 09:53:25 - [CleanUp] Can't find program.zip(C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\program.zip).
+2019/04/11 09:53:25 - [CleanUp] Can't find engine.zip.(C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\engine.zip)
+2019/04/11 09:53:25 - [CleanUp] Can't find pattern.zip(C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\pattern.zip).
+2019/04/11 09:53:25 - [CleanUp] Reset the PRGUPDATE vaule to 0.
+2019/04/11 09:53:25 - [GetApplicationPathFromReg] - Got application path from reg: (C:\Program Files (x86)\Trend Micro\OfficeScan Client\)
+2019/04/11 09:53:25 - [GetApplicationPathFromReg] - Application path (C:\Program Files (x86)\Trend Micro\OfficeScan Client\)
+2019/04/11 09:53:57 - [ExtractFiles][C:\Program Files (x86)\Trend Micro\OfficeScan Client\ClientConsole.zip] finished
+2019/04/11 09:53:58 - [CheckPkgIntegrity] Result = 1.
+2019/04/11 09:54:28 - [ExtractFiles][C:\Program Files (x86)\Trend Micro\OfficeScan Client\ClientConsole.zip] finished
+2019/04/11 09:54:28 - [ExtractFiles] Cannot find file[C:\Program Files (x86)\Trend Micro\OfficeScan Client\TMAS_ENG_X64.zip] error[-1]
+2019/04/11 09:54:28 - [TMASUpgrade] ExtractFiles Failed.
+2019/04/11 09:54:39 - [ExtractFiles][C:\Program Files (x86)\Trend Micro\OfficeScan Client\CCSF_X64.zip] finished
+2019/04/11 09:54:40 - [CheckPkgIntegrity] Result = 1.
+2019/04/11 09:54:50 - [ExtractFiles][C:\Program Files (x86)\Trend Micro\OfficeScan Client\CCSF_X64.zip] finished
+2019/04/11 09:54:50 - [StartRealTimeService] Service isn't running, call StartService to start
+2019/04/11 09:54:50 - [StartRealTimeService] Wait start to complete, time out 60 seconds
+2019/04/11 09:54:51 - [StartRealTimeService] Service not started yet, time out left 59 seconds
+2019/04/11 09:54:51 - [StartRealTimeService] Service started!!
+2019/04/11 09:54:51 - [UpdateOfficeScanNTModule] StartListenService OK.
+2019/04/11 09:54:56 - [StartListenService] Service isn't running, call StartService to start
+2019/04/11 09:54:57 - [StartListenService] Wait start to complete, time out 60 seconds
+2019/04/11 09:54:58 - [StartListenService] Service not started yet, time out left 59 seconds
+2019/04/11 09:54:59 - [StartListenService] Service not started yet, time out left 58 seconds
+2019/04/11 09:55:00 - [StartListenService] Service not started yet, time out left 57 seconds
+2019/04/11 09:55:01 - [StartListenService] Service not started yet, time out left 56 seconds
+2019/04/11 09:55:02 - [StartListenService] Service not started yet, time out left 55 seconds
+2019/04/11 09:55:03 - [StartListenService] Service not started yet, time out left 54 seconds
+2019/04/11 09:55:04 - [StartListenService] Service not started yet, time out left 53 seconds
+2019/04/11 09:55:05 - [StartListenService] Service not started yet, time out left 52 seconds
+2019/04/11 09:55:06 - [StartListenService] Service not started yet, time out left 51 seconds
+2019/04/11 09:55:07 - [StartListenService] Service not started yet, time out left 50 seconds
+2019/04/11 09:55:08 - [StartListenService] Service not started yet, time out left 49 seconds
+2019/04/11 09:55:09 - [StartListenService] Service not started yet, time out left 48 seconds
+2019/04/11 09:55:10 - [StartListenService] Service not started yet, time out left 47 seconds
+2019/04/11 09:55:11 - [StartListenService] Service not started yet, time out left 46 seconds
+2019/04/11 09:55:12 - [StartListenService] Service not started yet, time out left 45 seconds
+2019/04/11 09:55:13 - [StartListenService] Service not started yet, time out left 44 seconds
+2019/04/11 09:55:14 - [StartListenService] Service not started yet, time out left 43 seconds
+2019/04/11 09:55:15 - [StartListenService] Service not started yet, time out left 42 seconds
+2019/04/11 09:55:16 - [StartListenService] Service not started yet, time out left 41 seconds
+2019/04/11 09:55:17 - [StartListenService] Service not started yet, time out left 40 seconds
+2019/04/11 09:55:18 - [StartListenService] Service not started yet, time out left 39 seconds
+2019/04/11 09:55:19 - [StartListenService] Service not started yet, time out left 38 seconds
+2019/04/11 09:55:20 - [StartListenService] Service not started yet, time out left 37 seconds
+2019/04/11 09:55:21 - [StartListenService] Service not started yet, time out left 36 seconds
+2019/04/11 09:55:22 - [StartListenService] Service not started yet, time out left 35 seconds
+2019/04/11 09:55:23 - [StartListenService] Service not started yet, time out left 34 seconds
+2019/04/11 09:55:24 - [StartListenService] Service not started yet, time out left 33 seconds
+2019/04/11 09:55:25 - [StartListenService] Service not started yet, time out left 32 seconds
+2019/04/11 09:55:26 - [StartListenService] Service not started yet, time out left 31 seconds
+2019/04/11 09:55:27 - [StartListenService] Service not started yet, time out left 30 seconds
+2019/04/11 09:55:28 - [StartListenService] Service not started yet, time out left 29 seconds
+2019/04/11 09:55:29 - [StartListenService] Service not started yet, time out left 28 seconds
+2019/04/11 09:55:30 - [StartListenService] Service not started yet, time out left 27 seconds
+2019/04/11 09:55:31 - [StartListenService] Service not started yet, time out left 26 seconds
+2019/04/11 09:55:32 - [StartListenService] Service not started yet, time out left 25 seconds
+2019/04/11 09:55:33 - [StartListenService] Service not started yet, time out left 24 seconds
+2019/04/11 09:55:34 - [StartListenService] Service not started yet, time out left 23 seconds
+2019/04/11 09:55:35 - [StartListenService] Service not started yet, time out left 22 seconds
+2019/04/11 09:55:36 - [StartListenService] Service not started yet, time out left 21 seconds
+2019/04/11 09:55:37 - [StartListenService] Service not started yet, time out left 20 seconds
+2019/04/11 09:55:38 - [StartListenService] Service not started yet, time out left 19 seconds
+2019/04/11 09:55:39 - [StartListenService] Service not started yet, time out left 18 seconds
+2019/04/11 09:55:40 - [StartListenService] Service not started yet, time out left 17 seconds
+2019/04/11 09:55:42 - [StartListenService] Service not started yet, time out left 16 seconds
+2019/04/11 09:55:43 - [StartListenService] Service not started yet, time out left 15 seconds
+2019/04/11 09:55:44 - [StartListenService] Service not started yet, time out left 14 seconds
+2019/04/11 09:55:45 - [StartListenService] Service not started yet, time out left 13 seconds
+2019/04/11 09:55:46 - [StartListenService] Service not started yet, time out left 12 seconds
+2019/04/11 09:55:47 - [StartListenService] Service not started yet, time out left 11 seconds
+2019/04/11 09:55:48 - [StartListenService] Service not started yet, time out left 10 seconds
+2019/04/11 09:55:49 - [StartListenService] Service not started yet, time out left 9 seconds
+2019/04/11 09:55:50 - [StartListenService] Service not started yet, time out left 8 seconds
+2019/04/11 09:55:51 - [StartListenService] Service not started yet, time out left 7 seconds
+2019/04/11 09:55:52 - [StartListenService] Service not started yet, time out left 6 seconds
+2019/04/11 09:55:53 - [StartListenService] Service not started yet, time out left 5 seconds
+2019/04/11 09:55:54 - [StartListenService] Service not started yet, time out left 4 seconds
+2019/04/11 09:55:55 - [StartListenService] Service not started yet, time out left 3 seconds
+2019/04/11 09:55:56 - [StartListenService] Service not started yet, time out left 2 seconds
+2019/04/11 09:55:57 - [StartListenService] Service not started yet, time out left 1 seconds
+2019/04/11 09:55:58 - [StartListenService] Service not started yet, time out left 0 seconds
+2019/04/11 09:55:58 - [StartListenService] Service can't be started after 60 seconds
+2019/04/11 09:55:58 - [UpdateOfficeScanNTModule] StartListenService FAIL.
+2019/04/11 09:55:58 - [SetUpdatingEvent] ==> SetUpdatingEvent(0) 
+2019/04/11 09:55:58 - [SetUpdatingEvent] <== SetUpdatingEvent(0) 
+2019/04/11 09:55:58 - [tmdLaunchRelatedPrograms] Is Windows XP,start client...
+2019/04/11 09:56:29 - [UpdateOfficeScanNTModule] I/O Monitor's full path name = C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\pccntmon.exe
+2019/04/11 09:56:29 - LaunchAP:The Shell name of reg key is explorer.exe
+2019/04/11 09:56:29 - LaunchAP:The Shell is explorer.exe
+2019/04/11 09:56:29 - LaunchAP:processID 6508
+2019/04/11 09:56:29 - LaunchAP:CreateProcesAsUser Success!
+2019/04/11 09:56:29 - [SendScanOrCleanIPC] dwScanOrClean = 0
+2019/04/11 09:56:29 - [SEG 197238] dwEnableDCS = 1. 2019/04/11 09:56:29 - [LaunchTSC]Create Global event to launch TSC.
+2019/04/11 09:56:29 - [InstallShellExtension] ===>
+2019/04/11 09:56:29 - [RemoveShellExtension] Load library error C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\TMDSHELL.DLL , err = 126
+2019/04/11 09:56:29 - [UpdateOfficeScanNTModule] End process.
+2019/04/11 09:56:29 - [Main] Upgrade Stop Time [2019/ 4/11   9:56:29]
+

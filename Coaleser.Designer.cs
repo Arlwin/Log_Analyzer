@@ -42,7 +42,7 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dateStart = new System.Windows.Forms.DateTimePicker();
             this.dateEnd = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboCategory = new System.Windows.Forms.ComboBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.lblCategory = new System.Windows.Forms.Label();
             this.lblStartDate = new System.Windows.Forms.Label();
@@ -77,7 +77,7 @@
             this.pnlSearch.Controls.Add(this.lblStartDate);
             this.pnlSearch.Controls.Add(this.lblCategory);
             this.pnlSearch.Controls.Add(this.lblSearch);
-            this.pnlSearch.Controls.Add(this.comboBox1);
+            this.pnlSearch.Controls.Add(this.cboCategory);
             this.pnlSearch.Controls.Add(this.dateEnd);
             this.pnlSearch.Controls.Add(this.dateStart);
             this.pnlSearch.Controls.Add(this.txtSearch);
@@ -157,6 +157,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtxtSearchResult.Location = new System.Drawing.Point(9, 17);
             this.rtxtSearchResult.Name = "rtxtSearchResult";
+            this.rtxtSearchResult.ReadOnly = true;
             this.rtxtSearchResult.Size = new System.Drawing.Size(1193, 256);
             this.rtxtSearchResult.TabIndex = 0;
             this.rtxtSearchResult.Text = "";
@@ -168,6 +169,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtextFileBrowser.Location = new System.Drawing.Point(7, 17);
             this.rtextFileBrowser.Name = "rtextFileBrowser";
+            this.rtextFileBrowser.ReadOnly = true;
             this.rtextFileBrowser.Size = new System.Drawing.Size(744, 240);
             this.rtextFileBrowser.TabIndex = 0;
             this.rtextFileBrowser.Text = "";
@@ -179,52 +181,59 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtextSelectedFiles.Location = new System.Drawing.Point(13, 17);
             this.rtextSelectedFiles.Name = "rtextSelectedFiles";
+            this.rtextSelectedFiles.ReadOnly = true;
             this.rtextSelectedFiles.Size = new System.Drawing.Size(332, 240);
             this.rtextSelectedFiles.TabIndex = 0;
             this.rtextSelectedFiles.Text = "";
             // 
             // txtSearch
             // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(101, 20);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(249, 20);
+            this.txtSearch.Size = new System.Drawing.Size(249, 24);
             this.txtSearch.TabIndex = 0;
             // 
             // dateStart
             // 
+            this.dateStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateStart.Location = new System.Drawing.Point(482, 20);
             this.dateStart.Name = "dateStart";
-            this.dateStart.Size = new System.Drawing.Size(148, 20);
+            this.dateStart.Size = new System.Drawing.Size(148, 24);
             this.dateStart.TabIndex = 1;
             // 
             // dateEnd
             // 
+            this.dateEnd.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateEnd.Location = new System.Drawing.Point(482, 56);
+            this.dateEnd.Location = new System.Drawing.Point(482, 58);
             this.dateEnd.Name = "dateEnd";
-            this.dateEnd.Size = new System.Drawing.Size(148, 20);
+            this.dateEnd.Size = new System.Drawing.Size(148, 24);
             this.dateEnd.TabIndex = 2;
             // 
-            // comboBox1
+            // cboCategory
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cboCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCategory.FormattingEnabled = true;
+            this.cboCategory.Items.AddRange(new object[] {
             "Offline",
             "Update",
             "Smart Scan",
             "Performance",
             "DLP"});
-            this.comboBox1.Location = new System.Drawing.Point(101, 56);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(249, 21);
-            this.comboBox1.TabIndex = 3;
+            this.cboCategory.Location = new System.Drawing.Point(101, 56);
+            this.cboCategory.Name = "cboCategory";
+            this.cboCategory.Size = new System.Drawing.Size(249, 26);
+            this.cboCategory.TabIndex = 3;
             // 
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(9, 19);
+            this.lblSearch.Location = new System.Drawing.Point(9, 23);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(67, 19);
             this.lblSearch.TabIndex = 4;
@@ -234,7 +243,7 @@
             // 
             this.lblCategory.AutoSize = true;
             this.lblCategory.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategory.Location = new System.Drawing.Point(9, 55);
+            this.lblCategory.Location = new System.Drawing.Point(9, 61);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(85, 19);
             this.lblCategory.TabIndex = 5;
@@ -244,7 +253,7 @@
             // 
             this.lblStartDate.AutoSize = true;
             this.lblStartDate.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStartDate.Location = new System.Drawing.Point(378, 20);
+            this.lblStartDate.Location = new System.Drawing.Point(378, 23);
             this.lblStartDate.Name = "lblStartDate";
             this.lblStartDate.Size = new System.Drawing.Size(93, 19);
             this.lblStartDate.TabIndex = 6;
@@ -254,7 +263,7 @@
             // 
             this.lblEndDate.AutoSize = true;
             this.lblEndDate.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndDate.Location = new System.Drawing.Point(378, 55);
+            this.lblEndDate.Location = new System.Drawing.Point(378, 61);
             this.lblEndDate.Name = "lblEndDate";
             this.lblEndDate.Size = new System.Drawing.Size(83, 19);
             this.lblEndDate.TabIndex = 7;
@@ -294,7 +303,7 @@
         private System.Windows.Forms.RichTextBox rtxtSearchResult;
         private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.Label lblSearch;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboCategory;
         private System.Windows.Forms.DateTimePicker dateEnd;
         private System.Windows.Forms.DateTimePicker dateStart;
         private System.Windows.Forms.TextBox txtSearch;

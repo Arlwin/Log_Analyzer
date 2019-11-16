@@ -1,0 +1,12 @@
+converter_dll=dtsearch
+ddna_on=false
+disable_stop=true
+hide_me=false
+link_ip=192.168.0.123
+link_port=8904
+linkpipe_on=true
+max_queue_kbytes=10000
+usa_name_vad_on=true
+usb_cdrom_exception=false
+x_name=X-TMDLP-TAG
+x_value=Sensitive

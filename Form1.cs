@@ -126,7 +126,7 @@ namespace Log_Analyzer
             }
         }
         //Location of the file, accessable to anywhere 
-        private string full_path = "test.zip";
+        private string full_path = "CDT-20190426-095153.zip";
         //Extraction path
         private string extract_path = ""; 
 

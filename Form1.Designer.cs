@@ -209,22 +209,23 @@
             "Offline",
             "Update",
             "Install"});
-            this.comboBox1.Location = new System.Drawing.Point(64, 38);
+            this.comboBox1.Location = new System.Drawing.Point(64, 52);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(256, 21);
             this.comboBox1.TabIndex = 3;
             // 
             // txt_Fltr
             // 
-            this.txt_Fltr.Location = new System.Drawing.Point(66, 10);
+            this.txt_Fltr.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Fltr.Location = new System.Drawing.Point(66, 13);
             this.txt_Fltr.Name = "txt_Fltr";
-            this.txt_Fltr.Size = new System.Drawing.Size(254, 20);
+            this.txt_Fltr.Size = new System.Drawing.Size(254, 24);
             this.txt_Fltr.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 41);
+            this.label2.Location = new System.Drawing.Point(9, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 1;
@@ -233,9 +234,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(9, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.Size = new System.Drawing.Size(42, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Filter";
             // 

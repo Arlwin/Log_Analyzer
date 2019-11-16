@@ -1,0 +1,64 @@
+2019/04/08 13:38:25 - [Upgrade Start Time 6.0] ==  2019/ 4/ 8  13:38:24
+
+2019/04/08 13:38:25 - [getInstalledClientVersion] Version number = 13.95
+2019/04/08 13:38:25 - [CleanUpgradeLog] Find upgrade status Log [C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\upgrade_20190407015424.log]
+2019/04/08 13:38:25 - [CleanUpgradeLog] From[20190330] Upgrade Time[20190407]
+2019/04/08 13:38:25 - [CleanUpgradeLog] Find upgrade status Log [C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\upgrade_20190408133824.log]
+2019/04/08 13:38:25 - [CleanUpgradeLog] From[20190330] Upgrade Time[20190408]
+2019/04/08 13:38:25 - [Main] CreateMutex error = 0
+2019/04/08 13:38:25 - [Main] Current TmListen path [C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\TmListen.exe]
+2019/04/08 13:38:25 - [Main] Current TmListen Version Info (13.95.1107)
+2019/04/08 13:38:25 - [Main] Now szUpdateRoot = C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\, 1, 1073741824
+2019/04/08 13:38:25 - [Main] Parameter First = 1, Second = 40000000
+2019/04/08 13:38:25 - [UpdateOfficeScanNTModule] Start process .. (40000000)
+2019/04/08 13:38:28 - [UpdateInit] Begin ...
+2019/04/08 13:38:28 - [UpdateInit] Is Windows XP,stop client...
+2019/04/08 13:38:49 - [UpdateInit] End.
+2019/04/08 13:38:49 - [UpdateOfficeScanNTModule] Need to restart client!
+2019/04/08 13:39:44 - [UpdateOfficeScanNTModule] StopRealTimeService FAILED.
+2019/04/08 13:41:15 - [UpdateOfficeScanNTModule] StopListenService FAILED.
+2019/04/08 13:41:15 - [UpdateOfficeScanNTModule] StopPFWService OK.
+2019/04/08 13:41:15 - [UpdateOfficeScanNTModule] StopTmProxyService OK.
+2019/04/08 13:41:15 - [UpdateOfficeScanNTModule] StopPortBlockDriver OK.
+2019/04/08 13:41:21 - [Process_PSAPI] PSAPI.DLL folder(C:\Program Files (x86)\Trend Micro\OfficeScan Client\temp\..\PSAPI.Dll)
+2019/04/08 13:41:21 - [Process_PSAPI] PSAPI.DLL does not exist in client folder
+2019/04/08 13:41:21 - [UpdateOfficeScanNTModule] Find pccntupd ..
+2019/04/08 13:41:23 - [RemoveShellExtension] ===>
+2019/04/08 13:41:23 - [RemoveShellExtension] Success
+2019/04/08 13:41:23 - [RemoveShellExtension] <=== 
+2019/04/08 13:41:23 - [CleanUp] Can't find program.zip(C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\program.zip).
+2019/04/08 13:41:23 - [CleanUp] Can't find engine.zip.(C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\engine.zip)
+2019/04/08 13:41:23 - [CleanUp] Can't find pattern.zip(C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\pattern.zip).
+2019/04/08 13:41:23 - [CleanUp] Reset the PRGUPDATE vaule to 0.
+2019/04/08 13:41:23 - [GetApplicationPathFromReg] - Got application path from reg: (C:\Program Files (x86)\Trend Micro\OfficeScan Client\)
+2019/04/08 13:41:23 - [GetApplicationPathFromReg] - Application path (C:\Program Files (x86)\Trend Micro\OfficeScan Client\)
+2019/04/08 13:41:52 - [ExtractFiles][C:\Program Files (x86)\Trend Micro\OfficeScan Client\ClientConsole.zip] finished
+2019/04/08 13:41:53 - [CheckPkgIntegrity] Result = 1.
+2019/04/08 13:42:32 - [ExtractFiles][C:\Program Files (x86)\Trend Micro\OfficeScan Client\ClientConsole.zip] finished
+2019/04/08 13:42:32 - [ExtractFiles] Cannot find file[C:\Program Files (x86)\Trend Micro\OfficeScan Client\TMAS_ENG_X64.zip] error[-1]
+2019/04/08 13:42:32 - [TMASUpgrade] ExtractFiles Failed.
+2019/04/08 13:42:51 - [ExtractFiles][C:\Program Files (x86)\Trend Micro\OfficeScan Client\CCSF_X64.zip] finished
+2019/04/08 13:42:52 - [CheckPkgIntegrity] Result = 1.
+2019/04/08 13:43:05 - [ExtractFiles][C:\Program Files (x86)\Trend Micro\OfficeScan Client\CCSF_X64.zip] finished
+2019/04/08 13:43:05 - [StartRealTimeService] Service isn't running, call StartService to start
+2019/04/08 13:43:06 - [StartRealTimeService] Wait start to complete, time out 60 seconds
+2019/04/08 13:43:07 - [StartRealTimeService] Service not started yet, time out left 59 seconds
+2019/04/08 13:43:07 - [StartRealTimeService] Service started!!
+2019/04/08 13:43:07 - [UpdateOfficeScanNTModule] StartListenService OK.
+2019/04/08 13:43:12 - [StartListenService] Service isn't running, call StartService to start
+2019/04/08 13:43:12 - [StartListenService] Wait start to complete, time out 60 seconds
+2019/04/08 13:43:13 - [StartListenService] Service not started yet, time out left 59 seconds
+2019/04/08 13:43:13 - [StartListenService] Service started!!
+2019/04/08 13:43:13 - [UpdateOfficeScanNTModule] StartListenService OK.
+2019/04/08 13:43:13 - [tmdLaunchRelatedPrograms] Is Windows XP,start client...
+2019/04/08 13:43:44 - [UpdateOfficeScanNTModule] I/O Monitor's full path name = C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\pccntmon.exe
+2019/04/08 13:43:44 - LaunchAP:The Shell name of reg key is explorer.exe
+2019/04/08 13:43:44 - LaunchAP:The Shell is explorer.exe
+2019/04/08 13:43:44 - LaunchAP:processID 6508
+2019/04/08 13:43:44 - LaunchAP:CreateProcesAsUser Success!
+2019/04/08 13:43:44 - [SendScanOrCleanIPC] dwScanOrClean = 0
+2019/04/08 13:43:44 - [InstallShellExtension] ===>
+2019/04/08 13:43:44 - [RemoveShellExtension] Load library error C:\PROGRAM FILES (X86)\TREND MICRO\OFFICESCAN CLIENT\TMDSHELL.DLL , err = 126
+2019/04/08 13:43:44 - [UpdateOfficeScanNTModule] End process.
+2019/04/08 13:43:44 - [Main] Upgrade Stop Time [2019/ 4/ 8  13:43:44]
+
