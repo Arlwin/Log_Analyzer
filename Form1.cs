@@ -125,12 +125,52 @@ namespace Log_Analyzer
                 nodes.StateImageIndex = 1;
             }
         }
+         
+        private string full_path = "test.zip"; //Location of the file, accessable to anywhere 
+        private string extract_path = ""; //Extraction path
 
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            txt_Area.AppendText("File list: ");
-            loadDir(extractZip("test.zip"));    
+            //txt_Area.AppendText("File list: ");
+
+            extract_path = extractZip(full_path);
+
+            loadDir(extract_path); 
         }
 
+
+        private void tree_FileView_AfterSelect_1(object sender, TreeViewEventArgs e)
+        {
+            txt_Area.Clear();
+            TreeNode iterator;
+
+            String path = "";
+            String file = "";
+
+            iterator = e.Node;
+            file = iterator.Text;
+
+            while (iterator.Parent != null)
+            {
+                iterator = iterator.Parent;
+                path = path.Insert(0, iterator.Text + "\\");
+            }
+            
+            //txt_Area.Text = path + file;
+
+            try
+            {
+                string[] textlines = File.ReadAllLines(path + file);
+
+                foreach (string line in textlines)
+                {
+                    // Use a tab to indent each line of the file.
+                    txt_Area.AppendText(line + "\n");
+                }
+            }catch(Exception ex)
+            {
+
+            }
+        }
     }
 }

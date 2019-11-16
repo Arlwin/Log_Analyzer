@@ -34,6 +34,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tree_FileView = new System.Windows.Forms.TreeView();
             this.txt_Area = new System.Windows.Forms.RichTextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -50,7 +51,6 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tree_FileView = new System.Windows.Forms.TreeView();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -147,6 +147,14 @@
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.DragDrop += new System.Windows.Forms.DragEventHandler(this.tabPage3_DragDrop);
+            // 
+            // tree_FileView
+            // 
+            this.tree_FileView.Location = new System.Drawing.Point(414, 26);
+            this.tree_FileView.Name = "tree_FileView";
+            this.tree_FileView.Size = new System.Drawing.Size(288, 206);
+            this.tree_FileView.TabIndex = 1;
+            this.tree_FileView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tree_FileView_AfterSelect_1);
             // 
             // txt_Area
             // 
@@ -289,13 +297,6 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // tree_FileView
-            // 
-            this.tree_FileView.Location = new System.Drawing.Point(414, 26);
-            this.tree_FileView.Name = "tree_FileView";
-            this.tree_FileView.Size = new System.Drawing.Size(288, 206);
-            this.tree_FileView.TabIndex = 1;
             // 
             // Form1
             // 
