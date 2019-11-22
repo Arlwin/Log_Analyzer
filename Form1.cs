@@ -116,40 +116,7 @@ namespace Log_Analyzer
         }
 
 
-        private void tree_FileView_AfterSelect_1(object sender, TreeViewEventArgs e)
-        {
-            txt_Area.Clear();
-            TreeNode iterator;
-
-            String path = "";
-            String file = "";
-
-            iterator = e.Node;
-            file = iterator.Text;
-
-            while (iterator.Parent != null)
-            {
-                iterator = iterator.Parent;
-                path = path.Insert(0, iterator.Text + "\\");
-            }
-            
-            //txt_Area.Text = path + file;
-
-            try
-            {
-                string[] textlines = File.ReadAllLines(path + file);
-
-                foreach (string line in textlines)
-                {
-                    // Use a tab to indent each line of the file.
-                    txt_Area.AppendText(line + "\n");
-                }
-            }
-            catch(Exception ex)
-            {
-
-            }
-        }
+      
 
         private void coalescerToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -158,24 +125,15 @@ namespace Log_Analyzer
 
         }
 
+        private void txt_Fltr_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
 
         //highlight keyword after typing text on Filter textbox
         //has a bug, it does not include the last character, due to Event KEYDOWN executing AFTER last character is typed
-        private void txt_Fltr_KeyDown(object sender, KeyEventArgs e)
-        {
-            //reset txt_Area after entering new keyword
-            string temp = txt_Area.Text;
-            txt_Area.Clear();
-            txt_Area.Text = temp;
 
-            //match txt_Fltr to texts on txt_Area
-            Regex reg = new Regex(txt_Fltr.Text, RegexOptions.IgnoreCase);
-            foreach (Match find in reg.Matches(txt_Area.Text))
-            {
-                txt_Area.Select(find.Index, find.Length);
-                txt_Area.SelectionBackColor = Color.Yellow;
-            }
-        }
     }
 }

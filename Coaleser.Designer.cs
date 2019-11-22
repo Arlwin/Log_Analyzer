@@ -74,9 +74,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSelected.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.pnlSelected.Controls.Add(this.rtextSelectedFiles);
-            this.pnlSelected.Location = new System.Drawing.Point(860, 116);
+            this.pnlSelected.Location = new System.Drawing.Point(754, 116);
             this.pnlSelected.Name = "pnlSelected";
-            this.pnlSelected.Size = new System.Drawing.Size(354, 272);
+            this.pnlSelected.Size = new System.Drawing.Size(460, 239);
             this.pnlSelected.TabIndex = 4;
             // 
             // rtextSelectedFiles
@@ -87,7 +87,7 @@
             this.rtextSelectedFiles.Location = new System.Drawing.Point(13, 17);
             this.rtextSelectedFiles.Name = "rtextSelectedFiles";
             this.rtextSelectedFiles.ReadOnly = true;
-            this.rtextSelectedFiles.Size = new System.Drawing.Size(332, 240);
+            this.rtextSelectedFiles.Size = new System.Drawing.Size(438, 207);
             this.rtextSelectedFiles.TabIndex = 0;
             this.rtextSelectedFiles.Text = "";
             // 
@@ -98,9 +98,9 @@
             this.pnlBtn.BackColor = System.Drawing.Color.LawnGreen;
             this.pnlBtn.Controls.Add(this.btnRemove);
             this.pnlBtn.Controls.Add(this.btnAdd);
-            this.pnlBtn.Location = new System.Drawing.Point(788, 116);
+            this.pnlBtn.Location = new System.Drawing.Point(682, 116);
             this.pnlBtn.Name = "pnlBtn";
-            this.pnlBtn.Size = new System.Drawing.Size(66, 272);
+            this.pnlBtn.Size = new System.Drawing.Size(66, 239);
             this.pnlBtn.TabIndex = 3;
             // 
             // btnRemove
@@ -130,14 +130,17 @@
             this.pnlFiles.Controls.Add(this.c_tree_FileView);
             this.pnlFiles.Location = new System.Drawing.Point(3, 116);
             this.pnlFiles.Name = "pnlFiles";
-            this.pnlFiles.Size = new System.Drawing.Size(779, 272);
+            this.pnlFiles.Size = new System.Drawing.Size(673, 239);
             this.pnlFiles.TabIndex = 2;
             // 
             // c_tree_FileView
             // 
+            this.c_tree_FileView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.c_tree_FileView.Location = new System.Drawing.Point(12, 17);
             this.c_tree_FileView.Name = "c_tree_FileView";
-            this.c_tree_FileView.Size = new System.Drawing.Size(748, 240);
+            this.c_tree_FileView.Size = new System.Drawing.Size(641, 207);
             this.c_tree_FileView.TabIndex = 0;
             this.c_tree_FileView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.c_tree_FileView_AfterSelect);
             // 
@@ -147,9 +150,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlTextFile.BackColor = System.Drawing.Color.OrangeRed;
             this.pnlTextFile.Controls.Add(this.c_rtxtSearchResult);
-            this.pnlTextFile.Location = new System.Drawing.Point(3, 394);
+            this.pnlTextFile.Location = new System.Drawing.Point(3, 361);
             this.pnlTextFile.Name = "pnlTextFile";
-            this.pnlTextFile.Size = new System.Drawing.Size(1211, 282);
+            this.pnlTextFile.Size = new System.Drawing.Size(1211, 315);
             this.pnlTextFile.TabIndex = 1;
             // 
             // c_rtxtSearchResult
@@ -160,7 +163,7 @@
             this.c_rtxtSearchResult.Location = new System.Drawing.Point(9, 17);
             this.c_rtxtSearchResult.Name = "c_rtxtSearchResult";
             this.c_rtxtSearchResult.ReadOnly = true;
-            this.c_rtxtSearchResult.Size = new System.Drawing.Size(1193, 256);
+            this.c_rtxtSearchResult.Size = new System.Drawing.Size(1193, 289);
             this.c_rtxtSearchResult.TabIndex = 0;
             this.c_rtxtSearchResult.Text = "";
             // 

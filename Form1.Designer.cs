@@ -32,17 +32,13 @@
             this.pnl_Toolbar = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tree_FileView = new System.Windows.Forms.TreeView();
-            this.txt_Area = new System.Windows.Forms.RichTextBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.TabSystem = new System.Windows.Forms.TabControl();
+            this.tabSystemInfo = new System.Windows.Forms.TabPage();
+            this.tabAgentInfo = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pnl_Filter = new System.Windows.Forms.Panel();
             this.btnFilter = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txt_Fltr = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,14 +50,38 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.coalescerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblHostname = new System.Windows.Forms.Label();
+            this.lblIPAddress = new System.Windows.Forms.Label();
+            this.lblDns = new System.Windows.Forms.Label();
+            this.lblGateway = new System.Windows.Forms.Label();
+            this.lblOperatingSystem = new System.Windows.Forms.Label();
+            this.lblSystemArchitecture = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblRam = new System.Windows.Forms.Label();
+            this.lblFreeDiskSpace = new System.Windows.Forms.Label();
+            this.lblUpdateAgent = new System.Windows.Forms.Label();
+            this.lblAgentPort = new System.Windows.Forms.Label();
+            this.lblAgentVersion = new System.Windows.Forms.Label();
+            this.lblAgentBuild = new System.Windows.Forms.Label();
+            this.lblAgentAddr = new System.Windows.Forms.Label();
+            this.lblUpdateAgentAddr = new System.Windows.Forms.Label();
+            this.lblServerHttpPort = new System.Windows.Forms.Label();
+            this.lblServerHttpsPort = new System.Windows.Forms.Label();
+            this.lblUpdateAgentPort = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblEngineVersion = new System.Windows.Forms.Label();
+            this.lblConvenPtnVer = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblAgentLocation = new System.Windows.Forms.Label();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.pnl_Toolbar.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabControl2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.TabSystem.SuspendLayout();
+            this.tabSystemInfo.SuspendLayout();
+            this.tabAgentInfo.SuspendLayout();
             this.pnl_Filter.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -74,13 +94,13 @@
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.pnl_Toolbar);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.pnl_Filter);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1038, 529);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1303, 655);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.LeftToolStripPanelVisible = false;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.RightToolStripPanelVisible = false;
-            this.toolStripContainer1.Size = new System.Drawing.Size(1038, 553);
+            this.toolStripContainer1.Size = new System.Drawing.Size(1303, 679);
             this.toolStripContainer1.TabIndex = 0;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -97,7 +117,7 @@
             this.pnl_Toolbar.Controls.Add(this.tabControl1);
             this.pnl_Toolbar.Location = new System.Drawing.Point(3, 109);
             this.pnl_Toolbar.Name = "pnl_Toolbar";
-            this.pnl_Toolbar.Size = new System.Drawing.Size(1032, 417);
+            this.pnl_Toolbar.Size = new System.Drawing.Size(1297, 543);
             this.pnl_Toolbar.TabIndex = 1;
             // 
             // tabControl1
@@ -110,71 +130,76 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1026, 411);
+            this.tabControl1.Size = new System.Drawing.Size(1291, 537);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.tabControl2);
+            this.tabPage1.Controls.Add(this.TabSystem);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1018, 385);
+            this.tabPage1.Size = new System.Drawing.Size(1283, 511);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabControl2
+            // TabSystem
             // 
-            this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TabSystem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl2.Controls.Add(this.tabPage3);
-            this.tabControl2.Controls.Add(this.tabPage4);
-            this.tabControl2.Location = new System.Drawing.Point(3, 3);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1009, 376);
-            this.tabControl2.TabIndex = 0;
+            this.TabSystem.Controls.Add(this.tabSystemInfo);
+            this.TabSystem.Controls.Add(this.tabAgentInfo);
+            this.TabSystem.Location = new System.Drawing.Point(3, 3);
+            this.TabSystem.Name = "TabSystem";
+            this.TabSystem.SelectedIndex = 0;
+            this.TabSystem.Size = new System.Drawing.Size(1274, 502);
+            this.TabSystem.TabIndex = 0;
             // 
-            // tabPage3
+            // tabSystemInfo
             // 
-            this.tabPage3.AllowDrop = true;
-            this.tabPage3.Controls.Add(this.tree_FileView);
-            this.tabPage3.Controls.Add(this.txt_Area);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1001, 350);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabSystemInfo.AllowDrop = true;
+            this.tabSystemInfo.Controls.Add(this.label12);
+            this.tabSystemInfo.Controls.Add(this.lblFreeDiskSpace);
+            this.tabSystemInfo.Controls.Add(this.lblRam);
+            this.tabSystemInfo.Controls.Add(this.label3);
+            this.tabSystemInfo.Controls.Add(this.lblSystemArchitecture);
+            this.tabSystemInfo.Controls.Add(this.lblOperatingSystem);
+            this.tabSystemInfo.Controls.Add(this.lblGateway);
+            this.tabSystemInfo.Controls.Add(this.lblDns);
+            this.tabSystemInfo.Controls.Add(this.lblIPAddress);
+            this.tabSystemInfo.Controls.Add(this.lblHostname);
+            this.tabSystemInfo.Location = new System.Drawing.Point(4, 22);
+            this.tabSystemInfo.Name = "tabSystemInfo";
+            this.tabSystemInfo.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSystemInfo.Size = new System.Drawing.Size(1266, 476);
+            this.tabSystemInfo.TabIndex = 0;
+            this.tabSystemInfo.Text = "System Information";
+            this.tabSystemInfo.UseVisualStyleBackColor = true;
             // 
-            // tree_FileView
+            // tabAgentInfo
             // 
-            this.tree_FileView.Location = new System.Drawing.Point(414, 26);
-            this.tree_FileView.Name = "tree_FileView";
-            this.tree_FileView.Size = new System.Drawing.Size(288, 206);
-            this.tree_FileView.TabIndex = 1;
-            this.tree_FileView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tree_FileView_AfterSelect_1);
-            // 
-            // txt_Area
-            // 
-            this.txt_Area.Location = new System.Drawing.Point(24, 26);
-            this.txt_Area.Name = "txt_Area";
-            this.txt_Area.Size = new System.Drawing.Size(351, 206);
-            this.txt_Area.TabIndex = 0;
-            this.txt_Area.Text = "";
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1001, 350);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabAgentInfo.Controls.Add(this.lblAgentLocation);
+            this.tabAgentInfo.Controls.Add(this.label2);
+            this.tabAgentInfo.Controls.Add(this.lblConvenPtnVer);
+            this.tabAgentInfo.Controls.Add(this.lblEngineVersion);
+            this.tabAgentInfo.Controls.Add(this.lblUpdateAgentPort);
+            this.tabAgentInfo.Controls.Add(this.lblServerHttpsPort);
+            this.tabAgentInfo.Controls.Add(this.lblServerHttpPort);
+            this.tabAgentInfo.Controls.Add(this.lblUpdateAgentAddr);
+            this.tabAgentInfo.Controls.Add(this.lblUpdateAgent);
+            this.tabAgentInfo.Controls.Add(this.lblAgentPort);
+            this.tabAgentInfo.Controls.Add(this.lblAgentVersion);
+            this.tabAgentInfo.Controls.Add(this.lblAgentBuild);
+            this.tabAgentInfo.Controls.Add(this.lblAgentAddr);
+            this.tabAgentInfo.Location = new System.Drawing.Point(4, 22);
+            this.tabAgentInfo.Name = "tabAgentInfo";
+            this.tabAgentInfo.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAgentInfo.Size = new System.Drawing.Size(1266, 476);
+            this.tabAgentInfo.TabIndex = 1;
+            this.tabAgentInfo.Text = "Agent Information";
+            this.tabAgentInfo.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -192,13 +217,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_Filter.BackColor = System.Drawing.Color.Azure;
             this.pnl_Filter.Controls.Add(this.btnFilter);
-            this.pnl_Filter.Controls.Add(this.comboBox1);
             this.pnl_Filter.Controls.Add(this.txt_Fltr);
-            this.pnl_Filter.Controls.Add(this.label2);
             this.pnl_Filter.Controls.Add(this.label1);
             this.pnl_Filter.Location = new System.Drawing.Point(3, 3);
             this.pnl_Filter.Name = "pnl_Filter";
-            this.pnl_Filter.Size = new System.Drawing.Size(1032, 100);
+            this.pnl_Filter.Size = new System.Drawing.Size(1297, 100);
             this.pnl_Filter.TabIndex = 0;
             // 
             // btnFilter
@@ -210,20 +233,6 @@
             this.btnFilter.Text = "button1";
             this.btnFilter.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "General",
-            "Offline",
-            "Update",
-            "Install"});
-            this.comboBox1.Location = new System.Drawing.Point(64, 52);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(256, 21);
-            this.comboBox1.TabIndex = 3;
-            // 
             // txt_Fltr
             // 
             this.txt_Fltr.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -231,16 +240,7 @@
             this.txt_Fltr.Name = "txt_Fltr";
             this.txt_Fltr.Size = new System.Drawing.Size(254, 24);
             this.txt_Fltr.TabIndex = 2;
-            this.txt_Fltr.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Fltr_KeyDown);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Category";
+            this.txt_Fltr.TextChanged += new System.EventHandler(this.txt_Fltr_TextChanged);
             // 
             // label1
             // 
@@ -262,7 +262,7 @@
             this.toolsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1038, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1303, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -280,26 +280,26 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.saveAsToolStripMenuItem.Text = "Save as";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // formatToolStripMenuItem
@@ -329,11 +329,241 @@
             this.coalescerToolStripMenuItem.Text = "Coalescer";
             this.coalescerToolStripMenuItem.Click += new System.EventHandler(this.coalescerToolStripMenuItem_Click);
             // 
+            // lblHostname
+            // 
+            this.lblHostname.AutoSize = true;
+            this.lblHostname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHostname.Location = new System.Drawing.Point(15, 20);
+            this.lblHostname.Name = "lblHostname";
+            this.lblHostname.Size = new System.Drawing.Size(94, 21);
+            this.lblHostname.TabIndex = 0;
+            this.lblHostname.Text = "Hostname:";
+            // 
+            // lblIPAddress
+            // 
+            this.lblIPAddress.AutoSize = true;
+            this.lblIPAddress.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIPAddress.Location = new System.Drawing.Point(15, 56);
+            this.lblIPAddress.Name = "lblIPAddress";
+            this.lblIPAddress.Size = new System.Drawing.Size(94, 21);
+            this.lblIPAddress.TabIndex = 1;
+            this.lblIPAddress.Text = "IP Address:";
+            // 
+            // lblDns
+            // 
+            this.lblDns.AutoSize = true;
+            this.lblDns.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDns.Location = new System.Drawing.Point(15, 116);
+            this.lblDns.Name = "lblDns";
+            this.lblDns.Size = new System.Drawing.Size(46, 21);
+            this.lblDns.TabIndex = 2;
+            this.lblDns.Text = "DNS:";
+            // 
+            // lblGateway
+            // 
+            this.lblGateway.AutoSize = true;
+            this.lblGateway.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGateway.Location = new System.Drawing.Point(15, 86);
+            this.lblGateway.Name = "lblGateway";
+            this.lblGateway.Size = new System.Drawing.Size(89, 21);
+            this.lblGateway.TabIndex = 3;
+            this.lblGateway.Text = "Gateway:";
+            // 
+            // lblOperatingSystem
+            // 
+            this.lblOperatingSystem.AutoSize = true;
+            this.lblOperatingSystem.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperatingSystem.Location = new System.Drawing.Point(15, 189);
+            this.lblOperatingSystem.Name = "lblOperatingSystem";
+            this.lblOperatingSystem.Size = new System.Drawing.Size(154, 21);
+            this.lblOperatingSystem.TabIndex = 4;
+            this.lblOperatingSystem.Text = "Operating System:";
+            // 
+            // lblSystemArchitecture
+            // 
+            this.lblSystemArchitecture.AutoSize = true;
+            this.lblSystemArchitecture.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSystemArchitecture.Location = new System.Drawing.Point(18, 255);
+            this.lblSystemArchitecture.Name = "lblSystemArchitecture";
+            this.lblSystemArchitecture.Size = new System.Drawing.Size(172, 21);
+            this.lblSystemArchitecture.TabIndex = 5;
+            this.lblSystemArchitecture.Text = "System Architecture:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(18, 224);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 21);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "OS Version:";
+            // 
+            // lblRam
+            // 
+            this.lblRam.AutoSize = true;
+            this.lblRam.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRam.Location = new System.Drawing.Point(18, 323);
+            this.lblRam.Name = "lblRam";
+            this.lblRam.Size = new System.Drawing.Size(52, 21);
+            this.lblRam.TabIndex = 7;
+            this.lblRam.Text = "RAM:";
+            // 
+            // lblFreeDiskSpace
+            // 
+            this.lblFreeDiskSpace.AutoSize = true;
+            this.lblFreeDiskSpace.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFreeDiskSpace.Location = new System.Drawing.Point(18, 353);
+            this.lblFreeDiskSpace.Name = "lblFreeDiskSpace";
+            this.lblFreeDiskSpace.Size = new System.Drawing.Size(134, 21);
+            this.lblFreeDiskSpace.TabIndex = 8;
+            this.lblFreeDiskSpace.Text = "Free Disk Space:";
+            // 
+            // lblUpdateAgent
+            // 
+            this.lblUpdateAgent.AutoSize = true;
+            this.lblUpdateAgent.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateAgent.Location = new System.Drawing.Point(20, 231);
+            this.lblUpdateAgent.Name = "lblUpdateAgent";
+            this.lblUpdateAgent.Size = new System.Drawing.Size(130, 21);
+            this.lblUpdateAgent.TabIndex = 18;
+            this.lblUpdateAgent.Text = "Update Agent:";
+            // 
+            // lblAgentPort
+            // 
+            this.lblAgentPort.AutoSize = true;
+            this.lblAgentPort.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgentPort.Location = new System.Drawing.Point(20, 196);
+            this.lblAgentPort.Name = "lblAgentPort";
+            this.lblAgentPort.Size = new System.Drawing.Size(100, 21);
+            this.lblAgentPort.TabIndex = 17;
+            this.lblAgentPort.Text = "Agent Port:";
+            // 
+            // lblAgentVersion
+            // 
+            this.lblAgentVersion.AutoSize = true;
+            this.lblAgentVersion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgentVersion.Location = new System.Drawing.Point(20, 19);
+            this.lblAgentVersion.Name = "lblAgentVersion";
+            this.lblAgentVersion.Size = new System.Drawing.Size(120, 21);
+            this.lblAgentVersion.TabIndex = 16;
+            this.lblAgentVersion.Text = "Agent Version";
+            // 
+            // lblAgentBuild
+            // 
+            this.lblAgentBuild.AutoSize = true;
+            this.lblAgentBuild.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgentBuild.Location = new System.Drawing.Point(20, 52);
+            this.lblAgentBuild.Name = "lblAgentBuild";
+            this.lblAgentBuild.Size = new System.Drawing.Size(105, 21);
+            this.lblAgentBuild.TabIndex = 15;
+            this.lblAgentBuild.Text = "Agent Build:";
+            // 
+            // lblAgentAddr
+            // 
+            this.lblAgentAddr.AutoSize = true;
+            this.lblAgentAddr.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgentAddr.Location = new System.Drawing.Point(20, 88);
+            this.lblAgentAddr.Name = "lblAgentAddr";
+            this.lblAgentAddr.Size = new System.Drawing.Size(128, 21);
+            this.lblAgentAddr.TabIndex = 14;
+            this.lblAgentAddr.Text = "Server Address:";
+            // 
+            // lblUpdateAgentAddr
+            // 
+            this.lblUpdateAgentAddr.AutoSize = true;
+            this.lblUpdateAgentAddr.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateAgentAddr.Location = new System.Drawing.Point(20, 306);
+            this.lblUpdateAgentAddr.Name = "lblUpdateAgentAddr";
+            this.lblUpdateAgentAddr.Size = new System.Drawing.Size(196, 21);
+            this.lblUpdateAgentAddr.TabIndex = 19;
+            this.lblUpdateAgentAddr.Text = "Update Agent Address:";
+            // 
+            // lblServerHttpPort
+            // 
+            this.lblServerHttpPort.AutoSize = true;
+            this.lblServerHttpPort.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServerHttpPort.Location = new System.Drawing.Point(20, 121);
+            this.lblServerHttpPort.Name = "lblServerHttpPort";
+            this.lblServerHttpPort.Size = new System.Drawing.Size(137, 21);
+            this.lblServerHttpPort.TabIndex = 20;
+            this.lblServerHttpPort.Text = "Server HTTP Port:";
+            // 
+            // lblServerHttpsPort
+            // 
+            this.lblServerHttpsPort.AutoSize = true;
+            this.lblServerHttpsPort.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServerHttpsPort.Location = new System.Drawing.Point(20, 158);
+            this.lblServerHttpsPort.Name = "lblServerHttpsPort";
+            this.lblServerHttpsPort.Size = new System.Drawing.Size(145, 21);
+            this.lblServerHttpsPort.TabIndex = 21;
+            this.lblServerHttpsPort.Text = "Server HTTPS Port:";
+            // 
+            // lblUpdateAgentPort
+            // 
+            this.lblUpdateAgentPort.AutoSize = true;
+            this.lblUpdateAgentPort.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateAgentPort.Location = new System.Drawing.Point(20, 270);
+            this.lblUpdateAgentPort.Name = "lblUpdateAgentPort";
+            this.lblUpdateAgentPort.Size = new System.Drawing.Size(165, 21);
+            this.lblUpdateAgentPort.TabIndex = 22;
+            this.lblUpdateAgentPort.Text = "Update Agent Port:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(18, 289);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(47, 21);
+            this.label12.TabIndex = 19;
+            this.label12.Text = "CPU:";
+            // 
+            // lblEngineVersion
+            // 
+            this.lblEngineVersion.AutoSize = true;
+            this.lblEngineVersion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEngineVersion.Location = new System.Drawing.Point(653, 52);
+            this.lblEngineVersion.Name = "lblEngineVersion";
+            this.lblEngineVersion.Size = new System.Drawing.Size(126, 21);
+            this.lblEngineVersion.TabIndex = 23;
+            this.lblEngineVersion.Text = "Engine Version:";
+            // 
+            // lblConvenPtnVer
+            // 
+            this.lblConvenPtnVer.AutoSize = true;
+            this.lblConvenPtnVer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConvenPtnVer.Location = new System.Drawing.Point(653, 85);
+            this.lblConvenPtnVer.Name = "lblConvenPtnVer";
+            this.lblConvenPtnVer.Size = new System.Drawing.Size(243, 21);
+            this.lblConvenPtnVer.TabIndex = 24;
+            this.lblConvenPtnVer.Text = "Conventional Pattern Version:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(653, 121);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(225, 21);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Smart Scan Pattern Version:";
+            // 
+            // lblAgentLocation
+            // 
+            this.lblAgentLocation.AutoSize = true;
+            this.lblAgentLocation.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgentLocation.Location = new System.Drawing.Point(653, 19);
+            this.lblAgentLocation.Name = "lblAgentLocation";
+            this.lblAgentLocation.Size = new System.Drawing.Size(137, 21);
+            this.lblAgentLocation.TabIndex = 26;
+            this.lblAgentLocation.Text = "Agent Location:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1038, 553);
+            this.ClientSize = new System.Drawing.Size(1303, 679);
             this.Controls.Add(this.toolStripContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
@@ -349,8 +579,11 @@
             this.pnl_Toolbar.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabControl2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
+            this.TabSystem.ResumeLayout(false);
+            this.tabSystemInfo.ResumeLayout(false);
+            this.tabSystemInfo.PerformLayout();
+            this.tabAgentInfo.ResumeLayout(false);
+            this.tabAgentInfo.PerformLayout();
             this.pnl_Filter.ResumeLayout(false);
             this.pnl_Filter.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -372,21 +605,40 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem formatToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox txt_Fltr;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabControl tabControl2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.RichTextBox txt_Area;
-        private System.Windows.Forms.TreeView tree_FileView;
+        private System.Windows.Forms.TabControl TabSystem;
+        private System.Windows.Forms.TabPage tabSystemInfo;
+        private System.Windows.Forms.TabPage tabAgentInfo;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem coalescerToolStripMenuItem;
         private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.Label lblGateway;
+        private System.Windows.Forms.Label lblDns;
+        private System.Windows.Forms.Label lblIPAddress;
+        private System.Windows.Forms.Label lblHostname;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblSystemArchitecture;
+        private System.Windows.Forms.Label lblOperatingSystem;
+        private System.Windows.Forms.Label lblFreeDiskSpace;
+        private System.Windows.Forms.Label lblRam;
+        private System.Windows.Forms.Label lblUpdateAgentPort;
+        private System.Windows.Forms.Label lblServerHttpsPort;
+        private System.Windows.Forms.Label lblServerHttpPort;
+        private System.Windows.Forms.Label lblUpdateAgentAddr;
+        private System.Windows.Forms.Label lblUpdateAgent;
+        private System.Windows.Forms.Label lblAgentPort;
+        private System.Windows.Forms.Label lblAgentVersion;
+        private System.Windows.Forms.Label lblAgentBuild;
+        private System.Windows.Forms.Label lblAgentAddr;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblAgentLocation;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblConvenPtnVer;
+        private System.Windows.Forms.Label lblEngineVersion;
     }
 }
 
