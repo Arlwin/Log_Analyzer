@@ -31,24 +31,7 @@ namespace Log_Analyzer
            // System.Windows.Forms.Application.Exit();
         }
 
- 
-
-      
-
-        private void listDir()
-        {
-
-        }
-
-        /*private void readZip(String path)
-        {
-            ZipArchive zip = ZipFile.OpenRead("test.zip");
-            foreach (ZipArchiveEntry entry in zip.Entries)
-            {
-                txt_Area.AppendText("\r\n > " + entry.FullName);
-                tree_FileView.Nodes.Add(entry.FullName);
-            }
-        }*/
+        Coaleser Form2 = new Coaleser();
 
         private string extractZip(string path)
         {
@@ -83,7 +66,7 @@ namespace Log_Analyzer
         {
             DirectoryInfo dir = new DirectoryInfo(path);
 
-            TreeNode node = tree_FileView.Nodes.Add(dir.Name);
+            TreeNode node = Form2.c_tree_FileView.Nodes.Add(dir.Name);
             node.Tag = dir.FullName;
             node.StateImageIndex = 0;
             loadFiles(path, node);
@@ -170,8 +153,9 @@ namespace Log_Analyzer
 
         private void coalescerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Coaleser Form2 = new Coaleser();
+            //Coaleser Form2 = new Coaleser();
             Form2.Show();
+
         }
 
 

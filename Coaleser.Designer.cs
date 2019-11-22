@@ -29,30 +29,30 @@
         private void InitializeComponent()
         {
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.pnlSearch = new System.Windows.Forms.Panel();
-            this.pnlTextFile = new System.Windows.Forms.Panel();
-            this.pnlFiles = new System.Windows.Forms.Panel();
-            this.pnlBtn = new System.Windows.Forms.Panel();
             this.pnlSelected = new System.Windows.Forms.Panel();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.rtxtSearchResult = new System.Windows.Forms.RichTextBox();
-            this.rtextFileBrowser = new System.Windows.Forms.RichTextBox();
             this.rtextSelectedFiles = new System.Windows.Forms.RichTextBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.dateStart = new System.Windows.Forms.DateTimePicker();
-            this.dateEnd = new System.Windows.Forms.DateTimePicker();
-            this.cboCategory = new System.Windows.Forms.ComboBox();
-            this.lblSearch = new System.Windows.Forms.Label();
-            this.lblCategory = new System.Windows.Forms.Label();
-            this.lblStartDate = new System.Windows.Forms.Label();
+            this.pnlBtn = new System.Windows.Forms.Panel();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.pnlFiles = new System.Windows.Forms.Panel();
+            this.c_tree_FileView = new System.Windows.Forms.TreeView();
+            this.pnlTextFile = new System.Windows.Forms.Panel();
+            this.c_rtxtSearchResult = new System.Windows.Forms.RichTextBox();
+            this.pnlSearch = new System.Windows.Forms.Panel();
             this.lblEndDate = new System.Windows.Forms.Label();
+            this.lblStartDate = new System.Windows.Forms.Label();
+            this.lblCategory = new System.Windows.Forms.Label();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.cboCategory = new System.Windows.Forms.ComboBox();
+            this.dateEnd = new System.Windows.Forms.DateTimePicker();
+            this.dateStart = new System.Windows.Forms.DateTimePicker();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.pnlMain.SuspendLayout();
-            this.pnlSearch.SuspendLayout();
-            this.pnlTextFile.SuspendLayout();
-            this.pnlFiles.SuspendLayout();
-            this.pnlBtn.SuspendLayout();
             this.pnlSelected.SuspendLayout();
+            this.pnlBtn.SuspendLayout();
+            this.pnlFiles.SuspendLayout();
+            this.pnlTextFile.SuspendLayout();
+            this.pnlSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -67,6 +67,102 @@
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1217, 679);
             this.pnlMain.TabIndex = 0;
+            // 
+            // pnlSelected
+            // 
+            this.pnlSelected.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlSelected.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pnlSelected.Controls.Add(this.rtextSelectedFiles);
+            this.pnlSelected.Location = new System.Drawing.Point(860, 116);
+            this.pnlSelected.Name = "pnlSelected";
+            this.pnlSelected.Size = new System.Drawing.Size(354, 272);
+            this.pnlSelected.TabIndex = 4;
+            // 
+            // rtextSelectedFiles
+            // 
+            this.rtextSelectedFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtextSelectedFiles.Location = new System.Drawing.Point(13, 17);
+            this.rtextSelectedFiles.Name = "rtextSelectedFiles";
+            this.rtextSelectedFiles.ReadOnly = true;
+            this.rtextSelectedFiles.Size = new System.Drawing.Size(332, 240);
+            this.rtextSelectedFiles.TabIndex = 0;
+            this.rtextSelectedFiles.Text = "";
+            // 
+            // pnlBtn
+            // 
+            this.pnlBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlBtn.BackColor = System.Drawing.Color.LawnGreen;
+            this.pnlBtn.Controls.Add(this.btnRemove);
+            this.pnlBtn.Controls.Add(this.btnAdd);
+            this.pnlBtn.Location = new System.Drawing.Point(788, 116);
+            this.pnlBtn.Name = "pnlBtn";
+            this.pnlBtn.Size = new System.Drawing.Size(66, 272);
+            this.pnlBtn.TabIndex = 3;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(11, 74);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(44, 42);
+            this.btnRemove.TabIndex = 1;
+            this.btnRemove.Text = "<";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(11, 17);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(44, 42);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = ">";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // pnlFiles
+            // 
+            this.pnlFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlFiles.BackColor = System.Drawing.Color.Yellow;
+            this.pnlFiles.Controls.Add(this.c_tree_FileView);
+            this.pnlFiles.Location = new System.Drawing.Point(3, 116);
+            this.pnlFiles.Name = "pnlFiles";
+            this.pnlFiles.Size = new System.Drawing.Size(779, 272);
+            this.pnlFiles.TabIndex = 2;
+            // 
+            // c_tree_FileView
+            // 
+            this.c_tree_FileView.Location = new System.Drawing.Point(12, 17);
+            this.c_tree_FileView.Name = "c_tree_FileView";
+            this.c_tree_FileView.Size = new System.Drawing.Size(748, 240);
+            this.c_tree_FileView.TabIndex = 0;
+            this.c_tree_FileView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.c_tree_FileView_AfterSelect);
+            // 
+            // pnlTextFile
+            // 
+            this.pnlTextFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlTextFile.BackColor = System.Drawing.Color.OrangeRed;
+            this.pnlTextFile.Controls.Add(this.c_rtxtSearchResult);
+            this.pnlTextFile.Location = new System.Drawing.Point(3, 394);
+            this.pnlTextFile.Name = "pnlTextFile";
+            this.pnlTextFile.Size = new System.Drawing.Size(1211, 282);
+            this.pnlTextFile.TabIndex = 1;
+            // 
+            // c_rtxtSearchResult
+            // 
+            this.c_rtxtSearchResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.c_rtxtSearchResult.Location = new System.Drawing.Point(9, 17);
+            this.c_rtxtSearchResult.Name = "c_rtxtSearchResult";
+            this.c_rtxtSearchResult.ReadOnly = true;
+            this.c_rtxtSearchResult.Size = new System.Drawing.Size(1193, 256);
+            this.c_rtxtSearchResult.TabIndex = 0;
+            this.c_rtxtSearchResult.Text = "";
             // 
             // pnlSearch
             // 
@@ -86,132 +182,45 @@
             this.pnlSearch.Size = new System.Drawing.Size(1211, 107);
             this.pnlSearch.TabIndex = 0;
             // 
-            // pnlTextFile
+            // lblEndDate
             // 
-            this.pnlTextFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlTextFile.BackColor = System.Drawing.Color.OrangeRed;
-            this.pnlTextFile.Controls.Add(this.rtxtSearchResult);
-            this.pnlTextFile.Location = new System.Drawing.Point(3, 394);
-            this.pnlTextFile.Name = "pnlTextFile";
-            this.pnlTextFile.Size = new System.Drawing.Size(1211, 282);
-            this.pnlTextFile.TabIndex = 1;
+            this.lblEndDate.AutoSize = true;
+            this.lblEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEndDate.Location = new System.Drawing.Point(378, 61);
+            this.lblEndDate.Name = "lblEndDate";
+            this.lblEndDate.Size = new System.Drawing.Size(73, 18);
+            this.lblEndDate.TabIndex = 7;
+            this.lblEndDate.Text = "End Date:";
             // 
-            // pnlFiles
+            // lblStartDate
             // 
-            this.pnlFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlFiles.BackColor = System.Drawing.Color.Yellow;
-            this.pnlFiles.Controls.Add(this.rtextFileBrowser);
-            this.pnlFiles.Location = new System.Drawing.Point(3, 116);
-            this.pnlFiles.Name = "pnlFiles";
-            this.pnlFiles.Size = new System.Drawing.Size(779, 272);
-            this.pnlFiles.TabIndex = 2;
+            this.lblStartDate.AutoSize = true;
+            this.lblStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStartDate.Location = new System.Drawing.Point(378, 23);
+            this.lblStartDate.Name = "lblStartDate";
+            this.lblStartDate.Size = new System.Drawing.Size(78, 18);
+            this.lblStartDate.TabIndex = 6;
+            this.lblStartDate.Text = "Start Date:";
             // 
-            // pnlBtn
+            // lblCategory
             // 
-            this.pnlBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlBtn.BackColor = System.Drawing.Color.LawnGreen;
-            this.pnlBtn.Controls.Add(this.btnRemove);
-            this.pnlBtn.Controls.Add(this.btnAdd);
-            this.pnlBtn.Location = new System.Drawing.Point(788, 116);
-            this.pnlBtn.Name = "pnlBtn";
-            this.pnlBtn.Size = new System.Drawing.Size(66, 272);
-            this.pnlBtn.TabIndex = 3;
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategory.Location = new System.Drawing.Point(9, 61);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(72, 18);
+            this.lblCategory.TabIndex = 5;
+            this.lblCategory.Text = "Category:";
             // 
-            // pnlSelected
+            // lblSearch
             // 
-            this.pnlSelected.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlSelected.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.pnlSelected.Controls.Add(this.rtextSelectedFiles);
-            this.pnlSelected.Location = new System.Drawing.Point(860, 116);
-            this.pnlSelected.Name = "pnlSelected";
-            this.pnlSelected.Size = new System.Drawing.Size(354, 272);
-            this.pnlSelected.TabIndex = 4;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(11, 17);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(44, 42);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = ">";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.Location = new System.Drawing.Point(11, 74);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(44, 42);
-            this.btnRemove.TabIndex = 1;
-            this.btnRemove.Text = "<";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            // 
-            // rtxtSearchResult
-            // 
-            this.rtxtSearchResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtxtSearchResult.Location = new System.Drawing.Point(9, 17);
-            this.rtxtSearchResult.Name = "rtxtSearchResult";
-            this.rtxtSearchResult.ReadOnly = true;
-            this.rtxtSearchResult.Size = new System.Drawing.Size(1193, 256);
-            this.rtxtSearchResult.TabIndex = 0;
-            this.rtxtSearchResult.Text = "";
-            // 
-            // rtextFileBrowser
-            // 
-            this.rtextFileBrowser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtextFileBrowser.Location = new System.Drawing.Point(7, 17);
-            this.rtextFileBrowser.Name = "rtextFileBrowser";
-            this.rtextFileBrowser.ReadOnly = true;
-            this.rtextFileBrowser.Size = new System.Drawing.Size(744, 240);
-            this.rtextFileBrowser.TabIndex = 0;
-            this.rtextFileBrowser.Text = "";
-            // 
-            // rtextSelectedFiles
-            // 
-            this.rtextSelectedFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtextSelectedFiles.Location = new System.Drawing.Point(13, 17);
-            this.rtextSelectedFiles.Name = "rtextSelectedFiles";
-            this.rtextSelectedFiles.ReadOnly = true;
-            this.rtextSelectedFiles.Size = new System.Drawing.Size(332, 240);
-            this.rtextSelectedFiles.TabIndex = 0;
-            this.rtextSelectedFiles.Text = "";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(101, 20);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(249, 24);
-            this.txtSearch.TabIndex = 0;
-            // 
-            // dateStart
-            // 
-            this.dateStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateStart.Location = new System.Drawing.Point(482, 20);
-            this.dateStart.Name = "dateStart";
-            this.dateStart.Size = new System.Drawing.Size(148, 24);
-            this.dateStart.TabIndex = 1;
-            // 
-            // dateEnd
-            // 
-            this.dateEnd.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateEnd.Location = new System.Drawing.Point(482, 58);
-            this.dateEnd.Name = "dateEnd";
-            this.dateEnd.Size = new System.Drawing.Size(148, 24);
-            this.dateEnd.TabIndex = 2;
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.Location = new System.Drawing.Point(9, 23);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(59, 18);
+            this.lblSearch.TabIndex = 4;
+            this.lblSearch.Text = "Search:";
             // 
             // cboCategory
             // 
@@ -229,45 +238,32 @@
             this.cboCategory.Size = new System.Drawing.Size(249, 26);
             this.cboCategory.TabIndex = 3;
             // 
-            // lblSearch
+            // dateEnd
             // 
-            this.lblSearch.AutoSize = true;
-            this.lblSearch.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(9, 23);
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(67, 19);
-            this.lblSearch.TabIndex = 4;
-            this.lblSearch.Text = "Search:";
+            this.dateEnd.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateEnd.Location = new System.Drawing.Point(482, 58);
+            this.dateEnd.Name = "dateEnd";
+            this.dateEnd.Size = new System.Drawing.Size(148, 24);
+            this.dateEnd.TabIndex = 2;
             // 
-            // lblCategory
+            // dateStart
             // 
-            this.lblCategory.AutoSize = true;
-            this.lblCategory.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategory.Location = new System.Drawing.Point(9, 61);
-            this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(85, 19);
-            this.lblCategory.TabIndex = 5;
-            this.lblCategory.Text = "Category:";
+            this.dateStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateStart.Location = new System.Drawing.Point(482, 20);
+            this.dateStart.Name = "dateStart";
+            this.dateStart.Size = new System.Drawing.Size(148, 24);
+            this.dateStart.TabIndex = 1;
             // 
-            // lblStartDate
+            // txtSearch
             // 
-            this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStartDate.Location = new System.Drawing.Point(378, 23);
-            this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(93, 19);
-            this.lblStartDate.TabIndex = 6;
-            this.lblStartDate.Text = "Start Date:";
-            // 
-            // lblEndDate
-            // 
-            this.lblEndDate.AutoSize = true;
-            this.lblEndDate.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndDate.Location = new System.Drawing.Point(378, 61);
-            this.lblEndDate.Name = "lblEndDate";
-            this.lblEndDate.Size = new System.Drawing.Size(83, 19);
-            this.lblEndDate.TabIndex = 7;
-            this.lblEndDate.Text = "End Date:";
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(101, 20);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(249, 24);
+            this.txtSearch.TabIndex = 0;
             // 
             // Coaleser
             // 
@@ -278,12 +274,12 @@
             this.Name = "Coaleser";
             this.Text = "Coaleser";
             this.pnlMain.ResumeLayout(false);
+            this.pnlSelected.ResumeLayout(false);
+            this.pnlBtn.ResumeLayout(false);
+            this.pnlFiles.ResumeLayout(false);
+            this.pnlTextFile.ResumeLayout(false);
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
-            this.pnlTextFile.ResumeLayout(false);
-            this.pnlFiles.ResumeLayout(false);
-            this.pnlBtn.ResumeLayout(false);
-            this.pnlSelected.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -299,8 +295,7 @@
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.RichTextBox rtextSelectedFiles;
-        private System.Windows.Forms.RichTextBox rtextFileBrowser;
-        private System.Windows.Forms.RichTextBox rtxtSearchResult;
+        private System.Windows.Forms.RichTextBox c_rtxtSearchResult;
         private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.ComboBox cboCategory;
@@ -309,5 +304,6 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblEndDate;
         private System.Windows.Forms.Label lblStartDate;
+        public System.Windows.Forms.TreeView c_tree_FileView;
     }
 }
