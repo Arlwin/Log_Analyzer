@@ -112,6 +112,15 @@ namespace Log_Analyzer
             lblIPAddress_value.Text = gi.getIpAdd(); //Ip Address
             lblGateway_value.Text = gi.getGateway(); //Gateway
             lblDns_value.Text = gi.getDNS(); //DNS
+
+            lblOperatingSystem_value.Text = gi.getOS(); //OS
+            lblOSver_value.Text = gi.getOSver(); //OS Version
+            lblSystemArchitecture_value.Text = gi.getSysArch(); //System Architecture
+            lblCPU_value.Text = gi.getCPU(); //CPU
+            lblRam_value.Text = gi.getRAM(); //RAM
+            lblFreeDiskSpace_value.Text = gi.getDiskSpace(); //Free Disk Space
+
+            //NOTE: Currently, disk space can only print free disk space of FIRST disk drive
         }
 
         private void coalescerToolStripMenuItem_Click(object sender, EventArgs e)

@@ -35,10 +35,10 @@
             this.TabSystem = new System.Windows.Forms.TabControl();
             this.tabSystemInfo = new System.Windows.Forms.TabPage();
             this.lblHostname_value = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblCPU = new System.Windows.Forms.Label();
             this.lblFreeDiskSpace = new System.Windows.Forms.Label();
             this.lblRam = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblOSver = new System.Windows.Forms.Label();
             this.lblSystemArchitecture = new System.Windows.Forms.Label();
             this.lblOperatingSystem = new System.Windows.Forms.Label();
             this.lblGateway = new System.Windows.Forms.Label();
@@ -77,6 +77,12 @@
             this.lblIPAddress_value = new System.Windows.Forms.Label();
             this.lblGateway_value = new System.Windows.Forms.Label();
             this.lblDns_value = new System.Windows.Forms.Label();
+            this.lblOperatingSystem_value = new System.Windows.Forms.Label();
+            this.lblOSver_value = new System.Windows.Forms.Label();
+            this.lblSystemArchitecture_value = new System.Windows.Forms.Label();
+            this.lblCPU_value = new System.Windows.Forms.Label();
+            this.lblRam_value = new System.Windows.Forms.Label();
+            this.lblFreeDiskSpace_value = new System.Windows.Forms.Label();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -164,14 +170,20 @@
             // tabSystemInfo
             // 
             this.tabSystemInfo.AllowDrop = true;
+            this.tabSystemInfo.Controls.Add(this.lblFreeDiskSpace_value);
+            this.tabSystemInfo.Controls.Add(this.lblRam_value);
+            this.tabSystemInfo.Controls.Add(this.lblCPU_value);
+            this.tabSystemInfo.Controls.Add(this.lblSystemArchitecture_value);
+            this.tabSystemInfo.Controls.Add(this.lblOSver_value);
+            this.tabSystemInfo.Controls.Add(this.lblOperatingSystem_value);
             this.tabSystemInfo.Controls.Add(this.lblDns_value);
             this.tabSystemInfo.Controls.Add(this.lblGateway_value);
             this.tabSystemInfo.Controls.Add(this.lblIPAddress_value);
             this.tabSystemInfo.Controls.Add(this.lblHostname_value);
-            this.tabSystemInfo.Controls.Add(this.label12);
+            this.tabSystemInfo.Controls.Add(this.lblCPU);
             this.tabSystemInfo.Controls.Add(this.lblFreeDiskSpace);
             this.tabSystemInfo.Controls.Add(this.lblRam);
-            this.tabSystemInfo.Controls.Add(this.label3);
+            this.tabSystemInfo.Controls.Add(this.lblOSver);
             this.tabSystemInfo.Controls.Add(this.lblSystemArchitecture);
             this.tabSystemInfo.Controls.Add(this.lblOperatingSystem);
             this.tabSystemInfo.Controls.Add(this.lblGateway);
@@ -195,15 +207,15 @@
             this.lblHostname_value.Size = new System.Drawing.Size(0, 21);
             this.lblHostname_value.TabIndex = 20;
             // 
-            // label12
+            // lblCPU
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(18, 289);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(47, 21);
-            this.label12.TabIndex = 19;
-            this.label12.Text = "CPU:";
+            this.lblCPU.AutoSize = true;
+            this.lblCPU.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCPU.Location = new System.Drawing.Point(18, 289);
+            this.lblCPU.Name = "lblCPU";
+            this.lblCPU.Size = new System.Drawing.Size(47, 21);
+            this.lblCPU.TabIndex = 19;
+            this.lblCPU.Text = "CPU:";
             // 
             // lblFreeDiskSpace
             // 
@@ -225,15 +237,15 @@
             this.lblRam.TabIndex = 7;
             this.lblRam.Text = "RAM:";
             // 
-            // label3
+            // lblOSver
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 224);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 21);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "OS Version:";
+            this.lblOSver.AutoSize = true;
+            this.lblOSver.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOSver.Location = new System.Drawing.Point(18, 224);
+            this.lblOSver.Name = "lblOSver";
+            this.lblOSver.Size = new System.Drawing.Size(95, 21);
+            this.lblOSver.TabIndex = 6;
+            this.lblOSver.Text = "OS Version:";
             // 
             // lblSystemArchitecture
             // 
@@ -603,6 +615,60 @@
             this.lblDns_value.Size = new System.Drawing.Size(0, 21);
             this.lblDns_value.TabIndex = 23;
             // 
+            // lblOperatingSystem_value
+            // 
+            this.lblOperatingSystem_value.AutoSize = true;
+            this.lblOperatingSystem_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperatingSystem_value.Location = new System.Drawing.Point(194, 189);
+            this.lblOperatingSystem_value.Name = "lblOperatingSystem_value";
+            this.lblOperatingSystem_value.Size = new System.Drawing.Size(0, 21);
+            this.lblOperatingSystem_value.TabIndex = 24;
+            // 
+            // lblOSver_value
+            // 
+            this.lblOSver_value.AutoSize = true;
+            this.lblOSver_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOSver_value.Location = new System.Drawing.Point(194, 224);
+            this.lblOSver_value.Name = "lblOSver_value";
+            this.lblOSver_value.Size = new System.Drawing.Size(0, 21);
+            this.lblOSver_value.TabIndex = 25;
+            // 
+            // lblSystemArchitecture_value
+            // 
+            this.lblSystemArchitecture_value.AutoSize = true;
+            this.lblSystemArchitecture_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSystemArchitecture_value.Location = new System.Drawing.Point(194, 255);
+            this.lblSystemArchitecture_value.Name = "lblSystemArchitecture_value";
+            this.lblSystemArchitecture_value.Size = new System.Drawing.Size(0, 21);
+            this.lblSystemArchitecture_value.TabIndex = 26;
+            // 
+            // lblCPU_value
+            // 
+            this.lblCPU_value.AutoSize = true;
+            this.lblCPU_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCPU_value.Location = new System.Drawing.Point(194, 289);
+            this.lblCPU_value.Name = "lblCPU_value";
+            this.lblCPU_value.Size = new System.Drawing.Size(0, 21);
+            this.lblCPU_value.TabIndex = 27;
+            // 
+            // lblRam_value
+            // 
+            this.lblRam_value.AutoSize = true;
+            this.lblRam_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRam_value.Location = new System.Drawing.Point(194, 323);
+            this.lblRam_value.Name = "lblRam_value";
+            this.lblRam_value.Size = new System.Drawing.Size(0, 21);
+            this.lblRam_value.TabIndex = 28;
+            // 
+            // lblFreeDiskSpace_value
+            // 
+            this.lblFreeDiskSpace_value.AutoSize = true;
+            this.lblFreeDiskSpace_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFreeDiskSpace_value.Location = new System.Drawing.Point(194, 353);
+            this.lblFreeDiskSpace_value.Name = "lblFreeDiskSpace_value";
+            this.lblFreeDiskSpace_value.Size = new System.Drawing.Size(0, 21);
+            this.lblFreeDiskSpace_value.TabIndex = 29;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -664,7 +730,7 @@
         private System.Windows.Forms.Label lblDns;
         private System.Windows.Forms.Label lblIPAddress;
         private System.Windows.Forms.Label lblHostname;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblOSver;
         private System.Windows.Forms.Label lblSystemArchitecture;
         private System.Windows.Forms.Label lblOperatingSystem;
         private System.Windows.Forms.Label lblFreeDiskSpace;
@@ -678,7 +744,7 @@
         private System.Windows.Forms.Label lblAgentVersion;
         private System.Windows.Forms.Label lblAgentBuild;
         private System.Windows.Forms.Label lblAgentAddr;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblCPU;
         private System.Windows.Forms.Label lblAgentLocation;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblConvenPtnVer;
@@ -687,6 +753,12 @@
         private System.Windows.Forms.Label lblIPAddress_value;
         private System.Windows.Forms.Label lblDns_value;
         private System.Windows.Forms.Label lblGateway_value;
+        private System.Windows.Forms.Label lblFreeDiskSpace_value;
+        private System.Windows.Forms.Label lblRam_value;
+        private System.Windows.Forms.Label lblCPU_value;
+        private System.Windows.Forms.Label lblSystemArchitecture_value;
+        private System.Windows.Forms.Label lblOSver_value;
+        private System.Windows.Forms.Label lblOperatingSystem_value;
     }
 }
 
