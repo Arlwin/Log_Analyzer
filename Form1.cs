@@ -49,16 +49,6 @@ namespace Log_Analyzer
                 zip.ExtractAll(dest, Ionic.Zip.ExtractExistingFileAction.OverwriteSilently);
             }
 
-            /*try
-            {
-                ZipFile.ExtractToDirectory(path, dest);
-            }
-            catch (Exception e)
-            {
-                Directory.Delete(dest, true);
-                ZipFile.ExtractToDirectory(path, dest);
-            }*/
-
             return dest;
         }
 
@@ -101,22 +91,20 @@ namespace Log_Analyzer
                 nodes.StateImageIndex = 1;
             }
         }
+
         //Location of the file, accessable to anywhere 
         private string full_path = "CDT-20190426-095153.zip";
         //Extraction path
         private string extract_path = ""; 
 
-        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e) // START of loading CDT
         {
-            //txt_Area.AppendText("File list: ");
-
             extract_path = extractZip(full_path);
+            loadDir(extract_path);
+            getInformation gi = new getInformation(extract_path);
 
-            loadDir(extract_path); 
-        }
-
-
-      
+            lblHostname_value.Text = gi.getHostname();
+        } 
 
         private void coalescerToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -130,8 +118,7 @@ namespace Log_Analyzer
 
         }
 
-
-
+        
         //highlight keyword after typing text on Filter textbox
         //has a bug, it does not include the last character, due to Event KEYDOWN executing AFTER last character is typed
 

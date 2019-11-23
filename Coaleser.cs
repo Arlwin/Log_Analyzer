@@ -48,6 +48,7 @@ namespace Log_Analyzer
                     // Use a tab to indent each line of the file.
                     c_rtxtSearchResult.AppendText(line + "\n");
                 }
+               
             }
             catch (Exception ex)
             {

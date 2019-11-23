@@ -34,7 +34,30 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.TabSystem = new System.Windows.Forms.TabControl();
             this.tabSystemInfo = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblFreeDiskSpace = new System.Windows.Forms.Label();
+            this.lblRam = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblSystemArchitecture = new System.Windows.Forms.Label();
+            this.lblOperatingSystem = new System.Windows.Forms.Label();
+            this.lblGateway = new System.Windows.Forms.Label();
+            this.lblDns = new System.Windows.Forms.Label();
+            this.lblIPAddress = new System.Windows.Forms.Label();
+            this.lblHostname = new System.Windows.Forms.Label();
             this.tabAgentInfo = new System.Windows.Forms.TabPage();
+            this.lblAgentLocation = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblConvenPtnVer = new System.Windows.Forms.Label();
+            this.lblEngineVersion = new System.Windows.Forms.Label();
+            this.lblUpdateAgentPort = new System.Windows.Forms.Label();
+            this.lblServerHttpsPort = new System.Windows.Forms.Label();
+            this.lblServerHttpPort = new System.Windows.Forms.Label();
+            this.lblUpdateAgentAddr = new System.Windows.Forms.Label();
+            this.lblUpdateAgent = new System.Windows.Forms.Label();
+            this.lblAgentPort = new System.Windows.Forms.Label();
+            this.lblAgentVersion = new System.Windows.Forms.Label();
+            this.lblAgentBuild = new System.Windows.Forms.Label();
+            this.lblAgentAddr = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pnl_Filter = new System.Windows.Forms.Panel();
             this.btnFilter = new System.Windows.Forms.Button();
@@ -50,29 +73,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.coalescerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblHostname = new System.Windows.Forms.Label();
-            this.lblIPAddress = new System.Windows.Forms.Label();
-            this.lblDns = new System.Windows.Forms.Label();
-            this.lblGateway = new System.Windows.Forms.Label();
-            this.lblOperatingSystem = new System.Windows.Forms.Label();
-            this.lblSystemArchitecture = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblRam = new System.Windows.Forms.Label();
-            this.lblFreeDiskSpace = new System.Windows.Forms.Label();
-            this.lblUpdateAgent = new System.Windows.Forms.Label();
-            this.lblAgentPort = new System.Windows.Forms.Label();
-            this.lblAgentVersion = new System.Windows.Forms.Label();
-            this.lblAgentBuild = new System.Windows.Forms.Label();
-            this.lblAgentAddr = new System.Windows.Forms.Label();
-            this.lblUpdateAgentAddr = new System.Windows.Forms.Label();
-            this.lblServerHttpPort = new System.Windows.Forms.Label();
-            this.lblServerHttpsPort = new System.Windows.Forms.Label();
-            this.lblUpdateAgentPort = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.lblEngineVersion = new System.Windows.Forms.Label();
-            this.lblConvenPtnVer = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblAgentLocation = new System.Windows.Forms.Label();
+            this.lblHostname_value = new System.Windows.Forms.Label();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -160,6 +161,7 @@
             // tabSystemInfo
             // 
             this.tabSystemInfo.AllowDrop = true;
+            this.tabSystemInfo.Controls.Add(this.lblHostname_value);
             this.tabSystemInfo.Controls.Add(this.label12);
             this.tabSystemInfo.Controls.Add(this.lblFreeDiskSpace);
             this.tabSystemInfo.Controls.Add(this.lblRam);
@@ -177,6 +179,106 @@
             this.tabSystemInfo.TabIndex = 0;
             this.tabSystemInfo.Text = "System Information";
             this.tabSystemInfo.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(18, 289);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(47, 21);
+            this.label12.TabIndex = 19;
+            this.label12.Text = "CPU:";
+            // 
+            // lblFreeDiskSpace
+            // 
+            this.lblFreeDiskSpace.AutoSize = true;
+            this.lblFreeDiskSpace.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFreeDiskSpace.Location = new System.Drawing.Point(18, 353);
+            this.lblFreeDiskSpace.Name = "lblFreeDiskSpace";
+            this.lblFreeDiskSpace.Size = new System.Drawing.Size(134, 21);
+            this.lblFreeDiskSpace.TabIndex = 8;
+            this.lblFreeDiskSpace.Text = "Free Disk Space:";
+            // 
+            // lblRam
+            // 
+            this.lblRam.AutoSize = true;
+            this.lblRam.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRam.Location = new System.Drawing.Point(18, 323);
+            this.lblRam.Name = "lblRam";
+            this.lblRam.Size = new System.Drawing.Size(52, 21);
+            this.lblRam.TabIndex = 7;
+            this.lblRam.Text = "RAM:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(18, 224);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 21);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "OS Version:";
+            // 
+            // lblSystemArchitecture
+            // 
+            this.lblSystemArchitecture.AutoSize = true;
+            this.lblSystemArchitecture.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSystemArchitecture.Location = new System.Drawing.Point(18, 255);
+            this.lblSystemArchitecture.Name = "lblSystemArchitecture";
+            this.lblSystemArchitecture.Size = new System.Drawing.Size(172, 21);
+            this.lblSystemArchitecture.TabIndex = 5;
+            this.lblSystemArchitecture.Text = "System Architecture:";
+            // 
+            // lblOperatingSystem
+            // 
+            this.lblOperatingSystem.AutoSize = true;
+            this.lblOperatingSystem.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperatingSystem.Location = new System.Drawing.Point(15, 189);
+            this.lblOperatingSystem.Name = "lblOperatingSystem";
+            this.lblOperatingSystem.Size = new System.Drawing.Size(154, 21);
+            this.lblOperatingSystem.TabIndex = 4;
+            this.lblOperatingSystem.Text = "Operating System:";
+            // 
+            // lblGateway
+            // 
+            this.lblGateway.AutoSize = true;
+            this.lblGateway.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGateway.Location = new System.Drawing.Point(15, 86);
+            this.lblGateway.Name = "lblGateway";
+            this.lblGateway.Size = new System.Drawing.Size(89, 21);
+            this.lblGateway.TabIndex = 3;
+            this.lblGateway.Text = "Gateway:";
+            // 
+            // lblDns
+            // 
+            this.lblDns.AutoSize = true;
+            this.lblDns.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDns.Location = new System.Drawing.Point(15, 116);
+            this.lblDns.Name = "lblDns";
+            this.lblDns.Size = new System.Drawing.Size(46, 21);
+            this.lblDns.TabIndex = 2;
+            this.lblDns.Text = "DNS:";
+            // 
+            // lblIPAddress
+            // 
+            this.lblIPAddress.AutoSize = true;
+            this.lblIPAddress.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIPAddress.Location = new System.Drawing.Point(15, 56);
+            this.lblIPAddress.Name = "lblIPAddress";
+            this.lblIPAddress.Size = new System.Drawing.Size(94, 21);
+            this.lblIPAddress.TabIndex = 1;
+            this.lblIPAddress.Text = "IP Address:";
+            // 
+            // lblHostname
+            // 
+            this.lblHostname.AutoSize = true;
+            this.lblHostname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHostname.Location = new System.Drawing.Point(15, 20);
+            this.lblHostname.Name = "lblHostname";
+            this.lblHostname.Size = new System.Drawing.Size(94, 21);
+            this.lblHostname.TabIndex = 0;
+            this.lblHostname.Text = "Hostname:";
             // 
             // tabAgentInfo
             // 
@@ -201,12 +303,142 @@
             this.tabAgentInfo.Text = "Agent Information";
             this.tabAgentInfo.UseVisualStyleBackColor = true;
             // 
+            // lblAgentLocation
+            // 
+            this.lblAgentLocation.AutoSize = true;
+            this.lblAgentLocation.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgentLocation.Location = new System.Drawing.Point(653, 19);
+            this.lblAgentLocation.Name = "lblAgentLocation";
+            this.lblAgentLocation.Size = new System.Drawing.Size(137, 21);
+            this.lblAgentLocation.TabIndex = 26;
+            this.lblAgentLocation.Text = "Agent Location:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(653, 121);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(225, 21);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Smart Scan Pattern Version:";
+            // 
+            // lblConvenPtnVer
+            // 
+            this.lblConvenPtnVer.AutoSize = true;
+            this.lblConvenPtnVer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConvenPtnVer.Location = new System.Drawing.Point(653, 85);
+            this.lblConvenPtnVer.Name = "lblConvenPtnVer";
+            this.lblConvenPtnVer.Size = new System.Drawing.Size(243, 21);
+            this.lblConvenPtnVer.TabIndex = 24;
+            this.lblConvenPtnVer.Text = "Conventional Pattern Version:";
+            // 
+            // lblEngineVersion
+            // 
+            this.lblEngineVersion.AutoSize = true;
+            this.lblEngineVersion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEngineVersion.Location = new System.Drawing.Point(653, 52);
+            this.lblEngineVersion.Name = "lblEngineVersion";
+            this.lblEngineVersion.Size = new System.Drawing.Size(126, 21);
+            this.lblEngineVersion.TabIndex = 23;
+            this.lblEngineVersion.Text = "Engine Version:";
+            // 
+            // lblUpdateAgentPort
+            // 
+            this.lblUpdateAgentPort.AutoSize = true;
+            this.lblUpdateAgentPort.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateAgentPort.Location = new System.Drawing.Point(20, 270);
+            this.lblUpdateAgentPort.Name = "lblUpdateAgentPort";
+            this.lblUpdateAgentPort.Size = new System.Drawing.Size(165, 21);
+            this.lblUpdateAgentPort.TabIndex = 22;
+            this.lblUpdateAgentPort.Text = "Update Agent Port:";
+            // 
+            // lblServerHttpsPort
+            // 
+            this.lblServerHttpsPort.AutoSize = true;
+            this.lblServerHttpsPort.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServerHttpsPort.Location = new System.Drawing.Point(20, 158);
+            this.lblServerHttpsPort.Name = "lblServerHttpsPort";
+            this.lblServerHttpsPort.Size = new System.Drawing.Size(145, 21);
+            this.lblServerHttpsPort.TabIndex = 21;
+            this.lblServerHttpsPort.Text = "Server HTTPS Port:";
+            // 
+            // lblServerHttpPort
+            // 
+            this.lblServerHttpPort.AutoSize = true;
+            this.lblServerHttpPort.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServerHttpPort.Location = new System.Drawing.Point(20, 121);
+            this.lblServerHttpPort.Name = "lblServerHttpPort";
+            this.lblServerHttpPort.Size = new System.Drawing.Size(137, 21);
+            this.lblServerHttpPort.TabIndex = 20;
+            this.lblServerHttpPort.Text = "Server HTTP Port:";
+            // 
+            // lblUpdateAgentAddr
+            // 
+            this.lblUpdateAgentAddr.AutoSize = true;
+            this.lblUpdateAgentAddr.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateAgentAddr.Location = new System.Drawing.Point(20, 306);
+            this.lblUpdateAgentAddr.Name = "lblUpdateAgentAddr";
+            this.lblUpdateAgentAddr.Size = new System.Drawing.Size(196, 21);
+            this.lblUpdateAgentAddr.TabIndex = 19;
+            this.lblUpdateAgentAddr.Text = "Update Agent Address:";
+            // 
+            // lblUpdateAgent
+            // 
+            this.lblUpdateAgent.AutoSize = true;
+            this.lblUpdateAgent.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateAgent.Location = new System.Drawing.Point(20, 231);
+            this.lblUpdateAgent.Name = "lblUpdateAgent";
+            this.lblUpdateAgent.Size = new System.Drawing.Size(130, 21);
+            this.lblUpdateAgent.TabIndex = 18;
+            this.lblUpdateAgent.Text = "Update Agent:";
+            // 
+            // lblAgentPort
+            // 
+            this.lblAgentPort.AutoSize = true;
+            this.lblAgentPort.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgentPort.Location = new System.Drawing.Point(20, 196);
+            this.lblAgentPort.Name = "lblAgentPort";
+            this.lblAgentPort.Size = new System.Drawing.Size(100, 21);
+            this.lblAgentPort.TabIndex = 17;
+            this.lblAgentPort.Text = "Agent Port:";
+            // 
+            // lblAgentVersion
+            // 
+            this.lblAgentVersion.AutoSize = true;
+            this.lblAgentVersion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgentVersion.Location = new System.Drawing.Point(20, 19);
+            this.lblAgentVersion.Name = "lblAgentVersion";
+            this.lblAgentVersion.Size = new System.Drawing.Size(120, 21);
+            this.lblAgentVersion.TabIndex = 16;
+            this.lblAgentVersion.Text = "Agent Version";
+            // 
+            // lblAgentBuild
+            // 
+            this.lblAgentBuild.AutoSize = true;
+            this.lblAgentBuild.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgentBuild.Location = new System.Drawing.Point(20, 52);
+            this.lblAgentBuild.Name = "lblAgentBuild";
+            this.lblAgentBuild.Size = new System.Drawing.Size(105, 21);
+            this.lblAgentBuild.TabIndex = 15;
+            this.lblAgentBuild.Text = "Agent Build:";
+            // 
+            // lblAgentAddr
+            // 
+            this.lblAgentAddr.AutoSize = true;
+            this.lblAgentAddr.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgentAddr.Location = new System.Drawing.Point(20, 88);
+            this.lblAgentAddr.Name = "lblAgentAddr";
+            this.lblAgentAddr.Size = new System.Drawing.Size(128, 21);
+            this.lblAgentAddr.TabIndex = 14;
+            this.lblAgentAddr.Text = "Server Address:";
+            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1018, 385);
+            this.tabPage2.Size = new System.Drawing.Size(1283, 511);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -329,235 +561,14 @@
             this.coalescerToolStripMenuItem.Text = "Coalescer";
             this.coalescerToolStripMenuItem.Click += new System.EventHandler(this.coalescerToolStripMenuItem_Click);
             // 
-            // lblHostname
+            // lblHostname_value
             // 
-            this.lblHostname.AutoSize = true;
-            this.lblHostname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHostname.Location = new System.Drawing.Point(15, 20);
-            this.lblHostname.Name = "lblHostname";
-            this.lblHostname.Size = new System.Drawing.Size(94, 21);
-            this.lblHostname.TabIndex = 0;
-            this.lblHostname.Text = "Hostname:";
-            // 
-            // lblIPAddress
-            // 
-            this.lblIPAddress.AutoSize = true;
-            this.lblIPAddress.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIPAddress.Location = new System.Drawing.Point(15, 56);
-            this.lblIPAddress.Name = "lblIPAddress";
-            this.lblIPAddress.Size = new System.Drawing.Size(94, 21);
-            this.lblIPAddress.TabIndex = 1;
-            this.lblIPAddress.Text = "IP Address:";
-            // 
-            // lblDns
-            // 
-            this.lblDns.AutoSize = true;
-            this.lblDns.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDns.Location = new System.Drawing.Point(15, 116);
-            this.lblDns.Name = "lblDns";
-            this.lblDns.Size = new System.Drawing.Size(46, 21);
-            this.lblDns.TabIndex = 2;
-            this.lblDns.Text = "DNS:";
-            // 
-            // lblGateway
-            // 
-            this.lblGateway.AutoSize = true;
-            this.lblGateway.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGateway.Location = new System.Drawing.Point(15, 86);
-            this.lblGateway.Name = "lblGateway";
-            this.lblGateway.Size = new System.Drawing.Size(89, 21);
-            this.lblGateway.TabIndex = 3;
-            this.lblGateway.Text = "Gateway:";
-            // 
-            // lblOperatingSystem
-            // 
-            this.lblOperatingSystem.AutoSize = true;
-            this.lblOperatingSystem.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOperatingSystem.Location = new System.Drawing.Point(15, 189);
-            this.lblOperatingSystem.Name = "lblOperatingSystem";
-            this.lblOperatingSystem.Size = new System.Drawing.Size(154, 21);
-            this.lblOperatingSystem.TabIndex = 4;
-            this.lblOperatingSystem.Text = "Operating System:";
-            // 
-            // lblSystemArchitecture
-            // 
-            this.lblSystemArchitecture.AutoSize = true;
-            this.lblSystemArchitecture.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSystemArchitecture.Location = new System.Drawing.Point(18, 255);
-            this.lblSystemArchitecture.Name = "lblSystemArchitecture";
-            this.lblSystemArchitecture.Size = new System.Drawing.Size(172, 21);
-            this.lblSystemArchitecture.TabIndex = 5;
-            this.lblSystemArchitecture.Text = "System Architecture:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 224);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 21);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "OS Version:";
-            // 
-            // lblRam
-            // 
-            this.lblRam.AutoSize = true;
-            this.lblRam.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRam.Location = new System.Drawing.Point(18, 323);
-            this.lblRam.Name = "lblRam";
-            this.lblRam.Size = new System.Drawing.Size(52, 21);
-            this.lblRam.TabIndex = 7;
-            this.lblRam.Text = "RAM:";
-            // 
-            // lblFreeDiskSpace
-            // 
-            this.lblFreeDiskSpace.AutoSize = true;
-            this.lblFreeDiskSpace.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFreeDiskSpace.Location = new System.Drawing.Point(18, 353);
-            this.lblFreeDiskSpace.Name = "lblFreeDiskSpace";
-            this.lblFreeDiskSpace.Size = new System.Drawing.Size(134, 21);
-            this.lblFreeDiskSpace.TabIndex = 8;
-            this.lblFreeDiskSpace.Text = "Free Disk Space:";
-            // 
-            // lblUpdateAgent
-            // 
-            this.lblUpdateAgent.AutoSize = true;
-            this.lblUpdateAgent.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdateAgent.Location = new System.Drawing.Point(20, 231);
-            this.lblUpdateAgent.Name = "lblUpdateAgent";
-            this.lblUpdateAgent.Size = new System.Drawing.Size(130, 21);
-            this.lblUpdateAgent.TabIndex = 18;
-            this.lblUpdateAgent.Text = "Update Agent:";
-            // 
-            // lblAgentPort
-            // 
-            this.lblAgentPort.AutoSize = true;
-            this.lblAgentPort.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgentPort.Location = new System.Drawing.Point(20, 196);
-            this.lblAgentPort.Name = "lblAgentPort";
-            this.lblAgentPort.Size = new System.Drawing.Size(100, 21);
-            this.lblAgentPort.TabIndex = 17;
-            this.lblAgentPort.Text = "Agent Port:";
-            // 
-            // lblAgentVersion
-            // 
-            this.lblAgentVersion.AutoSize = true;
-            this.lblAgentVersion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgentVersion.Location = new System.Drawing.Point(20, 19);
-            this.lblAgentVersion.Name = "lblAgentVersion";
-            this.lblAgentVersion.Size = new System.Drawing.Size(120, 21);
-            this.lblAgentVersion.TabIndex = 16;
-            this.lblAgentVersion.Text = "Agent Version";
-            // 
-            // lblAgentBuild
-            // 
-            this.lblAgentBuild.AutoSize = true;
-            this.lblAgentBuild.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgentBuild.Location = new System.Drawing.Point(20, 52);
-            this.lblAgentBuild.Name = "lblAgentBuild";
-            this.lblAgentBuild.Size = new System.Drawing.Size(105, 21);
-            this.lblAgentBuild.TabIndex = 15;
-            this.lblAgentBuild.Text = "Agent Build:";
-            // 
-            // lblAgentAddr
-            // 
-            this.lblAgentAddr.AutoSize = true;
-            this.lblAgentAddr.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgentAddr.Location = new System.Drawing.Point(20, 88);
-            this.lblAgentAddr.Name = "lblAgentAddr";
-            this.lblAgentAddr.Size = new System.Drawing.Size(128, 21);
-            this.lblAgentAddr.TabIndex = 14;
-            this.lblAgentAddr.Text = "Server Address:";
-            // 
-            // lblUpdateAgentAddr
-            // 
-            this.lblUpdateAgentAddr.AutoSize = true;
-            this.lblUpdateAgentAddr.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdateAgentAddr.Location = new System.Drawing.Point(20, 306);
-            this.lblUpdateAgentAddr.Name = "lblUpdateAgentAddr";
-            this.lblUpdateAgentAddr.Size = new System.Drawing.Size(196, 21);
-            this.lblUpdateAgentAddr.TabIndex = 19;
-            this.lblUpdateAgentAddr.Text = "Update Agent Address:";
-            // 
-            // lblServerHttpPort
-            // 
-            this.lblServerHttpPort.AutoSize = true;
-            this.lblServerHttpPort.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServerHttpPort.Location = new System.Drawing.Point(20, 121);
-            this.lblServerHttpPort.Name = "lblServerHttpPort";
-            this.lblServerHttpPort.Size = new System.Drawing.Size(137, 21);
-            this.lblServerHttpPort.TabIndex = 20;
-            this.lblServerHttpPort.Text = "Server HTTP Port:";
-            // 
-            // lblServerHttpsPort
-            // 
-            this.lblServerHttpsPort.AutoSize = true;
-            this.lblServerHttpsPort.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServerHttpsPort.Location = new System.Drawing.Point(20, 158);
-            this.lblServerHttpsPort.Name = "lblServerHttpsPort";
-            this.lblServerHttpsPort.Size = new System.Drawing.Size(145, 21);
-            this.lblServerHttpsPort.TabIndex = 21;
-            this.lblServerHttpsPort.Text = "Server HTTPS Port:";
-            // 
-            // lblUpdateAgentPort
-            // 
-            this.lblUpdateAgentPort.AutoSize = true;
-            this.lblUpdateAgentPort.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdateAgentPort.Location = new System.Drawing.Point(20, 270);
-            this.lblUpdateAgentPort.Name = "lblUpdateAgentPort";
-            this.lblUpdateAgentPort.Size = new System.Drawing.Size(165, 21);
-            this.lblUpdateAgentPort.TabIndex = 22;
-            this.lblUpdateAgentPort.Text = "Update Agent Port:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(18, 289);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(47, 21);
-            this.label12.TabIndex = 19;
-            this.label12.Text = "CPU:";
-            // 
-            // lblEngineVersion
-            // 
-            this.lblEngineVersion.AutoSize = true;
-            this.lblEngineVersion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEngineVersion.Location = new System.Drawing.Point(653, 52);
-            this.lblEngineVersion.Name = "lblEngineVersion";
-            this.lblEngineVersion.Size = new System.Drawing.Size(126, 21);
-            this.lblEngineVersion.TabIndex = 23;
-            this.lblEngineVersion.Text = "Engine Version:";
-            // 
-            // lblConvenPtnVer
-            // 
-            this.lblConvenPtnVer.AutoSize = true;
-            this.lblConvenPtnVer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConvenPtnVer.Location = new System.Drawing.Point(653, 85);
-            this.lblConvenPtnVer.Name = "lblConvenPtnVer";
-            this.lblConvenPtnVer.Size = new System.Drawing.Size(243, 21);
-            this.lblConvenPtnVer.TabIndex = 24;
-            this.lblConvenPtnVer.Text = "Conventional Pattern Version:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(653, 121);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(225, 21);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "Smart Scan Pattern Version:";
-            // 
-            // lblAgentLocation
-            // 
-            this.lblAgentLocation.AutoSize = true;
-            this.lblAgentLocation.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgentLocation.Location = new System.Drawing.Point(653, 19);
-            this.lblAgentLocation.Name = "lblAgentLocation";
-            this.lblAgentLocation.Size = new System.Drawing.Size(137, 21);
-            this.lblAgentLocation.TabIndex = 26;
-            this.lblAgentLocation.Text = "Agent Location:";
+            this.lblHostname_value.AutoSize = true;
+            this.lblHostname_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHostname_value.Location = new System.Drawing.Point(115, 20);
+            this.lblHostname_value.Name = "lblHostname_value";
+            this.lblHostname_value.Size = new System.Drawing.Size(0, 21);
+            this.lblHostname_value.TabIndex = 20;
             // 
             // Form1
             // 
@@ -639,6 +650,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblConvenPtnVer;
         private System.Windows.Forms.Label lblEngineVersion;
+        private System.Windows.Forms.Label lblHostname_value;
     }
 }
 

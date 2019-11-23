@@ -1,0 +1,37 @@
+1. Basic product information
+===========================================================================================
+ProductName=Trend Micro Apex One Security Agent
+ProductVersion=13.95
+EngineVersion=11.000.1006
+InstallDateTime= 
+HomeDir=C:\Program Files (x86)\Trend Micro\OfficeScan Client\
+RegRootKey=HKEY_LOCAL_MACHINE\SOFTWARE\TrendMicro
+PluginDir=C:\Program Files (x86)\Trend Micro\OfficeScan Client\..\BM;C:\Windows\System32;C:\Windows\SysWOW64;C:\Windows\Sysnative\dgagent;C:\Program Files (x86)\Trend Micro\OfficeScan Client\..\iService
+VsApiNT version=11.000.1006
+TmFilter version=11.0.1006
+PatternVersion=14.961.00
+IcrcPatternVersion=14.871.00
+GUID=a823acee-ee5a-4cd1-bb96-240c4ad8b998
+Server name/port=ftzgah.manage.trendmicro.com:80
+
+
+2. Problem types
+===========================================================================================
+
+2.1	- Basic Information
+	Event1	- Collect Apex One Security Agent basic debug information
+	Event19	- Collect system services and drivers information
+
+2.13	- Data Loss Prevention <font color=ff0000>(Warning! Logs collected may contain sensitive data.)</font>
+	Event18	- Problems with Data Loss Prevention
+
+
+3. Selected events
+===========================================================================================
+Event1	- Collect Apex One Security Agent basic debug information
+Event18	- Problems with Data Loss Prevention
+Event19	- Collect system services and drivers information
+
+
+
+

@@ -1,0 +1,72 @@
+Operating system: Microsoft Windows 7  Service Pack 1 (Build 7601) , 64-bit(x64)
+
+Internet Explorer version (blank for other browsers): 9.11.9600.19326
+Wininet.dll version: 11.00.9600.19326 (winblue_ltsb_escrow.190325-1700)
+
+Computer name: IT_PC8513025
+User name: Administrator
+
+Elapsed time: Windows has been running for 11 days, 01 hours, 22 minutes, and 33 seconds
+System time: 2019/04/26 04:30:09
+Local time: 2019/04/26 10:00:09
+
+Hardware Information
+===========================================================================================
+    CPU: Type=Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz, Intel64 Family 6 Model 58 Stepping 9, Number=4, PageSize=4096K
+    Physical memory: Total=8341972K, Available=3279392K, Usage=60%
+    Commit charge: Limit=16682044K, Available=10823356K
+    Swap file: Location=C:\pagefile.sys, Size=4147668K, 4050M
+    Display: Resolution=1280*1024, Color=32 bit
+
+
+Disk Information
+===========================================================================================
+    Drive C:\
+        Drive type=Fixed, Volume=New Volume, File system=NTFS
+        Available space=53982044KB|52716MB, Total space=245816316KB|240054MB
+    Drive D:\
+        Drive type=Fixed, Volume=New Volume, File system=NTFS
+        Available space=122958920KB|120077MB, Total space=242567164KB|236881MB
+    Drive E:\
+        Drive type=CD-ROM, Volume=, File system=
+        Available space=0KB|0MB, Total space=0KB|0MB
+    Drive F:\
+        Drive type=CD-ROM, Volume=, File system=
+        Available space=0KB|0MB, Total space=0KB|0MB
+
+Startup Programs
+===========================================================================================
+    IMSS                            Command=<"C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IMSS\PIconStartup.exe">
+    USB3MON                         Command=<"C:\Program Files (x86)\Intel\Intel(R) USB 3.0 eXtensible Host Controller Driver\Application\iusb3mon.exe">
+    StartCCC                        Command=<"C:\Program Files (x86)\AMD\ATI.ACE\Core-Static\amd64\CLIStart.exe" MSRun>
+    PrintClient                     Command=<C:\Program Files (x86)\Print Manager\Print Manager Plus\Client\PrintClient.exe>
+    BCSSync                         Command=<"C:\Program Files (x86)\Microsoft Office\Office14\BCSSync.exe" /DelayServices>
+    FTAutoUpdater                   Command=<C:\ODIN\DIET\FTUpdateService.exe>
+                                    Command=<>
+    Acrobat Assistant 8.0           Command=<"C:\Program Files (x86)\Adobe\Acrobat 11.0\Acrobat\Acrotray.exe">
+    ADSK DLMSession                 Command=<C:\Program Files (x86)\Common Files\Autodesk Shared\Autodesk Download Manager\DLMSession.exe>
+    ConnectionCenter                Command=<"C:\Program Files (x86)\Citrix\ICA Client\concentr.exe" /startup>
+    Redirector                      Command=<"C:\Program Files (x86)\Citrix\ICA Client\redirector.exe" /startup>
+    WD_Stdcertm                     Command=<C:\Windows\SysWOW64\Watchdata\PROXKey CSP India V1.0\SP_CertMND.exe>
+    SunJavaUpdateSched              Command=<"C:\Program Files (x86)\Common Files\Java\Java Update\jusched.exe">
+    ePass2003_std                   Command=<C:\Program Files (x86)\Feitian\ePass2003\ePassCertd_2003.exe>
+    Apex One NT Monitor             Command=<"C:\Program Files (x86)\Trend Micro\OfficeScan Client\pccntmon.exe" -HideWindow>
+    Akamai NetSession Interface     Command=<"C:\Users\Administrator\AppData\Local\Akamai\netsession_win.exe">
+    Lync                            Command=<"C:\Program Files (x86)\Microsoft Office\Office16\lync.exe" /fromrunkey>
+    GoToMeeting                     Command=<"C:\Users\Administrator\AppData\Local\GoToMeeting\12604\g2mstart.exe" "/Trigger RunAtLogon">
+    com.squirrel.Teams.Teams        Command=<C:\Users\Administrator\AppData\Local\Microsoft\Teams\Update.exe --processStart "Teams.exe" --process-start-args "--system-initiated">
+    AdobeAAMUpdater-1.0             Command=<"C:\Program Files (x86)\Common Files\Adobe\OOBE\PDApp\UWA\UpdaterStartupUtility.exe">
+    FileOpenBroker                  Command=<C:\Program Files\FileOpen\Services\FileOpenBroker64.exe>
+    CertificateRegistration         Command=<aetcrss1.exe>
+    AdobeGCInvoker-1.0              Command=<"C:\Program Files (x86)\Common Files\Adobe\AdobeGCClient\AGCInvokerUtility.exe">
+    GlobalProtect                   Command=<"C:\Program Files\Palo Alto Networks\GlobalProtect\PanGPA.exe">
+    iTunesHelper                    Command=<"C:\Program Files\iTunes\iTunesHelper.exe">
+    Apex One NT Monitor             Command=<"C:\Program Files (x86)\Trend Micro\OfficeScan Client\pccntmon.exe" -HideWindow>
+    Akamai NetSession Interface     Command=<"C:\Users\Administrator\AppData\Local\Akamai\netsession_win.exe">
+    Lync                            Command=<"C:\Program Files (x86)\Microsoft Office\Office16\lync.exe" /fromrunkey>
+    GoToMeeting                     Command=<"C:\Users\Administrator\AppData\Local\GoToMeeting\12604\g2mstart.exe" "/Trigger RunAtLogon">
+    com.squirrel.Teams.Teams        Command=<C:\Users\Administrator\AppData\Local\Microsoft\Teams\Update.exe --processStart "Teams.exe" --process-start-args "--system-initiated">
+    emSigner                        Command=<C:\emSigner\emSigner\emSigner.exe>
+    emSignerGSTN                    Command=<C:\Program Files (x86)\eMudhra Limited\emSigner\emSigner\emSignerGSTN.exe>
+    Citrix Receiver                 Command=<C:\Program Files (x86)\Citrix\ICA Client\SelfServicePlugin\SelfServicePlugin.exe>
+
