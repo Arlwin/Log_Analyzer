@@ -102,23 +102,37 @@ namespace Log_Analyzer
             extract_path = extractZip(full_path);
             loadDir(extract_path);
 
-            getInformation gi = new getInformation(extract_path);
-            loadInformation(gi);
+            getSysInformation gsi = new getSysInformation(extract_path);
+            getAgentInformation gai = new getAgentInformation(extract_path, gsi.getSysArch());
+
+            loadSysInformation(gsi);
+            loadAgentInformation(gai);
         }
 
-        private void loadInformation(getInformation gi)
+        private void loadAgentInformation(getAgentInformation gai)
         {
-            lblHostname_value.Text = gi.getHostname(); //Host name
-            lblIPAddress_value.Text = gi.getIpAdd(); //Ip Address
-            lblGateway_value.Text = gi.getGateway(); //Gateway
-            lblDns_value.Text = gi.getDNS(); //DNS
+            lblAgentVersion_value.Text = gai.getAgentVer();
+            lblAgentBuild_value.Text = gai.getAgentBuild();
+            lblAgentAddr_value.Text = gai.getServer();
+            lblServerHttpPort_value.Text = gai.getServerHTTP();
+            lblServerHttpsPort_value.Text = gai.getServerHTTPS();
+            lblAgentPort_value.Text = gai.getAgentPort();
+            lblAgentLocation_value.Text = gai.getAgentLocation();
+        }
 
-            lblOperatingSystem_value.Text = gi.getOS(); //OS
-            lblOSver_value.Text = gi.getOSver(); //OS Version
-            lblSystemArchitecture_value.Text = gi.getSysArch(); //System Architecture
-            lblCPU_value.Text = gi.getCPU(); //CPU
-            lblRam_value.Text = gi.getRAM(); //RAM
-            lblFreeDiskSpace_value.Text = gi.getDiskSpace(); //Free Disk Space
+        private void loadSysInformation(getSysInformation gsi)
+        {
+            lblHostname_value.Text = gsi.getHostname(); //Host name
+            lblIPAddress_value.Text = gsi.getIpAdd(); //Ip Address
+            lblGateway_value.Text = gsi.getGateway(); //Gateway
+            lblDns_value.Text = gsi.getDNS(); //DNS
+
+            lblOperatingSystem_value.Text = gsi.getOS(); //OS
+            lblOSver_value.Text = gsi.getOSver(); //OS Version
+            lblSystemArchitecture_value.Text = gsi.getSysArch(); //System Architecture
+            lblCPU_value.Text = gsi.getCPU(); //CPU
+            lblRam_value.Text = gsi.getRAM(); //RAM
+            lblFreeDiskSpace_value.Text = gsi.getDiskSpace(); //Free Disk Space
 
             //NOTE: Currently, disk space can only print free disk space of FIRST disk drive
         }

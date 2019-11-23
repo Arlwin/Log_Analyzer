@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 
 namespace Log_Analyzer
 {
-    class getInformation
+    class getSysInformation
     {
         //Network
         String Hostname;
@@ -23,25 +23,20 @@ namespace Log_Analyzer
         String CPU;
         String RAM;
         String DiskSpace;
-
-        String dir;
-
-        String NetworkStatus;
-
-        public getInformation(String path)
+      
+        public getSysInformation(String path)
         {
-            dir = path;
-            setHostname(dir + "\\System_Info\\SystemInfo_NetworkStatus.txt");
-            setIpAdd(dir + "\\System_Info\\SystemInfo_NetworkStatus.txt");
-            setGateway(dir + "\\System_Info\\SystemInfo_NetworkStatus.txt");
-            setDNS(dir + "\\System_Info\\SystemInfo_NetworkStatus.txt");
+            setHostname(path + "\\System_Info\\SystemInfo_NetworkStatus.txt");
+            setIpAdd(path + "\\System_Info\\SystemInfo_NetworkStatus.txt");
+            setGateway(path + "\\System_Info\\SystemInfo_NetworkStatus.txt");
+            setDNS(path + "\\System_Info\\SystemInfo_NetworkStatus.txt");
 
-            setOS(dir + "\\System_Info\\msinfo.nfo");
-            setOSver(dir + "\\System_Info\\msinfo.nfo");
-            setSysArch(dir + "\\System_Info\\msinfo.nfo");
-            setCPU(dir + "\\System_Info\\msinfo.nfo");
-            setRAM(dir + "\\System_Info\\msinfo.nfo");
-            setDiskSpace(dir + "\\System_Info\\msinfo.nfo");
+            setOS(path + "\\System_Info\\msinfo.nfo");
+            setOSver(path + "\\System_Info\\msinfo.nfo");
+            setSysArch(path + "\\System_Info\\msinfo.nfo");
+            setCPU(path + "\\System_Info\\msinfo.nfo");
+            setRAM(path + "\\System_Info\\msinfo.nfo");
+            setDiskSpace(path + "\\System_Info\\msinfo.nfo");
         }
 
         String Search (String file, String text)

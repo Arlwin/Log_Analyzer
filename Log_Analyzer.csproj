@@ -62,7 +62,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="getInformation.cs" />
+    <Compile Include="getAgentInformation.cs" />
+    <Compile Include="getSysInformation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Coaleser.resx">

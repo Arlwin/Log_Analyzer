@@ -83,6 +83,19 @@
             this.lblCPU_value = new System.Windows.Forms.Label();
             this.lblRam_value = new System.Windows.Forms.Label();
             this.lblFreeDiskSpace_value = new System.Windows.Forms.Label();
+            this.lblAgentVersion_value = new System.Windows.Forms.Label();
+            this.lblAgentBuild_value = new System.Windows.Forms.Label();
+            this.lblAgentAddr_value = new System.Windows.Forms.Label();
+            this.lblServerHttpPort_value = new System.Windows.Forms.Label();
+            this.lblServerHttpsPort_value = new System.Windows.Forms.Label();
+            this.lblAgentPort_value = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblAgentLocation_value = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -309,6 +322,19 @@
             // 
             // tabAgentInfo
             // 
+            this.tabAgentInfo.Controls.Add(this.label15);
+            this.tabAgentInfo.Controls.Add(this.label14);
+            this.tabAgentInfo.Controls.Add(this.label13);
+            this.tabAgentInfo.Controls.Add(this.lblAgentLocation_value);
+            this.tabAgentInfo.Controls.Add(this.label11);
+            this.tabAgentInfo.Controls.Add(this.label10);
+            this.tabAgentInfo.Controls.Add(this.label9);
+            this.tabAgentInfo.Controls.Add(this.lblAgentPort_value);
+            this.tabAgentInfo.Controls.Add(this.lblServerHttpsPort_value);
+            this.tabAgentInfo.Controls.Add(this.lblServerHttpPort_value);
+            this.tabAgentInfo.Controls.Add(this.lblAgentAddr_value);
+            this.tabAgentInfo.Controls.Add(this.lblAgentBuild_value);
+            this.tabAgentInfo.Controls.Add(this.lblAgentVersion_value);
             this.tabAgentInfo.Controls.Add(this.lblAgentLocation);
             this.tabAgentInfo.Controls.Add(this.label2);
             this.tabAgentInfo.Controls.Add(this.lblConvenPtnVer);
@@ -669,6 +695,129 @@
             this.lblFreeDiskSpace_value.Size = new System.Drawing.Size(0, 21);
             this.lblFreeDiskSpace_value.TabIndex = 29;
             // 
+            // lblAgentVersion_value
+            // 
+            this.lblAgentVersion_value.AutoSize = true;
+            this.lblAgentVersion_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgentVersion_value.Location = new System.Drawing.Point(236, 19);
+            this.lblAgentVersion_value.Name = "lblAgentVersion_value";
+            this.lblAgentVersion_value.Size = new System.Drawing.Size(0, 21);
+            this.lblAgentVersion_value.TabIndex = 27;
+            // 
+            // lblAgentBuild_value
+            // 
+            this.lblAgentBuild_value.AutoSize = true;
+            this.lblAgentBuild_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgentBuild_value.Location = new System.Drawing.Point(236, 52);
+            this.lblAgentBuild_value.Name = "lblAgentBuild_value";
+            this.lblAgentBuild_value.Size = new System.Drawing.Size(0, 21);
+            this.lblAgentBuild_value.TabIndex = 28;
+            // 
+            // lblAgentAddr_value
+            // 
+            this.lblAgentAddr_value.AutoSize = true;
+            this.lblAgentAddr_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgentAddr_value.Location = new System.Drawing.Point(236, 88);
+            this.lblAgentAddr_value.Name = "lblAgentAddr_value";
+            this.lblAgentAddr_value.Size = new System.Drawing.Size(0, 21);
+            this.lblAgentAddr_value.TabIndex = 29;
+            // 
+            // lblServerHttpPort_value
+            // 
+            this.lblServerHttpPort_value.AutoSize = true;
+            this.lblServerHttpPort_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServerHttpPort_value.Location = new System.Drawing.Point(236, 121);
+            this.lblServerHttpPort_value.Name = "lblServerHttpPort_value";
+            this.lblServerHttpPort_value.Size = new System.Drawing.Size(0, 21);
+            this.lblServerHttpPort_value.TabIndex = 30;
+            // 
+            // lblServerHttpsPort_value
+            // 
+            this.lblServerHttpsPort_value.AutoSize = true;
+            this.lblServerHttpsPort_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServerHttpsPort_value.Location = new System.Drawing.Point(236, 158);
+            this.lblServerHttpsPort_value.Name = "lblServerHttpsPort_value";
+            this.lblServerHttpsPort_value.Size = new System.Drawing.Size(0, 21);
+            this.lblServerHttpsPort_value.TabIndex = 31;
+            // 
+            // lblAgentPort_value
+            // 
+            this.lblAgentPort_value.AutoSize = true;
+            this.lblAgentPort_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgentPort_value.Location = new System.Drawing.Point(236, 196);
+            this.lblAgentPort_value.Name = "lblAgentPort_value";
+            this.lblAgentPort_value.Size = new System.Drawing.Size(0, 21);
+            this.lblAgentPort_value.TabIndex = 32;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(236, 231);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(120, 21);
+            this.label9.TabIndex = 33;
+            this.label9.Text = "Agent Version";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(236, 270);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(120, 21);
+            this.label10.TabIndex = 34;
+            this.label10.Text = "Agent Version";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(236, 306);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(120, 21);
+            this.label11.TabIndex = 35;
+            this.label11.Text = "Agent Version";
+            // 
+            // lblAgentLocation_value
+            // 
+            this.lblAgentLocation_value.AutoSize = true;
+            this.lblAgentLocation_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgentLocation_value.Location = new System.Drawing.Point(902, 19);
+            this.lblAgentLocation_value.Name = "lblAgentLocation_value";
+            this.lblAgentLocation_value.Size = new System.Drawing.Size(0, 21);
+            this.lblAgentLocation_value.TabIndex = 36;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(902, 52);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(120, 21);
+            this.label13.TabIndex = 37;
+            this.label13.Text = "Agent Version";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(902, 85);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(120, 21);
+            this.label14.TabIndex = 38;
+            this.label14.Text = "Agent Version";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(902, 121);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(120, 21);
+            this.label15.TabIndex = 39;
+            this.label15.Text = "Agent Version";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -759,6 +908,19 @@
         private System.Windows.Forms.Label lblSystemArchitecture_value;
         private System.Windows.Forms.Label lblOSver_value;
         private System.Windows.Forms.Label lblOperatingSystem_value;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblAgentLocation_value;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblAgentPort_value;
+        private System.Windows.Forms.Label lblServerHttpsPort_value;
+        private System.Windows.Forms.Label lblServerHttpPort_value;
+        private System.Windows.Forms.Label lblAgentAddr_value;
+        private System.Windows.Forms.Label lblAgentBuild_value;
+        private System.Windows.Forms.Label lblAgentVersion_value;
     }
 }
 
