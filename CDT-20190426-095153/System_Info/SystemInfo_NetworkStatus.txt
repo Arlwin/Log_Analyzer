@@ -1,0 +1,129 @@
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : IT_PC8513025
+   Primary Dns Suffix  . . . . . . . : LNTCHIYODA.COM
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : LNTCHIYODA.COM
+
+Ethernet adapter Local Area Connection:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : PANGP Virtual Ethernet Adapter
+   Physical Address. . . . . . . . . : 02-50-41-00-00-01
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+
+Ethernet adapter Local Area Connection 2:
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Intel(R) 82579LM Gigabit Network Connection
+   Physical Address. . . . . . . . . : 90-B1-1C-85-75-D8
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   IPv4 Address. . . . . . . . . . . : 192.168.140.194(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.140.254
+   DNS Servers . . . . . . . . . . . : 192.168.140.2
+                                       192.168.140.9
+                                       4.2.2.2
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+
+Active TCP/IP Connections
+===========================================================================================
+Protocol Local Address              Foreign Address            State                 PID
+  TCP    0.0.0.0:135                0.0.0.0:0                  LISTENING             576
+  TCP    192.168.140.194:139        0.0.0.0:0                  LISTENING             4
+  TCP    0.0.0.0:623                0.0.0.0:0                  LISTENING             8724
+  TCP    0.0.0.0:1025               0.0.0.0:0                  LISTENING             668
+  TCP    0.0.0.0:1026               0.0.0.0:0                  LISTENING             1060
+  TCP    0.0.0.0:1027               0.0.0.0:0                  LISTENING             804
+  TCP    0.0.0.0:1029               0.0.0.0:0                  LISTENING             1200
+  TCP    127.0.0.1:1049             127.0.0.1:5354             ESTABLISHED           2096
+  TCP    127.0.0.1:1050             127.0.0.1:5354             ESTABLISHED           2096
+  TCP    0.0.0.0:1051               0.0.0.0:0                  LISTENING             3024
+  TCP    0.0.0.0:1062               0.0.0.0:0                  LISTENING             772
+  TCP    127.0.0.1:1128             127.0.0.1:27015            ESTABLISHED           3648
+  TCP    127.0.0.1:1228             0.0.0.0:0                  LISTENING             8888
+  TCP    127.0.0.1:1359             0.0.0.0:0                  LISTENING             8724
+  TCP    127.0.0.1:1510             127.0.0.1:1511             ESTABLISHED           6900
+  TCP    127.0.0.1:1511             127.0.0.1:1510             ESTABLISHED           6900
+  TCP    127.0.0.1:1512             127.0.0.1:1513             ESTABLISHED           7012
+  TCP    127.0.0.1:1513             127.0.0.1:1512             ESTABLISHED           7012
+  TCP    0.0.0.0:2792               0.0.0.0:0                  LISTENING             2668
+  TCP    0.0.0.0:3389               0.0.0.0:0                  LISTENING             1676
+  TCP    127.0.0.1:4767             0.0.0.0:0                  LISTENING             2940
+  TCP    127.0.0.1:4767             127.0.0.1:32388            ESTABLISHED           2940
+  TCP    127.0.0.1:5354             0.0.0.0:0                  LISTENING             2212
+  TCP    127.0.0.1:5354             127.0.0.1:1049             ESTABLISHED           2212
+  TCP    127.0.0.1:5354             127.0.0.1:1050             ESTABLISHED           2212
+  TCP    0.0.0.0:5501               0.0.0.0:0                  LISTENING             2864
+  TCP    0.0.0.0:5503               0.0.0.0:0                  LISTENING             11920
+  TCP    0.0.0.0:8081               0.0.0.0:0                  LISTENING             3692
+  TCP    0.0.0.0:8082               0.0.0.0:0                  LISTENING             3692
+  TCP    0.0.0.0:9081               0.0.0.0:0                  LISTENING             3692
+  TCP    127.0.0.1:9421             0.0.0.0:0                  LISTENING             6136
+  TCP    127.0.0.1:14679            127.0.0.1:14680            ESTABLISHED           10308
+  TCP    127.0.0.1:14680            127.0.0.1:14679            ESTABLISHED           10308
+  TCP    192.168.140.194:14739      192.168.140.5:1352         ESTABLISHED           10724
+  TCP    192.168.140.194:15735      192.168.188.65:445         ESTABLISHED           4
+  TCP    192.168.140.194:15843      192.168.140.159:445        ESTABLISHED           4
+  TCP    192.168.140.194:15882      104.108.203.116:80         TIME_WAIT             0
+  TCP    192.168.140.194:15886      104.108.203.116:80         TIME_WAIT             0
+  TCP    192.168.140.194:15936      23.101.122.133:443         TIME_WAIT             0
+  TCP    192.168.140.194:15939      23.101.122.133:443         TIME_WAIT             0
+  TCP    192.168.140.194:15942      23.101.122.133:443         TIME_WAIT             0
+  TCP    127.0.0.1:15949            127.0.0.1:40000            TIME_WAIT             0
+  TCP    192.168.140.194:15954      104.115.92.35:443          TIME_WAIT             0
+  TCP    192.168.140.194:15955      104.115.92.35:443          TIME_WAIT             0
+  TCP    192.168.140.194:15956      23.101.122.133:443         ESTABLISHED           16468
+  TCP    192.168.140.194:15957      23.101.122.133:443         TIME_WAIT             0
+  TCP    192.168.140.194:15974      23.101.122.133:443         TIME_WAIT             0
+  TCP    192.168.140.194:15975      104.115.94.32:443          TIME_WAIT             0
+  TCP    0.0.0.0:16992              0.0.0.0:0                  LISTENING             8724
+  TCP    127.0.0.1:27015            127.0.0.1:1128             ESTABLISHED           2096
+  TCP    127.0.0.1:27015            0.0.0.0:0                  LISTENING             2096
+  TCP    127.0.0.1:32388            127.0.0.1:4767             ESTABLISHED           3376
+  TCP    0.0.0.0:37826              0.0.0.0:0                  LISTENING             1872
+  TCP    127.0.0.1:39009            0.0.0.0:0                  LISTENING             6400
+  TCP    127.0.0.1:40000            127.0.0.1:15865            TIME_WAIT             0
+  TCP    192.168.140.194:47333      192.168.140.123:49295      ESTABLISHED           1872
+  TCP    192.168.140.194:47377      192.168.140.100:445        ESTABLISHED           4
+  TCP    0.0.0.0:48102              0.0.0.0:0                  LISTENING             7088
+  TCP    127.0.0.1:49009            0.0.0.0:0                  LISTENING             6400
+  TCP    127.0.0.1:51749            0.0.0.0:0                  LISTENING             11920
+  TCP    192.168.140.194:55003      0.0.0.0:0                  LISTENING             4660
+  TCP    0.0.0.0:445                0.0.0.0:0                  LISTENING             4
+  TCP    0.0.0.0:1585               0.0.0.0:0                  LISTENING             7012
+  TCP    0.0.0.0:2015               0.0.0.0:0                  LISTENING             6900
+  TCP    0.0.0.0:21112              0.0.0.0:0                  LISTENING             4
+  UDP    0.0.0.0:123                *:*                                              1148
+  UDP    192.168.140.194:137        *:*                                              4
+  UDP    192.168.140.194:138        *:*                                              4
+  UDP    0.0.0.0:500                *:*                                              1200
+  UDP    127.0.0.1:1900             *:*                                              1920
+  UDP    192.168.140.194:1900       *:*                                              1920
+  UDP    0.0.0.0:4500               *:*                                              1200
+  UDP    192.168.140.194:5353       *:*                                              2212
+  UDP    0.0.0.0:5355               *:*                                              1644
+  UDP    127.0.0.1:51627            *:*                                              1352
+  UDP    127.0.0.1:53119            *:*                                              15320
+  UDP    127.0.0.1:55635            *:*                                              3500
+  UDP    127.0.0.1:56609            *:*                                              3024
+  UDP    127.0.0.1:56610            *:*                                              3692
+  UDP    127.0.0.1:58772            *:*                                              3648
+  UDP    127.0.0.1:58773            *:*                                              3648
+  UDP    127.0.0.1:58843            *:*                                              6136
+  UDP    192.168.140.194:60776      *:*                                              1920
+  UDP    127.0.0.1:60777            *:*                                              1920
+  UDP    127.0.0.1:60836            *:*                                              804
+  UDP    127.0.0.1:61366            *:*                                              1676
+  UDP    127.0.0.1:61951            *:*                                              2096
+  UDP    127.0.0.1:61952            *:*                                              2096
+  UDP    0.0.0.0:61953              *:*                                              2212
+  UDP    127.0.0.1:62974            *:*                                              6136
+

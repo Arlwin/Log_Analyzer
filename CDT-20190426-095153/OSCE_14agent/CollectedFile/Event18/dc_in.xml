@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<SAccessControl>
+    <deviceType action="enable">DVD_CD_ROM_drives</deviceType>
+    <deviceType action="disable">Floppy_disk_controllers</deviceType>
+    <deviceType action="disable">IEEE_1394_Bus_host_controllers</deviceType>
+    <deviceType action="enable">Imaging_devices</deviceType>
+    <deviceType action="disable">Infrared_devices</deviceType>
+    <deviceType action="disable">Modems</deviceType>
+    <deviceType action="disable">PCMCIA_adapters</deviceType>
+    <deviceType action="enable">Ports_COM_LPT</deviceType>
+    <deviceType action="enable">Disk_drives</deviceType>
+    <deviceType action="enable">Print_Screen_Key</deviceType>
+    <deviceType action="disable">Bluetooth</deviceType>
+    <deviceType action="disable">WirelessNIC</deviceType>
+    <deviceType action="enable">NonStorageUsbDevices</deviceType>
+</SAccessControl>
