@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.IO.Compression;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Threading;
+using Ionic.Zip;
 
 namespace Log_Analyzer
 {
@@ -23,7 +25,6 @@ namespace Log_Analyzer
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
@@ -37,19 +38,38 @@ namespace Log_Analyzer
         {
             string dest = "";
             int index = path.IndexOf(".");
+            string filename = path.Substring(path.LastIndexOf("\\") + 1, index - path.LastIndexOf("\\") - 1);
 
             if(index > 0)
             {
-                dest = path.Substring(0, index);
+                //dest = path.Substring(0, index);
+                dest = "TEMP\\" + filename;
             }
 
             using (Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(path))
             {
                 zip.Password = "trend";
+
+                zip.ExtractProgress += new EventHandler<ExtractProgressEventArgs>(zip_ExtractProgress);
                 zip.ExtractAll(dest, Ionic.Zip.ExtractExistingFileAction.OverwriteSilently);
             }
 
             return dest;
+        }
+        
+
+        void zip_ExtractProgress(object sender, ExtractProgressEventArgs e)
+        {
+            if (e.BytesTransferred > 0)
+            {
+                prog_perFile.Value = Convert.ToInt32(100 * e.BytesTransferred / e.TotalBytesToTransfer);
+            }
+
+            if ((e.EntriesTotal - e.EntriesExtracted) >= 0 && (e.EntriesTotal > 0))
+            {
+                prog_Open.Value = Convert.ToInt32(100 * e.EntriesExtracted / e.EntriesTotal);
+
+            }
         }
 
         private void loadDir(string path)
@@ -115,8 +135,7 @@ namespace Log_Analyzer
                 loadAgentInformation(gai);
 
             }
-
-
+            
         }
 
         private void loadAgentInformation(getAgentInformation gai)
@@ -127,7 +146,13 @@ namespace Log_Analyzer
             lblServerHttpPort_value.Text = gai.getServerHTTP();
             lblServerHttpsPort_value.Text = gai.getServerHTTPS();
             lblAgentPort_value.Text = gai.getAgentPort();
+            lblUpdateAgentAddr_value.Text = gai.getUpdateAgentAddress();
+            lblUpdateAgentPort_value.Text = gai.getUpdateAgentPort();
+            lblUpdateAgent_value.Text = gai.getUpdateAgent();
             lblAgentLocation_value.Text = gai.getAgentLocation();
+            lblEngineVersion_value.Text = gai.getEngineVersion();
+            lblConvenPtnVer_value.Text = gai.getConPtnVersion();
+            lblSmartScanPatternVer_value.Text = gai.getSmartPtnVersion();
         }
 
         private void loadSysInformation(getSysInformation gsi)
@@ -158,7 +183,6 @@ namespace Log_Analyzer
         {
 
         }
-
         
         //highlight keyword after typing text on Filter textbox
         //has a bug, it does not include the last character, due to Event KEYDOWN executing AFTER last character is typed

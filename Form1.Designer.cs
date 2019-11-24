@@ -55,13 +55,13 @@
             this.lblIPAddress = new System.Windows.Forms.Label();
             this.lblHostname = new System.Windows.Forms.Label();
             this.tabAgentInfo = new System.Windows.Forms.TabPage();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblSmartScanPatternVer_value = new System.Windows.Forms.Label();
+            this.lblConvenPtnVer_value = new System.Windows.Forms.Label();
+            this.lblEngineVersion_value = new System.Windows.Forms.Label();
             this.lblAgentLocation_value = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblUpdateAgentAddr_value = new System.Windows.Forms.Label();
+            this.lblUpdateAgentPort_value = new System.Windows.Forms.Label();
+            this.lblUpdateAgent_value = new System.Windows.Forms.Label();
             this.lblAgentPort_value = new System.Windows.Forms.Label();
             this.lblServerHttpsPort_value = new System.Windows.Forms.Label();
             this.lblServerHttpPort_value = new System.Windows.Forms.Label();
@@ -69,7 +69,7 @@
             this.lblAgentBuild_value = new System.Windows.Forms.Label();
             this.lblAgentVersion_value = new System.Windows.Forms.Label();
             this.lblAgentLocation = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblSmartScanPatternVer = new System.Windows.Forms.Label();
             this.lblConvenPtnVer = new System.Windows.Forms.Label();
             this.lblEngineVersion = new System.Windows.Forms.Label();
             this.lblUpdateAgentPort = new System.Windows.Forms.Label();
@@ -83,6 +83,8 @@
             this.lblAgentAddr = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pnl_Filter = new System.Windows.Forms.Panel();
+            this.prog_perFile = new System.Windows.Forms.ProgressBar();
+            this.prog_Open = new System.Windows.Forms.ProgressBar();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txt_Fltr = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -403,13 +405,13 @@
             // 
             // tabAgentInfo
             // 
-            this.tabAgentInfo.Controls.Add(this.label15);
-            this.tabAgentInfo.Controls.Add(this.label14);
-            this.tabAgentInfo.Controls.Add(this.label13);
+            this.tabAgentInfo.Controls.Add(this.lblSmartScanPatternVer_value);
+            this.tabAgentInfo.Controls.Add(this.lblConvenPtnVer_value);
+            this.tabAgentInfo.Controls.Add(this.lblEngineVersion_value);
             this.tabAgentInfo.Controls.Add(this.lblAgentLocation_value);
-            this.tabAgentInfo.Controls.Add(this.label11);
-            this.tabAgentInfo.Controls.Add(this.label10);
-            this.tabAgentInfo.Controls.Add(this.label9);
+            this.tabAgentInfo.Controls.Add(this.lblUpdateAgentAddr_value);
+            this.tabAgentInfo.Controls.Add(this.lblUpdateAgentPort_value);
+            this.tabAgentInfo.Controls.Add(this.lblUpdateAgent_value);
             this.tabAgentInfo.Controls.Add(this.lblAgentPort_value);
             this.tabAgentInfo.Controls.Add(this.lblServerHttpsPort_value);
             this.tabAgentInfo.Controls.Add(this.lblServerHttpPort_value);
@@ -417,7 +419,7 @@
             this.tabAgentInfo.Controls.Add(this.lblAgentBuild_value);
             this.tabAgentInfo.Controls.Add(this.lblAgentVersion_value);
             this.tabAgentInfo.Controls.Add(this.lblAgentLocation);
-            this.tabAgentInfo.Controls.Add(this.label2);
+            this.tabAgentInfo.Controls.Add(this.lblSmartScanPatternVer);
             this.tabAgentInfo.Controls.Add(this.lblConvenPtnVer);
             this.tabAgentInfo.Controls.Add(this.lblEngineVersion);
             this.tabAgentInfo.Controls.Add(this.lblUpdateAgentPort);
@@ -437,35 +439,32 @@
             this.tabAgentInfo.Text = "Agent Information";
             this.tabAgentInfo.UseVisualStyleBackColor = true;
             // 
-            // label15
+            // lblSmartScanPatternVer_value
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(902, 121);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(120, 21);
-            this.label15.TabIndex = 39;
-            this.label15.Text = "Agent Version";
+            this.lblSmartScanPatternVer_value.AutoSize = true;
+            this.lblSmartScanPatternVer_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSmartScanPatternVer_value.Location = new System.Drawing.Point(902, 121);
+            this.lblSmartScanPatternVer_value.Name = "lblSmartScanPatternVer_value";
+            this.lblSmartScanPatternVer_value.Size = new System.Drawing.Size(0, 21);
+            this.lblSmartScanPatternVer_value.TabIndex = 39;
             // 
-            // label14
+            // lblConvenPtnVer_value
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(902, 85);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(120, 21);
-            this.label14.TabIndex = 38;
-            this.label14.Text = "Agent Version";
+            this.lblConvenPtnVer_value.AutoSize = true;
+            this.lblConvenPtnVer_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConvenPtnVer_value.Location = new System.Drawing.Point(902, 85);
+            this.lblConvenPtnVer_value.Name = "lblConvenPtnVer_value";
+            this.lblConvenPtnVer_value.Size = new System.Drawing.Size(0, 21);
+            this.lblConvenPtnVer_value.TabIndex = 38;
             // 
-            // label13
+            // lblEngineVersion_value
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(902, 52);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(120, 21);
-            this.label13.TabIndex = 37;
-            this.label13.Text = "Agent Version";
+            this.lblEngineVersion_value.AutoSize = true;
+            this.lblEngineVersion_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEngineVersion_value.Location = new System.Drawing.Point(902, 52);
+            this.lblEngineVersion_value.Name = "lblEngineVersion_value";
+            this.lblEngineVersion_value.Size = new System.Drawing.Size(0, 21);
+            this.lblEngineVersion_value.TabIndex = 37;
             // 
             // lblAgentLocation_value
             // 
@@ -476,35 +475,35 @@
             this.lblAgentLocation_value.Size = new System.Drawing.Size(0, 21);
             this.lblAgentLocation_value.TabIndex = 36;
             // 
-            // label11
+            // lblUpdateAgentAddr_value
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(236, 306);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(120, 21);
-            this.label11.TabIndex = 35;
-            this.label11.Text = "Agent Version";
+            this.lblUpdateAgentAddr_value.AutoSize = true;
+            this.lblUpdateAgentAddr_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateAgentAddr_value.Location = new System.Drawing.Point(236, 306);
+            this.lblUpdateAgentAddr_value.Name = "lblUpdateAgentAddr_value";
+            this.lblUpdateAgentAddr_value.Size = new System.Drawing.Size(120, 21);
+            this.lblUpdateAgentAddr_value.TabIndex = 35;
+            this.lblUpdateAgentAddr_value.Text = "Agent Version";
             // 
-            // label10
+            // lblUpdateAgentPort_value
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(236, 270);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(120, 21);
-            this.label10.TabIndex = 34;
-            this.label10.Text = "Agent Version";
+            this.lblUpdateAgentPort_value.AutoSize = true;
+            this.lblUpdateAgentPort_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateAgentPort_value.Location = new System.Drawing.Point(236, 270);
+            this.lblUpdateAgentPort_value.Name = "lblUpdateAgentPort_value";
+            this.lblUpdateAgentPort_value.Size = new System.Drawing.Size(120, 21);
+            this.lblUpdateAgentPort_value.TabIndex = 34;
+            this.lblUpdateAgentPort_value.Text = "Agent Version";
             // 
-            // label9
+            // lblUpdateAgent_value
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(236, 231);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(120, 21);
-            this.label9.TabIndex = 33;
-            this.label9.Text = "Agent Version";
+            this.lblUpdateAgent_value.AutoSize = true;
+            this.lblUpdateAgent_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateAgent_value.Location = new System.Drawing.Point(236, 231);
+            this.lblUpdateAgent_value.Name = "lblUpdateAgent_value";
+            this.lblUpdateAgent_value.Size = new System.Drawing.Size(120, 21);
+            this.lblUpdateAgent_value.TabIndex = 33;
+            this.lblUpdateAgent_value.Text = "Agent Version";
             // 
             // lblAgentPort_value
             // 
@@ -570,15 +569,15 @@
             this.lblAgentLocation.TabIndex = 26;
             this.lblAgentLocation.Text = "Agent Location:";
             // 
-            // label2
+            // lblSmartScanPatternVer
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(653, 121);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(225, 21);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "Smart Scan Pattern Version:";
+            this.lblSmartScanPatternVer.AutoSize = true;
+            this.lblSmartScanPatternVer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSmartScanPatternVer.Location = new System.Drawing.Point(653, 121);
+            this.lblSmartScanPatternVer.Name = "lblSmartScanPatternVer";
+            this.lblSmartScanPatternVer.Size = new System.Drawing.Size(225, 21);
+            this.lblSmartScanPatternVer.TabIndex = 25;
+            this.lblSmartScanPatternVer.Text = "Smart Scan Pattern Version:";
             // 
             // lblConvenPtnVer
             // 
@@ -705,6 +704,8 @@
             this.pnl_Filter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_Filter.BackColor = System.Drawing.Color.Azure;
+            this.pnl_Filter.Controls.Add(this.prog_perFile);
+            this.pnl_Filter.Controls.Add(this.prog_Open);
             this.pnl_Filter.Controls.Add(this.btnFilter);
             this.pnl_Filter.Controls.Add(this.txt_Fltr);
             this.pnl_Filter.Controls.Add(this.label1);
@@ -712,6 +713,24 @@
             this.pnl_Filter.Name = "pnl_Filter";
             this.pnl_Filter.Size = new System.Drawing.Size(1297, 100);
             this.pnl_Filter.TabIndex = 0;
+            // 
+            // prog_perFile
+            // 
+            this.prog_perFile.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.prog_perFile.Location = new System.Drawing.Point(696, 55);
+            this.prog_perFile.Name = "prog_perFile";
+            this.prog_perFile.Size = new System.Drawing.Size(220, 23);
+            this.prog_perFile.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.prog_perFile.TabIndex = 41;
+            // 
+            // prog_Open
+            // 
+            this.prog_Open.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.prog_Open.Location = new System.Drawing.Point(14, 55);
+            this.prog_Open.Name = "prog_Open";
+            this.prog_Open.Size = new System.Drawing.Size(676, 23);
+            this.prog_Open.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.prog_Open.TabIndex = 40;
             // 
             // btnFilter
             // 
@@ -769,26 +788,26 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.saveAsToolStripMenuItem.Text = "Save as";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // formatToolStripMenuItem
@@ -895,7 +914,7 @@
         private System.Windows.Forms.Label lblAgentAddr;
         private System.Windows.Forms.Label lblCPU;
         private System.Windows.Forms.Label lblAgentLocation;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblSmartScanPatternVer;
         private System.Windows.Forms.Label lblConvenPtnVer;
         private System.Windows.Forms.Label lblEngineVersion;
         private System.Windows.Forms.Label lblHostname_value;
@@ -908,19 +927,21 @@
         private System.Windows.Forms.Label lblSystemArchitecture_value;
         private System.Windows.Forms.Label lblOSver_value;
         private System.Windows.Forms.Label lblOperatingSystem_value;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblSmartScanPatternVer_value;
+        private System.Windows.Forms.Label lblConvenPtnVer_value;
+        private System.Windows.Forms.Label lblEngineVersion_value;
         private System.Windows.Forms.Label lblAgentLocation_value;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblUpdateAgentAddr_value;
+        private System.Windows.Forms.Label lblUpdateAgentPort_value;
+        private System.Windows.Forms.Label lblUpdateAgent_value;
         private System.Windows.Forms.Label lblAgentPort_value;
         private System.Windows.Forms.Label lblServerHttpsPort_value;
         private System.Windows.Forms.Label lblServerHttpPort_value;
         private System.Windows.Forms.Label lblAgentAddr_value;
         private System.Windows.Forms.Label lblAgentBuild_value;
         private System.Windows.Forms.Label lblAgentVersion_value;
+        private System.Windows.Forms.ProgressBar prog_Open;
+        private System.Windows.Forms.ProgressBar prog_perFile;
     }
 }
 

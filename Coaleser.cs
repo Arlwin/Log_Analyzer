@@ -25,7 +25,7 @@ namespace Log_Analyzer
             c_rtxtSearchResult.Clear();
             TreeNode iterator;
 
-            String path = "";
+            String path = "TEMP\\";
             String file = "";
 
             iterator = e.Node;
@@ -34,7 +34,7 @@ namespace Log_Analyzer
             while (iterator.Parent != null)
             {
                 iterator = iterator.Parent;
-                path = path.Insert(0, iterator.Text + "\\");
+                path = path.Insert(path.IndexOf("\\") + 1, iterator.Text + "\\");
             }
 
             //txt_Area.Text = path + file;

@@ -35,23 +35,26 @@ namespace Log_Analyzer
             else
                 reg = "REG-1.reg";
 
-            setAgentBuild(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);
-            setAgentVer(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);
+            setAgentVer(path + "\\OSCE_14agent\\ProductInfo.txt");
+            setAgentBuild(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);         
             setServer(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);
             setServerHTTP(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);
             setServerHTTPS(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);
             setAgentPort(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);
+            setUpdateAgent(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);
+            setUpdateAgentAddress(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);
+            setUpdateAgentPort(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);
             setAgentLocation(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);
-            setEngineVersion(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);
-            setConPtnVersion(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);
-            setSmartPtnVersion(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);
+            setEngineVersion(path + "\\OSCE_14agent\\ProductInfo.txt");
+            setConPtnVersion(path + "\\OSCE_14agent\\ProductInfo.txt");
+            setSmartPtnVersion(path + "\\OSCE_14agent\\ProductInfo.txt");
         }
 
+        //Original Search
         String Search (String file, String text)
         {
-            String value = "";
+            String value = null;
             String line;
-            int counter = 0;
 
             //Load a file
             StreamReader f = new StreamReader(file);
@@ -68,13 +71,11 @@ namespace Log_Analyzer
                         //Get the value after : on the line
                         line = line.Trim(); //Removes most whitespaces
 
-                        int colon = line.LastIndexOf(":") + 2;
+                        int separator = line.LastIndexOf("=") + 1;
 
-                        value = line.Substring(colon);
+                        value = line.Substring(separator);
                         break;
                     }
-
-                    counter++;
                 }
             }
             else if (file.Contains(".reg")) {
@@ -96,35 +97,134 @@ namespace Log_Analyzer
                             value = line.Substring(equal, line.Length - equal - 1);
                         break;
                     }
-
-                    counter++;
                 }
             }
 
             return value;
         }
 
+
+        //Overloading Search for multitple entries
+        String Search(String file, String text, int iteration)
+        {
+            String value = null;
+            String line;
+            int counter = 0;
+
+            //Load a file
+            StreamReader f = new StreamReader(file);
+
+            //Determine the file type
+            if (file.Contains(".txt"))
+            {
+                //Read each line
+                while ((line = f.ReadLine()) != null)
+                {
+                    //If the line contains text, get the line > break
+                    if (line.Contains(text))
+                    {
+                        //continue the loop if counter is not yet on iteration
+                        counter++;
+                        if (counter != iteration)
+                            continue;
+                        //Get the value after separator on the line
+                        line = line.Trim(); //Removes most whitespaces
+
+                        int separator = line.LastIndexOf("=") + 1;
+
+                        value = line.Substring(separator);
+                        break;
+                    }
+                }
+            }
+            else if (file.Contains(".reg"))
+            {
+                //Read each line
+                while ((line = f.ReadLine()) != null)
+                {
+                    //If the line contains text, get the line > break
+                    if (line.Contains(text))
+                    {
+                        counter++;
+                        if (counter != iteration)
+                            continue;
+
+                        //Get the value after : on the line
+                        line = line.Trim(); //Removes most whitespaces
+
+                        int equal = line.LastIndexOf("=") + 2;
+
+                        if (line.Contains("dword"))
+                            value = line.Substring(equal, line.Length - equal);
+                        else
+                            value = line.Substring(equal, line.Length - equal - 1);
+                        break;
+                    }
+                }
+            }
+
+            return value;
+        }
+
+
+        //Search for Agent Build
+        String SearchBuild (String file, String version)
+        {
+            String value = null;
+            String line;
+
+            //Load a file
+            StreamReader f = new StreamReader(file);
+            {
+                //Read each line
+                while ((line = f.ReadLine()) != null)
+                {
+                    //If the line contains text, get the line > break
+                    if (line.Contains("HotfixHistory\\" + version + "]"))
+                    {
+                        //Get value below (HotfixHistory)
+                        line = f.ReadLine();
+
+                        //Get the value after : on the line
+                        line = line.Trim(); //Removes most whitespaces
+
+                        int equal = line.LastIndexOf("=") + 2;
+
+                        if (line.Contains("dword"))
+                            value = line.Substring(equal, line.Length - equal);
+                        else
+                            value = line.Substring(equal, line.Length - equal - 1);
+                        break;
+                    }
+                }
+            }
+            return value;
+        }
+
         //Agent Version
         void setAgentVer(String filedir)
         {
-            if (AgentBuild[0] == '1')
-                AgentVer = "OSCE XG";
-            else
-                AgentVer = "OSCE XG SP1";
+            AgentVer = Search(filedir, "ProductVersion");
         }
 
         public String getAgentVer()
         {
-            return AgentVer;
+            switch (AgentVer)
+            {
+                case "12.0": return "OSCE XG SP1";
+                case "13.95": return "Apex One";
+                case "14.0": return "Apex One";
+                default: return "OSCE XG";
+            }
         }
 
 
         //Agent Build
         void setAgentBuild(String filedir)
         {
-            String builds = Search(filedir, "\"HotfixInstalled\"");
-            int charlength = builds.Length - builds.LastIndexOf(";") - 1;
-            AgentBuild = builds.Substring(builds.LastIndexOf(";") + 1);
+                String builds = SearchBuild (filedir, AgentVer);
+                int charlength = builds.Length - builds.LastIndexOf(";") - 1;
+                AgentBuild = builds.Substring(builds.LastIndexOf(";") + 1);
         }
 
         public String getAgentBuild()
@@ -172,7 +272,7 @@ namespace Log_Analyzer
             return ServerHTTPS;
         }
 
-
+        
         //Agent Port
         void setAgentPort(String filedir)
         {
@@ -187,17 +287,46 @@ namespace Log_Analyzer
         }
 
 
-        //Update Agent 
+        //Update Agent
+        void setUpdateAgent(String filedir)
+        {
+            UpdateAgent = Search(filedir, "\"UpdateAgent\"");
+            UpdateAgent = UpdateAgent.Substring(UpdateAgent.IndexOf(":") + 1);
+            UpdateAgent = (Convert.ToInt32(UpdateAgent, 16)).ToString();
+        }
 
+        public String getUpdateAgent()
+        {
+            if (UpdateAgent.Equals(0))
+                return "No";
+            else
+                return "Yes";
+        }
 
 
         //Update Agent Port
+        void setUpdateAgentPort(String filedir)
+        {
+            UpdateAgentPort = UpdateAgentAddress.Substring(UpdateAgentAddress.LastIndexOf(":") + 1, UpdateAgentAddress.LastIndexOf("/") - UpdateAgentAddress.LastIndexOf(":") - 1);
+        }
 
+        public String getUpdateAgentPort()
+        {
+            return UpdateAgentPort;
+        }
 
 
         //Update Agent Address
+        void setUpdateAgentAddress(String filedir)
+        {
+            UpdateAgentAddress = Search(filedir, "\"UpdateFrom\"");
+        }
 
-
+        public String getUpdateAgentAddress()
+        {
+            return UpdateAgentAddress;
+        }
+        
 
         //Agent Location
         void setAgentLocation(String filedir)
@@ -218,7 +347,7 @@ namespace Log_Analyzer
         //Engine Version
         void setEngineVersion(String filedir)
         {
-            EngineVersion = Search(filedir, "\"EngineMin\"");
+            EngineVersion = Search(filedir, "EngineVersion");
         }
 
         public String getEngineVersion()
@@ -230,7 +359,7 @@ namespace Log_Analyzer
         //Conventional Pattern Version
         void setConPtnVersion(String filedir)
         {
-            ConPtnVersion = Search(filedir, "\"EngineMin\"");
+            ConPtnVersion = Search(filedir, "PatternVersion");
         }
 
         public String getConPtnVersion()
@@ -242,7 +371,7 @@ namespace Log_Analyzer
         //Smart Scan Pattern Version    
         void setSmartPtnVersion(String filedir)
         {
-            SmartPtnVersion = Search(filedir, "\"EngineMin\"");
+            SmartPtnVersion = Search(filedir, "IcrcPatternVersion");
         }
 
         public String getSmartPtnVersion()
