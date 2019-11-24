@@ -35,19 +35,45 @@ namespace Log_Analyzer
             else
                 reg = "REG-1.reg";
 
-            setAgentVer(path + "\\OSCE_14agent\\ProductInfo.txt");
-            setAgentBuild(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);         
-            setServer(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);
-            setServerHTTP(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);
-            setServerHTTPS(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);
-            setAgentPort(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);
-            setUpdateAgent(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);
-            setUpdateAgentAddress(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);
-            setUpdateAgentPort(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);
-            setAgentLocation(path + "\\OSCE_14agent\\CollectedFile\\Event1\\" + reg);
-            setEngineVersion(path + "\\OSCE_14agent\\ProductInfo.txt");
-            setConPtnVersion(path + "\\OSCE_14agent\\ProductInfo.txt");
-            setSmartPtnVersion(path + "\\OSCE_14agent\\ProductInfo.txt");
+            String agentfolder = checkAgent(path);
+
+            setAgentVer(path + "\\" + agentfolder + "\\ProductInfo.txt");
+            setAgentBuild(path + "\\" + agentfolder + "\\CollectedFile\\Event1\\" + reg);         
+            setServer(path + "\\" + agentfolder + "\\CollectedFile\\Event1\\" + reg);
+            setServerHTTP(path + "\\" + agentfolder + "\\CollectedFile\\Event1\\" + reg);
+            setServerHTTPS(path + "\\" + agentfolder + "\\CollectedFile\\Event1\\" + reg);
+            setAgentPort(path + "\\" + agentfolder + "\\CollectedFile\\Event1\\" + reg);
+            setUpdateAgent(path + "\\" + agentfolder + "\\CollectedFile\\Event1\\" + reg);
+            setUpdateAgentAddress(path + "\\" + agentfolder + "\\CollectedFile\\Event1\\" + reg);
+            setUpdateAgentPort(path + "\\" + agentfolder + "\\CollectedFile\\Event1\\" + reg);
+            setAgentLocation(path + "\\" + agentfolder + "\\CollectedFile\\Event1\\" + reg);
+            setEngineVersion(path + "\\" + agentfolder + "\\ProductInfo.txt");
+            setConPtnVersion(path + "\\" + agentfolder + "\\ProductInfo.txt");
+            setSmartPtnVersion(path + "\\" + agentfolder + "\\ProductInfo.txt");
+        }
+
+        //Check the folder of agent (osce_14agent or osce_12agent, etc.)
+        String checkAgent(String path)
+        {
+            String value = null;
+            String line;
+
+            //Load a file
+            StreamReader f = new StreamReader(path + "\\ReadmeFirst.txt");
+
+            //Iterate through the file
+            while ((line = f.ReadLine()) != null)
+            {
+                if (line.Contains("Product diagnosed:"))
+                {
+                    line = f.ReadLine();
+                    line = f.ReadLine();
+                    
+                    value = line.Trim();
+                }
+            }
+
+            return value;
         }
 
         //Original Search
