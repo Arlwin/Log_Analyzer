@@ -93,20 +93,30 @@ namespace Log_Analyzer
         }
 
         //Location of the file, accessable to anywhere 
-        private string full_path = "CDT-20190426-095153.zip";
+        private string full_path = "";
         //Extraction path
         private string extract_path = ""; 
 
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e) // START of loading CDT
         {
-            extract_path = extractZip(full_path);
-            loadDir(extract_path);
 
-            getSysInformation gsi = new getSysInformation(extract_path);
-            getAgentInformation gai = new getAgentInformation(extract_path, gsi.getSysArch());
+            OpenFileDialog openFile = new OpenFileDialog();
 
-            loadSysInformation(gsi);
-            loadAgentInformation(gai);
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                full_path = openFile.FileName;
+                extract_path = extractZip(full_path);
+                loadDir(extract_path);
+
+                getSysInformation gsi = new getSysInformation(extract_path);
+                getAgentInformation gai = new getAgentInformation(extract_path, gsi.getSysArch());
+
+                loadSysInformation(gsi);
+                loadAgentInformation(gai);
+
+            }
+
+
         }
 
         private void loadAgentInformation(getAgentInformation gai)
