@@ -19,11 +19,18 @@ namespace Log_Analyzer
         {
             InitializeComponent();
         }
-
-        private void c_tree_FileView_AfterSelect(object sender, TreeViewEventArgs e)
+        
+        private async void c_tree_FileView_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            string[] lines = readText(e);
             c_rtxtSearchResult.Clear();
+            writeToTextBox(lines, c_rtxtSearchResult);
+        }
+        
+        private string[] readText(TreeViewEventArgs e)
+        {
             TreeNode iterator;
+            string[] textlines = null;
 
             String path = "TEMP\\";
             String file = "";
@@ -37,23 +44,26 @@ namespace Log_Analyzer
                 path = path.Insert(path.IndexOf("\\") + 1, iterator.Text + "\\");
             }
 
-            //txt_Area.Text = path + file;
-
             try
             {
-                string[] textlines = File.ReadAllLines(path + file);
-
-                foreach (string line in textlines)
-                {
-                    // Use a tab to indent each line of the file.
-                    c_rtxtSearchResult.AppendText(line + "\n");
-                }
-               
+                textlines = File.ReadAllLines(path + file);
             }
             catch (Exception ex)
             {
+                textlines[0] = "Error Reading file";
+            }
 
+            return textlines;
+        }
+
+        private void writeToTextBox(string[] lines, RichTextBox r)
+        {
+            foreach (var line in lines)
+            {
+                // Use a tab to indent each line of the file.
+                r.AppendText(line + "\n");
             }
         }
+
     }
 }

@@ -51,13 +51,13 @@ namespace Log_Analyzer
                 zip.Password = "trend";
 
                 zip.ExtractProgress += new EventHandler<ExtractProgressEventArgs>(zip_ExtractProgress);
+
                 zip.ExtractAll(dest, Ionic.Zip.ExtractExistingFileAction.OverwriteSilently);
             }
 
             return dest;
         }
-        
-
+       
         void zip_ExtractProgress(object sender, ExtractProgressEventArgs e)
         {
             if (e.BytesTransferred > 0)
@@ -112,22 +112,20 @@ namespace Log_Analyzer
             }
         }
 
-        //Location of the file, accessable to anywhere 
+        //Location of the file, accessible to anywhere 
         private string full_path = "";
+
         //Extraction path
         private string extract_path = ""; 
-
+        
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e) // START of loading CDT
         {
-
             OpenFileDialog openFile = new OpenFileDialog();
 
             if (openFile.ShowDialog() == DialogResult.OK)
             {
-                full_path = openFile.FileName;
-                extract_path = extractZip(full_path);
-                loadDir(extract_path);
-
+                UnzipCDTAsync(openFile.FileName);
+                
                 getSysInformation gsi = new getSysInformation(extract_path);
                 getAgentInformation gai = new getAgentInformation(extract_path, gsi.getSysArch());
 
@@ -135,7 +133,14 @@ namespace Log_Analyzer
                 loadAgentInformation(gai);
 
             }
-            
+        }
+
+        private void UnzipCDTAsync(String file)
+        {
+            full_path = file;
+
+            extract_path = extractZip(full_path);
+            loadDir(extract_path);
         }
 
         private void loadAgentInformation(getAgentInformation gai)

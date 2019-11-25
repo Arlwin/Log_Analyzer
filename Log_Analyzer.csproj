@@ -64,6 +64,7 @@
     </Compile>
     <Compile Include="getAgentInformation.cs" />
     <Compile Include="getSysInformation.cs" />
+    <Compile Include="offlineAnalyzer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Coaleser.resx">
