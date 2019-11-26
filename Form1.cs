@@ -25,6 +25,9 @@ namespace Log_Analyzer
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            offlineAnalyzer oa = new offlineAnalyzer("ofcdebug.log", "codes.txt");
+
+            loadKnownError(oa.errorsFound);
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
@@ -132,9 +135,9 @@ namespace Log_Analyzer
                 loadSysInformation(gsi);
                 loadAgentInformation(gai);
 
-                offlineAnalyzer oa = new offlineAnalyzer("ofcdebug.log", "codes.txt");
+                //offlineAnalyzer oa = new offlineAnalyzer("ofcdebug.log", "codes.txt");
 
-                loadKnownError(oa.errorsFound);
+                //loadKnownError(oa.errorsFound);
             }
         }
 

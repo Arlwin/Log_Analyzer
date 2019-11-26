@@ -9,7 +9,7 @@ namespace Log_Analyzer
 {
     class offlineAnalyzer
     {
-        public List<String[]> errorsFound { get; set; }
+        public List<String[]> errorsFound = new List<string[]>();
 
         public offlineAnalyzer(String filepath, String codepath)
         {
@@ -24,7 +24,7 @@ namespace Log_Analyzer
 
             List<string[]> errorCodes = loadCodes(codepath);
 
-            foreach (var errorCode in errorCodes)
+            foreach (string[] errorCode in errorCodes)
             {
                 if(checkError(f, errorCode))
                 {
@@ -45,7 +45,7 @@ namespace Log_Analyzer
 
             while ((line = code.ReadLine()) != null)
             {
-                codeList[counter] = line.Split(',');
+                codeList.Add(line.Split(','));
                 counter++;
             }
 
