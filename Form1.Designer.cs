@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.prog_perFile = new System.Windows.Forms.ProgressBar();
             this.pnl_Toolbar = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -81,9 +82,13 @@
             this.lblAgentVersion = new System.Windows.Forms.Label();
             this.lblAgentBuild = new System.Windows.Forms.Label();
             this.lblAgentAddr = new System.Windows.Forms.Label();
+            this.tabKnownError = new System.Windows.Forms.TabPage();
+            this.grid_KnownError = new System.Windows.Forms.DataGridView();
+            this.colErrorCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSolution = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pnl_Filter = new System.Windows.Forms.Panel();
-            this.prog_perFile = new System.Windows.Forms.ProgressBar();
             this.prog_Open = new System.Windows.Forms.ProgressBar();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txt_Fltr = new System.Windows.Forms.TextBox();
@@ -98,11 +103,6 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.coalescerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabKnownError = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colErrorCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSolution = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -112,10 +112,10 @@
             this.TabSystem.SuspendLayout();
             this.tabSystemInfo.SuspendLayout();
             this.tabAgentInfo.SuspendLayout();
+            this.tabKnownError.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_KnownError)).BeginInit();
             this.pnl_Filter.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.tabKnownError.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -140,6 +140,16 @@
             // toolStripContainer1.TopToolStripPanel
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
+            // 
+            // prog_perFile
+            // 
+            this.prog_perFile.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.prog_perFile.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.prog_perFile.Location = new System.Drawing.Point(0, 645);
+            this.prog_perFile.Name = "prog_perFile";
+            this.prog_perFile.Size = new System.Drawing.Size(1303, 10);
+            this.prog_perFile.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.prog_perFile.TabIndex = 41;
             // 
             // pnl_Toolbar
             // 
@@ -217,7 +227,7 @@
             this.tabSystemInfo.Location = new System.Drawing.Point(4, 22);
             this.tabSystemInfo.Name = "tabSystemInfo";
             this.tabSystemInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSystemInfo.Size = new System.Drawing.Size(1266, 476);
+            this.tabSystemInfo.Size = new System.Drawing.Size(1266, 470);
             this.tabSystemInfo.TabIndex = 0;
             this.tabSystemInfo.Text = "System Information";
             this.tabSystemInfo.UseVisualStyleBackColor = true;
@@ -443,7 +453,7 @@
             this.tabAgentInfo.Location = new System.Drawing.Point(4, 22);
             this.tabAgentInfo.Name = "tabAgentInfo";
             this.tabAgentInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAgentInfo.Size = new System.Drawing.Size(1266, 476);
+            this.tabAgentInfo.Size = new System.Drawing.Size(1266, 470);
             this.tabAgentInfo.TabIndex = 1;
             this.tabAgentInfo.Text = "Agent Information";
             this.tabAgentInfo.UseVisualStyleBackColor = true;
@@ -698,12 +708,58 @@
             this.lblAgentAddr.TabIndex = 14;
             this.lblAgentAddr.Text = "Server Address:";
             // 
+            // tabKnownError
+            // 
+            this.tabKnownError.Controls.Add(this.grid_KnownError);
+            this.tabKnownError.Location = new System.Drawing.Point(4, 22);
+            this.tabKnownError.Name = "tabKnownError";
+            this.tabKnownError.Size = new System.Drawing.Size(1266, 470);
+            this.tabKnownError.TabIndex = 2;
+            this.tabKnownError.Text = "Known Error";
+            this.tabKnownError.UseVisualStyleBackColor = true;
+            // 
+            // grid_KnownError
+            // 
+            this.grid_KnownError.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grid_KnownError.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grid_KnownError.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colErrorCode,
+            this.colDescription,
+            this.colSolution});
+            this.grid_KnownError.Location = new System.Drawing.Point(25, 30);
+            this.grid_KnownError.Name = "grid_KnownError";
+            this.grid_KnownError.Size = new System.Drawing.Size(902, 303);
+            this.grid_KnownError.TabIndex = 0;
+            // 
+            // colErrorCode
+            // 
+            this.colErrorCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colErrorCode.HeaderText = "Error Code";
+            this.colErrorCode.Name = "colErrorCode";
+            this.colErrorCode.ReadOnly = true;
+            // 
+            // colDescription
+            // 
+            this.colDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDescription.HeaderText = "Description";
+            this.colDescription.Name = "colDescription";
+            this.colDescription.ReadOnly = true;
+            // 
+            // colSolution
+            // 
+            this.colSolution.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colSolution.HeaderText = "Solution";
+            this.colSolution.Name = "colSolution";
+            this.colSolution.ReadOnly = true;
+            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1283, 511);
+            this.tabPage2.Size = new System.Drawing.Size(1283, 505);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -721,16 +777,6 @@
             this.pnl_Filter.Name = "pnl_Filter";
             this.pnl_Filter.Size = new System.Drawing.Size(1297, 100);
             this.pnl_Filter.TabIndex = 0;
-            // 
-            // prog_perFile
-            // 
-            this.prog_perFile.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.prog_perFile.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.prog_perFile.Location = new System.Drawing.Point(0, 645);
-            this.prog_perFile.Name = "prog_perFile";
-            this.prog_perFile.Size = new System.Drawing.Size(1303, 10);
-            this.prog_perFile.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.prog_perFile.TabIndex = 41;
             // 
             // prog_Open
             // 
@@ -847,52 +893,6 @@
             this.coalescerToolStripMenuItem.Text = "Coalescer";
             this.coalescerToolStripMenuItem.Click += new System.EventHandler(this.coalescerToolStripMenuItem_Click);
             // 
-            // tabKnownError
-            // 
-            this.tabKnownError.Controls.Add(this.dataGridView1);
-            this.tabKnownError.Location = new System.Drawing.Point(4, 22);
-            this.tabKnownError.Name = "tabKnownError";
-            this.tabKnownError.Size = new System.Drawing.Size(1266, 470);
-            this.tabKnownError.TabIndex = 2;
-            this.tabKnownError.Text = "Known Error";
-            this.tabKnownError.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colErrorCode,
-            this.colDescription,
-            this.colSolution});
-            this.dataGridView1.Location = new System.Drawing.Point(25, 30);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(902, 303);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // colErrorCode
-            // 
-            this.colErrorCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colErrorCode.HeaderText = "Error Code";
-            this.colErrorCode.Name = "colErrorCode";
-            this.colErrorCode.ReadOnly = true;
-            // 
-            // colDescription
-            // 
-            this.colDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDescription.HeaderText = "Description";
-            this.colDescription.Name = "colDescription";
-            this.colDescription.ReadOnly = true;
-            // 
-            // colSolution
-            // 
-            this.colSolution.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colSolution.HeaderText = "Solution";
-            this.colSolution.Name = "colSolution";
-            this.colSolution.ReadOnly = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -918,12 +918,12 @@
             this.tabSystemInfo.PerformLayout();
             this.tabAgentInfo.ResumeLayout(false);
             this.tabAgentInfo.PerformLayout();
+            this.tabKnownError.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grid_KnownError)).EndInit();
             this.pnl_Filter.ResumeLayout(false);
             this.pnl_Filter.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tabKnownError.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1001,7 +1001,7 @@
         private System.Windows.Forms.ProgressBar prog_Open;
         private System.Windows.Forms.ProgressBar prog_perFile;
         private System.Windows.Forms.TabPage tabKnownError;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grid_KnownError;
         private System.Windows.Forms.DataGridViewTextBoxColumn colErrorCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSolution;

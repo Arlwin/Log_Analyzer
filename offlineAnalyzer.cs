@@ -26,7 +26,10 @@ namespace Log_Analyzer
 
             foreach (var errorCode in errorCodes)
             {
-                checkError(f, errorCode);
+                if(checkError(f, errorCode))
+                {
+                    errorsFound.Add(errorCode);
+                }
                 f.BaseStream.Seek(0, SeekOrigin.Begin);
             }
         }

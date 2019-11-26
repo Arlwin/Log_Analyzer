@@ -132,6 +132,17 @@ namespace Log_Analyzer
                 loadSysInformation(gsi);
                 loadAgentInformation(gai);
 
+                offlineAnalyzer oa = new offlineAnalyzer("ofcdebug.log", "codes.txt");
+
+                loadKnownError(oa.errorsFound);
+            }
+        }
+
+        private void loadKnownError(List<string[]> errorsFound)
+        {
+            foreach (var error in errorsFound)
+            {
+                grid_KnownError.Rows.Add(error[0], error[1], error[2]);
             }
         }
 
