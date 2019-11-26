@@ -32,7 +32,7 @@ namespace Log_Analyzer
            // System.Windows.Forms.Application.Exit();
         }
 
-        Coaleser Form2 = new Coaleser();
+        //Coaleser Form2 = new Coaleser();
 
         private string extractZip(string path)
         {
@@ -72,7 +72,7 @@ namespace Log_Analyzer
             }
         }
 
-        private void loadDir(string path)
+        private void loadDir(string path, Coaleser Form2)
         {
             DirectoryInfo dir = new DirectoryInfo(path);
 
@@ -140,7 +140,6 @@ namespace Log_Analyzer
             full_path = file;
 
             extract_path = extractZip(full_path);
-            loadDir(extract_path);
         }
 
         private void loadAgentInformation(getAgentInformation gai)
@@ -179,7 +178,9 @@ namespace Log_Analyzer
 
         private void coalescerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Coaleser Form2 = new Coaleser();
+            Coaleser Form2 = new Coaleser();
+            loadDir(extract_path, Form2);
+
             Form2.Show();
 
         }
