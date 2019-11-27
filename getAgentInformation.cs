@@ -28,6 +28,8 @@ namespace Log_Analyzer
         String ConPtnVersion;
         String SmartPtnVersion;
 
+        public String agentfolder { get; set; }
+
         public getAgentInformation(String path, String sysArch)
         {
             if (sysArch.Contains("x64"))
@@ -35,7 +37,7 @@ namespace Log_Analyzer
             else
                 reg = "REG-1.reg";
 
-            String agentfolder = checkAgent(path);
+            agentfolder = checkAgent(path);
 
             setAgentVer(path + "\\" + agentfolder + "\\ProductInfo.txt");
             setAgentBuild(path + "\\" + agentfolder + "\\CollectedFile\\Event1\\" + reg);         
