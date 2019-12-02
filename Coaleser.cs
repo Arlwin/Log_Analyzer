@@ -47,6 +47,7 @@ namespace Log_Analyzer
             try
             {
                 textlines = File.ReadAllLines(path + file);
+
             }
             catch (Exception ex)
             {
@@ -56,14 +57,20 @@ namespace Log_Analyzer
             return textlines;
         }
 
-        private void writeToTextBox(string[] lines, RichTextBox r)
+        /*private void writeToTextBox(string[] lines, RichTextBox r)
         {
             foreach (var line in lines)
             {
                 // Use a tab to indent each line of the file.
                 r.AppendText(line + "\n");
             }
+        }*/
+
+        private void writeToTextBox(string[] lines, RichTextBox r)
+        {
+            r.Text = string.Join("\n", lines);
         }
+
 
     }
 }
