@@ -133,15 +133,26 @@ namespace Log_Analyzer
                 loadAgentInformation(gai);
 
                 offlineAnalyzer oa = new offlineAnalyzer($"{ extract_path }\\{gai.agentfolder}\\CollectedFile\\Event1\\ofcdebug.log", "codes.txt");
-                loadKnownError(oa.errorsFound);
+                //loadKnownError(oa.errorsFound);
+                loadKnownError(oa.errorList);
             }
         }
-
+        /*
         private void loadKnownError(List<string[]> errorsFound)
         {
             foreach (var error in errorsFound)
             {
                 grid_KnownError.Rows.Add(error[0], error[1], error[2]);
+            }
+        }*/
+
+        private void loadKnownError(List<List<String>> errorsFound)
+        {
+            int counter = 0;
+            foreach (List<string> error in errorsFound)
+            {
+                grid_KnownError.Rows.Add(error[1], error[0], "");
+                counter++;
             }
         }
 
