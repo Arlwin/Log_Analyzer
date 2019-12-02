@@ -32,8 +32,6 @@ namespace Log_Analyzer
            // System.Windows.Forms.Application.Exit();
         }
 
-        //Coaleser Form2 = new Coaleser();
-
         private string extractZip(string path)
         {
             string dest = "";
