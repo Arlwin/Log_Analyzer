@@ -67,6 +67,7 @@
     <Compile Include="offlineAnalyzer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateAnalyzer.cs" />
     <EmbeddedResource Include="Coaleser.resx">
       <DependentUpon>Coaleser.cs</DependentUpon>
     </EmbeddedResource>

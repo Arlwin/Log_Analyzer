@@ -48,24 +48,32 @@ namespace Log_Analyzer
         private string extractZip(string path)
         {
             string dest = "";
-            int index = path.IndexOf(".");
-            string filename = path.Substring(path.LastIndexOf("\\") + 1, index - path.LastIndexOf("\\") - 1);
 
-            if(index > 0)
+            try
             {
-                //dest = path.Substring(0, index);
-                dest = "TEMP\\" + filename;
+                int index = path.IndexOf(".");
+                string filename = path.Substring(path.LastIndexOf("\\") + 1, index - path.LastIndexOf("\\") - 1);
+
+                if (index > 0)
+                {
+                    //dest = path.Substring(0, index);
+                    dest = "TEMP\\" + filename;
+                }
+
+                using (Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(path))
+                {
+                    zip.Password = "trend";
+
+                    zip.ExtractProgress += new EventHandler<ExtractProgressEventArgs>(zip_ExtractProgress);
+
+                    zip.ExtractAll(dest, Ionic.Zip.ExtractExistingFileAction.OverwriteSilently);
+                }
+
+            } catch (Exception ex){
+                if (ex.Message.Equals("Ionic.Zip.ZipException"))
+                    Console.WriteLine("Please upload proper ZIP");
             }
-
-            using (Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(path))
-            {
-                zip.Password = "trend";
-
-                zip.ExtractProgress += new EventHandler<ExtractProgressEventArgs>(zip_ExtractProgress);
-
-                zip.ExtractAll(dest, Ionic.Zip.ExtractExistingFileAction.OverwriteSilently);
-            }
-
+            
             return dest;
         }
        
@@ -132,8 +140,11 @@ namespace Log_Analyzer
         private string full_path = "";
 
         //Extraction path
-        private string extract_path = ""; 
-        
+        private string extract_path = "";
+
+        //Imported CSV
+        private string imported_CSV = "";
+                
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e) // START of loading CDT
         {
             OpenFileDialog openFile = new OpenFileDialog();
@@ -141,12 +152,12 @@ namespace Log_Analyzer
             if (openFile.ShowDialog() == DialogResult.OK)
             {
                 UnzipCDTAsync(openFile.FileName);
-                
-                getSysInformation gsi = new getSysInformation(extract_path);   
+                getSysInformation gsi = new getSysInformation(extract_path);
                 getAgentInformation gai = new getAgentInformation(extract_path, gsi.getSysArch());
 
                 loadSysInformation(gsi);
                 loadAgentInformation(gai);
+                                
             }
         }
         
@@ -253,20 +264,54 @@ namespace Log_Analyzer
 
         }
 
-        //Click button first before analysis
-        private void offAnalyze(getAgentInformation gai)
+        private string getFullPath()
         {
-            offlineAnalyzer oa = new offlineAnalyzer($"{ extract_path }\\{gai.agentfolder}\\CollectedFile\\Event1\\", "codes.csv");
-            loadKnownError(oa.errorList, oa.errorsFound);
+            getSysInformation gsi = new getSysInformation(extract_path);
+            getAgentInformation gai = new getAgentInformation(extract_path, gsi.getSysArch());
+
+            return $"{ extract_path }\\{ gai.agentfolder}\\CollectedFile\\";
+        }
+
+        //Click button first before analysis
+        private void offAnalyze(string path)
+        {
+            txtResults.Text = ""; //Clear
+
+            if (imported_CSV.Equals("") || extract_path.Equals(""))
+                txtResults.Text = "Please import the csv codes and upload the CDT file first";
+            else
+            {
+                offlineAnalyzer oa = new offlineAnalyzer($"{path}\\Event1\\", imported_CSV);
+                loadKnownError(oa.errorList, oa.errorsFound);
+            }
         }
 
         private void Btn_OffAnalyze_Click(object sender, EventArgs e)
         {
-            getSysInformation gsi = new getSysInformation(extract_path);
-            getAgentInformation gai = new getAgentInformation(extract_path, gsi.getSysArch());
-            offAnalyze(gai);
+            offAnalyze(getFullPath());
         }
-               
+
+        private void ImportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                imported_CSV = openFile.FileName;
+            }
+        }
+
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            UpdateAnalyze(getFullPath());
+        }
+
+        private void UpdateAnalyze(string path)
+        {
+            UpdateAnalyzer ua = new UpdateAnalyzer($"{path}\\Event5\\", "update.csv");
+            txtUpdate.Text = ua.getSummary();
+        }
+
         //highlight keyword after typing text on Filter textbox
         //has a bug, it does not include the last character, due to Event KEYDOWN executing AFTER last character is typed
 

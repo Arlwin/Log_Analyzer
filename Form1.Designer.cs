@@ -83,6 +83,7 @@
             this.lblAgentBuild = new System.Windows.Forms.Label();
             this.lblAgentAddr = new System.Windows.Forms.Label();
             this.tabKnownError = new System.Windows.Forms.TabPage();
+            this.txtResults = new System.Windows.Forms.RichTextBox();
             this.btn_OffAnalyze = new System.Windows.Forms.Button();
             this.grid_KnownError = new System.Windows.Forms.DataGridView();
             this.colErrorCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,7 +105,10 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.coalescerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtResults = new System.Windows.Forms.RichTextBox();
+            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabUpdate = new System.Windows.Forms.TabPage();
+            this.txtUpdate = new System.Windows.Forms.RichTextBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -118,6 +122,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grid_KnownError)).BeginInit();
             this.pnl_Filter.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.tabUpdate.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -197,6 +202,7 @@
             this.TabSystem.Controls.Add(this.tabSystemInfo);
             this.TabSystem.Controls.Add(this.tabAgentInfo);
             this.TabSystem.Controls.Add(this.tabKnownError);
+            this.TabSystem.Controls.Add(this.tabUpdate);
             this.TabSystem.Location = new System.Drawing.Point(3, 3);
             this.TabSystem.Name = "TabSystem";
             this.TabSystem.SelectedIndex = 0;
@@ -719,6 +725,14 @@
             this.tabKnownError.Text = "Known Error";
             this.tabKnownError.UseVisualStyleBackColor = true;
             // 
+            // txtResults
+            // 
+            this.txtResults.Location = new System.Drawing.Point(25, 245);
+            this.txtResults.Name = "txtResults";
+            this.txtResults.Size = new System.Drawing.Size(1073, 206);
+            this.txtResults.TabIndex = 2;
+            this.txtResults.Text = "";
+            // 
             // btn_OffAnalyze
             // 
             this.btn_OffAnalyze.Location = new System.Drawing.Point(1104, 30);
@@ -743,9 +757,6 @@
             this.grid_KnownError.Name = "grid_KnownError";
             this.grid_KnownError.Size = new System.Drawing.Size(1073, 208);
             this.grid_KnownError.TabIndex = 0;
-
-            //this.grid_KnownError.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_KnownError_CellClick);
-
             // 
             // colErrorCode
             // 
@@ -850,7 +861,8 @@
             this.openToolStripMenuItem,
             this.saveToolStripMenuItem,
             this.saveAsToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.exitToolStripMenuItem,
+            this.importToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(50, 20);
             this.toolStripMenuItem1.Text = "Menu";
@@ -858,26 +870,26 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveAsToolStripMenuItem.Text = "Save as";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // formatToolStripMenuItem
@@ -907,13 +919,42 @@
             this.coalescerToolStripMenuItem.Text = "Coalescer";
             this.coalescerToolStripMenuItem.Click += new System.EventHandler(this.coalescerToolStripMenuItem_Click);
             // 
-            // txtResults
+            // importToolStripMenuItem
             // 
-            this.txtResults.Location = new System.Drawing.Point(25, 245);
-            this.txtResults.Name = "txtResults";
-            this.txtResults.Size = new System.Drawing.Size(1073, 206);
-            this.txtResults.TabIndex = 2;
-            this.txtResults.Text = "";
+            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importToolStripMenuItem.Text = "Import";
+            this.importToolStripMenuItem.Click += new System.EventHandler(this.ImportToolStripMenuItem_Click);
+            // 
+            // tabUpdate
+            // 
+            this.tabUpdate.Controls.Add(this.btnUpdate);
+            this.tabUpdate.Controls.Add(this.txtUpdate);
+            this.tabUpdate.Location = new System.Drawing.Point(4, 22);
+            this.tabUpdate.Name = "tabUpdate";
+            this.tabUpdate.Padding = new System.Windows.Forms.Padding(3);
+            this.tabUpdate.Size = new System.Drawing.Size(1266, 470);
+            this.tabUpdate.TabIndex = 3;
+            this.tabUpdate.Text = "Update Issues";
+            this.tabUpdate.UseVisualStyleBackColor = true;
+            // 
+            // txtUpdate
+            // 
+            this.txtUpdate.Location = new System.Drawing.Point(19, 16);
+            this.txtUpdate.Name = "txtUpdate";
+            this.txtUpdate.Size = new System.Drawing.Size(1115, 438);
+            this.txtUpdate.TabIndex = 0;
+            this.txtUpdate.Text = "";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(1141, 16);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(119, 45);
+            this.btnUpdate.TabIndex = 1;
+            this.btnUpdate.Text = "Check ";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // Form1
             // 
@@ -946,6 +987,7 @@
             this.pnl_Filter.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tabUpdate.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1029,6 +1071,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colSolution;
         private System.Windows.Forms.Button btn_OffAnalyze;
         private System.Windows.Forms.RichTextBox txtResults;
+        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabUpdate;
+        private System.Windows.Forms.RichTextBox txtUpdate;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
 

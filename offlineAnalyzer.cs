@@ -35,36 +35,6 @@ namespace Log_Analyzer
             }
         }
 
-
-        //Main function
-        private void analyze(string filepath, string codepath)
-        {
-            //Load the file first
-            StreamReader f = new StreamReader(filepath);
-
-            //Load the errors
-            List<string[]> errorCodes = loadCodes(codepath);
-
-            int counter = 0;
-
-            //Check each error code if it exists on ofcdebug
-            foreach (string[] errorCode in errorCodes)
-            {
-                errorList.Add(new List<String>() { errorCode[0] }); //Add the error code at the start of the list
-
-                if(checkError(f, errorCode, counter))
-                {
-                    errorsFound.Add(errorCode);
-                }
-
-                f.BaseStream.Seek(0, SeekOrigin.Begin);
-                counter++;
-            }
-
-            //close the file
-            f.Close();
-        }
-
         //Main function
         private void analyzeAsync(string filepath, string codepath, int numFiles)
         {
