@@ -83,6 +83,7 @@
             this.lblAgentBuild = new System.Windows.Forms.Label();
             this.lblAgentAddr = new System.Windows.Forms.Label();
             this.tabKnownError = new System.Windows.Forms.TabPage();
+            this.btn_OffAnalyze = new System.Windows.Forms.Button();
             this.grid_KnownError = new System.Windows.Forms.DataGridView();
             this.colErrorCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,7 +104,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.coalescerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_OffAnalyze = new System.Windows.Forms.Button();
+            this.txtResults = new System.Windows.Forms.RichTextBox();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -708,6 +709,7 @@
             // 
             // tabKnownError
             // 
+            this.tabKnownError.Controls.Add(this.txtResults);
             this.tabKnownError.Controls.Add(this.btn_OffAnalyze);
             this.tabKnownError.Controls.Add(this.grid_KnownError);
             this.tabKnownError.Location = new System.Drawing.Point(4, 22);
@@ -716,6 +718,16 @@
             this.tabKnownError.TabIndex = 2;
             this.tabKnownError.Text = "Known Error";
             this.tabKnownError.UseVisualStyleBackColor = true;
+            // 
+            // btn_OffAnalyze
+            // 
+            this.btn_OffAnalyze.Location = new System.Drawing.Point(1104, 30);
+            this.btn_OffAnalyze.Name = "btn_OffAnalyze";
+            this.btn_OffAnalyze.Size = new System.Drawing.Size(147, 43);
+            this.btn_OffAnalyze.TabIndex = 1;
+            this.btn_OffAnalyze.Text = "Check";
+            this.btn_OffAnalyze.UseVisualStyleBackColor = true;
+            this.btn_OffAnalyze.Click += new System.EventHandler(this.Btn_OffAnalyze_Click);
             // 
             // grid_KnownError
             // 
@@ -729,8 +741,11 @@
             this.colSolution});
             this.grid_KnownError.Location = new System.Drawing.Point(25, 30);
             this.grid_KnownError.Name = "grid_KnownError";
-            this.grid_KnownError.Size = new System.Drawing.Size(1073, 414);
+            this.grid_KnownError.Size = new System.Drawing.Size(1073, 208);
             this.grid_KnownError.TabIndex = 0;
+
+            //this.grid_KnownError.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_KnownError_CellClick);
+
             // 
             // colErrorCode
             // 
@@ -892,15 +907,13 @@
             this.coalescerToolStripMenuItem.Text = "Coalescer";
             this.coalescerToolStripMenuItem.Click += new System.EventHandler(this.coalescerToolStripMenuItem_Click);
             // 
-            // btn_OffAnalyze
+            // txtResults
             // 
-            this.btn_OffAnalyze.Location = new System.Drawing.Point(1104, 30);
-            this.btn_OffAnalyze.Name = "btn_OffAnalyze";
-            this.btn_OffAnalyze.Size = new System.Drawing.Size(147, 43);
-            this.btn_OffAnalyze.TabIndex = 1;
-            this.btn_OffAnalyze.Text = "Check";
-            this.btn_OffAnalyze.UseVisualStyleBackColor = true;
-            this.btn_OffAnalyze.Click += new System.EventHandler(this.Btn_OffAnalyze_Click);
+            this.txtResults.Location = new System.Drawing.Point(25, 245);
+            this.txtResults.Name = "txtResults";
+            this.txtResults.Size = new System.Drawing.Size(1073, 206);
+            this.txtResults.TabIndex = 2;
+            this.txtResults.Text = "";
             // 
             // Form1
             // 
@@ -1015,6 +1028,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSolution;
         private System.Windows.Forms.Button btn_OffAnalyze;
+        private System.Windows.Forms.RichTextBox txtResults;
     }
 }
 

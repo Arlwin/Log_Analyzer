@@ -85,13 +85,18 @@ namespace Log_Analyzer
 
         private void loadDir(string path, Coaleser Form2)
         {
-            DirectoryInfo dir = new DirectoryInfo(path);
+            try
+            {
+                DirectoryInfo dir = new DirectoryInfo(path);
 
-            TreeNode node = Form2.c_tree_FileView.Nodes.Add(dir.Name);
-            node.Tag = dir.FullName;
-            node.StateImageIndex = 0;
-            loadFiles(path, node);
-            loadSubDir(path, node);
+                TreeNode node = Form2.c_tree_FileView.Nodes.Add(dir.Name);
+                node.Tag = dir.FullName;
+                node.StateImageIndex = 0;
+                loadFiles(path, node);
+                loadSubDir(path, node);
+            }
+            catch (Exception ex) { }
+
         }
 
         private void loadSubDir(string path, TreeNode node)
@@ -144,15 +149,47 @@ namespace Log_Analyzer
                 loadAgentInformation(gai);
             }
         }
+        
+        //FOR TESTING ONLY
+        private List<List<string>> ErrorsList;
 
         private void loadKnownError(List<List<String>> errorsList, List<string[]> errorsFound)
         {
             int counter = 0;
+            ErrorsList = errorsList;
+
             foreach (string[] error in errorsFound)
             {
                 grid_KnownError.Rows.Add(error[0], error[1], error[2]);
                 counter++;
             }
+
+            grid_KnownError.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_KnownError_CellClick);
+        }
+
+        private void Grid_KnownError_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Get the row of the current cell selected
+            DataGridViewCell cell = grid_KnownError.CurrentRow.Cells[0];
+            string error = cell.Value.ToString();
+
+            //txtResults.Text = error;
+
+            //List the errors under the error code
+            showErrors(error);
+        }
+
+        private void showErrors(string error)
+        {
+            string errorOutput = "";
+
+            foreach (List<string> errors in ErrorsList)
+            {
+                if (errors[0].Equals(error))
+                    errorOutput = String.Join("\n", errors);
+            }
+
+            txtResults.Text = errorOutput;
         }
 
         private void UnzipCDTAsync(String file)
@@ -223,7 +260,7 @@ namespace Log_Analyzer
             getAgentInformation gai = new getAgentInformation(extract_path, gsi.getSysArch());
             offAnalyze(gai);
         }
-
+               
         //highlight keyword after typing text on Filter textbox
         //has a bug, it does not include the last character, due to Event KEYDOWN executing AFTER last character is typed
 
