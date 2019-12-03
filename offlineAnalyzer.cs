@@ -15,8 +15,26 @@ namespace Log_Analyzer
 
         public offlineAnalyzer(String filepath, String codepath)
         {
-            analyze(filepath, codepath);
+            init(filepath, codepath);
         }
+
+        //Init
+        private void init(String filepath, String codepath)
+        {
+            //Check first the Event 1 folder
+            DirectoryInfo dir = new DirectoryInfo(filepath);
+
+            //Get all the debuglogs
+            FileInfo[] files = dir.GetFiles("ofcdebug*.*");
+
+            int counter = 0;
+            foreach (var file in files)
+            {
+                analyzeAsync($"{filepath}{file}", codepath, counter);
+                counter++;
+            }
+        }
+
 
         //Main function
         private void analyze(string filepath, string codepath)
@@ -45,6 +63,55 @@ namespace Log_Analyzer
 
             //close the file
             f.Close();
+        }
+
+        //Main function
+        private void analyzeAsync(string filepath, string codepath, int numFiles)
+        {
+            //Load the file first
+            StreamReader f = new StreamReader(filepath);
+
+            //Load the errors
+            List<string[]> errorCodes = loadCodes(codepath);
+
+            int counter = 0;
+
+            //Check each error code if it exists on ofcdebug
+            foreach (string[] errorCode in errorCodes)
+            {
+                if (numFiles == 0)
+                    errorList.Add(new List<String>() { errorCode[0] }); //Add the error code at the start of the list
+
+                if (checkError(f, errorCode, counter))
+                {
+                    if (!(errorsFound.Count < 1))
+                    {
+                        if(!checkErrorsFound(errorCode))
+                            errorsFound.Add(errorCode);
+                    }
+                    else
+                    {
+                        errorsFound.Add(errorCode);
+                    }
+                }
+
+                f.BaseStream.Seek(0, SeekOrigin.Begin);
+                counter++;
+            }
+
+            //close the file
+            f.Close();
+        }
+
+        //checkErrorsFound
+        private bool checkErrorsFound(string[] errorcodes)
+        {
+            foreach(string[] errors in errorsFound)
+            {
+                if (errors[0].Equals(errorcodes[0])) //If match
+                    return true;
+            }
+            return false;
         }
 
         //Load the codes

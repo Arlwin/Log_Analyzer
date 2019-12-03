@@ -169,11 +169,17 @@ namespace Log_Analyzer
 
         private void Grid_KnownError_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            string error;
+
             //Get the row of the current cell selected
             DataGridViewCell cell = grid_KnownError.CurrentRow.Cells[0];
-            string error = cell.Value.ToString();
-
-            //txtResults.Text = error;
+            try
+            {
+                error = cell.Value.ToString();
+            }catch(Exception ex)
+            {
+                error = ex.ToString();
+            }
 
             //List the errors under the error code
             showErrors(error);
@@ -250,7 +256,7 @@ namespace Log_Analyzer
         //Click button first before analysis
         private void offAnalyze(getAgentInformation gai)
         {
-            offlineAnalyzer oa = new offlineAnalyzer($"{ extract_path }\\{gai.agentfolder}\\CollectedFile\\Event1\\ofcdebug.log", "codes.csv");
+            offlineAnalyzer oa = new offlineAnalyzer($"{ extract_path }\\{gai.agentfolder}\\CollectedFile\\Event1\\", "codes.csv");
             loadKnownError(oa.errorList, oa.errorsFound);
         }
 
