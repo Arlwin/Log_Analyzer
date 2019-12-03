@@ -47,6 +47,7 @@
             this.dateEnd = new System.Windows.Forms.DateTimePicker();
             this.dateStart = new System.Windows.Forms.DateTimePicker();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btn_Search = new System.Windows.Forms.Button();
             this.pnlMain.SuspendLayout();
             this.pnlSelected.SuspendLayout();
             this.pnlBtn.SuspendLayout();
@@ -172,6 +173,7 @@
             this.pnlSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSearch.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlSearch.Controls.Add(this.btn_Search);
             this.pnlSearch.Controls.Add(this.lblEndDate);
             this.pnlSearch.Controls.Add(this.lblStartDate);
             this.pnlSearch.Controls.Add(this.lblCategory);
@@ -189,7 +191,7 @@
             // 
             this.lblEndDate.AutoSize = true;
             this.lblEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndDate.Location = new System.Drawing.Point(378, 61);
+            this.lblEndDate.Location = new System.Drawing.Point(452, 61);
             this.lblEndDate.Name = "lblEndDate";
             this.lblEndDate.Size = new System.Drawing.Size(73, 18);
             this.lblEndDate.TabIndex = 7;
@@ -199,7 +201,7 @@
             // 
             this.lblStartDate.AutoSize = true;
             this.lblStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStartDate.Location = new System.Drawing.Point(378, 23);
+            this.lblStartDate.Location = new System.Drawing.Point(452, 23);
             this.lblStartDate.Name = "lblStartDate";
             this.lblStartDate.Size = new System.Drawing.Size(78, 18);
             this.lblStartDate.TabIndex = 6;
@@ -236,7 +238,7 @@
             "Smart Scan",
             "Performance",
             "DLP"});
-            this.cboCategory.Location = new System.Drawing.Point(101, 56);
+            this.cboCategory.Location = new System.Drawing.Point(87, 58);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(249, 26);
             this.cboCategory.TabIndex = 3;
@@ -246,7 +248,7 @@
             this.dateEnd.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateEnd.Location = new System.Drawing.Point(482, 58);
+            this.dateEnd.Location = new System.Drawing.Point(556, 58);
             this.dateEnd.Name = "dateEnd";
             this.dateEnd.Size = new System.Drawing.Size(148, 24);
             this.dateEnd.TabIndex = 2;
@@ -255,7 +257,7 @@
             // 
             this.dateStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateStart.Location = new System.Drawing.Point(482, 20);
+            this.dateStart.Location = new System.Drawing.Point(556, 20);
             this.dateStart.Name = "dateStart";
             this.dateStart.Size = new System.Drawing.Size(148, 24);
             this.dateStart.TabIndex = 1;
@@ -263,10 +265,20 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(101, 20);
+            this.txtSearch.Location = new System.Drawing.Point(87, 22);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(249, 24);
             this.txtSearch.TabIndex = 0;
+            // 
+            // btn_Search
+            // 
+            this.btn_Search.Location = new System.Drawing.Point(343, 23);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(75, 23);
+            this.btn_Search.TabIndex = 8;
+            this.btn_Search.Text = "Search";
+            this.btn_Search.UseVisualStyleBackColor = true;
+            this.btn_Search.Click += new System.EventHandler(this.Btn_Search_Click);
             // 
             // Coaleser
             // 
@@ -308,5 +320,6 @@
         private System.Windows.Forms.Label lblEndDate;
         private System.Windows.Forms.Label lblStartDate;
         public System.Windows.Forms.TreeView c_tree_FileView;
+        private System.Windows.Forms.Button btn_Search;
     }
 }

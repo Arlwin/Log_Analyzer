@@ -20,7 +20,21 @@ namespace Log_Analyzer
         public Form1()
         {
             InitializeComponent();
+            this.FormClosed += new FormClosedEventHandler(f_FormClosed);
+        }
 
+        //Delete the TEMP folders when done
+        void f_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                var dir = new DirectoryInfo(extract_path);
+                dir.Delete(true);
+            }
+            catch (Exception ex)
+            {
+                //wala lang
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -124,13 +138,13 @@ namespace Log_Analyzer
             {
                 UnzipCDTAsync(openFile.FileName);
                 
-                getSysInformation gsi = new getSysInformation(extract_path);
+                getSysInformation gsi = new getSysInformation(extract_path);   
                 getAgentInformation gai = new getAgentInformation(extract_path, gsi.getSysArch());
 
                 loadSysInformation(gsi);
                 loadAgentInformation(gai);
 
-                offlineAnalyzer oa = new offlineAnalyzer($"{ extract_path }\\{gai.agentfolder}\\CollectedFile\\Event1\\ofcdebug.log", "codes.txt");
+                offlineAnalyzer oa = new offlineAnalyzer($"{ extract_path }\\{gai.agentfolder}\\CollectedFile\\Event1\\ofcdebug.log", "codes.csv");
                 //loadKnownError(oa.errorsFound);
                 loadKnownError(oa.errorList);
             }

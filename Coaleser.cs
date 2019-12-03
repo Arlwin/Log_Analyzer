@@ -71,6 +71,16 @@ namespace Log_Analyzer
             r.Text = string.Join("\n", lines);
         }
 
+        //Search function
+        private void Btn_Search_Click(object sender, EventArgs e)
+        {
+            //Get all the lines with the keyword
+
+
+            //Output the lines to another textbox
+            //Highlight the words on that textbox
+            //When double click, jump to text on original textbox
+        }
 
     }
 }

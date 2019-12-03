@@ -500,9 +500,8 @@
             this.lblUpdateAgentAddr_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUpdateAgentAddr_value.Location = new System.Drawing.Point(236, 306);
             this.lblUpdateAgentAddr_value.Name = "lblUpdateAgentAddr_value";
-            this.lblUpdateAgentAddr_value.Size = new System.Drawing.Size(120, 21);
+            this.lblUpdateAgentAddr_value.Size = new System.Drawing.Size(0, 21);
             this.lblUpdateAgentAddr_value.TabIndex = 35;
-            this.lblUpdateAgentAddr_value.Text = "Agent Version";
             // 
             // lblUpdateAgentPort_value
             // 
@@ -510,9 +509,8 @@
             this.lblUpdateAgentPort_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUpdateAgentPort_value.Location = new System.Drawing.Point(236, 270);
             this.lblUpdateAgentPort_value.Name = "lblUpdateAgentPort_value";
-            this.lblUpdateAgentPort_value.Size = new System.Drawing.Size(120, 21);
+            this.lblUpdateAgentPort_value.Size = new System.Drawing.Size(0, 21);
             this.lblUpdateAgentPort_value.TabIndex = 34;
-            this.lblUpdateAgentPort_value.Text = "Agent Version";
             // 
             // lblUpdateAgent_value
             // 
@@ -520,9 +518,8 @@
             this.lblUpdateAgent_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUpdateAgent_value.Location = new System.Drawing.Point(236, 231);
             this.lblUpdateAgent_value.Name = "lblUpdateAgent_value";
-            this.lblUpdateAgent_value.Size = new System.Drawing.Size(120, 21);
+            this.lblUpdateAgent_value.Size = new System.Drawing.Size(0, 21);
             this.lblUpdateAgent_value.TabIndex = 33;
-            this.lblUpdateAgent_value.Text = "Agent Version";
             // 
             // lblAgentPort_value
             // 
