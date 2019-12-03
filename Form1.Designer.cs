@@ -103,6 +103,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.coalescerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_OffAnalyze = new System.Windows.Forms.Button();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -707,6 +708,7 @@
             // 
             // tabKnownError
             // 
+            this.tabKnownError.Controls.Add(this.btn_OffAnalyze);
             this.tabKnownError.Controls.Add(this.grid_KnownError);
             this.tabKnownError.Location = new System.Drawing.Point(4, 22);
             this.tabKnownError.Name = "tabKnownError";
@@ -727,7 +729,7 @@
             this.colSolution});
             this.grid_KnownError.Location = new System.Drawing.Point(25, 30);
             this.grid_KnownError.Name = "grid_KnownError";
-            this.grid_KnownError.Size = new System.Drawing.Size(902, 303);
+            this.grid_KnownError.Size = new System.Drawing.Size(1073, 414);
             this.grid_KnownError.TabIndex = 0;
             // 
             // colErrorCode
@@ -890,6 +892,16 @@
             this.coalescerToolStripMenuItem.Text = "Coalescer";
             this.coalescerToolStripMenuItem.Click += new System.EventHandler(this.coalescerToolStripMenuItem_Click);
             // 
+            // btn_OffAnalyze
+            // 
+            this.btn_OffAnalyze.Location = new System.Drawing.Point(1104, 30);
+            this.btn_OffAnalyze.Name = "btn_OffAnalyze";
+            this.btn_OffAnalyze.Size = new System.Drawing.Size(147, 43);
+            this.btn_OffAnalyze.TabIndex = 1;
+            this.btn_OffAnalyze.Text = "Check";
+            this.btn_OffAnalyze.UseVisualStyleBackColor = true;
+            this.btn_OffAnalyze.Click += new System.EventHandler(this.Btn_OffAnalyze_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1002,6 +1014,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colErrorCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSolution;
+        private System.Windows.Forms.Button btn_OffAnalyze;
     }
 }
 

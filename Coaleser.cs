@@ -20,7 +20,7 @@ namespace Log_Analyzer
             InitializeComponent();
         }
         
-        private async void c_tree_FileView_AfterSelect(object sender, TreeViewEventArgs e)
+        private void c_tree_FileView_AfterSelect(object sender, TreeViewEventArgs e)
         {
             string[] lines = readText(e);
             c_rtxtSearchResult.Clear();
@@ -57,14 +57,6 @@ namespace Log_Analyzer
             return textlines;
         }
 
-        /*private void writeToTextBox(string[] lines, RichTextBox r)
-        {
-            foreach (var line in lines)
-            {
-                // Use a tab to indent each line of the file.
-                r.AppendText(line + "\n");
-            }
-        }*/
 
         private void writeToTextBox(string[] lines, RichTextBox r)
         {
@@ -74,13 +66,51 @@ namespace Log_Analyzer
         //Search function
         private void Btn_Search_Click(object sender, EventArgs e)
         {
+            string searchText = txtSearch.Text.Trim();
             //Get all the lines with the keyword
-
+            List<string> lines = getLines(c_rtxtSearchResult, searchText);
 
             //Output the lines to another textbox
+            outputLines(lines, rtextSelectedFiles);
+
             //Highlight the words on that textbox
+            highlightText(rtextSelectedFiles, searchText);
+
             //When double click, jump to text on original textbox
         }
 
+        private List<string> getLines(RichTextBox r, string search)
+        {
+            List<string> lines = new List<string>(); 
+
+            foreach (var line in r.Lines)
+            {
+                if((line.ToLower()).Contains(search.ToLower()))
+                    lines.Add(line);
+            }
+
+            return lines;
+        }
+
+        private void outputLines(List<string> lines, RichTextBox r)
+        {
+            r.Text = string.Join("\n", lines);
+        }
+
+        private void highlightText(RichTextBox r, string text)
+        {
+            int s_start = r.SelectionStart, startIndex = 0, index;
+
+            while ((index = r.Text.ToLower().IndexOf(text.ToLower(), startIndex)) != -1)
+            {
+                r.Select(index, text.Length);
+                r.SelectionBackColor = Color.Yellow;
+
+                startIndex = index + text.Length;
+            }
+
+            r.SelectionStart = s_start;
+            r.SelectionLength = 0;
+        }
     }
 }

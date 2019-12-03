@@ -115,6 +115,8 @@ namespace Log_Analyzer
         void setIpAdd(String filedir)
         {
             IpAdd = Search(filedir, "IPv4 Address");
+            if (IpAdd.Equals(""))
+                IpAdd = Search(filedir, "IP Address");
         }
 
         public string getIpAdd()
@@ -195,10 +197,12 @@ namespace Log_Analyzer
         }
 
 
-        //For Operating System
+        //For RAM
         void setRAM(String filedir)
         {
             RAM = Search(filedir, "[Installed Physical Memory (RAM)]");
+            if(RAM.Equals(""))
+                RAM = Search(filedir, "[Total Physical Memory]");
         }
 
         public string getRAM()

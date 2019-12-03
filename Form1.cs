@@ -43,7 +43,6 @@ namespace Log_Analyzer
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-           // System.Windows.Forms.Application.Exit();
         }
 
         private string extractZip(string path)
@@ -143,19 +142,15 @@ namespace Log_Analyzer
 
                 loadSysInformation(gsi);
                 loadAgentInformation(gai);
-
-                offlineAnalyzer oa = new offlineAnalyzer($"{ extract_path }\\{gai.agentfolder}\\CollectedFile\\Event1\\ofcdebug.log", "codes.csv");
-                //loadKnownError(oa.errorsFound);
-                loadKnownError(oa.errorList);
             }
         }
 
-        private void loadKnownError(List<List<String>> errorsFound)
+        private void loadKnownError(List<List<String>> errorsList, List<string[]> errorsFound)
         {
             int counter = 0;
-            foreach (List<string> error in errorsFound)
+            foreach (string[] error in errorsFound)
             {
-                grid_KnownError.Rows.Add(error[1], error[0], "");
+                grid_KnownError.Rows.Add(error[0], error[1], error[2]);
                 counter++;
             }
         }
@@ -214,7 +209,21 @@ namespace Log_Analyzer
         {
 
         }
-        
+
+        //Click button first before analysis
+        private void offAnalyze(getAgentInformation gai)
+        {
+            offlineAnalyzer oa = new offlineAnalyzer($"{ extract_path }\\{gai.agentfolder}\\CollectedFile\\Event1\\ofcdebug.log", "codes.csv");
+            loadKnownError(oa.errorList, oa.errorsFound);
+        }
+
+        private void Btn_OffAnalyze_Click(object sender, EventArgs e)
+        {
+            getSysInformation gsi = new getSysInformation(extract_path);
+            getAgentInformation gai = new getAgentInformation(extract_path, gsi.getSysArch());
+            offAnalyze(gai);
+        }
+
         //highlight keyword after typing text on Filter textbox
         //has a bug, it does not include the last character, due to Event KEYDOWN executing AFTER last character is typed
 
