@@ -57,7 +57,7 @@ namespace Log_Analyzer
                 //Add the line to the errors list
                 foreach (string[] error in errorCodes)
                 {
-                    if (line.Contains(error[0]))
+                    if ((line.ToLower()).Contains(error[0].ToLower()))
                     {
                         errorsFound.Add(error);
                         errorList[counter].Add(line);
