@@ -49,7 +49,7 @@ namespace Log_Analyzer
             }
 
             //Summarize
-            summary = "Issues Found: \n===========================================\n\n";
+            summary = "Errors Found: \n===========================================\n";
 
             summary = summary + String.Join("\n", errors);
 

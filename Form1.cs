@@ -260,9 +260,7 @@ namespace Log_Analyzer
         }
 
         private void txt_Fltr_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        {       }
 
         private string getFullPath()
         {
@@ -276,18 +274,17 @@ namespace Log_Analyzer
         private void offAnalyze(string path)
         {
             txtResults.Text = ""; //Clear
-
-            if (imported_CSV.Equals("") || extract_path.Equals(""))
-                txtResults.Text = "Please import the csv codes and upload the CDT file first";
-            else
-            {
-                offlineAnalyzer oa = new offlineAnalyzer($"{path}\\Event1\\", imported_CSV);
-                loadKnownError(oa.errorList, oa.errorsFound);
-            }
+            if (imported_CSV.Equals(""))
+                imported_CSV = "codes.csv";
+            
+            offlineAnalyzer oa = new offlineAnalyzer($"{path}\\Event1\\", imported_CSV);
+            loadKnownError(oa.errorList, oa.errorsFound);
         }
 
         private void Btn_OffAnalyze_Click(object sender, EventArgs e)
         {
+            if (extract_path.Equals(""))
+                return;
             offAnalyze(getFullPath());
         }
 
@@ -303,6 +300,8 @@ namespace Log_Analyzer
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
+            if (extract_path.Equals(""))
+                return;
             UpdateAnalyze(getFullPath());
         }
 
