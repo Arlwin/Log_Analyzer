@@ -352,6 +352,11 @@ namespace Log_Analyzer
             txtUpdate.Text = ua.getSummary();
         }
 
+        private void tabKnownError_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //highlight keyword after typing text on Filter textbox
         //has a bug, it does not include the last character, due to Event KEYDOWN executing AFTER last character is typed
 
