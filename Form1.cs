@@ -164,7 +164,22 @@ namespace Log_Analyzer
         //FOR TESTING ONLY
         private List<List<string>> ErrorsList;
 
+        /*
         private void loadKnownError(List<List<String>> errorsList, List<string[]> errorsFound)
+        {
+            int counter = 0;
+            ErrorsList = errorsList;
+
+            foreach (string[] error in errorsFound)
+            {
+                grid_KnownError.Rows.Add(error[0], error[1], error[2]);
+                counter++;
+            }
+
+            grid_KnownError.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_KnownError_CellClick);
+        }*/
+
+        private void loadKnownError(List<List<String>> errorsList, HashSet<string[]> errorsFound)
         {
             int counter = 0;
             ErrorsList = errorsList;

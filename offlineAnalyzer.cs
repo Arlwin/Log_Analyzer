@@ -9,7 +9,8 @@ namespace Log_Analyzer
 {
     class offlineAnalyzer
     {
-        public List<String[]> errorsFound = new List<String[]>(); //List of Error Code arrays [Error code, description, solution]
+        //public List<String[]> errorsFound = new List<String[]>(); //List of Error Code arrays [Error code, description, solution]
+        public HashSet<String[]> errorsFound = new HashSet<String[]>(); //Set of Error Code arrays [Error code, description, solution]
 
         public List<List<String>> errorList = new List<List<String>>(); //Error lines found for each error
 
@@ -36,6 +37,7 @@ namespace Log_Analyzer
         }
 
         //Main function
+        //NOTE: Optimize = Check per line instead of per file
         private void analyzeAsync(string filepath, string codepath, int numFiles)
         {
             //Load the file first
@@ -45,7 +47,27 @@ namespace Log_Analyzer
             List<string[]> errorCodes = loadCodes(codepath);
 
             int counter = 0;
+            string line;
 
+            //Iterate through the given debug log
+            //Check each line if error code is present
+            while ((line = f.ReadLine()) != null)
+            {
+                //If present, add the error code to the errors found
+                //Add the line to the errors list
+                foreach (string[] error in errorCodes)
+                {
+                    if (line.Contains(error[0]))
+                    {
+                        errorsFound.Add(error);
+                        errorList[counter].Add(line);
+                    }
+                    counter++;
+                }
+                counter = 0;
+            }
+            
+            /*
             //Check each error code if it exists on ofcdebug
             foreach (string[] errorCode in errorCodes)
             {
@@ -71,8 +93,10 @@ namespace Log_Analyzer
 
             //close the file
             f.Close();
+            */
         }
 
+        /*
         //checkErrorsFound
         private bool checkErrorsFound(string[] errorcodes)
         {
@@ -82,7 +106,7 @@ namespace Log_Analyzer
                     return true;
             }
             return false;
-        }
+        }*/
 
         //Load the codes
         private List<string[]> loadCodes(string codepath)
@@ -95,7 +119,9 @@ namespace Log_Analyzer
 
             while ((line = code.ReadLine()) != null)
             {
-                codeList.Add(line.Split(','));
+                string[] arr = line.Split(',');
+                codeList.Add(arr);
+                errorList.Add(new List<string>() { arr[0] });
                 counter++;
             }
 
@@ -103,7 +129,8 @@ namespace Log_Analyzer
 
             return codeList;
         }
-
+        
+        /*
         //Search the file for errors inside the codes
         private bool checkError(StreamReader r, string[] errorLine, int index)
         {
@@ -120,7 +147,7 @@ namespace Log_Analyzer
             }
 
             return check;
-        }
+        }*/
 
     }
 }
