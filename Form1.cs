@@ -222,6 +222,23 @@ namespace Log_Analyzer
             }
 
             txtResults.Text = errorOutput;
+            highlightText(txtResults, error);
+        }
+
+        private void highlightText(RichTextBox r, string text)
+        {
+            int s_start = r.SelectionStart, startIndex = 1, index;
+
+            while ((index = r.Text.ToLower().IndexOf(text.ToLower(), startIndex)) != -1)
+            {
+                r.Select(index, text.Length);
+                r.SelectionBackColor = Color.Yellow;
+
+                startIndex = index + text.Length;
+            }
+
+            r.SelectionStart = s_start;
+            r.SelectionLength = 0;
         }
 
         private void UnzipCDTAsync(String file)

@@ -120,8 +120,9 @@ namespace Log_Analyzer
             while ((line = code.ReadLine()) != null)
             {
                 string[] arr = line.Split(',');
+
                 codeList.Add(arr);
-                errorList.Add(new List<string>() { arr[0] });
+                errorList.Add(new List<string>() { arr[0] }); //Add the error code at the start of the list
                 counter++;
             }
 
