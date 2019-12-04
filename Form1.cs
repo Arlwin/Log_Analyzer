@@ -202,13 +202,14 @@ namespace Log_Analyzer
             try
             {
                 error = cell.Value.ToString();
-            }catch(Exception ex)
-            {
-                error = ex.ToString();
-            }
+                //List the errors under the error code
+                showErrors(error);
 
-            //List the errors under the error code
-            showErrors(error);
+            }
+            catch(Exception ex)
+            {
+                error = "";
+            }
         }
 
         private void showErrors(string error)
@@ -222,7 +223,7 @@ namespace Log_Analyzer
             }
 
             txtResults.Text = errorOutput;
-            highlightText(txtResults, error);
+            //highlightText(txtResults, error);
         }
 
         private void highlightText(RichTextBox r, string text)
@@ -315,9 +316,16 @@ namespace Log_Analyzer
 
         private void Btn_OffAnalyze_Click(object sender, EventArgs e)
         {
+            clearGrid(grid_KnownError);
             if (extract_path.Equals(""))
                 return;
             offAnalyze(getFullPath());
+        }
+
+        private void clearGrid(DataGridView d)
+        {
+            d.Rows.Clear();
+            d.Refresh();
         }
 
         private void ImportToolStripMenuItem_Click(object sender, EventArgs e)

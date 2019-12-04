@@ -37,7 +37,7 @@ namespace Log_Analyzer
         }
 
         //Main function
-        //NOTE: Optimize = Check per line instead of per file
+        //NOTE: Optimized = Check per line instead of per file
         private void analyzeAsync(string filepath, string codepath, int numFiles)
         {
             //Load the file first
