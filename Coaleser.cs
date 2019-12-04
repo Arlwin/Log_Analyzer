@@ -51,7 +51,7 @@ namespace Log_Analyzer
             }
             catch (Exception ex)
             {
-                textlines[0] = "Error Reading file";
+                textlines = new string[] { "" };
             }
 
             return textlines;
@@ -66,6 +66,11 @@ namespace Log_Analyzer
         //Search function
         private void Btn_Search_Click(object sender, EventArgs e)
         {
+
+            //If textbox / search is empty, do nothing
+            if (c_rtxtSearchResult.Text.Equals("") || txtSearch.Text.Trim().Equals(""))
+                return;
+
             string searchText = txtSearch.Text.Trim();
             //Get all the lines with the keyword
             List<string> lines = getLines(c_rtxtSearchResult, searchText);
@@ -81,8 +86,8 @@ namespace Log_Analyzer
 
         private List<string> getLines(RichTextBox r, string search)
         {
-            List<string> lines = new List<string>(); 
-
+            List<string> lines = new List<string>();
+            
             foreach (var line in r.Lines)
             {
                 if((line.ToLower()).Contains(search.ToLower()))
