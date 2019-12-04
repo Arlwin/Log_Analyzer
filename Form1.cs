@@ -226,6 +226,7 @@ namespace Log_Analyzer
             //highlightText(txtResults, error);
         }
 
+        //For highlighting the results
         private void highlightText(RichTextBox r, string text)
         {
             int s_start = r.SelectionStart, startIndex = 1, index;

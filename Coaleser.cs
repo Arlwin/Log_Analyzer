@@ -78,10 +78,11 @@ namespace Log_Analyzer
             //Output the lines to another textbox
             outputLines(lines, rtextSelectedFiles);
 
-            //Highlight the words on that textbox
-            highlightText(rtextSelectedFiles, searchText);
+            //Highlight the words on that textbox = slow
+            //highlightText(rtextSelectedFiles, searchText);
 
             //When double click, jump to text on original textbox
+            //howto
         }
 
         private List<string> getLines(RichTextBox r, string search)
