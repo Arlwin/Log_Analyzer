@@ -152,8 +152,8 @@ namespace Log_Analyzer
             if (openFile.ShowDialog() == DialogResult.OK)
             {
                 UnzipCDTAsync(openFile.FileName);
-                getSysInformation gsi = new getSysInformation(extract_path);
-                getAgentInformation gai = new getAgentInformation(extract_path, gsi.getSysArch());
+                getSysInformation gsi = new getSysInformation($"{extract_path}");
+                getAgentInformation gai = new getAgentInformation($"{extract_path}", gsi.getSysArch());
 
                 loadSysInformation(gsi);
                 loadAgentInformation(gai);

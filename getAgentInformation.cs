@@ -132,69 +132,7 @@ namespace Log_Analyzer
         }
 
 
-        //Overloading Search for multitple entries
-        String Search(String file, String text, int iteration)
-        {
-            String value = null;
-            String line;
-            int counter = 0;
-
-            //Load a file
-            StreamReader f = new StreamReader(file);
-
-            //Determine the file type
-            if (file.Contains(".txt"))
-            {
-                //Read each line
-                while ((line = f.ReadLine()) != null)
-                {
-                    //If the line contains text, get the line > break
-                    if (line.Contains(text))
-                    {
-                        //continue the loop if counter is not yet on iteration
-                        counter++;
-                        if (counter != iteration)
-                            continue;
-                        //Get the value after separator on the line
-                        line = line.Trim(); //Removes most whitespaces
-
-                        int separator = line.LastIndexOf("=") + 1;
-
-                        value = line.Substring(separator);
-                        break;
-                    }
-                }
-            }
-            else if (file.Contains(".reg"))
-            {
-                //Read each line
-                while ((line = f.ReadLine()) != null)
-                {
-                    //If the line contains text, get the line > break
-                    if (line.Contains(text))
-                    {
-                        counter++;
-                        if (counter != iteration)
-                            continue;
-
-                        //Get the value after : on the line
-                        line = line.Trim(); //Removes most whitespaces
-
-                        int equal = line.LastIndexOf("=") + 2;
-
-                        if (line.Contains("dword"))
-                            value = line.Substring(equal, line.Length - equal);
-                        else
-                            value = line.Substring(equal, line.Length - equal - 1);
-                        break;
-                    }
-                }
-            }
-
-            return value;
-        }
-
-
+        
         //Search for Agent Build
         String SearchBuild (String file, String version)
         {
@@ -250,9 +188,12 @@ namespace Log_Analyzer
         //Agent Build
         void setAgentBuild(String filedir)
         {
-                String builds = SearchBuild (filedir, AgentVer);
-                int charlength = builds.Length - builds.LastIndexOf(";") - 1;
-                AgentBuild = builds.Substring(builds.LastIndexOf(";") + 1);
+            /*String builds = Search (filedir, "BuildNum");
+            int charlength = builds.Length - builds.LastIndexOf(";") - 1;
+            AgentBuild = builds.Substring(builds.LastIndexOf(";") + 1);*/
+            AgentBuild = Search(filedir, "\"BuildNum\"");
+            AgentBuild = AgentBuild.Substring(AgentBuild.IndexOf(":") + 1);
+            AgentBuild = (Convert.ToInt32(AgentBuild, 16)).ToString();
         }
 
         public String getAgentBuild()

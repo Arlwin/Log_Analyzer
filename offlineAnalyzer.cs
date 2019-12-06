@@ -66,47 +66,7 @@ namespace Log_Analyzer
                 }
                 counter = 0;
             }
-            
-            /*
-            //Check each error code if it exists on ofcdebug
-            foreach (string[] errorCode in errorCodes)
-            {
-                if (numFiles == 0)
-                    errorList.Add(new List<String>() { errorCode[0] }); //Add the error code at the start of the list
-
-                if (checkError(f, errorCode, counter))
-                {
-                    if (!(errorsFound.Count < 1))
-                    {
-                        if(!checkErrorsFound(errorCode))
-                            errorsFound.Add(errorCode);
-                    }
-                    else
-                    {
-                        errorsFound.Add(errorCode);
-                    }
-                }
-
-                f.BaseStream.Seek(0, SeekOrigin.Begin);
-                counter++;
-            }
-
-            //close the file
-            f.Close();
-            */
         }
-
-        /*
-        //checkErrorsFound
-        private bool checkErrorsFound(string[] errorcodes)
-        {
-            foreach(string[] errors in errorsFound)
-            {
-                if (errors[0].Equals(errorcodes[0])) //If match
-                    return true;
-            }
-            return false;
-        }*/
 
         //Load the codes
         private List<string[]> loadCodes(string codepath)
