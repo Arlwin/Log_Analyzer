@@ -266,7 +266,7 @@ namespace Log_Analyzer
 
         public String getUpdateAgent()
         {
-            if (UpdateAgent.Equals(0))
+            if (UpdateAgent.Equals("0"))
                 return "No";
             else
                 return "Yes";
