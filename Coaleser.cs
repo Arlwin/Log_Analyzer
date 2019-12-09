@@ -18,6 +18,9 @@ namespace Log_Analyzer
         public Coaleser()
         {
             InitializeComponent();
+
+           
+
         }
         
         private void c_tree_FileView_AfterSelect(object sender, TreeViewEventArgs e)

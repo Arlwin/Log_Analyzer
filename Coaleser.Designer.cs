@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.pnlSelected = new System.Windows.Forms.Panel();
             this.rtextSelectedFiles = new System.Windows.Forms.RichTextBox();
             this.pnlFiles = new System.Windows.Forms.Panel();
             this.c_tree_FileView = new System.Windows.Forms.TreeView();
-            this.pnlTextFile = new System.Windows.Forms.Panel();
             this.c_rtxtSearchResult = new System.Windows.Forms.RichTextBox();
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.btn_Search = new System.Windows.Forms.Button();
@@ -45,50 +43,41 @@
             this.dateEnd = new System.Windows.Forms.DateTimePicker();
             this.dateStart = new System.Windows.Forms.DateTimePicker();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.pnlMain.SuspendLayout();
-            this.pnlSelected.SuspendLayout();
             this.pnlFiles.SuspendLayout();
-            this.pnlTextFile.SuspendLayout();
             this.pnlSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
+            this.splitContainer.Panel1.SuspendLayout();
+            this.splitContainer.Panel2.SuspendLayout();
+            this.splitContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
             // 
-            this.pnlMain.Controls.Add(this.pnlSelected);
+            this.pnlMain.Controls.Add(this.splitContainer);
             this.pnlMain.Controls.Add(this.pnlFiles);
-            this.pnlMain.Controls.Add(this.pnlTextFile);
             this.pnlMain.Controls.Add(this.pnlSearch);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1432, 632);
+            this.pnlMain.Size = new System.Drawing.Size(1351, 612);
             this.pnlMain.TabIndex = 0;
-            // 
-            // pnlSelected
-            // 
-            this.pnlSelected.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlSelected.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.pnlSelected.Controls.Add(this.rtextSelectedFiles);
-            this.pnlSelected.Location = new System.Drawing.Point(318, 391);
-            this.pnlSelected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pnlSelected.Name = "pnlSelected";
-            this.pnlSelected.Size = new System.Drawing.Size(1110, 238);
-            this.pnlSelected.TabIndex = 4;
             // 
             // rtextSelectedFiles
             // 
-            this.rtextSelectedFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtextSelectedFiles.Location = new System.Drawing.Point(12, 4);
-            this.rtextSelectedFiles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtextSelectedFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtextSelectedFiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtextSelectedFiles.Location = new System.Drawing.Point(4, 4);
+            this.rtextSelectedFiles.Margin = new System.Windows.Forms.Padding(4);
             this.rtextSelectedFiles.Name = "rtextSelectedFiles";
             this.rtextSelectedFiles.ReadOnly = true;
-            this.rtextSelectedFiles.Size = new System.Drawing.Size(1094, 224);
+            this.rtextSelectedFiles.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
+            this.rtextSelectedFiles.Size = new System.Drawing.Size(1004, 180);
             this.rtextSelectedFiles.TabIndex = 0;
             this.rtextSelectedFiles.Text = "";
+            this.rtextSelectedFiles.WordWrap = false;
             // 
             // pnlFiles
             // 
@@ -97,9 +86,9 @@
             this.pnlFiles.BackColor = System.Drawing.Color.Yellow;
             this.pnlFiles.Controls.Add(this.c_tree_FileView);
             this.pnlFiles.Location = new System.Drawing.Point(4, 143);
-            this.pnlFiles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlFiles.Margin = new System.Windows.Forms.Padding(4);
             this.pnlFiles.Name = "pnlFiles";
-            this.pnlFiles.Size = new System.Drawing.Size(312, 485);
+            this.pnlFiles.Size = new System.Drawing.Size(312, 465);
             this.pnlFiles.TabIndex = 2;
             // 
             // c_tree_FileView
@@ -108,37 +97,25 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.c_tree_FileView.Location = new System.Drawing.Point(9, 4);
-            this.c_tree_FileView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.c_tree_FileView.Margin = new System.Windows.Forms.Padding(4);
             this.c_tree_FileView.Name = "c_tree_FileView";
-            this.c_tree_FileView.Size = new System.Drawing.Size(297, 472);
+            this.c_tree_FileView.Size = new System.Drawing.Size(297, 452);
             this.c_tree_FileView.TabIndex = 0;
             this.c_tree_FileView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.c_tree_FileView_AfterSelect);
             // 
-            // pnlTextFile
-            // 
-            this.pnlTextFile.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlTextFile.BackColor = System.Drawing.Color.OrangeRed;
-            this.pnlTextFile.Controls.Add(this.c_rtxtSearchResult);
-            this.pnlTextFile.Location = new System.Drawing.Point(318, 143);
-            this.pnlTextFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pnlTextFile.Name = "pnlTextFile";
-            this.pnlTextFile.Size = new System.Drawing.Size(1110, 244);
-            this.pnlTextFile.TabIndex = 1;
-            // 
             // c_rtxtSearchResult
             // 
-            this.c_rtxtSearchResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.c_rtxtSearchResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.c_rtxtSearchResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.c_rtxtSearchResult.Location = new System.Drawing.Point(4, 4);
-            this.c_rtxtSearchResult.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.c_rtxtSearchResult.Margin = new System.Windows.Forms.Padding(4);
             this.c_rtxtSearchResult.Name = "c_rtxtSearchResult";
             this.c_rtxtSearchResult.ReadOnly = true;
-            this.c_rtxtSearchResult.Size = new System.Drawing.Size(1102, 236);
+            this.c_rtxtSearchResult.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
+            this.c_rtxtSearchResult.Size = new System.Drawing.Size(1004, 252);
             this.c_rtxtSearchResult.TabIndex = 0;
             this.c_rtxtSearchResult.Text = "";
+            this.c_rtxtSearchResult.WordWrap = false;
             // 
             // pnlSearch
             // 
@@ -155,15 +132,15 @@
             this.pnlSearch.Controls.Add(this.dateStart);
             this.pnlSearch.Controls.Add(this.txtSearch);
             this.pnlSearch.Location = new System.Drawing.Point(4, 4);
-            this.pnlSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlSearch.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(1424, 132);
+            this.pnlSearch.Size = new System.Drawing.Size(1343, 132);
             this.pnlSearch.TabIndex = 0;
             // 
             // btn_Search
             // 
             this.btn_Search.Location = new System.Drawing.Point(457, 28);
-            this.btn_Search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Search.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(100, 28);
             this.btn_Search.TabIndex = 8;
@@ -227,7 +204,7 @@
             "Performance",
             "DLP"});
             this.cboCategory.Location = new System.Drawing.Point(116, 71);
-            this.cboCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboCategory.Margin = new System.Windows.Forms.Padding(4);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(331, 32);
             this.cboCategory.TabIndex = 3;
@@ -238,7 +215,7 @@
             this.dateEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateEnd.Location = new System.Drawing.Point(741, 71);
-            this.dateEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateEnd.Margin = new System.Windows.Forms.Padding(4);
             this.dateEnd.Name = "dateEnd";
             this.dateEnd.Size = new System.Drawing.Size(196, 29);
             this.dateEnd.TabIndex = 2;
@@ -248,7 +225,7 @@
             this.dateStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateStart.Location = new System.Drawing.Point(741, 25);
-            this.dateStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateStart.Margin = new System.Windows.Forms.Padding(4);
             this.dateStart.Name = "dateStart";
             this.dateStart.Size = new System.Drawing.Size(196, 29);
             this.dateStart.TabIndex = 1;
@@ -257,26 +234,56 @@
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(116, 27);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(331, 29);
             this.txtSearch.TabIndex = 0;
+            // 
+            // splitContainer
+            // 
+            this.splitContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.splitContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitContainer.Location = new System.Drawing.Point(325, 144);
+            this.splitContainer.Name = "splitContainer";
+            this.splitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer.Panel1
+            // 
+            this.splitContainer.Panel1.AutoScroll = true;
+            this.splitContainer.Panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.splitContainer.Panel1.Controls.Add(this.c_rtxtSearchResult);
+            this.splitContainer.Panel1.Padding = new System.Windows.Forms.Padding(4);
+            // 
+            // splitContainer.Panel2
+            // 
+            this.splitContainer.Panel2.AutoScroll = true;
+            this.splitContainer.Panel2.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.splitContainer.Panel2.Controls.Add(this.rtextSelectedFiles);
+            this.splitContainer.Panel2.Padding = new System.Windows.Forms.Padding(4);
+            this.splitContainer.Size = new System.Drawing.Size(1014, 456);
+            this.splitContainer.SplitterDistance = 262;
+            this.splitContainer.TabIndex = 1;
             // 
             // Coaleser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1432, 632);
+            this.ClientSize = new System.Drawing.Size(1351, 612);
             this.Controls.Add(this.pnlMain);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Coaleser";
             this.Text = "Coaleser";
             this.pnlMain.ResumeLayout(false);
-            this.pnlSelected.ResumeLayout(false);
             this.pnlFiles.ResumeLayout(false);
-            this.pnlTextFile.ResumeLayout(false);
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
+            this.splitContainer.Panel1.ResumeLayout(false);
+            this.splitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
+            this.splitContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -284,9 +291,7 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlMain;
-        private System.Windows.Forms.Panel pnlSelected;
         private System.Windows.Forms.Panel pnlFiles;
-        private System.Windows.Forms.Panel pnlTextFile;
         private System.Windows.Forms.Panel pnlSearch;
         private System.Windows.Forms.RichTextBox rtextSelectedFiles;
         private System.Windows.Forms.RichTextBox c_rtxtSearchResult;
@@ -300,5 +305,6 @@
         private System.Windows.Forms.Label lblStartDate;
         public System.Windows.Forms.TreeView c_tree_FileView;
         private System.Windows.Forms.Button btn_Search;
+        private System.Windows.Forms.SplitContainer splitContainer;
     }
 }
