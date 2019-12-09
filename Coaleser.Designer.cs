@@ -72,7 +72,7 @@
             this.splitContainer.BackColor = System.Drawing.SystemColors.ControlDark;
             this.splitContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer.Location = new System.Drawing.Point(244, 117);
-            this.splitContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer.Name = "splitContainer";
             this.splitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -81,14 +81,14 @@
             this.splitContainer.Panel1.AutoScroll = true;
             this.splitContainer.Panel1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.splitContainer.Panel1.Controls.Add(this.c_rtxtSearchResult);
-            this.splitContainer.Panel1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.splitContainer.Panel1.Padding = new System.Windows.Forms.Padding(3);
             // 
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.AutoScroll = true;
             this.splitContainer.Panel2.BackColor = System.Drawing.Color.DarkSlateGray;
             this.splitContainer.Panel2.Controls.Add(this.rtextSelectedFiles);
-            this.splitContainer.Panel2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.splitContainer.Panel2.Padding = new System.Windows.Forms.Padding(3);
             this.splitContainer.Size = new System.Drawing.Size(760, 370);
             this.splitContainer.SplitterDistance = 212;
             this.splitContainer.SplitterWidth = 3;
@@ -96,6 +96,7 @@
             // 
             // c_rtxtSearchResult
             // 
+            this.c_rtxtSearchResult.BackColor = System.Drawing.Color.White;
             this.c_rtxtSearchResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.c_rtxtSearchResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.c_rtxtSearchResult.Location = new System.Drawing.Point(3, 3);
