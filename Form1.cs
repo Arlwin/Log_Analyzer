@@ -317,7 +317,7 @@ namespace Log_Analyzer
             if (imported_CSV.Equals(""))
                 imported_CSV = "codes.csv";
             
-            offlineAnalyzer oa = new offlineAnalyzer($"{path}\\Event1\\", imported_CSV);
+            offlineAnalyzer oa = new offlineAnalyzer($"{path}Event1\\", imported_CSV);
             loadKnownError(oa.errorList, oa.errorsFound);
         }
 

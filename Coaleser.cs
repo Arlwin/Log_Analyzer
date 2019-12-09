@@ -67,7 +67,7 @@ namespace Log_Analyzer
 
         public void Extract7zip(string sourceArchive, string destination)
         {
-            string zPath = @"D:\Ehe\LogAnal\Log_Analyzer\packages\7z1900-extra\x64\7za.exe"; //add to proj and set CopyToOuputDir
+            string zPath = @"lib\7zip\x64\7za.exe"; //add to proj and set CopyToOuputDir
             try
             {
                 ProcessStartInfo pro = new ProcessStartInfo();

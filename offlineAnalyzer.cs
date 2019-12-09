@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Diagnostics;
 
 namespace Log_Analyzer
 {
@@ -19,6 +20,25 @@ namespace Log_Analyzer
             init(filepath, codepath);
         }
 
+        //Extract 7z files
+        public void Extract7zip(string sourceArchive, string destination)
+        {
+            string zPath = @"D:\Ehe\LogAnal\Log_Analyzer\packages\7z1900-extra\x64\7za.exe"; //add to proj and set CopyToOuputDir
+            try
+            {
+                ProcessStartInfo pro = new ProcessStartInfo();
+                pro.WindowStyle = ProcessWindowStyle.Hidden;
+                pro.FileName = zPath;
+                pro.Arguments = string.Format("x \"{0}\" -y -o\"{1}\"", sourceArchive, destination);
+                Process x = Process.Start(pro);
+                x.WaitForExit();
+            }
+            catch (System.Exception Ex)
+            {
+                Console.WriteLine(Ex.Message.ToString());
+            }
+        }
+
         //Init
         private void init(String filepath, String codepath)
         {
@@ -32,27 +52,41 @@ namespace Log_Analyzer
 
             int counter = 0;
             foreach (var file in files)
-            {   
-                /*
-                if (file.Extension.Contains("7z"))
+            {
+                string filename = file.ToString();
+                //If 7z file, extract first
+                if (file.Extension.Contains(".7z"))
                 {
-                    using (Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(file))
+                    //Check first if there is already a folder extracted
+                    string extract_folder = $"{filepath}{filename.Substring(0, filename.IndexOf(".7z"))}";
+                    if (Directory.Exists(extract_folder))
                     {
-                        zip.Password = "trend";
-
-                        zip.ExtractProgress += new EventHandler<ExtractProgressEventArgs>(zip_ExtractProgress);
-
-                        zip.ExtractAll(dest, Ionic.Zip.ExtractExistingFileAction.OverwriteSilently);
+                        //If there is, get the log file inside of that folder                         
+                        analyzeAsync($"{extract_folder}\\{filename.Substring(0, filename.IndexOf(".7z"))}.log", codepath);
                     }
-                } */       
-                analyzeAsync($"{filepath}{file}", codepath, counter);
-                counter++;
+                    else
+                    {
+                        //If there is none, extract first
+                        //Create a new directory
+                        string new_folder = Directory.CreateDirectory(filepath + filename.Substring(0, filename.IndexOf(".7z"))).ToString();
+                        //Extract to that directory
+                        Extract7zip(filepath + filename, filepath + new_folder);
+
+                        //get the log inside the extracted folder
+                        analyzeAsync($"{filepath}{new_folder}\\{filename.Substring(0, filename.IndexOf(".7z"))}.log", codepath);
+                    }
+
+                }
+                else
+                {
+                    analyzeAsync($"{filepath}{file}", codepath);
+                }
             }
         }
 
         //Main function
         //NOTE: Optimized = Check per line instead of per file
-        private void analyzeAsync(string filepath, string codepath, int numFiles)
+        private void analyzeAsync(string filepath, string codepath)
         {
             //Load the file first
             StreamReader f = new StreamReader(filepath);

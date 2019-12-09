@@ -11,6 +11,21 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -84,6 +99,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="ClassDiagram1.cd" />
+    <None Include="lib\7zip\Far\7-ZipEng.hlf" />
+    <None Include="lib\7zip\Far\7-ZipEng.lng" />
+    <None Include="lib\7zip\Far\7-ZipRus.hlf" />
+    <None Include="lib\7zip\Far\7-ZipRus.lng" />
+    <None Include="lib\7zip\Far\7zToFar.ini" />
+    <None Include="lib\7zip\Far\far7z.reg" />
+    <None Include="lib\7zip\x64\7za.zip" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -100,6 +122,33 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\7zip\7za.dll" />
+    <Content Include="lib\7zip\7za.exe" />
+    <Content Include="lib\7zip\7zxa.dll" />
+    <Content Include="lib\7zip\Far\7-ZipFar.dll" />
+    <Content Include="lib\7zip\Far\7-ZipFar64.dll" />
+    <Content Include="lib\7zip\Far\far7z.txt" />
+    <Content Include="lib\7zip\history.txt" />
+    <Content Include="lib\7zip\License.txt" />
+    <Content Include="lib\7zip\readme.txt" />
+    <Content Include="lib\7zip\x64\7za.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\7zip\x64\7za.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\7zip\x64\7zxa.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
