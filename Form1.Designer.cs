@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.prog_perFile = new System.Windows.Forms.ProgressBar();
             this.pnl_Toolbar = new System.Windows.Forms.Panel();
+            this.prog_Open = new System.Windows.Forms.ProgressBar();
+            this.prog_perFile = new System.Windows.Forms.ProgressBar();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.cdtLog = new System.Windows.Forms.TabPage();
             this.TabSystem = new System.Windows.Forms.TabControl();
@@ -83,17 +84,18 @@
             this.lblAgentBuild = new System.Windows.Forms.Label();
             this.lblAgentAddr = new System.Windows.Forms.Label();
             this.tabKnownError = new System.Windows.Forms.TabPage();
-            this.txtResults = new System.Windows.Forms.RichTextBox();
-            this.btn_OffAnalyze = new System.Windows.Forms.Button();
+            this.pnlErrorGrid = new System.Windows.Forms.Panel();
             this.grid_KnownError = new System.Windows.Forms.DataGridView();
             this.colErrorCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSolution = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlSelectedError = new System.Windows.Forms.Panel();
+            this.txtResults = new System.Windows.Forms.RichTextBox();
+            this.btn_OffAnalyze = new System.Windows.Forms.Button();
             this.tabUpdate = new System.Windows.Forms.TabPage();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtUpdate = new System.Windows.Forms.RichTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.prog_Open = new System.Windows.Forms.ProgressBar();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -105,8 +107,6 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.coalescerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlErrorGrid = new System.Windows.Forms.Panel();
-            this.pnlSelectedError = new System.Windows.Forms.Panel();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -117,11 +117,11 @@
             this.tabSystemInfo.SuspendLayout();
             this.tabAgentInfo.SuspendLayout();
             this.tabKnownError.SuspendLayout();
+            this.pnlErrorGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_KnownError)).BeginInit();
+            this.pnlSelectedError.SuspendLayout();
             this.tabUpdate.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.pnlErrorGrid.SuspendLayout();
-            this.pnlSelectedError.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -131,33 +131,21 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.pnl_Toolbar);
-            this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1182, 835);
+            this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1314, 835);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.LeftToolStripPanelVisible = false;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
-            this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.RightToolStripPanelVisible = false;
-            this.toolStripContainer1.Size = new System.Drawing.Size(1182, 863);
+            this.toolStripContainer1.Size = new System.Drawing.Size(1314, 863);
             this.toolStripContainer1.TabIndex = 0;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
             // toolStripContainer1.TopToolStripPanel
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
-            // 
-            // prog_perFile
-            // 
-            this.prog_perFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.prog_perFile.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.prog_perFile.Location = new System.Drawing.Point(1074, 815);
-            this.prog_perFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.prog_perFile.Name = "prog_perFile";
-            this.prog_perFile.Size = new System.Drawing.Size(100, 12);
-            this.prog_perFile.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.prog_perFile.TabIndex = 41;
             // 
             // pnl_Toolbar
             // 
@@ -169,10 +157,34 @@
             this.pnl_Toolbar.Controls.Add(this.prog_perFile);
             this.pnl_Toolbar.Controls.Add(this.tabControl1);
             this.pnl_Toolbar.Location = new System.Drawing.Point(4, 4);
-            this.pnl_Toolbar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_Toolbar.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Toolbar.Name = "pnl_Toolbar";
-            this.pnl_Toolbar.Size = new System.Drawing.Size(1174, 827);
+            this.pnl_Toolbar.Size = new System.Drawing.Size(1306, 827);
             this.pnl_Toolbar.TabIndex = 1;
+            // 
+            // prog_Open
+            // 
+            this.prog_Open.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.prog_Open.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.prog_Open.Location = new System.Drawing.Point(-4, 815);
+            this.prog_Open.Margin = new System.Windows.Forms.Padding(4);
+            this.prog_Open.Name = "prog_Open";
+            this.prog_Open.Size = new System.Drawing.Size(1210, 12);
+            this.prog_Open.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.prog_Open.TabIndex = 40;
+            // 
+            // prog_perFile
+            // 
+            this.prog_perFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.prog_perFile.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.prog_perFile.Location = new System.Drawing.Point(1074, 815);
+            this.prog_perFile.Margin = new System.Windows.Forms.Padding(4);
+            this.prog_perFile.Name = "prog_perFile";
+            this.prog_perFile.Size = new System.Drawing.Size(232, 12);
+            this.prog_perFile.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.prog_perFile.TabIndex = 41;
             // 
             // tabControl1
             // 
@@ -182,20 +194,20 @@
             this.tabControl1.Controls.Add(this.cdtLog);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(4, 4);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1166, 813);
+            this.tabControl1.Size = new System.Drawing.Size(1298, 813);
             this.tabControl1.TabIndex = 0;
             // 
             // cdtLog
             // 
             this.cdtLog.Controls.Add(this.TabSystem);
             this.cdtLog.Location = new System.Drawing.Point(4, 25);
-            this.cdtLog.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cdtLog.Margin = new System.Windows.Forms.Padding(4);
             this.cdtLog.Name = "cdtLog";
-            this.cdtLog.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cdtLog.Size = new System.Drawing.Size(1158, 784);
+            this.cdtLog.Padding = new System.Windows.Forms.Padding(4);
+            this.cdtLog.Size = new System.Drawing.Size(1290, 784);
             this.cdtLog.TabIndex = 0;
             this.cdtLog.Text = "CDT";
             this.cdtLog.UseVisualStyleBackColor = true;
@@ -210,10 +222,10 @@
             this.TabSystem.Controls.Add(this.tabKnownError);
             this.TabSystem.Controls.Add(this.tabUpdate);
             this.TabSystem.Location = new System.Drawing.Point(4, 4);
-            this.TabSystem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabSystem.Margin = new System.Windows.Forms.Padding(4);
             this.TabSystem.Name = "TabSystem";
             this.TabSystem.SelectedIndex = 0;
-            this.TabSystem.Size = new System.Drawing.Size(1144, 766);
+            this.TabSystem.Size = new System.Drawing.Size(1276, 766);
             this.TabSystem.TabIndex = 0;
             // 
             // tabSystemInfo
@@ -240,10 +252,10 @@
             this.tabSystemInfo.Controls.Add(this.lblIPAddress);
             this.tabSystemInfo.Controls.Add(this.lblHostname);
             this.tabSystemInfo.Location = new System.Drawing.Point(4, 25);
-            this.tabSystemInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabSystemInfo.Margin = new System.Windows.Forms.Padding(4);
             this.tabSystemInfo.Name = "tabSystemInfo";
-            this.tabSystemInfo.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabSystemInfo.Size = new System.Drawing.Size(1691, 580);
+            this.tabSystemInfo.Padding = new System.Windows.Forms.Padding(4);
+            this.tabSystemInfo.Size = new System.Drawing.Size(1268, 737);
             this.tabSystemInfo.TabIndex = 0;
             this.tabSystemInfo.Text = "System Information";
             this.tabSystemInfo.UseVisualStyleBackColor = true;
@@ -487,10 +499,10 @@
             this.tabAgentInfo.Controls.Add(this.lblAgentBuild);
             this.tabAgentInfo.Controls.Add(this.lblAgentAddr);
             this.tabAgentInfo.Location = new System.Drawing.Point(4, 25);
-            this.tabAgentInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAgentInfo.Margin = new System.Windows.Forms.Padding(4);
             this.tabAgentInfo.Name = "tabAgentInfo";
-            this.tabAgentInfo.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabAgentInfo.Size = new System.Drawing.Size(1691, 573);
+            this.tabAgentInfo.Padding = new System.Windows.Forms.Padding(4);
+            this.tabAgentInfo.Size = new System.Drawing.Size(1136, 737);
             this.tabAgentInfo.TabIndex = 1;
             this.tabAgentInfo.Text = "Agent Information";
             this.tabAgentInfo.UseVisualStyleBackColor = true;
@@ -774,7 +786,7 @@
             this.tabKnownError.Controls.Add(this.pnlSelectedError);
             this.tabKnownError.Controls.Add(this.btn_OffAnalyze);
             this.tabKnownError.Location = new System.Drawing.Point(4, 25);
-            this.tabKnownError.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabKnownError.Margin = new System.Windows.Forms.Padding(4);
             this.tabKnownError.Name = "tabKnownError";
             this.tabKnownError.Size = new System.Drawing.Size(1136, 737);
             this.tabKnownError.TabIndex = 2;
@@ -782,28 +794,16 @@
             this.tabKnownError.UseVisualStyleBackColor = true;
             this.tabKnownError.Click += new System.EventHandler(this.tabKnownError_Click);
             // 
-            // txtResults
+            // pnlErrorGrid
             // 
-            this.txtResults.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlErrorGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtResults.Location = new System.Drawing.Point(4, 14);
-            this.txtResults.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtResults.Name = "txtResults";
-            this.txtResults.Size = new System.Drawing.Size(877, 265);
-            this.txtResults.TabIndex = 2;
-            this.txtResults.Text = "";
-            // 
-            // btn_OffAnalyze
-            // 
-            this.btn_OffAnalyze.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_OffAnalyze.Location = new System.Drawing.Point(933, 12);
-            this.btn_OffAnalyze.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_OffAnalyze.Name = "btn_OffAnalyze";
-            this.btn_OffAnalyze.Size = new System.Drawing.Size(141, 37);
-            this.btn_OffAnalyze.TabIndex = 1;
-            this.btn_OffAnalyze.Text = "Check";
-            this.btn_OffAnalyze.UseVisualStyleBackColor = true;
-            this.btn_OffAnalyze.Click += new System.EventHandler(this.Btn_OffAnalyze_Click);
+            this.pnlErrorGrid.Controls.Add(this.grid_KnownError);
+            this.pnlErrorGrid.Location = new System.Drawing.Point(3, 12);
+            this.pnlErrorGrid.Name = "pnlErrorGrid";
+            this.pnlErrorGrid.Size = new System.Drawing.Size(902, 423);
+            this.pnlErrorGrid.TabIndex = 3;
             // 
             // grid_KnownError
             // 
@@ -816,7 +816,7 @@
             this.colDescription,
             this.colSolution});
             this.grid_KnownError.Location = new System.Drawing.Point(4, 4);
-            this.grid_KnownError.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grid_KnownError.Margin = new System.Windows.Forms.Padding(4);
             this.grid_KnownError.Name = "grid_KnownError";
             this.grid_KnownError.RowHeadersWidth = 51;
             this.grid_KnownError.Size = new System.Drawing.Size(894, 403);
@@ -846,15 +846,48 @@
             this.colSolution.Name = "colSolution";
             this.colSolution.ReadOnly = true;
             // 
+            // pnlSelectedError
+            // 
+            this.pnlSelectedError.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlSelectedError.Controls.Add(this.txtResults);
+            this.pnlSelectedError.Location = new System.Drawing.Point(7, 441);
+            this.pnlSelectedError.Name = "pnlSelectedError";
+            this.pnlSelectedError.Size = new System.Drawing.Size(898, 293);
+            this.pnlSelectedError.TabIndex = 1;
+            // 
+            // txtResults
+            // 
+            this.txtResults.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtResults.Location = new System.Drawing.Point(4, 14);
+            this.txtResults.Margin = new System.Windows.Forms.Padding(4);
+            this.txtResults.Name = "txtResults";
+            this.txtResults.Size = new System.Drawing.Size(877, 265);
+            this.txtResults.TabIndex = 2;
+            this.txtResults.Text = "";
+            // 
+            // btn_OffAnalyze
+            // 
+            this.btn_OffAnalyze.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_OffAnalyze.Location = new System.Drawing.Point(933, 12);
+            this.btn_OffAnalyze.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_OffAnalyze.Name = "btn_OffAnalyze";
+            this.btn_OffAnalyze.Size = new System.Drawing.Size(141, 37);
+            this.btn_OffAnalyze.TabIndex = 1;
+            this.btn_OffAnalyze.Text = "Check";
+            this.btn_OffAnalyze.UseVisualStyleBackColor = true;
+            this.btn_OffAnalyze.Click += new System.EventHandler(this.Btn_OffAnalyze_Click);
+            // 
             // tabUpdate
             // 
             this.tabUpdate.Controls.Add(this.btnUpdate);
             this.tabUpdate.Controls.Add(this.txtUpdate);
             this.tabUpdate.Location = new System.Drawing.Point(4, 25);
-            this.tabUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.tabUpdate.Name = "tabUpdate";
-            this.tabUpdate.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabUpdate.Size = new System.Drawing.Size(1691, 573);
+            this.tabUpdate.Padding = new System.Windows.Forms.Padding(4);
+            this.tabUpdate.Size = new System.Drawing.Size(1136, 737);
             this.tabUpdate.TabIndex = 3;
             this.tabUpdate.Text = "Update Issues";
             this.tabUpdate.UseVisualStyleBackColor = true;
@@ -862,7 +895,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(1521, 20);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(159, 55);
             this.btnUpdate.TabIndex = 1;
@@ -873,7 +906,7 @@
             // txtUpdate
             // 
             this.txtUpdate.Location = new System.Drawing.Point(25, 20);
-            this.txtUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.txtUpdate.Name = "txtUpdate";
             this.txtUpdate.Size = new System.Drawing.Size(1485, 538);
             this.txtUpdate.TabIndex = 0;
@@ -882,25 +915,13 @@
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(1158, 784);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "N/A";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // prog_Open
-            // 
-            this.prog_Open.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.prog_Open.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.prog_Open.Location = new System.Drawing.Point(-4, 815);
-            this.prog_Open.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.prog_Open.Name = "prog_Open";
-            this.prog_Open.Size = new System.Drawing.Size(1078, 12);
-            this.prog_Open.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.prog_Open.TabIndex = 40;
             // 
             // menuStrip1
             // 
@@ -913,7 +934,7 @@
             this.toolsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1182, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1314, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -988,36 +1009,15 @@
             this.coalescerToolStripMenuItem.Text = "Coalescer";
             this.coalescerToolStripMenuItem.Click += new System.EventHandler(this.coalescerToolStripMenuItem_Click);
             // 
-            // pnlErrorGrid
-            // 
-            this.pnlErrorGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlErrorGrid.Controls.Add(this.grid_KnownError);
-            this.pnlErrorGrid.Location = new System.Drawing.Point(3, 12);
-            this.pnlErrorGrid.Name = "pnlErrorGrid";
-            this.pnlErrorGrid.Size = new System.Drawing.Size(902, 423);
-            this.pnlErrorGrid.TabIndex = 3;
-            // 
-            // pnlSelectedError
-            // 
-            this.pnlSelectedError.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlSelectedError.Controls.Add(this.txtResults);
-            this.pnlSelectedError.Location = new System.Drawing.Point(7, 441);
-            this.pnlSelectedError.Name = "pnlSelectedError";
-            this.pnlSelectedError.Size = new System.Drawing.Size(898, 293);
-            this.pnlSelectedError.TabIndex = 1;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 863);
+            this.ClientSize = new System.Drawing.Size(1314, 863);
             this.Controls.Add(this.toolStripContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log Analyzer V1 Beta";
@@ -1036,12 +1036,12 @@
             this.tabAgentInfo.ResumeLayout(false);
             this.tabAgentInfo.PerformLayout();
             this.tabKnownError.ResumeLayout(false);
+            this.pnlErrorGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grid_KnownError)).EndInit();
+            this.pnlSelectedError.ResumeLayout(false);
             this.tabUpdate.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.pnlErrorGrid.ResumeLayout(false);
-            this.pnlSelectedError.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
