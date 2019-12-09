@@ -69,8 +69,9 @@ namespace Log_Analyzer
                     zip.Password = "trend";
 
                     zip.ExtractProgress += new EventHandler<ExtractProgressEventArgs>(zip_ExtractProgress);
-
+                    
                     zip.ExtractAll(dest, Ionic.Zip.ExtractExistingFileAction.OverwriteSilently);
+                    
                 }
 
             } catch (Exception ex){
@@ -93,6 +94,7 @@ namespace Log_Analyzer
                 prog_Open.Value = Convert.ToInt32(100 * e.EntriesExtracted / e.EntriesTotal);
 
             }
+
         }
 
         private void loadDir(string path, Coaleser Form2)

@@ -19,28 +19,25 @@ namespace Log_Analyzer
         public Coaleser()
         {
             InitializeComponent();
-
-           
-
+            
         }
         
         private void c_tree_FileView_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            /*
-            if (checkIfZip(e))
-                c_tree_FileView.Refresh();
-              */
-              
-            string[] lines = readText(e);
+            string[] lines = checkIfZip(e);
+            
+            if (lines == null)
+                lines = readText(e);
+
             c_rtxtSearchResult.Clear();
             writeToTextBox(lines, c_rtxtSearchResult);
         }
 
-        /*private bool checkIfZip(TreeViewEventArgs e)
+        private string[] checkIfZip(TreeViewEventArgs e)
         {
             if (!(e.Node.FullPath.Contains(".7z")))
             {
-                return false;
+                return null;
             }
 
             TreeNode iterator;
@@ -60,7 +57,7 @@ namespace Log_Analyzer
             string new_folder = System.IO.Directory.CreateDirectory(path + file.Substring(0, file.IndexOf(".7z"))).ToString();
             Extract7zip(path + file, path + new_folder);
 
-            return true;
+            return File.ReadAllLines($"{path}{new_folder}\\{new_folder}.log");
         }
 
         public void Extract7zip(string sourceArchive, string destination)
@@ -79,8 +76,7 @@ namespace Log_Analyzer
             {
                 c_rtxtSearchResult.Text = Ex.Message.ToString();
             }
-        }*/
-
+        }
 
         private string[] readText(TreeViewEventArgs e)
         {
