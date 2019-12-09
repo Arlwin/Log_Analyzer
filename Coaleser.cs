@@ -174,5 +174,10 @@ namespace Log_Analyzer
             r.SelectionStart = s_start;
             r.SelectionLength = 0;
         }
+
+        private void RtextSelectedFiles_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
