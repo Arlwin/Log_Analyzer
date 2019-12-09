@@ -177,7 +177,24 @@ namespace Log_Analyzer
 
         private void RtextSelectedFiles_DoubleClick(object sender, EventArgs e)
         {
+            //c_rtxtSearchResult.DeselectAll();
 
+            int line_number = rtextSelectedFiles.GetLineFromCharIndex(rtextSelectedFiles.SelectionStart);
+            int search_index = c_rtxtSearchResult.Find(rtextSelectedFiles.Lines[line_number]);
+
+            int view = search_index - 30;
+            if (view < 0)
+            {
+                c_rtxtSearchResult.Select(search_index, rtextSelectedFiles.Lines[line_number].Length);
+                //c_rtxtSearchResult.SelectionBackColor = Color.Yellow;
+            }
+            else
+            {
+                c_rtxtSearchResult.Select(search_index - 30, rtextSelectedFiles.Lines[line_number].Length);
+                //c_rtxtSearchResult.SelectionBackColor = Color.Yellow;
+            }
+
+            c_rtxtSearchResult.ScrollToCaret();
         }
     }
 }
