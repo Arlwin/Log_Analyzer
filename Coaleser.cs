@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO.Compression;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 namespace Log_Analyzer
 {
@@ -22,11 +23,62 @@ namespace Log_Analyzer
         
         private void c_tree_FileView_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            /*
+            if (checkIfZip(e))
+                c_tree_FileView.Refresh();
+              */
+              
             string[] lines = readText(e);
             c_rtxtSearchResult.Clear();
             writeToTextBox(lines, c_rtxtSearchResult);
         }
-        
+
+        /*private bool checkIfZip(TreeViewEventArgs e)
+        {
+            if (!(e.Node.FullPath.Contains(".7z")))
+            {
+                return false;
+            }
+
+            TreeNode iterator;
+
+            String path = "TEMP\\";
+            String file = "";
+
+            iterator = e.Node;
+            file = iterator.Text;
+
+            while (iterator.Parent != null)
+            {
+                iterator = iterator.Parent;
+                path = path.Insert(path.IndexOf("\\") + 1, iterator.Text + "\\");
+            }
+
+            string new_folder = System.IO.Directory.CreateDirectory(path + file.Substring(0, file.IndexOf(".7z"))).ToString();
+            Extract7zip(path + file, path + new_folder);
+
+            return true;
+        }
+
+        public void Extract7zip(string sourceArchive, string destination)
+        {
+            string zPath = @"D:\Ehe\LogAnal\Log_Analyzer\packages\7z1900-extra\x64\7za.exe"; //add to proj and set CopyToOuputDir
+            try
+            {
+                ProcessStartInfo pro = new ProcessStartInfo();
+                pro.WindowStyle = ProcessWindowStyle.Hidden;
+                pro.FileName = zPath;
+                pro.Arguments = string.Format("x \"{0}\" -y -o\"{1}\"", sourceArchive, destination);
+                Process x = Process.Start(pro);
+                x.WaitForExit();
+            }
+            catch (System.Exception Ex)
+            {
+                c_rtxtSearchResult.Text = Ex.Message.ToString();
+            }
+        }*/
+
+
         private string[] readText(TreeViewEventArgs e)
         {
             TreeNode iterator;

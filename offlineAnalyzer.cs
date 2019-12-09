@@ -25,12 +25,26 @@ namespace Log_Analyzer
             //Check first the Event 1 folder
             DirectoryInfo dir = new DirectoryInfo(filepath);
 
+            //Check if debug logs are zipped
+
             //Get all the debuglogs
-            FileInfo[] files = dir.GetFiles("ofcdebug*.*");
+            FileInfo[] files = dir.GetFiles("ofcdebug.log*");
 
             int counter = 0;
             foreach (var file in files)
-            {
+            {   
+                /*
+                if (file.Extension.Contains("7z"))
+                {
+                    using (Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(file))
+                    {
+                        zip.Password = "trend";
+
+                        zip.ExtractProgress += new EventHandler<ExtractProgressEventArgs>(zip_ExtractProgress);
+
+                        zip.ExtractAll(dest, Ionic.Zip.ExtractExistingFileAction.OverwriteSilently);
+                    }
+                } */       
                 analyzeAsync($"{filepath}{file}", codepath, counter);
                 counter++;
             }

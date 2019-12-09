@@ -60,6 +60,10 @@ namespace Log_Analyzer
                     dest = "TEMP\\" + filename;
                 }
 
+                var dir = new DirectoryInfo(dest);
+                if (dir.Exists)
+                    dir.Delete(true);
+                
                 using (Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(path))
                 {
                     zip.Password = "trend";
