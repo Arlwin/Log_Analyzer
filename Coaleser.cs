@@ -54,6 +54,11 @@ namespace Log_Analyzer
                 path = path.Insert(path.IndexOf("\\") + 1, iterator.Text + "\\");
             }
 
+            if(Directory.Exists(path + file.Substring(0, file.IndexOf(".7z"))))
+            {
+                return File.ReadAllLines($"{path}\\{file.Substring(0, file.IndexOf(".7z"))}\\{file.Substring(0, file.IndexOf(".7z"))}.log");
+            }
+
             string new_folder = System.IO.Directory.CreateDirectory(path + file.Substring(0, file.IndexOf(".7z"))).ToString();
             Extract7zip(path + file, path + new_folder);
 
