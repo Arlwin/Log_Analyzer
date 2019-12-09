@@ -23,7 +23,7 @@ namespace Log_Analyzer
         //Extract 7z files
         public void Extract7zip(string sourceArchive, string destination)
         {
-            string zPath = @"D:\Ehe\LogAnal\Log_Analyzer\packages\7z1900-extra\x64\7za.exe"; //add to proj and set CopyToOuputDir
+            string zPath = @"lib\7zip\x64\7za.exe"; //add to proj and set CopyToOuputDir
             try
             {
                 ProcessStartInfo pro = new ProcessStartInfo();
@@ -45,7 +45,8 @@ namespace Log_Analyzer
             //Check first the Event 1 folder
             DirectoryInfo dir = new DirectoryInfo(filepath);
 
-            //Check if debug logs are zipped
+            //Init the codes
+            List<string[]> errorCodes = loadCodes(codepath);
 
             //Get all the debuglogs
             FileInfo[] files = dir.GetFiles("ofcdebug.log*");
@@ -62,7 +63,7 @@ namespace Log_Analyzer
                     if (Directory.Exists(extract_folder))
                     {
                         //If there is, get the log file inside of that folder                         
-                        analyzeAsync($"{extract_folder}\\{filename.Substring(0, filename.IndexOf(".7z"))}.log", codepath);
+                        analyzeAsync($"{extract_folder}\\{filename.Substring(0, filename.IndexOf(".7z"))}.log", errorCodes);
                     }
                     else
                     {
@@ -73,26 +74,23 @@ namespace Log_Analyzer
                         Extract7zip(filepath + filename, filepath + new_folder);
 
                         //get the log inside the extracted folder
-                        analyzeAsync($"{filepath}{new_folder}\\{filename.Substring(0, filename.IndexOf(".7z"))}.log", codepath);
+                        analyzeAsync($"{filepath}{new_folder}\\{filename.Substring(0, filename.IndexOf(".7z"))}.log", errorCodes);
                     }
 
                 }
                 else
                 {
-                    analyzeAsync($"{filepath}{file}", codepath);
+                    analyzeAsync($"{filepath}{file}", errorCodes);
                 }
             }
         }
 
         //Main function
         //NOTE: Optimized = Check per line instead of per file
-        private void analyzeAsync(string filepath, string codepath)
+        private void analyzeAsync(string filepath, List<string[]> errorCodes)
         {
             //Load the file first
             StreamReader f = new StreamReader(filepath);
-
-            //Load the errors
-            List<string[]> errorCodes = loadCodes(codepath);
 
             int counter = 0;
             string line;
@@ -130,7 +128,8 @@ namespace Log_Analyzer
                 string[] arr = line.Split(',');
 
                 codeList.Add(arr);
-                errorList.Add(new List<string>() { arr[0] }); //Add the error code at the start of the list
+
+                errorList.Add(new List<string>() { arr[0] }); //Add the error code at the start of the list, should only be called once
                 counter++;
             }
 
