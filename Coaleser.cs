@@ -181,32 +181,30 @@ namespace Log_Analyzer
             c_rtxtSearchResult.SelectAll();
             c_rtxtSearchResult.SelectionBackColor = Color.White;
             c_rtxtSearchResult.DeselectAll();
+            
 
             int line_number = rtextSelectedFiles.GetLineFromCharIndex(rtextSelectedFiles.SelectionStart);
 
             string line = rtextSelectedFiles.Lines[line_number].Trim();
             int word_index = c_rtxtSearchResult.Find(line);
 
-            int search_index = c_rtxtSearchResult.Find(rtextSelectedFiles.Lines[line_number]);
+            //int search_index = c_rtxtSearchResult.Find(rtextSelectedFiles.Lines[line_number]);
 
             Console.WriteLine(rtextSelectedFiles.Lines[line_number].Trim());
 
-            /* This method has subtraction to try and focus the line below the top 
-            int view = search_index - 30;
+            // This method has subtraction to try and focus the line below the top 
+            int view = word_index - 30;
             if (view < 0)
             {
-                c_rtxtSearchResult.Select(search_index, rtextSelectedFiles.Lines[line_number].Length);
-                //c_rtxtSearchResult.SelectionBackColor = Color.Yellow;
+                c_rtxtSearchResult.Select(word_index, rtextSelectedFiles.Lines[line_number].Length);
             }
             else
             {
-                c_rtxtSearchResult.Select(search_index - 30, rtextSelectedFiles.Lines[line_number].Length);
-                //c_rtxtSearchResult.SelectionBackColor = Color.Yellow;
+                c_rtxtSearchResult.Select(word_index - 30, rtextSelectedFiles.Lines[line_number].Length);
             }
-            */
 
             //Search and jump
-            c_rtxtSearchResult.Select(search_index, rtextSelectedFiles.Lines[line_number].Length);
+            //c_rtxtSearchResult.Select(search_index, rtextSelectedFiles.Lines[line_number].Length);
             c_rtxtSearchResult.ScrollToCaret();
 
             //Highlight the text
