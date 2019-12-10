@@ -71,6 +71,7 @@ namespace Log_Analyzer
             new_rtxtSearchResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             new_rtxtSearchResult.Location = new System.Drawing.Point(16, 27);
             new_rtxtSearchResult.Margin = new System.Windows.Forms.Padding(4);
+            new_rtxtSearchResult.Dock = DockStyle.Fill;
             new_rtxtSearchResult.Name = $"{name}_textbox";
             new_rtxtSearchResult.ReadOnly = true;
             new_rtxtSearchResult.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
