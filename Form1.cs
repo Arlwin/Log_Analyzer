@@ -159,15 +159,22 @@ namespace Log_Analyzer
         {
             OpenFileDialog openFile = new OpenFileDialog();
 
-            if (openFile.ShowDialog() == DialogResult.OK)
+            try
             {
-                UnzipCDTAsync(openFile.FileName);
-                getSysInformation gsi = new getSysInformation($"{extract_path}");
-                getAgentInformation gai = new getAgentInformation($"{extract_path}", gsi.getSysArch());
+                if (openFile.ShowDialog() == DialogResult.OK)
+                {
+                    UnzipCDTAsync(openFile.FileName);
+                    getSysInformation gsi = new getSysInformation($"{extract_path}");
+                    getAgentInformation gai = new getAgentInformation($"{extract_path}", gsi.getSysArch());
 
-                loadSysInformation(gsi);
-                loadAgentInformation(gai);
-                                
+                    loadSysInformation(gsi);
+                    loadAgentInformation(gai);
+
+                }
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show("Error! Invalid Filetype. Make sure to import ZIP format.");
             }
         }
         
