@@ -166,11 +166,16 @@ namespace Log_Analyzer
                     string file_name = openFile.FileName;
                     UnzipCDTAsync(file_name);
 
-                    //Change the tab name
+                    //Get the tab name
                     int index = file_name.IndexOf(".");
-                    cdtLog.Text = file_name.Substring(file_name.LastIndexOf("\\") + 1, index - file_name.LastIndexOf("\\") - 1);
+                    string tab_name = file_name.Substring(file_name.LastIndexOf("\\") + 1, index - file_name.LastIndexOf("\\") - 1);
 
-                    CDTTab new_tab = new CDTTab("Testest", tabControl1);
+                    //Check if CDT is already loaded
+                    if(CDTTab.doesExist(tab_name, tabControl1))
+                        return;
+
+                    //If not, load another page
+                    CDTTab new_tab = new CDTTab(tab_name, tabControl1);
 
                     getSysInformation gsi = new getSysInformation($"{extract_path}");
                     getAgentInformation gai = new getAgentInformation($"{extract_path}", gsi.getSysArch());
