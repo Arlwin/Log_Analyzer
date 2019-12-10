@@ -30,11 +30,25 @@ namespace Log_Analyzer
             if (lines == null)
                 lines = readText(e);
 
+            newTabPage(e.Node.Text);
+
             c_rtxtSearchResult.Clear();
             writeToTextBox(lines, c_rtxtSearchResult);
         }
 
+        private void newTabPage(string name)
+        {
+            //Add new key and name
+            tabControlFile.TabPages.Add(name, name);
+            Console.WriteLine(tabControlFile.TabPages[name]);
 
+            //Focus on new tab key
+            tabControlFile.SelectedTab = tabControlFile.TabPages[name];
+
+            //Add a textbox to new tab
+            TextBox new_rtxtSearchResult = new TextBox();
+            tabControlFile.TabPages[name].Controls.Add(new_rtxtSearchResult);
+        }
 
         private string[] checkIfZip(TreeViewEventArgs e)
         {

@@ -170,6 +170,8 @@ namespace Log_Analyzer
                     int index = file_name.IndexOf(".");
                     cdtLog.Text = file_name.Substring(file_name.LastIndexOf("\\") + 1, index - file_name.LastIndexOf("\\") - 1);
 
+                    CDTTab new_tab = new CDTTab("Testest", tabControl1);
+
                     getSysInformation gsi = new getSysInformation($"{extract_path}");
                     getAgentInformation gai = new getAgentInformation($"{extract_path}", gsi.getSysArch());
 

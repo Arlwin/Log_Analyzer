@@ -75,6 +75,7 @@ namespace Log_Analyzer
                 }
             }
 
+            f.Close();
             return value;
         }
 
@@ -128,6 +129,7 @@ namespace Log_Analyzer
                 }
             }
 
+            f.Close();
             return value;
         }
 
