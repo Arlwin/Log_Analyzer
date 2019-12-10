@@ -30,14 +30,29 @@ namespace Log_Analyzer
             if (lines == null)
                 lines = readText(e);
 
-            newTabPage(e.Node.Text);
+            if (e.Node.Nodes.Count > 1)
+            {
+            }
+            else
+            {
+                var text_box = newTabPage(e.Node.Text);
 
-            c_rtxtSearchResult.Clear();
-            writeToTextBox(lines, c_rtxtSearchResult);
+                //c_rtxtSearchResult.Clear();
+                // writeToTextBox(lines, c_rtxtSearchResult);
+                text_box.Clear();
+                writeToTextBox(lines, text_box);
+            }
         }
 
-        private void newTabPage(string name)
+        private RichTextBox newTabPage(string name)
         {
+            //If selected existing key, focus on that key
+            if (tabControlFile.TabPages.ContainsKey(name))
+            {
+                tabControlFile.SelectedTab = tabControlFile.TabPages[name];
+                return (RichTextBox) tabControlFile.TabPages[name].Controls[0];
+            }
+
             //Add new key and name
             tabControlFile.TabPages.Add(name, name);
             Console.WriteLine(tabControlFile.TabPages[name]);
@@ -45,9 +60,28 @@ namespace Log_Analyzer
             //Focus on new tab key
             tabControlFile.SelectedTab = tabControlFile.TabPages[name];
 
-            //Add a textbox to new tab
-            TextBox new_rtxtSearchResult = new TextBox();
+            //Create a textbox
+            RichTextBox new_rtxtSearchResult = new RichTextBox();
+
+            //Design
+            new_rtxtSearchResult.BackColor = System.Drawing.Color.White;
+            new_rtxtSearchResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            new_rtxtSearchResult.Location = new System.Drawing.Point(16, 27);
+            new_rtxtSearchResult.Margin = new System.Windows.Forms.Padding(4);
+            new_rtxtSearchResult.Name = $"{name}_textbox";
+            new_rtxtSearchResult.ReadOnly = true;
+            new_rtxtSearchResult.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
+            new_rtxtSearchResult.Size = new System.Drawing.Size(552, 150);
+            new_rtxtSearchResult.TabIndex = 0;
+            new_rtxtSearchResult.Text = "";
+            new_rtxtSearchResult.WordWrap = false;
+
+            //Add the textbox to the tab
             tabControlFile.TabPages[name].Controls.Add(new_rtxtSearchResult);
+
+
+            //Return the textbox created
+            return new_rtxtSearchResult;
         }
 
         private string[] checkIfZip(TreeViewEventArgs e)
