@@ -163,7 +163,13 @@ namespace Log_Analyzer
             {
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
-                    UnzipCDTAsync(openFile.FileName);
+                    string file_name = openFile.FileName;
+                    UnzipCDTAsync(file_name);
+
+                    //Change the tab name
+                    int index = file_name.IndexOf(".");
+                    cdtLog.Text = file_name.Substring(file_name.LastIndexOf("\\") + 1, index - file_name.LastIndexOf("\\") - 1);
+
                     getSysInformation gsi = new getSysInformation($"{extract_path}");
                     getAgentInformation gai = new getAgentInformation($"{extract_path}", gsi.getSysArch());
 
