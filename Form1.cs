@@ -17,6 +17,19 @@ namespace Log_Analyzer
 {
     public partial class Form1 : Form
     {
+        //Location of the file, accessible to anywhere 
+        private string full_path = "";
+
+        //Extraction path
+        private string extract_path = "";
+
+        //Imported CSVs
+        private string imported_CSV_offline = "";
+        private string imported_CSV_update = "";
+
+        //For the Known Errors grid
+        private List<List<string>> ErrorsList;
+
         public Form1()
         {
             InitializeComponent();
@@ -142,15 +155,6 @@ namespace Log_Analyzer
             }
         }
 
-        //Location of the file, accessible to anywhere 
-        private string full_path = "";
-
-        //Extraction path
-        private string extract_path = "";
-
-        //Imported CSV
-        private string imported_CSV = "";
-                
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e) // START of loading CDT
         {
             OpenFileDialog openFile = new OpenFileDialog();
@@ -167,24 +171,6 @@ namespace Log_Analyzer
             }
         }
         
-        //FOR TESTING ONLY
-        private List<List<string>> ErrorsList;
-
-        /*
-        private void loadKnownError(List<List<String>> errorsList, List<string[]> errorsFound)
-        {
-            int counter = 0;
-            ErrorsList = errorsList;
-
-            foreach (string[] error in errorsFound)
-            {
-                grid_KnownError.Rows.Add(error[0], error[1], error[2]);
-                counter++;
-            }
-
-            grid_KnownError.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_KnownError_CellClick);
-        }*/
-
         private void loadKnownError(List<List<String>> errorsList, HashSet<string[]> errorsFound)
         {
             int counter = 0;
@@ -210,7 +196,6 @@ namespace Log_Analyzer
                 error = cell.Value.ToString();
                 //List the errors under the error code
                 showErrors(error);
-
             }
             catch(Exception ex)
             {
@@ -314,10 +299,11 @@ namespace Log_Analyzer
         private void offAnalyze(string path)
         {
             txtResults.Text = ""; //Clear
-            if (imported_CSV.Equals(""))
-                imported_CSV = "codes.csv";
+
+            if (imported_CSV_offline.Equals(""))
+                imported_CSV_offline = "codes.csv";
             
-            offlineAnalyzer oa = new offlineAnalyzer($"{path}Event1\\", imported_CSV);
+            offlineAnalyzer oa = new offlineAnalyzer($"{path}Event1\\", imported_CSV_offline);
             loadKnownError(oa.errorList, oa.errorsFound);
         }
 
@@ -335,17 +321,7 @@ namespace Log_Analyzer
             d.Refresh();
         }
 
-        private void ImportToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFile = new OpenFileDialog();
-
-            if (openFile.ShowDialog() == DialogResult.OK)
-            {
-                imported_CSV = openFile.FileName;
-            }
-        }
-
-        private void BtnUpdate_Click(object sender, EventArgs e)
+         private void BtnUpdate_Click(object sender, EventArgs e)
         {
             if (extract_path.Equals(""))
                 return;
@@ -354,7 +330,17 @@ namespace Log_Analyzer
 
         private void UpdateAnalyze(string path)
         {
-            UpdateAnalyzer ua = new UpdateAnalyzer($"{path}\\Event5\\", "update.csv");
+            //Check first if update event exists in CDT
+            if (!Directory.Exists($"{ path}\\Event5\\"))
+            {
+                txtUpdate.Text = "No TmuDump Uploaded";
+                return;
+            }
+
+            if (imported_CSV_update.Equals(""))
+                imported_CSV_update = "update.csv";
+
+            UpdateAnalyzer ua = new UpdateAnalyzer($"{path}\\Event5\\", imported_CSV_update);
             txtUpdate.Text = ua.getSummary();
         }
 
@@ -365,6 +351,25 @@ namespace Log_Analyzer
 
         //highlight keyword after typing text on Filter textbox
         //has a bug, it does not include the last character, due to Event KEYDOWN executing AFTER last character is typed
+
+        private void ImportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                string codes_zip = openFile.FileName;
+
+                using (Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(codes_zip))
+                {
+                    zip.ExtractAll("TEMP\\Codes", Ionic.Zip.ExtractExistingFileAction.OverwriteSilently);
+                }
+
+                imported_CSV_offline = @"TEMP\Codes\offline.csv";
+                imported_CSV_update = @"TEMP\Codes\update.csv";
+            }
+            
+        }
 
     }
 }

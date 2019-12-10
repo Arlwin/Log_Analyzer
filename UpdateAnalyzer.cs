@@ -23,6 +23,13 @@ namespace Log_Analyzer
 
         private void init(String filepath, String codepath)
         {
+            //check if TmuDump exists
+            if (!File.Exists($"{filepath}\\TmuDump.txt"))
+            {
+                summary = "No TmuDump found";
+                return;
+            }
+
             //get the tmudump
             StreamReader tmudump = new StreamReader($"{filepath}\\TmuDump.txt");
 

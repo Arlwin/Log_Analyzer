@@ -25,6 +25,7 @@ namespace Log_Analyzer
         private void c_tree_FileView_AfterSelect(object sender, TreeViewEventArgs e)
         {
             string[] lines = checkIfZip(e);
+            rtextSelectedFiles.Text = "";
             
             if (lines == null)
                 lines = readText(e);
@@ -211,6 +212,10 @@ namespace Log_Analyzer
 
         private void RtextSelectedFiles_DoubleClick(object sender, EventArgs e)
         {
+            //If no entry, do nothing
+            if (rtextSelectedFiles.Text.Equals(""))
+                return;
+
             //For highlighting
             c_rtxtSearchResult.SelectAll();
             c_rtxtSearchResult.SelectionBackColor = Color.White;
@@ -219,8 +224,8 @@ namespace Log_Analyzer
             int line_number = rtextSelectedFiles.GetLineFromCharIndex(rtextSelectedFiles.SelectionStart); //Get the line index of the selected word
             string line = rtextSelectedFiles.Lines[line_number].Trim(); //removed white spaces
 
-            //Using the Find method
-            /* Slow
+            /** Using the Find method (Slow) */
+            /*
             int word_index = c_rtxtSearchResult.Find(line); //find the part where the line matches
 
             // This method has subtraction to try and focus the line below the top 
@@ -235,7 +240,7 @@ namespace Log_Analyzer
             }
             */
 
-            //Searching lines instead of strings
+            /** Searching lines instead of strings */
             /* Little slow
             int counter = 0;
             foreach (var textbox_line in c_rtxtSearchResult.Lines)
@@ -251,18 +256,29 @@ namespace Log_Analyzer
             */
 
             //Try to use caching to get the line number immediately
-            /*Faster but not instant */
+            //Faster but not instant 
             string string_line_number = line.Substring(0, line.IndexOf(" ")); //Get the number from the line before the ||
             int real_line_number = Int32.Parse(string_line_number); //Conver string to int
             int index_of_line = c_rtxtSearchResult.GetFirstCharIndexFromLine(real_line_number); //Get the index from the line number
-            c_rtxtSearchResult.Select(index_of_line, line.Length - 10); //Select the index with length of the line
-            
+
+            if (index_of_line - 50 < 0)
+                c_rtxtSearchResult.Select(index_of_line, line.Length - 10); //Select the index with length of the line
+            else
+                c_rtxtSearchResult.Select(index_of_line - 50, line.Length - 10); //Select the index with length of the line
+
+            /* Test
+            Random rand_num = new Random();
+            int random_index = rand_num.Next(0, c_rtxtSearchResult.Text.Length - 1);
+            c_rtxtSearchResult.Select(random_index, line.Length - 10); //Select the index with length of the line
+            */
+
             Console.WriteLine(line);
 
             //Jump to selected
             c_rtxtSearchResult.ScrollToCaret();
 
             //Highlight the text
+            c_rtxtSearchResult.Select(index_of_line, line.Length - 10);
             c_rtxtSearchResult.SelectionBackColor = Color.Yellow;
 
         }

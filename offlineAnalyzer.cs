@@ -50,7 +50,7 @@ namespace Log_Analyzer
 
             //Get all the debuglogs
             FileInfo[] files = dir.GetFiles("ofcdebug.log*");
-
+            
             int counter = 0;
             foreach (var file in files)
             {
