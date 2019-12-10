@@ -134,7 +134,7 @@ namespace Log_Analyzer
             }
             catch (System.Exception Ex)
             {
-                c_rtxtSearchResult.Text = Ex.Message.ToString();
+                //c_rtxtSearchResult.Text = Ex.Message.ToString();
             }
         }
 
@@ -176,7 +176,7 @@ namespace Log_Analyzer
         //Search function
         private void Btn_Search_Click(object sender, EventArgs e)
         {
-            c_rtxtSearchResult = (RichTextBox)tabControlFile.SelectedTab.Controls[0];
+           var c_rtxtSearchResult = (RichTextBox)tabControlFile.SelectedTab.Controls[0];
             //If textbox / search is empty, do nothing
             /*if (c_rtxtSearchResult.Text.Equals("") || txtSearch.Text.Trim().Equals(""))
                 return;
