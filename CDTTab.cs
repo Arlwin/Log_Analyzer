@@ -26,8 +26,12 @@ namespace Log_Analyzer
             tab_name = name;
             tc.TabPages.Add(tab_name, tab_name);
 
+            //Create all the previous elements
+            initElements();
+            initDesign();
+
             //Add all the previous elements to the new tab page
-            loadContent(tc);
+            loadContent(tc, tab_name);
 
             //Set focus to the new tab page
             tc.SelectedTab = tc.TabPages[tab_name];
@@ -40,7 +44,15 @@ namespace Log_Analyzer
             return false;
         }
 
-        private void loadContent(TabControl tc)
+        private void loadContent(TabControl tc, string tab_name)
+        {
+        }
+
+        private void initDesign()
+        {
+        }
+
+        private void initElements()
         {
 
         }
