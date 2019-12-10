@@ -16,6 +16,9 @@ namespace Log_Analyzer
 {
     public partial class Coaleser : Form
     {
+
+        private TabPage previousTabPage = new TabPage();
+
         public Coaleser()
         {
             InitializeComponent();
@@ -164,7 +167,6 @@ namespace Log_Analyzer
             return textlines;
         }
 
-
         private void writeToTextBox(string[] lines, RichTextBox r)
         {
             r.Text = string.Join("\n", lines);
@@ -173,14 +175,18 @@ namespace Log_Analyzer
         //Search function
         private void Btn_Search_Click(object sender, EventArgs e)
         {
-
+            c_rtxtSearchResult = (RichTextBox)tabControlFile.SelectedTab.Controls[0];
             //If textbox / search is empty, do nothing
+            /*if (c_rtxtSearchResult.Text.Equals("") || txtSearch.Text.Trim().Equals(""))
+                return;
+                */
+
             if (c_rtxtSearchResult.Text.Equals("") || txtSearch.Text.Trim().Equals(""))
                 return;
 
             string searchText = txtSearch.Text.Trim();
             //Get all the lines with the keyword
-            List<string> lines = getLines(c_rtxtSearchResult, searchText);
+            List<string> lines = getLines((RichTextBox) tabControlFile.SelectedTab.Controls[0], searchText);
 
             //Output the lines to another textbox
             outputLines(lines, rtextSelectedFiles);
@@ -188,8 +194,7 @@ namespace Log_Analyzer
             //Highlight the words on that textbox = slow
             //highlightText(rtextSelectedFiles, searchText);
 
-            //When double click, jump to text on original textbox
-            //howto
+            previousTabPage = tabControlFile.SelectedTab;
         }
 
         private List<string> getLines(RichTextBox r, string search)
@@ -244,24 +249,15 @@ namespace Log_Analyzer
             r.Text = string.Join("\n", lines);
         }
 
-        private void highlightText(RichTextBox r, string text)
-        {
-            int s_start = r.SelectionStart, startIndex = 0, index;
-
-            while ((index = r.Text.ToLower().IndexOf(text.ToLower(), startIndex)) != -1)
-            {
-                r.Select(index, text.Length);
-                r.SelectionBackColor = Color.Yellow;
-
-                startIndex = index + text.Length;
-            }
-
-            r.SelectionStart = s_start;
-            r.SelectionLength = 0;
-        }
-
         private void RtextSelectedFiles_DoubleClick(object sender, EventArgs e)
         {
+            if (!tabControlFile.SelectedTab.Text.Equals(previousTabPage.Text))
+            {
+                tabControlFile.SelectedTab = previousTabPage;
+            }
+
+            var c_rtxtSearchResult = (RichTextBox)tabControlFile.SelectedTab.Controls[0];
+
             //If no entry, do nothing
             if (rtextSelectedFiles.Text.Equals(""))
                 return;
@@ -335,17 +331,6 @@ namespace Log_Analyzer
 
         private void pnlMain_Paint(object sender, PaintEventArgs e)
         {
-
-        }
-
-        private void OpenCDTFile(String fileName, string fileLines)
-        {
-
-
-            tabControlFile.TabPages.Add(fileName);
-            TextBox new_rtxtSearchResult = new TextBox();
-            new_rtxtSearchResult.Dock = DockStyle.Fill;
-            new_rtxtSearchResult.Multiline = true;
 
         }
 
