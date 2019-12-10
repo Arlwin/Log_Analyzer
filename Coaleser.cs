@@ -26,13 +26,15 @@ namespace Log_Analyzer
         {
             string[] lines = checkIfZip(e);
             rtextSelectedFiles.Text = "";
-            
+
             if (lines == null)
                 lines = readText(e);
 
             c_rtxtSearchResult.Clear();
             writeToTextBox(lines, c_rtxtSearchResult);
         }
+
+
 
         private string[] checkIfZip(TreeViewEventArgs e)
         {
@@ -57,13 +59,13 @@ namespace Log_Analyzer
 
             if(Directory.Exists(path + file.Substring(0, file.IndexOf(".7z"))))
             {
-                return File.ReadAllLines($"{path}\\{file.Substring(0, file.IndexOf(".7z"))}\\{file.Substring(0, file.IndexOf(".7z"))}.log");
+                return System.IO.File.ReadAllLines($"{path}\\{file.Substring(0, file.IndexOf(".7z"))}\\{file.Substring(0, file.IndexOf(".7z"))}.log");
             }
 
             string new_folder = System.IO.Directory.CreateDirectory(path + file.Substring(0, file.IndexOf(".7z"))).ToString();
             Extract7zip(path + file, path + new_folder);
-
-            return File.ReadAllLines($"{path}{new_folder}\\{new_folder}.log");
+ 
+            return System.IO.File.ReadAllLines($"{path}{new_folder}\\{new_folder}.log");
         }
 
         public void Extract7zip(string sourceArchive, string destination)
@@ -103,7 +105,7 @@ namespace Log_Analyzer
 
             try
             {
-                textlines = File.ReadAllLines(path + file);
+                textlines = System.IO.File.ReadAllLines(path + file);
 
             }
             catch (Exception ex)
@@ -282,5 +284,22 @@ namespace Log_Analyzer
             c_rtxtSearchResult.SelectionBackColor = Color.Yellow;
 
         }
+
+        private void pnlMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void OpenCDTFile(String fileName, string fileLines)
+        {
+
+
+            tabControlFile.TabPages.Add(fileName);
+            TextBox new_rtxtSearchResult = new TextBox();
+            new_rtxtSearchResult.Dock = DockStyle.Fill;
+            new_rtxtSearchResult.Multiline = true;
+
+        }
+
     }
 }
