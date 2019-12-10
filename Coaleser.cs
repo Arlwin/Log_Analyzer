@@ -144,11 +144,45 @@ namespace Log_Analyzer
         private List<string> getLines(RichTextBox r, string search)
         {
             List<string> lines = new List<string>();
-            
+
+            int counter = 0; //For the caching
             foreach (var line in r.Lines)
             {
-                if((line.ToLower()).Contains(search.ToLower()))
-                    lines.Add(line);
+                if ((line.ToLower()).Contains(search.ToLower()))
+                {
+                    switch (counter.ToString().Length)
+                    {
+                        case 1:
+                            lines.Add($"00000{counter.ToString()} ||  {line}");
+                            break;
+
+                        case 2:
+                            lines.Add($"0000{counter.ToString()} ||  {line}");
+                            break;
+
+                        case 3:
+                            lines.Add($"000{counter.ToString()} ||  {line}");
+                            break;
+
+                        case 4:
+                            lines.Add($"00{counter.ToString()} ||  {line}");
+                            break;
+
+                        case 5:
+                            lines.Add($"0{counter.ToString()} ||  {line}");
+                            break;
+
+                        case 6:
+                            lines.Add($"{counter.ToString()} ||  {line}");
+                            break;
+
+                        default:
+                            lines.Add($"{counter.ToString()}||  {line}");
+                            break;
+                    }
+                }
+
+                counter++;
             }
 
             return lines;
@@ -182,15 +216,12 @@ namespace Log_Analyzer
             c_rtxtSearchResult.SelectionBackColor = Color.White;
             c_rtxtSearchResult.DeselectAll();
             
+            int line_number = rtextSelectedFiles.GetLineFromCharIndex(rtextSelectedFiles.SelectionStart); //Get the line index of the selected word
+            string line = rtextSelectedFiles.Lines[line_number].Trim(); //removed white spaces
 
-            int line_number = rtextSelectedFiles.GetLineFromCharIndex(rtextSelectedFiles.SelectionStart);
-
-            string line = rtextSelectedFiles.Lines[line_number].Trim();
-            int word_index = c_rtxtSearchResult.Find(line);
-
-            //int search_index = c_rtxtSearchResult.Find(rtextSelectedFiles.Lines[line_number]);
-
-            Console.WriteLine(rtextSelectedFiles.Lines[line_number].Trim());
+            //Using the Find method
+            /* Slow
+            int word_index = c_rtxtSearchResult.Find(line); //find the part where the line matches
 
             // This method has subtraction to try and focus the line below the top 
             int view = word_index - 30;
@@ -202,13 +233,36 @@ namespace Log_Analyzer
             {
                 c_rtxtSearchResult.Select(word_index - 30, rtextSelectedFiles.Lines[line_number].Length);
             }
+            */
 
-            //Search and jump
-            //c_rtxtSearchResult.Select(search_index, rtextSelectedFiles.Lines[line_number].Length);
+            //Searching lines instead of strings
+            /* Little slow
+            int counter = 0;
+            foreach (var textbox_line in c_rtxtSearchResult.Lines)
+            {
+                if (textbox_line.Contains(line))
+                {
+                    //If a line on the textbox matches the selected line on the searchtextbox, select that line
+                    int index_of_line = c_rtxtSearchResult.GetFirstCharIndexFromLine(counter); //Get the index from the line first
+                    c_rtxtSearchResult.Select(index_of_line, line.Length);//Select the index with lenght of the line
+                }
+                counter++;
+            }
+            */
+
+            //Try to use caching to get the line number immediately
+            /*Faster but not instant */
+            string string_line_number = line.Substring(0, line.IndexOf(" ")); //Get the number from the line before the ||
+            int real_line_number = Int32.Parse(string_line_number); //Conver string to int
+            int index_of_line = c_rtxtSearchResult.GetFirstCharIndexFromLine(real_line_number); //Get the index from the line number
+            c_rtxtSearchResult.Select(index_of_line, line.Length - 10); //Select the index with length of the line
+            
+            Console.WriteLine(line);
+
+            //Jump to selected
             c_rtxtSearchResult.ScrollToCaret();
 
             //Highlight the text
-            c_rtxtSearchResult.Select(word_index, line.Length);
             c_rtxtSearchResult.SelectionBackColor = Color.Yellow;
 
         }
