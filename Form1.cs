@@ -367,9 +367,21 @@ namespace Log_Analyzer
             {
                 string codes_zip = openFile.FileName;
 
-                using (Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(codes_zip))
+                try
                 {
-                    zip.ExtractAll("TEMP\\Codes", Ionic.Zip.ExtractExistingFileAction.OverwriteSilently);
+                    using (Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(codes_zip))
+                    {
+                        zip.Password = "beveko";
+
+                        zip.ExtractAll("TEMP\\Codes", Ionic.Zip.ExtractExistingFileAction.OverwriteSilently);
+                    }
+                } catch (Exception ex)
+                {
+                    if(ex.Message.ToLower().Contains("bad password"))
+                    {
+                        //Message box
+                        Console.WriteLine("Wrong password");
+                    }
                 }
 
                 imported_CSV_offline = @"TEMP\Codes\offline.csv";
