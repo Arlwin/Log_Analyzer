@@ -263,35 +263,40 @@ namespace Log_Analyzer
         }
 
         private void loadAgentInformation(getAgentInformation gai, TabPage tp)
-        {   
-            lblAgentVersion_value.Text = gai.getAgentVer();
-            lblAgentBuild_value.Text = gai.getAgentBuild();
-            lblAgentAddr_value.Text = gai.getServer();
-            lblServerHttpPort_value.Text = gai.getServerHTTP();
-            lblServerHttpsPort_value.Text = gai.getServerHTTPS();
-            lblAgentPort_value.Text = gai.getAgentPort();
-            lblUpdateAgentAddr_value.Text = gai.getUpdateAgentAddress();
-            lblUpdateAgentPort_value.Text = gai.getUpdateAgentPort();
-            lblUpdateAgent_value.Text = gai.getUpdateAgent();
-            lblAgentLocation_value.Text = gai.getAgentLocation();
-            lblEngineVersion_value.Text = gai.getEngineVersion();
-            lblConvenPtnVer_value.Text = gai.getConPtnVersion();
-            lblSmartScanPatternVer_value.Text = gai.getSmartPtnVersion();
+        {
+            TabControl tc = (TabControl)tp.Controls["TabSystem"];
+            TabPage page = (TabPage)tc.TabPages["tab_AgentInfo"];
+
+            page.Controls["lblAgentVersion_value"].Text = gai.getAgentVer();
+            page.Controls["lblAgentBuild_value"].Text = gai.getAgentBuild();
+            page.Controls["lblAgentAddr_value"].Text = gai.getServer();
+            page.Controls["lblServerHttpPort_value"].Text = gai.getServerHTTP();
+            page.Controls["lblServerHttpsPort_value"].Text = gai.getServerHTTPS();
+            page.Controls["lblAgentPort_value"].Text = gai.getAgentPort();
+            page.Controls["lblUpdateAgentAddr_value"].Text = gai.getUpdateAgentAddress();
+            page.Controls["lblUpdateAgentPort_value"].Text = gai.getUpdateAgentPort();
+            page.Controls["lblUpdateAgent_value"].Text = gai.getUpdateAgent();
+            page.Controls["lblAgentLocation_value"].Text = gai.getAgentLocation();
+            page.Controls["lblEngineVersion_value"].Text = gai.getEngineVersion();
+            page.Controls["lblConvenPtnVer_value"].Text = gai.getConPtnVersion();
+            page.Controls["lblSmartScanPatternVer_value"].Text = gai.getSmartPtnVersion();
         }
 
         private void loadSysInformation(getSysInformation gsi, TabPage tp)
         {
-            lblHostname_value.Text = gsi.getHostname(); //Host name
-            lblIPAddress_value.Text = gsi.getIpAdd(); //Ip Address
-            lblGateway_value.Text = gsi.getGateway(); //Gateway
-            lblDns_value.Text = gsi.getDNS(); //DNS
+            TabControl tc = (TabControl) tp.Controls["TabSystem"];
+            TabPage page = (TabPage) tc.TabPages["tab_SystemInfo"];
 
-            lblOperatingSystem_value.Text = gsi.getOS(); //OS
-            lblOSver_value.Text = gsi.getOSver(); //OS Version
-            lblSystemArchitecture_value.Text = gsi.getSysArch(); //System Architecture
-            lblCPU_value.Text = gsi.getCPU(); //CPU
-            lblRam_value.Text = gsi.getRAM(); //RAM
-            lblFreeDiskSpace_value.Text = gsi.getDiskSpace(); //Free Disk Space
+            page.Controls["lblHostname_value"].Text = gsi.getHostname(); //Host name
+            page.Controls["lblIPAddress_value"].Text = gsi.getIpAdd(); //Ip Address
+            page.Controls["lblGateway_value"].Text = gsi.getGateway(); //Gateway
+            page.Controls["lblDns_value"].Text = gsi.getDNS(); //DNS
+            page.Controls["lblOperatingSystem_value"].Text = gsi.getOS(); //OS
+            page.Controls["lblOSver_value"].Text = gsi.getOSver(); //OS Version
+            page.Controls["lblSystemArchitecture_value"].Text = gsi.getSysArch(); //System Architecture
+            page.Controls["lblCPU_value"].Text = gsi.getCPU(); //CPU
+            page.Controls["lblRam_value"].Text = gsi.getRAM(); //RAM
+            page.Controls["lblFreeDiskSpace_value"].Text = gsi.getDiskSpace(); //Free Disk Space
 
             //NOTE: Currently, disk space can only print free disk space of FIRST disk drive
         }
