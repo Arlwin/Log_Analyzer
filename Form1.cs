@@ -57,9 +57,6 @@ namespace Log_Analyzer
         {
         }
 
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-        }
 
         public static void zip_ExtractProgress(object sender, ExtractProgressEventArgs e)
         {
@@ -75,7 +72,6 @@ namespace Log_Analyzer
             }
 
         }
-
 
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e) // START of loading CDT
         {
@@ -95,17 +91,10 @@ namespace Log_Analyzer
                     if (NewTab.doesExist(tab_name, tabControl1))
                         return;
 
-                    //UnzipCDTAsync(file_name);
-
                     //If not, load another page
                     NewTab new_tab = new NewTab(tab_name, tabControl1, file_name);
                     tabs.Add(new_tab);
 
-                    //getSysInformation gsi = new getSysInformation($"{extract_path}");
-                    //getAgentInformation gai = new getAgentInformation($"{extract_path}", gsi.getSysArch());
-
-                    //loadSysInformation(gsi, tabControl1.TabPages[tab_name]);
-                    //loadAgentInformation(gai, tabControl1.TabPages[tab_name]);
                 }
             }
             catch (Exception x)
@@ -114,51 +103,6 @@ namespace Log_Analyzer
             }
         }
         
-        private void loadKnownError(List<List<String>> errorsList, HashSet<string[]> errorsFound)
-        {
-            int counter = 0;
-            ErrorsList = errorsList;
-
-            foreach (string[] error in errorsFound)
-            {
-                grid_KnownError.Rows.Add(error[0], error[1], error[2]);
-                counter++;
-            }
-
-            grid_KnownError.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_KnownError_CellClick);
-        }
-
-        private void Grid_KnownError_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            string error;
-
-            //Get the row of the current cell selected
-            DataGridViewCell cell = grid_KnownError.CurrentRow.Cells[0];
-            try
-            {
-                error = cell.Value.ToString();
-                //List the errors under the error code
-                showErrors(error);
-            }
-            catch(Exception ex)
-            {
-                error = "";
-            }
-        }
-
-        private void showErrors(string error)
-        {
-            string errorOutput = "";
-
-            foreach (List<string> errors in ErrorsList)
-            {
-                if (errors[0].Equals(error))
-                    errorOutput = String.Join("\n", errors);
-            }
-
-            txtResults.Text = errorOutput;
-            //highlightText(txtResults, error);
-        }
 
         //For highlighting the results
         private void highlightText(RichTextBox r, string text)
@@ -244,57 +188,6 @@ namespace Log_Analyzer
             return $"{ extract_path }\\{ gai.agentfolder}\\CollectedFile\\";
         }
 
-        //Click button first before analysis
-        private void offAnalyze(string path)
-        {
-            txtResults.Text = ""; //Clear
-
-            if (imported_CSV_offline.Equals(""))
-                imported_CSV_offline = "codes.csv";
-            
-            offlineAnalyzer oa = new offlineAnalyzer($"{path}Event1\\", imported_CSV_offline);
-            loadKnownError(oa.errorList, oa.errorsFound);
-        }
-
-        private void Btn_OffAnalyze_Click(object sender, EventArgs e)
-        {
-            clearGrid(grid_KnownError);
-            if (extract_path.Equals(""))
-                return;
-            offAnalyze(getFullPath());
-        }
-
-        private void clearGrid(DataGridView d)
-        {
-            d.Rows.Clear();
-            d.Refresh();
-        }
-
-         private void BtnUpdate_Click(object sender, EventArgs e)
-        {
-            if (extract_path.Equals(""))
-                return;
-            UpdateAnalyze(getFullPath());
-        }
-
-        private void UpdateAnalyze(string path)
-        {
-            //Check first if update event exists in CDT
-            if (!Directory.Exists($"{ path}\\Event5\\"))
-            {
-                txtUpdate.Text = "No TmuDump Uploaded";
-                return;
-            }
-
-            if (imported_CSV_update.Equals(""))
-                imported_CSV_update = "update.csv";
-
-            UpdateAnalyzer ua = new UpdateAnalyzer($"{path}\\Event5\\", imported_CSV_update);
-            txtUpdate.Text = ua.getSummary();
-        }
-
-        //highlight keyword after typing text on Filter textbox
-        //has a bug, it does not include the last character, due to Event KEYDOWN executing AFTER last character is typed
 
         private void ImportToolStripMenuItem_Click(object sender, EventArgs e)
         {

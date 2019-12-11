@@ -24,9 +24,10 @@ namespace Log_Analyzer
         //For the Known Errors grid
         private List<List<string>> ErrorsList;
 
-        //DECLARATIONS of elements
+        //DECLARATIONS of elements modified
         DataGridView grid_KnownError;
         RichTextBox txtResults;
+        RichTextBox txtUpdate;
 
 
         public CDT_Tab_Template(TabPage tp)
@@ -53,6 +54,7 @@ namespace Log_Analyzer
             tc.SelectedIndex = 0;
             tc.Size = new System.Drawing.Size(1276, 766);
             tc.TabIndex = 0;
+            tc.Dock = DockStyle.Fill;
 
             //Add the system information page
             tc.TabPages.Add(createSysInfoPage());
@@ -138,8 +140,16 @@ namespace Log_Analyzer
         }
         private TabPage createUpdateIssuePage()
         {
-            TabPage tp = new TabPage("Update Issues");
-            tp.Name = "UpdateIssues";
+            TabPage tp = new TabPage();
+
+            //Design the page
+            tp.Location = new System.Drawing.Point(4, 22);
+            tp.Name = "tab_Update";
+            tp.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            tp.Size = new System.Drawing.Size(949, 602);
+            tp.TabIndex = 3;
+            tp.Text = "Update Issues";
+            tp.UseVisualStyleBackColor = true;
 
             //Create the elements inside the page
             List<Control> controls = UpdateIssueCreateElements();
@@ -925,6 +935,33 @@ namespace Log_Analyzer
         {
             List<Control> controls = new List<Control>();
 
+
+            // btnUpdate
+            Button btnUpdate = new Button();
+            // Design
+            btnUpdate.Location = new System.Drawing.Point(1141, 16);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new System.Drawing.Size(119, 45);
+            btnUpdate.TabIndex = 1;
+            btnUpdate.Text = "Check ";
+            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += new System.EventHandler(BtnUpdate_Click);
+
+            
+            // txtUpdate
+            txtUpdate = new RichTextBox();
+            // 
+            txtUpdate.Location = new System.Drawing.Point(19, 16);
+            txtUpdate.Name = "txtUpdate";
+            txtUpdate.Size = new System.Drawing.Size(1115, 438);
+            txtUpdate.TabIndex = 0;
+            txtUpdate.Text = "";
+
+
+            //Add both to controls
+            controls.Add(btnUpdate);
+            controls.Add(txtUpdate);
+
             return controls;
         }
 
@@ -939,7 +976,7 @@ namespace Log_Analyzer
 
 
         //METHODS
-        //FOR OFFLINE ANALYZE
+        //FOR OFFLINE ANALYZER
         private void Btn_OffAnalyze_Click(object sender, EventArgs e)
         {
             clearGrid(this.grid_KnownError);
@@ -1022,20 +1059,17 @@ namespace Log_Analyzer
 
 
         //FOR UPDATE ISSUES
-
-            /*
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
             if (extract_path.Equals(""))
                 return;
             UpdateAnalyze(getFullPath());
         }
-        */
-        /*
+
         private void UpdateAnalyze(string path)
         {
             //Check first if update event exists in CDT
-            if (!Directory.Exists($"{ path}\\Event5\\"))
+            if (!Directory.Exists($"{path}\\Event5\\"))
             {
                 txtUpdate.Text = "No TmuDump Uploaded";
                 return;
@@ -1046,7 +1080,7 @@ namespace Log_Analyzer
 
             UpdateAnalyzer ua = new UpdateAnalyzer($"{path}\\Event5\\", imported_CSV_update);
             txtUpdate.Text = ua.getSummary();
-        }*/
+        }
 
 
     }

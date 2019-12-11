@@ -828,7 +828,6 @@
             this.btn_OffAnalyze.TabIndex = 1;
             this.btn_OffAnalyze.Text = "Check";
             this.btn_OffAnalyze.UseVisualStyleBackColor = true;
-            this.btn_OffAnalyze.Click += new System.EventHandler(this.Btn_OffAnalyze_Click);
             // 
             // tabUpdate
             // 
@@ -850,7 +849,6 @@
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Check ";
             this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // txtUpdate
             // 
