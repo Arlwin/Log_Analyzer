@@ -27,6 +27,10 @@ namespace Log_Analyzer
         {
             InitializeComponent();
             this.FormClosed += new FormClosedEventHandler(f_FormClosed);
+            tabControl1.Padding = new Point(12, 4);
+            tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
+            tabControl1.DrawItem += tabControl1_DrawItem;
+            tabControl1.MouseDown += tabControl1_MouseDown;
         }
 
         //Delete the TEMP folders when done
@@ -189,6 +193,40 @@ namespace Log_Analyzer
 
                 CDT_Tab_Template.imported_CSV_offline = @"TEMP\Codes\offline.csv";
                 CDT_Tab_Template.imported_CSV_update = @"TEMP\Codes\update.csv";
+            }
+
+        }
+
+
+
+        //Closing tabs
+        private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            var tabPage = tabControl1.TabPages[e.Index];
+            var tabRect = tabControl1.GetTabRect(e.Index);
+            tabRect.Inflate(-2, -2);
+            var closeImage = Properties.Resources.Close;
+            e.Graphics.DrawImage(closeImage, (tabRect.Right - closeImage.Width), tabRect.Top + (tabRect.Height - closeImage.Height) / 2);
+            TextRenderer.DrawText(e.Graphics, tabPage.Text, tabPage.Font, tabRect, tabPage.ForeColor, TextFormatFlags.Left);
+        }
+
+        private void tabControl1_MouseDown(object sender, MouseEventArgs e)
+        {
+            for (var i = 0; i <= tabControl1.TabPages.Count; i++)
+            {
+                var tabRect = tabControl1.GetTabRect(i);
+                tabRect.Inflate(-2, -2);
+                var closeImage = Properties.Resources.Close;
+                var imageRect = new Rectangle(
+                    (tabRect.Right - closeImage.Width),
+                    tabRect.Top + (tabRect.Height - closeImage.Height) / 2,
+                    closeImage.Width,
+                    closeImage.Height);
+                if (imageRect.Contains(e.Location))
+                {
+                    tabControl1.TabPages.RemoveAt(i);
+                    break;
+                }
             }
 
         }

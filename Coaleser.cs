@@ -320,7 +320,7 @@ namespace Log_Analyzer
 
         private void tabControlFile_MouseDown(object sender, MouseEventArgs e)
         {
-            for(var i = 0; i <= tabControlFile.TabPages.Count; i++)
+            for(var i = 0; i <= tabControlFile.TabPages.Count - 1; i++)
                 {
                     var tabRect = tabControlFile.GetTabRect(i);
                     tabRect.Inflate(-2, -2);
