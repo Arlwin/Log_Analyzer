@@ -51,9 +51,11 @@ namespace Log_Analyzer
             //Get all the debuglogs
             FileInfo[] files = dir.GetFiles("ofcdebug.log*");
 
-            Form1.setMainProgressBar(0);
-
+            //Reset the Progress bar
             int counter = 0;
+            int total = files.Count();
+            Form1.setMainProgressBar(counter);
+
             foreach (var file in files)
             {
                 string filename = file.ToString();
@@ -84,7 +86,12 @@ namespace Log_Analyzer
                 {
                     analyzeAsync($"{filepath}{file}", errorCodes);
                 }
+
+                //Update the progress bar for each file done
+                counter++;
+                Form1.setMainProgressBar(100 * (counter / total));
             }
+
         }
 
         //Main function
@@ -110,9 +117,15 @@ namespace Log_Analyzer
                         errorsFound.Add(error);
                         errorList[counter].Add(line);
                     }
+
                     counter++;
+                    //Update the sub progress bar
+                    Form1.setSubProgressBar(100 * (counter / (errorCodes.Count())));
                 }
+
                 counter = 0;
+                //Reset the sub
+                Form1.setSubProgressBar(counter);
             }
         }
 
@@ -139,25 +152,7 @@ namespace Log_Analyzer
 
             return codeList;
         }
-        
-        /*
-        //Search the file for errors inside the codes
-        private bool checkError(StreamReader r, string[] errorLine, int index)
-        {
-            string line;
-            bool check = false;
 
-            while ((line = r.ReadLine()) != null)
-            {
-                if (line.Contains(errorLine[0]))
-                {
-                    check = true;
-                    errorList[index].Add(line);
-                }               
-            }
-
-            return check;
-        }*/
 
     }
 }

@@ -18,8 +18,8 @@ namespace Log_Analyzer
         public string extract_path { get; set; }
 
         //Imported CSVs [STATIC | For all CDTs]
-        public static string imported_CSV_offline { get; set; } = "";
-        public static string imported_CSV_update { get; set; } = "";
+        public static string imported_CSV_offline { get; set; } = @"TEMP\Codes\offline.csv";
+        public static string imported_CSV_update { get; set; } = @"TEMP\Codes\update.csv";
 
         //For the Known Errors grid
         private List<List<string>> ErrorsList;

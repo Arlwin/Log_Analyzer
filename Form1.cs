@@ -64,7 +64,12 @@ namespace Log_Analyzer
 
         public static void setMainProgressBar(int progress)
         {
+            prog_Open.Value = progress;
+        }
 
+        public static void setSubProgressBar(int progress)
+        {
+            prog_perFile.Value = progress;
         }
 
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e) // START of loading CDT
