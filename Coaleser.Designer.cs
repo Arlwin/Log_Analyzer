@@ -30,7 +30,7 @@
         {
             this.pnlMain = new System.Windows.Forms.Panel();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.c_rtxtSearchResult = new System.Windows.Forms.RichTextBox();
+            this.tabControlFile = new System.Windows.Forms.TabControl();
             this.rtextSelectedFiles = new System.Windows.Forms.RichTextBox();
             this.pnlFiles = new System.Windows.Forms.Panel();
             this.c_tree_FileView = new System.Windows.Forms.TreeView();
@@ -44,8 +44,6 @@
             this.dateEnd = new System.Windows.Forms.DateTimePicker();
             this.dateStart = new System.Windows.Forms.DateTimePicker();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.tabControlFile = new System.Windows.Forms.TabControl();
-            this.tabpageNew = new System.Windows.Forms.TabPage();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -53,8 +51,6 @@
             this.splitContainer.SuspendLayout();
             this.pnlFiles.SuspendLayout();
             this.pnlSearch.SuspendLayout();
-            this.tabControlFile.SuspendLayout();
-            this.tabpageNew.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -99,19 +95,14 @@
             this.splitContainer.SplitterDistance = 260;
             this.splitContainer.TabIndex = 1;
             // 
-            // c_rtxtSearchResult
+            // tabControlFile
             // 
-            this.c_rtxtSearchResult.BackColor = System.Drawing.Color.White;
-            this.c_rtxtSearchResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.c_rtxtSearchResult.Location = new System.Drawing.Point(16, 27);
-            this.c_rtxtSearchResult.Margin = new System.Windows.Forms.Padding(4);
-            this.c_rtxtSearchResult.Name = "c_rtxtSearchResult";
-            this.c_rtxtSearchResult.ReadOnly = true;
-            this.c_rtxtSearchResult.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
-            this.c_rtxtSearchResult.Size = new System.Drawing.Size(552, 150);
-            this.c_rtxtSearchResult.TabIndex = 0;
-            this.c_rtxtSearchResult.Text = "";
-            this.c_rtxtSearchResult.WordWrap = false;
+            this.tabControlFile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlFile.Location = new System.Drawing.Point(4, 4);
+            this.tabControlFile.Name = "tabControlFile";
+            this.tabControlFile.SelectedIndex = 0;
+            this.tabControlFile.Size = new System.Drawing.Size(1003, 250);
+            this.tabControlFile.TabIndex = 0;
             // 
             // rtextSelectedFiles
             // 
@@ -278,27 +269,6 @@
             this.txtSearch.Size = new System.Drawing.Size(331, 29);
             this.txtSearch.TabIndex = 0;
             // 
-            // tabControlFile
-            // 
-            this.tabControlFile.Controls.Add(this.tabpageNew);
-            this.tabControlFile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlFile.Location = new System.Drawing.Point(4, 4);
-            this.tabControlFile.Name = "tabControlFile";
-            this.tabControlFile.SelectedIndex = 0;
-            this.tabControlFile.Size = new System.Drawing.Size(1003, 250);
-            this.tabControlFile.TabIndex = 0;
-            // 
-            // tabpageNew
-            // 
-            this.tabpageNew.Controls.Add(this.c_rtxtSearchResult);
-            this.tabpageNew.Location = new System.Drawing.Point(4, 25);
-            this.tabpageNew.Name = "tabpageNew";
-            this.tabpageNew.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpageNew.Size = new System.Drawing.Size(995, 221);
-            this.tabpageNew.TabIndex = 1;
-            this.tabpageNew.Text = "empty";
-            this.tabpageNew.UseVisualStyleBackColor = true;
-            // 
             // Coaleser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -316,8 +286,6 @@
             this.pnlFiles.ResumeLayout(false);
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
-            this.tabControlFile.ResumeLayout(false);
-            this.tabpageNew.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -328,7 +296,6 @@
         private System.Windows.Forms.Panel pnlFiles;
         private System.Windows.Forms.Panel pnlSearch;
         private System.Windows.Forms.RichTextBox rtextSelectedFiles;
-        private System.Windows.Forms.RichTextBox c_rtxtSearchResult;
         private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.ComboBox cboCategory;
@@ -341,6 +308,5 @@
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.SplitContainer splitContainer;
         private System.Windows.Forms.TabControl tabControlFile;
-        private System.Windows.Forms.TabPage tabpageNew;
     }
 }

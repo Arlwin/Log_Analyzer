@@ -140,27 +140,55 @@ namespace Log_Analyzer
             lblFreeDiskSpace_value.Name = "lblFreeDiskSpace_value";
             lblFreeDiskSpace_value.Size = new System.Drawing.Size(0, 23);
             lblFreeDiskSpace_value.TabIndex = 29;
- 
+
+
+            // lblRam
+            Label lblRam = new Label();
+            //Design
+            lblRam.AutoSize = true;
+            lblRam.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblRam.Location = new System.Drawing.Point(24, 398);
+            lblRam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblRam.Name = "lblRam";
+            lblRam.Size = new System.Drawing.Size(59, 23);
+            lblRam.TabIndex = 7;
+            lblRam.Text = "RAM:";
 
             // lblRam_value
-            // 
-            this.lblRam_value.AutoSize = true;
-            this.lblRam_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRam_value.Location = new System.Drawing.Point(259, 398);
-            this.lblRam_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblRam_value.Name = "lblRam_value";
-            this.lblRam_value.Size = new System.Drawing.Size(0, 23);
-            this.lblRam_value.TabIndex = 28;
-            // 
+            Label lblRam_value = new Label();
+            // Design
+            lblRam_value.AutoSize = true;
+            lblRam_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblRam_value.Location = new System.Drawing.Point(259, 398);
+            lblRam_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblRam_value.Name = "lblRam_value";
+            lblRam_value.Size = new System.Drawing.Size(0, 23);
+            lblRam_value.TabIndex = 28;
+
+
+            // lblCPU
+            Label lblCPU = new Label();
+            // Design
+            lblCPU.AutoSize = true;
+            lblCPU.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblCPU.Location = new System.Drawing.Point(24, 356);
+            lblCPU.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblCPU.Name = "lblCPU";
+            lblCPU.Size = new System.Drawing.Size(56, 23);
+            lblCPU.TabIndex = 19;
+            lblCPU.Text = "CPU:";
+
             // lblCPU_value
-            // 
-            this.lblCPU_value.AutoSize = true;
-            this.lblCPU_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCPU_value.Location = new System.Drawing.Point(259, 356);
-            this.lblCPU_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCPU_value.Name = "lblCPU_value";
-            this.lblCPU_value.Size = new System.Drawing.Size(0, 23);
-            this.lblCPU_value.TabIndex = 27;
+            Label lblCPU_value = new Label();
+            // Design
+            lblCPU_value.AutoSize = true;
+            lblCPU_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblCPU_value.Location = new System.Drawing.Point(259, 356);
+            lblCPU_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblCPU_value.Name = "lblCPU_value";
+            lblCPU_value.Size = new System.Drawing.Size(0, 23);
+            lblCPU_value.TabIndex = 27;
+
             // 
             // lblSystemArchitecture_value
             // 
@@ -231,30 +259,10 @@ namespace Log_Analyzer
             this.lblHostname_value.Name = "lblHostname_value";
             this.lblHostname_value.Size = new System.Drawing.Size(0, 23);
             this.lblHostname_value.TabIndex = 20;
-            // 
-            // lblCPU
-            // 
-            this.lblCPU.AutoSize = true;
-            this.lblCPU.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCPU.Location = new System.Drawing.Point(24, 356);
-            this.lblCPU.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCPU.Name = "lblCPU";
-            this.lblCPU.Size = new System.Drawing.Size(56, 23);
-            this.lblCPU.TabIndex = 19;
-            this.lblCPU.Text = "CPU:";
 
 
-            // 
-            // lblRam
-            // 
-            this.lblRam.AutoSize = true;
-            this.lblRam.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRam.Location = new System.Drawing.Point(24, 398);
-            this.lblRam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblRam.Name = "lblRam";
-            this.lblRam.Size = new System.Drawing.Size(59, 23);
-            this.lblRam.TabIndex = 7;
-            this.lblRam.Text = "RAM:";
+
+
             // 
             // lblOSver
             // 
