@@ -26,7 +26,7 @@ namespace Log_Analyzer
         public string full_path { get; set; }
         public string extract_path { get; set; }
 
-
+        CDT_Tab_Template new_tab;
         public NewTab(string name, TabControl current_tc, string file_name)
         {
             //Init new TabPage to the TabControl
@@ -38,6 +38,12 @@ namespace Log_Analyzer
 
             //Extract the given filepath
             UnzipCDTAsync(file_name);
+
+            //Add some default file paths to the CDT 
+            new_tab.extract_path = extract_path;
+            new_tab.full_path = full_path;
+            CDT_Tab_Template.imported_CSV_offline = "";
+            CDT_Tab_Template.imported_CSV_update = "";
 
             //Populate the tabs
             getSysInformation gsi = new getSysInformation($"{extract_path}");
@@ -59,7 +65,7 @@ namespace Log_Analyzer
 
         private void loadContent(TabPage tp)
         {
-            CDT_Tab_Template new_tab = new CDT_Tab_Template(tp);
+            new_tab = new CDT_Tab_Template(tp);
         }
 
 
