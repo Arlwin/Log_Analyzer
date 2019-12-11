@@ -192,6 +192,8 @@ namespace Log_Analyzer
             // 
             // lblSystemArchitecture_value
             // 
+            
+            /**
             this.lblSystemArchitecture_value.AutoSize = true;
             this.lblSystemArchitecture_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSystemArchitecture_value.Location = new System.Drawing.Point(259, 314);
@@ -340,7 +342,8 @@ namespace Log_Analyzer
             this.lblHostname.Size = new System.Drawing.Size(115, 23);
             this.lblHostname.TabIndex = 0;
             this.lblHostname.Text = "Hostname:";
-
+            
+        */
 
 
             return controls;

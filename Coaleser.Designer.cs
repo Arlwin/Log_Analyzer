@@ -103,6 +103,9 @@
             this.tabControlFile.SelectedIndex = 0;
             this.tabControlFile.Size = new System.Drawing.Size(1003, 250);
             this.tabControlFile.TabIndex = 0;
+            this.tabControlFile.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControlFile_DrawItem_1);
+            //this.tabControlFile.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControlFile_Selecting);
+            this.tabControlFile.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControlFile_MouseDown);
             // 
             // rtextSelectedFiles
             // 

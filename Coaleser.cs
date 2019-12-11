@@ -12,6 +12,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
 
+
 namespace Log_Analyzer
 {
     public partial class Coaleser : Form
@@ -22,7 +23,12 @@ namespace Log_Analyzer
         public Coaleser()
         {
             InitializeComponent();
-            
+            tabControlFile.Padding = new Point(12, 4);
+            tabControlFile.DrawMode = TabDrawMode.OwnerDrawFixed;
+            tabControlFile.DrawItem += tabControlFile_DrawItem_1;
+            tabControlFile.MouseDown += tabControlFile_MouseDown;
+           // tabControlFile.Selecting += tabControlFile_Selecting;
+
         }
         
         private void c_tree_FileView_AfterSelect(object sender, TreeViewEventArgs e)
@@ -40,6 +46,8 @@ namespace Log_Analyzer
             {
                 var text_box = newTabPage(e.Node.Text);
 
+             
+
                 //c_rtxtSearchResult.Clear();
                 // writeToTextBox(lines, c_rtxtSearchResult);
                 text_box.Clear();
@@ -54,11 +62,22 @@ namespace Log_Analyzer
             {
                 tabControlFile.SelectedTab = tabControlFile.TabPages[name];
                 return (RichTextBox) tabControlFile.TabPages[name].Controls[0];
+
             }
 
             //Add new key and name
+
             tabControlFile.TabPages.Add(name, name);
             Console.WriteLine(tabControlFile.TabPages[name]);
+
+            tabControlFile.SelectedTab = tabControlFile.TabPages[name];
+
+            //tab drawing initialization
+
+       
+           // tabControlFile.HandleCreated += tabControlFile_HandleCreated;
+
+
 
             //Focus on new tab key
             tabControlFile.SelectedTab = tabControlFile.TabPages[name];
@@ -80,6 +99,8 @@ namespace Log_Analyzer
             new_rtxtSearchResult.Text = "";
             new_rtxtSearchResult.WordWrap = false;
 
+
+
             //Add the textbox to the tab
             tabControlFile.TabPages[name].Controls.Add(new_rtxtSearchResult);
 
@@ -87,6 +108,7 @@ namespace Log_Analyzer
             //Return the textbox created
             return new_rtxtSearchResult;
         }
+
 
         private string[] checkIfZip(TreeViewEventArgs e)
         {
@@ -331,10 +353,53 @@ namespace Log_Analyzer
 
         }
 
+        private void tabControlFile_DrawItem_1(object sender, DrawItemEventArgs e)
+        {
+
+            var tabPage = tabControlFile.SelectedTab;
+            var tabRect = tabControlFile.GetTabRect(tabControlFile.SelectedIndex);
+            tabRect.Inflate(-2, -2);
+
+            var closeImage = Properties.Resources.Close;
+            e.Graphics.DrawImage(closeImage,
+                    (tabRect.Right - closeImage.Width),
+                    tabRect.Top + (tabRect.Height - closeImage.Height) / 2);
+           TextRenderer.DrawText(e.Graphics, tabPage.Text, tabPage.Font, tabRect, tabPage.ForeColor, TextFormatFlags.Left);;
+            
+        }
+
+        private void tabControlFile_MouseDown(object sender, MouseEventArgs e)
+        {
+            var lastIndex = tabControlFile.TabCount - 1;
+
+            for(var i = 0; i < tabControlFile.TabPages.Count; i++)
+                {
+                    var tabRect = tabControlFile.GetTabRect(i);
+                    tabRect.Inflate(-2, -2);
+                    var closeImage = Properties.Resources.Close;
+                    var imageRect = new Rectangle(
+                        (tabRect.Right - closeImage.Width),
+                        tabRect.Top + (tabRect.Height - closeImage.Height) / 2,
+                        closeImage.Width,
+                        closeImage.Height);
+                    if (imageRect.Contains(e.Location))
+                    {
+                        tabControlFile.TabPages.RemoveAt(i);
+                        break;
+                    }
+                }
+            
+        }
+
         private void pnlMain_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
+      //  private void tabControlFile_Selecting(object sender, TabControlCancelEventArgs e)
+       // {
+       //     if (e.TabPageIndex == this.tabControlFile.TabCount - 1)
+       //         e.Cancel = true;
+        //}
     }
 }
