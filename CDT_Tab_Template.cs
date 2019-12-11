@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,25 @@ namespace Log_Analyzer
 {
     class CDT_Tab_Template
     {
+        //For the files per each CDT
+        //Location of the file, accessible to anywhere 
+        public string full_path { get; set; }
+
+        //Extraction path
+        public string extract_path { get; set; }
+
+        //Imported CSVs [STATIC | For all CDTs]
+        public static string imported_CSV_offline { get; set; }
+        public static string imported_CSV_update { get; set; }
+
+        //For the Known Errors grid
+        private List<List<string>> ErrorsList;
+
+        //DECLARATIONS of elements
+        DataGridView grid_KnownError;
+        RichTextBox txtResults;
+
+
         public CDT_Tab_Template(TabPage tp)
         {
             //Create the tab control
@@ -17,6 +37,9 @@ namespace Log_Analyzer
             //Add the tab control to the TabPage
             tp.Controls.Add(tc);
         }
+
+
+
 
         private TabControl createTabControl()
         {
@@ -94,8 +117,16 @@ namespace Log_Analyzer
         }
         private TabPage createKnownErrorsPage()
         {
-            TabPage tp = new TabPage("Known Errors");
-            tp.Name = "KnownErrors";
+            TabPage tp = new TabPage();
+
+            //Design the page
+            tp.Location = new System.Drawing.Point(4, 25);
+            tp.Margin = new System.Windows.Forms.Padding(4);
+            tp.Name = "tab_KnownError";
+            tp.Size = new System.Drawing.Size(1136, 737);
+            tp.TabIndex = 2;
+            tp.Text = "Known Error";
+            tp.UseVisualStyleBackColor = true;
 
             //Create the elements inside the page
             List<Control> controls = KnownErrorsCreateElements();
@@ -786,6 +817,108 @@ namespace Log_Analyzer
             List<Control> controls = new List<Control>();
 
 
+            //COLUMNS
+            // colErrorCode
+            DataGridViewTextBoxColumn colErrorCode = new DataGridViewTextBoxColumn();
+            // Design
+            colErrorCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            colErrorCode.HeaderText = "Error Code";
+            colErrorCode.MinimumWidth = 6;
+            colErrorCode.Name = "colErrorCode";
+            colErrorCode.ReadOnly = true;
+
+            // colDescription
+            DataGridViewTextBoxColumn colDescription = new DataGridViewTextBoxColumn();
+            // Design
+            colDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            colDescription.HeaderText = "Description";
+            colDescription.MinimumWidth = 6;
+            colDescription.Name = "colDescription";
+            colDescription.ReadOnly = true;
+
+            // colSolution
+            DataGridViewTextBoxColumn colSolution = new DataGridViewTextBoxColumn();
+            // Design
+            colSolution.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            colSolution.HeaderText = "Solution";
+            colSolution.MinimumWidth = 6;
+            colSolution.Name = "colSolution";
+            colSolution.ReadOnly = true;
+
+            //DATA GRID
+            // grid_KnownError
+            grid_KnownError = new DataGridView();
+            // Design
+            grid_KnownError.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            grid_KnownError.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grid_KnownError.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+                colErrorCode,
+                colDescription,
+                colSolution
+            });
+            grid_KnownError.Location = new System.Drawing.Point(4, 4);
+            grid_KnownError.Margin = new System.Windows.Forms.Padding(4);
+            grid_KnownError.Name = "grid_KnownError";
+            grid_KnownError.RowHeadersWidth = 51;
+            grid_KnownError.Size = new System.Drawing.Size(894, 403);
+            grid_KnownError.TabIndex = 0;
+
+            //GRID PANEL
+            // pnlErrorGrid
+            Panel pnlErrorGrid = new Panel();
+            // Design
+            pnlErrorGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            pnlErrorGrid.Controls.Add(grid_KnownError);
+            pnlErrorGrid.Location = new System.Drawing.Point(3, 12);
+            pnlErrorGrid.Name = "pnlErrorGrid";
+            pnlErrorGrid.Size = new System.Drawing.Size(902, 423);
+            pnlErrorGrid.TabIndex = 3;
+
+            //Add to Controls
+            controls.Add(pnlErrorGrid);
+
+
+            // txtResults
+            txtResults = new RichTextBox();
+            // Design
+            txtResults.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            txtResults.Location = new System.Drawing.Point(4, 14);
+            txtResults.Margin = new System.Windows.Forms.Padding(4);
+            txtResults.Name = "txtResults";
+            txtResults.Size = new System.Drawing.Size(877, 265);
+            txtResults.TabIndex = 2;
+            txtResults.Text = "";
+
+            // pnlSelectedError
+            Panel pnlSelectedError = new Panel();
+            // Design
+            pnlSelectedError.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            pnlSelectedError.Controls.Add(txtResults);
+            pnlSelectedError.Location = new System.Drawing.Point(7, 441);
+            pnlSelectedError.Name = "pnlSelectedError";
+            pnlSelectedError.Size = new System.Drawing.Size(898, 293);
+            pnlSelectedError.TabIndex = 1;
+
+            //Add to controls
+            controls.Add(pnlSelectedError);
+
+
+            // btn_OffAnalyze
+            Button btn_OffAnalyze = new Button();
+            // Design
+            btn_OffAnalyze.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            btn_OffAnalyze.Location = new System.Drawing.Point(933, 12);
+            btn_OffAnalyze.Margin = new System.Windows.Forms.Padding(4);
+            btn_OffAnalyze.Name = "btn_OffAnalyze";
+            btn_OffAnalyze.Size = new System.Drawing.Size(141, 37);
+            btn_OffAnalyze.TabIndex = 1;
+            btn_OffAnalyze.Text = "Check";
+            btn_OffAnalyze.UseVisualStyleBackColor = true;
+            btn_OffAnalyze.Click += new System.EventHandler(Btn_OffAnalyze_Click);
+
+            //Add to controls
+            controls.Add(btn_OffAnalyze);
+
             return controls;
         }
         private List<Control> UpdateIssueCreateElements()
@@ -803,6 +936,118 @@ namespace Log_Analyzer
                 tp.Controls.Add(c);
             }
         }
+
+
+        //METHODS
+        //FOR OFFLINE ANALYZE
+        private void Btn_OffAnalyze_Click(object sender, EventArgs e)
+        {
+            clearGrid(this.grid_KnownError);
+            if (extract_path.Equals(""))
+                return;
+            offAnalyze(getFullPath());
+        }
+
+        private void clearGrid(DataGridView d)
+        {
+            d.Rows.Clear();
+            d.Refresh();
+        }
+
+        private void offAnalyze(string path)
+        {
+            txtResults.Text = ""; //Clear
+
+            if (imported_CSV_offline.Equals(""))
+                imported_CSV_offline = "codes.csv";
+
+            offlineAnalyzer oa = new offlineAnalyzer($"{path}Event1\\", imported_CSV_offline);
+            loadKnownError(oa.errorList, oa.errorsFound);
+        }
+
+        private string getFullPath()
+        {
+            getSysInformation gsi = new getSysInformation(extract_path);
+            getAgentInformation gai = new getAgentInformation(extract_path, gsi.getSysArch());
+
+            return $"{ extract_path }\\{ gai.agentfolder}\\CollectedFile\\";
+        }
+
+        private void loadKnownError(List<List<String>> errorsList, HashSet<string[]> errorsFound)
+        {
+            int counter = 0;
+            ErrorsList = errorsList;
+
+            foreach (string[] error in errorsFound)
+            {
+                grid_KnownError.Rows.Add(error[0], error[1], error[2]);
+                counter++;
+            }
+
+            grid_KnownError.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_KnownError_CellClick);
+        }
+
+        private void Grid_KnownError_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string error;
+
+            //Get the row of the current cell selected
+            DataGridViewCell cell = grid_KnownError.CurrentRow.Cells[0];
+            try
+            {
+                error = cell.Value.ToString();
+                //List the errors under the error code
+                showErrors(error);
+            }
+            catch (Exception ex)
+            {
+                error = "";
+            }
+        }
+
+        private void showErrors(string error)
+        {
+            string errorOutput = "";
+
+            foreach (List<string> errors in ErrorsList)
+            {
+                if (errors[0].Equals(error))
+                    errorOutput = String.Join("\n", errors);
+            }
+
+            txtResults.Text = errorOutput;
+            //highlightText(txtResults, error);
+        }
+
+
+
+        //FOR UPDATE ISSUES
+
+            /*
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            if (extract_path.Equals(""))
+                return;
+            UpdateAnalyze(getFullPath());
+        }
+        */
+        /*
+        private void UpdateAnalyze(string path)
+        {
+            //Check first if update event exists in CDT
+            if (!Directory.Exists($"{ path}\\Event5\\"))
+            {
+                txtUpdate.Text = "No TmuDump Uploaded";
+                return;
+            }
+
+            if (imported_CSV_update.Equals(""))
+                imported_CSV_update = "update.csv";
+
+            UpdateAnalyzer ua = new UpdateAnalyzer($"{path}\\Event5\\", imported_CSV_update);
+            txtUpdate.Text = ua.getSummary();
+        }*/
+
 
     }
 }

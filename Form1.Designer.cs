@@ -30,8 +30,10 @@
         {
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.pnl_Toolbar = new System.Windows.Forms.Panel();
-            this.prog_Open = new System.Windows.Forms.ProgressBar();
-            this.prog_perFile = new System.Windows.Forms.ProgressBar();
+
+            prog_Open = new System.Windows.Forms.ProgressBar();
+            prog_perFile = new System.Windows.Forms.ProgressBar();
+
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.cdtLog = new System.Windows.Forms.TabPage();
             this.TabSystem = new System.Windows.Forms.TabControl();
@@ -131,15 +133,13 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.pnl_Toolbar);
-            this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(4);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1314, 835);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(986, 677);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.LeftToolStripPanelVisible = false;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
-            this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.RightToolStripPanelVisible = false;
-            this.toolStripContainer1.Size = new System.Drawing.Size(1314, 863);
+            this.toolStripContainer1.Size = new System.Drawing.Size(986, 701);
             this.toolStripContainer1.TabIndex = 0;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -153,38 +153,43 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_Toolbar.BackColor = System.Drawing.Color.DarkRed;
-            this.pnl_Toolbar.Controls.Add(this.prog_Open);
-            this.pnl_Toolbar.Controls.Add(this.prog_perFile);
+
+
+            this.pnl_Toolbar.Controls.Add(prog_Open);
+            this.pnl_Toolbar.Controls.Add(prog_perFile);
+
+
             this.pnl_Toolbar.Controls.Add(this.tabControl1);
-            this.pnl_Toolbar.Location = new System.Drawing.Point(4, 4);
-            this.pnl_Toolbar.Margin = new System.Windows.Forms.Padding(4);
+            this.pnl_Toolbar.Location = new System.Drawing.Point(3, 3);
             this.pnl_Toolbar.Name = "pnl_Toolbar";
-            this.pnl_Toolbar.Size = new System.Drawing.Size(1306, 827);
+            this.pnl_Toolbar.Size = new System.Drawing.Size(980, 670);
             this.pnl_Toolbar.TabIndex = 1;
+
+
             // 
             // prog_Open
             // 
-            this.prog_Open.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            prog_Open.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.prog_Open.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.prog_Open.Location = new System.Drawing.Point(-4, 815);
-            this.prog_Open.Margin = new System.Windows.Forms.Padding(4);
-            this.prog_Open.Name = "prog_Open";
-            this.prog_Open.Size = new System.Drawing.Size(1210, 12);
-            this.prog_Open.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.prog_Open.TabIndex = 40;
+            prog_Open.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            prog_Open.Location = new System.Drawing.Point(-3, 660);
+            prog_Open.Name = "prog_Open";
+            prog_Open.Size = new System.Drawing.Size(908, 10);
+            prog_Open.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            prog_Open.TabIndex = 40;
             // 
             // prog_perFile
             // 
-            this.prog_perFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            prog_perFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.prog_perFile.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.prog_perFile.Location = new System.Drawing.Point(1074, 815);
-            this.prog_perFile.Margin = new System.Windows.Forms.Padding(4);
-            this.prog_perFile.Name = "prog_perFile";
-            this.prog_perFile.Size = new System.Drawing.Size(232, 12);
-            this.prog_perFile.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.prog_perFile.TabIndex = 41;
+            prog_perFile.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            prog_perFile.Location = new System.Drawing.Point(806, 660);
+            prog_perFile.Name = "prog_perFile";
+            prog_perFile.Size = new System.Drawing.Size(174, 10);
+            prog_perFile.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            prog_perFile.TabIndex = 41;
+
+
             // 
             // tabControl1
             // 
@@ -193,21 +198,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.cdtLog);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(4, 4);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabControl1.Location = new System.Drawing.Point(3, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1298, 813);
+            this.tabControl1.Size = new System.Drawing.Size(974, 659);
             this.tabControl1.TabIndex = 0;
             // 
             // cdtLog
             // 
             this.cdtLog.Controls.Add(this.TabSystem);
-            this.cdtLog.Location = new System.Drawing.Point(4, 25);
-            this.cdtLog.Margin = new System.Windows.Forms.Padding(4);
+            this.cdtLog.Location = new System.Drawing.Point(4, 22);
             this.cdtLog.Name = "cdtLog";
-            this.cdtLog.Padding = new System.Windows.Forms.Padding(4);
-            this.cdtLog.Size = new System.Drawing.Size(1290, 784);
+            this.cdtLog.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.cdtLog.Size = new System.Drawing.Size(966, 633);
             this.cdtLog.TabIndex = 0;
             this.cdtLog.Text = "CDT";
             this.cdtLog.UseVisualStyleBackColor = true;
@@ -221,11 +224,10 @@
             this.TabSystem.Controls.Add(this.tabAgentInfo);
             this.TabSystem.Controls.Add(this.tabKnownError);
             this.TabSystem.Controls.Add(this.tabUpdate);
-            this.TabSystem.Location = new System.Drawing.Point(4, 4);
-            this.TabSystem.Margin = new System.Windows.Forms.Padding(4);
+            this.TabSystem.Location = new System.Drawing.Point(3, 3);
             this.TabSystem.Name = "TabSystem";
             this.TabSystem.SelectedIndex = 0;
-            this.TabSystem.Size = new System.Drawing.Size(1276, 766);
+            this.TabSystem.Size = new System.Drawing.Size(957, 623);
             this.TabSystem.TabIndex = 0;
             // 
             // tabSystemInfo
@@ -251,11 +253,10 @@
             this.tabSystemInfo.Controls.Add(this.lblDns);
             this.tabSystemInfo.Controls.Add(this.lblIPAddress);
             this.tabSystemInfo.Controls.Add(this.lblHostname);
-            this.tabSystemInfo.Location = new System.Drawing.Point(4, 25);
-            this.tabSystemInfo.Margin = new System.Windows.Forms.Padding(4);
+            this.tabSystemInfo.Location = new System.Drawing.Point(4, 22);
             this.tabSystemInfo.Name = "tabSystemInfo";
-            this.tabSystemInfo.Padding = new System.Windows.Forms.Padding(4);
-            this.tabSystemInfo.Size = new System.Drawing.Size(1268, 737);
+            this.tabSystemInfo.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabSystemInfo.Size = new System.Drawing.Size(949, 597);
             this.tabSystemInfo.TabIndex = 0;
             this.tabSystemInfo.Text = "System Information";
             this.tabSystemInfo.UseVisualStyleBackColor = true;
@@ -264,110 +265,99 @@
             // 
             this.lblFreeDiskSpace_value.AutoSize = true;
             this.lblFreeDiskSpace_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFreeDiskSpace_value.Location = new System.Drawing.Point(259, 434);
-            this.lblFreeDiskSpace_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFreeDiskSpace_value.Location = new System.Drawing.Point(194, 353);
             this.lblFreeDiskSpace_value.Name = "lblFreeDiskSpace_value";
-            this.lblFreeDiskSpace_value.Size = new System.Drawing.Size(0, 23);
+            this.lblFreeDiskSpace_value.Size = new System.Drawing.Size(0, 21);
             this.lblFreeDiskSpace_value.TabIndex = 29;
             // 
             // lblRam_value
             // 
             this.lblRam_value.AutoSize = true;
             this.lblRam_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRam_value.Location = new System.Drawing.Point(259, 398);
-            this.lblRam_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRam_value.Location = new System.Drawing.Point(194, 323);
             this.lblRam_value.Name = "lblRam_value";
-            this.lblRam_value.Size = new System.Drawing.Size(0, 23);
+            this.lblRam_value.Size = new System.Drawing.Size(0, 21);
             this.lblRam_value.TabIndex = 28;
             // 
             // lblCPU_value
             // 
             this.lblCPU_value.AutoSize = true;
             this.lblCPU_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCPU_value.Location = new System.Drawing.Point(259, 356);
-            this.lblCPU_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCPU_value.Location = new System.Drawing.Point(194, 289);
             this.lblCPU_value.Name = "lblCPU_value";
-            this.lblCPU_value.Size = new System.Drawing.Size(0, 23);
+            this.lblCPU_value.Size = new System.Drawing.Size(0, 21);
             this.lblCPU_value.TabIndex = 27;
             // 
             // lblSystemArchitecture_value
             // 
             this.lblSystemArchitecture_value.AutoSize = true;
             this.lblSystemArchitecture_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSystemArchitecture_value.Location = new System.Drawing.Point(259, 314);
-            this.lblSystemArchitecture_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSystemArchitecture_value.Location = new System.Drawing.Point(194, 255);
             this.lblSystemArchitecture_value.Name = "lblSystemArchitecture_value";
-            this.lblSystemArchitecture_value.Size = new System.Drawing.Size(0, 23);
+            this.lblSystemArchitecture_value.Size = new System.Drawing.Size(0, 21);
             this.lblSystemArchitecture_value.TabIndex = 26;
             // 
             // lblOSver_value
             // 
             this.lblOSver_value.AutoSize = true;
             this.lblOSver_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOSver_value.Location = new System.Drawing.Point(259, 276);
-            this.lblOSver_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblOSver_value.Location = new System.Drawing.Point(194, 224);
             this.lblOSver_value.Name = "lblOSver_value";
-            this.lblOSver_value.Size = new System.Drawing.Size(0, 23);
+            this.lblOSver_value.Size = new System.Drawing.Size(0, 21);
             this.lblOSver_value.TabIndex = 25;
             // 
             // lblOperatingSystem_value
             // 
             this.lblOperatingSystem_value.AutoSize = true;
             this.lblOperatingSystem_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOperatingSystem_value.Location = new System.Drawing.Point(259, 233);
-            this.lblOperatingSystem_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblOperatingSystem_value.Location = new System.Drawing.Point(194, 189);
             this.lblOperatingSystem_value.Name = "lblOperatingSystem_value";
-            this.lblOperatingSystem_value.Size = new System.Drawing.Size(0, 23);
+            this.lblOperatingSystem_value.Size = new System.Drawing.Size(0, 21);
             this.lblOperatingSystem_value.TabIndex = 24;
             // 
             // lblDns_value
             // 
             this.lblDns_value.AutoSize = true;
             this.lblDns_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDns_value.Location = new System.Drawing.Point(153, 143);
-            this.lblDns_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDns_value.Location = new System.Drawing.Point(115, 116);
             this.lblDns_value.Name = "lblDns_value";
-            this.lblDns_value.Size = new System.Drawing.Size(0, 23);
+            this.lblDns_value.Size = new System.Drawing.Size(0, 21);
             this.lblDns_value.TabIndex = 23;
             // 
             // lblGateway_value
             // 
             this.lblGateway_value.AutoSize = true;
             this.lblGateway_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGateway_value.Location = new System.Drawing.Point(153, 106);
-            this.lblGateway_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGateway_value.Location = new System.Drawing.Point(115, 86);
             this.lblGateway_value.Name = "lblGateway_value";
-            this.lblGateway_value.Size = new System.Drawing.Size(0, 23);
+            this.lblGateway_value.Size = new System.Drawing.Size(0, 21);
             this.lblGateway_value.TabIndex = 22;
             // 
             // lblIPAddress_value
             // 
             this.lblIPAddress_value.AutoSize = true;
             this.lblIPAddress_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIPAddress_value.Location = new System.Drawing.Point(153, 69);
-            this.lblIPAddress_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIPAddress_value.Location = new System.Drawing.Point(115, 56);
             this.lblIPAddress_value.Name = "lblIPAddress_value";
-            this.lblIPAddress_value.Size = new System.Drawing.Size(0, 23);
+            this.lblIPAddress_value.Size = new System.Drawing.Size(0, 21);
             this.lblIPAddress_value.TabIndex = 21;
             // 
             // lblHostname_value
             // 
             this.lblHostname_value.AutoSize = true;
             this.lblHostname_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHostname_value.Location = new System.Drawing.Point(153, 25);
-            this.lblHostname_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHostname_value.Location = new System.Drawing.Point(115, 20);
             this.lblHostname_value.Name = "lblHostname_value";
-            this.lblHostname_value.Size = new System.Drawing.Size(0, 23);
+            this.lblHostname_value.Size = new System.Drawing.Size(0, 21);
             this.lblHostname_value.TabIndex = 20;
             // 
             // lblCPU
             // 
             this.lblCPU.AutoSize = true;
             this.lblCPU.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCPU.Location = new System.Drawing.Point(24, 356);
-            this.lblCPU.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCPU.Location = new System.Drawing.Point(18, 289);
             this.lblCPU.Name = "lblCPU";
-            this.lblCPU.Size = new System.Drawing.Size(56, 23);
+            this.lblCPU.Size = new System.Drawing.Size(47, 21);
             this.lblCPU.TabIndex = 19;
             this.lblCPU.Text = "CPU:";
             // 
@@ -375,10 +365,9 @@
             // 
             this.lblFreeDiskSpace.AutoSize = true;
             this.lblFreeDiskSpace.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFreeDiskSpace.Location = new System.Drawing.Point(24, 434);
-            this.lblFreeDiskSpace.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFreeDiskSpace.Location = new System.Drawing.Point(18, 353);
             this.lblFreeDiskSpace.Name = "lblFreeDiskSpace";
-            this.lblFreeDiskSpace.Size = new System.Drawing.Size(169, 23);
+            this.lblFreeDiskSpace.Size = new System.Drawing.Size(134, 21);
             this.lblFreeDiskSpace.TabIndex = 8;
             this.lblFreeDiskSpace.Text = "Free Disk Space:";
             // 
@@ -386,10 +375,9 @@
             // 
             this.lblRam.AutoSize = true;
             this.lblRam.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRam.Location = new System.Drawing.Point(24, 398);
-            this.lblRam.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRam.Location = new System.Drawing.Point(18, 323);
             this.lblRam.Name = "lblRam";
-            this.lblRam.Size = new System.Drawing.Size(59, 23);
+            this.lblRam.Size = new System.Drawing.Size(52, 21);
             this.lblRam.TabIndex = 7;
             this.lblRam.Text = "RAM:";
             // 
@@ -397,10 +385,9 @@
             // 
             this.lblOSver.AutoSize = true;
             this.lblOSver.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOSver.Location = new System.Drawing.Point(24, 276);
-            this.lblOSver.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblOSver.Location = new System.Drawing.Point(18, 224);
             this.lblOSver.Name = "lblOSver";
-            this.lblOSver.Size = new System.Drawing.Size(118, 23);
+            this.lblOSver.Size = new System.Drawing.Size(95, 21);
             this.lblOSver.TabIndex = 6;
             this.lblOSver.Text = "OS Version:";
             // 
@@ -408,10 +395,9 @@
             // 
             this.lblSystemArchitecture.AutoSize = true;
             this.lblSystemArchitecture.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSystemArchitecture.Location = new System.Drawing.Point(24, 314);
-            this.lblSystemArchitecture.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSystemArchitecture.Location = new System.Drawing.Point(18, 255);
             this.lblSystemArchitecture.Name = "lblSystemArchitecture";
-            this.lblSystemArchitecture.Size = new System.Drawing.Size(209, 23);
+            this.lblSystemArchitecture.Size = new System.Drawing.Size(172, 21);
             this.lblSystemArchitecture.TabIndex = 5;
             this.lblSystemArchitecture.Text = "System Architecture:";
             // 
@@ -419,10 +405,9 @@
             // 
             this.lblOperatingSystem.AutoSize = true;
             this.lblOperatingSystem.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOperatingSystem.Location = new System.Drawing.Point(20, 233);
-            this.lblOperatingSystem.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblOperatingSystem.Location = new System.Drawing.Point(15, 189);
             this.lblOperatingSystem.Name = "lblOperatingSystem";
-            this.lblOperatingSystem.Size = new System.Drawing.Size(188, 23);
+            this.lblOperatingSystem.Size = new System.Drawing.Size(154, 21);
             this.lblOperatingSystem.TabIndex = 4;
             this.lblOperatingSystem.Text = "Operating System:";
             // 
@@ -430,10 +415,9 @@
             // 
             this.lblGateway.AutoSize = true;
             this.lblGateway.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGateway.Location = new System.Drawing.Point(20, 106);
-            this.lblGateway.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGateway.Location = new System.Drawing.Point(15, 86);
             this.lblGateway.Name = "lblGateway";
-            this.lblGateway.Size = new System.Drawing.Size(109, 23);
+            this.lblGateway.Size = new System.Drawing.Size(89, 21);
             this.lblGateway.TabIndex = 3;
             this.lblGateway.Text = "Gateway:";
             // 
@@ -441,10 +425,9 @@
             // 
             this.lblDns.AutoSize = true;
             this.lblDns.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDns.Location = new System.Drawing.Point(20, 143);
-            this.lblDns.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDns.Location = new System.Drawing.Point(15, 116);
             this.lblDns.Name = "lblDns";
-            this.lblDns.Size = new System.Drawing.Size(55, 23);
+            this.lblDns.Size = new System.Drawing.Size(46, 21);
             this.lblDns.TabIndex = 2;
             this.lblDns.Text = "DNS:";
             // 
@@ -452,10 +435,9 @@
             // 
             this.lblIPAddress.AutoSize = true;
             this.lblIPAddress.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIPAddress.Location = new System.Drawing.Point(20, 69);
-            this.lblIPAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIPAddress.Location = new System.Drawing.Point(15, 56);
             this.lblIPAddress.Name = "lblIPAddress";
-            this.lblIPAddress.Size = new System.Drawing.Size(116, 23);
+            this.lblIPAddress.Size = new System.Drawing.Size(94, 21);
             this.lblIPAddress.TabIndex = 1;
             this.lblIPAddress.Text = "IP Address:";
             // 
@@ -463,10 +445,9 @@
             // 
             this.lblHostname.AutoSize = true;
             this.lblHostname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHostname.Location = new System.Drawing.Point(20, 25);
-            this.lblHostname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHostname.Location = new System.Drawing.Point(15, 20);
             this.lblHostname.Name = "lblHostname";
-            this.lblHostname.Size = new System.Drawing.Size(115, 23);
+            this.lblHostname.Size = new System.Drawing.Size(94, 21);
             this.lblHostname.TabIndex = 0;
             this.lblHostname.Text = "Hostname:";
             // 
@@ -498,11 +479,10 @@
             this.tabAgentInfo.Controls.Add(this.lblAgentVersion);
             this.tabAgentInfo.Controls.Add(this.lblAgentBuild);
             this.tabAgentInfo.Controls.Add(this.lblAgentAddr);
-            this.tabAgentInfo.Location = new System.Drawing.Point(4, 25);
-            this.tabAgentInfo.Margin = new System.Windows.Forms.Padding(4);
+            this.tabAgentInfo.Location = new System.Drawing.Point(4, 22);
             this.tabAgentInfo.Name = "tabAgentInfo";
-            this.tabAgentInfo.Padding = new System.Windows.Forms.Padding(4);
-            this.tabAgentInfo.Size = new System.Drawing.Size(1136, 737);
+            this.tabAgentInfo.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabAgentInfo.Size = new System.Drawing.Size(949, 602);
             this.tabAgentInfo.TabIndex = 1;
             this.tabAgentInfo.Text = "Agent Information";
             this.tabAgentInfo.UseVisualStyleBackColor = true;
@@ -511,140 +491,126 @@
             // 
             this.lblSmartScanPatternVer_value.AutoSize = true;
             this.lblSmartScanPatternVer_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSmartScanPatternVer_value.Location = new System.Drawing.Point(1203, 149);
-            this.lblSmartScanPatternVer_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSmartScanPatternVer_value.Location = new System.Drawing.Point(902, 121);
             this.lblSmartScanPatternVer_value.Name = "lblSmartScanPatternVer_value";
-            this.lblSmartScanPatternVer_value.Size = new System.Drawing.Size(0, 23);
+            this.lblSmartScanPatternVer_value.Size = new System.Drawing.Size(0, 21);
             this.lblSmartScanPatternVer_value.TabIndex = 39;
             // 
             // lblConvenPtnVer_value
             // 
             this.lblConvenPtnVer_value.AutoSize = true;
             this.lblConvenPtnVer_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConvenPtnVer_value.Location = new System.Drawing.Point(1203, 105);
-            this.lblConvenPtnVer_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblConvenPtnVer_value.Location = new System.Drawing.Point(902, 85);
             this.lblConvenPtnVer_value.Name = "lblConvenPtnVer_value";
-            this.lblConvenPtnVer_value.Size = new System.Drawing.Size(0, 23);
+            this.lblConvenPtnVer_value.Size = new System.Drawing.Size(0, 21);
             this.lblConvenPtnVer_value.TabIndex = 38;
             // 
             // lblEngineVersion_value
             // 
             this.lblEngineVersion_value.AutoSize = true;
             this.lblEngineVersion_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEngineVersion_value.Location = new System.Drawing.Point(1203, 64);
-            this.lblEngineVersion_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEngineVersion_value.Location = new System.Drawing.Point(902, 52);
             this.lblEngineVersion_value.Name = "lblEngineVersion_value";
-            this.lblEngineVersion_value.Size = new System.Drawing.Size(0, 23);
+            this.lblEngineVersion_value.Size = new System.Drawing.Size(0, 21);
             this.lblEngineVersion_value.TabIndex = 37;
             // 
             // lblAgentLocation_value
             // 
             this.lblAgentLocation_value.AutoSize = true;
             this.lblAgentLocation_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgentLocation_value.Location = new System.Drawing.Point(1203, 23);
-            this.lblAgentLocation_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAgentLocation_value.Location = new System.Drawing.Point(902, 19);
             this.lblAgentLocation_value.Name = "lblAgentLocation_value";
-            this.lblAgentLocation_value.Size = new System.Drawing.Size(0, 23);
+            this.lblAgentLocation_value.Size = new System.Drawing.Size(0, 21);
             this.lblAgentLocation_value.TabIndex = 36;
             // 
             // lblUpdateAgentAddr_value
             // 
             this.lblUpdateAgentAddr_value.AutoSize = true;
             this.lblUpdateAgentAddr_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdateAgentAddr_value.Location = new System.Drawing.Point(315, 377);
-            this.lblUpdateAgentAddr_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUpdateAgentAddr_value.Location = new System.Drawing.Point(236, 306);
             this.lblUpdateAgentAddr_value.Name = "lblUpdateAgentAddr_value";
-            this.lblUpdateAgentAddr_value.Size = new System.Drawing.Size(0, 23);
+            this.lblUpdateAgentAddr_value.Size = new System.Drawing.Size(0, 21);
             this.lblUpdateAgentAddr_value.TabIndex = 35;
             // 
             // lblUpdateAgentPort_value
             // 
             this.lblUpdateAgentPort_value.AutoSize = true;
             this.lblUpdateAgentPort_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdateAgentPort_value.Location = new System.Drawing.Point(315, 332);
-            this.lblUpdateAgentPort_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUpdateAgentPort_value.Location = new System.Drawing.Point(236, 270);
             this.lblUpdateAgentPort_value.Name = "lblUpdateAgentPort_value";
-            this.lblUpdateAgentPort_value.Size = new System.Drawing.Size(0, 23);
+            this.lblUpdateAgentPort_value.Size = new System.Drawing.Size(0, 21);
             this.lblUpdateAgentPort_value.TabIndex = 34;
             // 
             // lblUpdateAgent_value
             // 
             this.lblUpdateAgent_value.AutoSize = true;
             this.lblUpdateAgent_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdateAgent_value.Location = new System.Drawing.Point(315, 284);
-            this.lblUpdateAgent_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUpdateAgent_value.Location = new System.Drawing.Point(236, 231);
             this.lblUpdateAgent_value.Name = "lblUpdateAgent_value";
-            this.lblUpdateAgent_value.Size = new System.Drawing.Size(0, 23);
+            this.lblUpdateAgent_value.Size = new System.Drawing.Size(0, 21);
             this.lblUpdateAgent_value.TabIndex = 33;
             // 
             // lblAgentPort_value
             // 
             this.lblAgentPort_value.AutoSize = true;
             this.lblAgentPort_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgentPort_value.Location = new System.Drawing.Point(315, 241);
-            this.lblAgentPort_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAgentPort_value.Location = new System.Drawing.Point(236, 196);
             this.lblAgentPort_value.Name = "lblAgentPort_value";
-            this.lblAgentPort_value.Size = new System.Drawing.Size(0, 23);
+            this.lblAgentPort_value.Size = new System.Drawing.Size(0, 21);
             this.lblAgentPort_value.TabIndex = 32;
             // 
             // lblServerHttpsPort_value
             // 
             this.lblServerHttpsPort_value.AutoSize = true;
             this.lblServerHttpsPort_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServerHttpsPort_value.Location = new System.Drawing.Point(315, 194);
-            this.lblServerHttpsPort_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblServerHttpsPort_value.Location = new System.Drawing.Point(236, 158);
             this.lblServerHttpsPort_value.Name = "lblServerHttpsPort_value";
-            this.lblServerHttpsPort_value.Size = new System.Drawing.Size(0, 23);
+            this.lblServerHttpsPort_value.Size = new System.Drawing.Size(0, 21);
             this.lblServerHttpsPort_value.TabIndex = 31;
             // 
             // lblServerHttpPort_value
             // 
             this.lblServerHttpPort_value.AutoSize = true;
             this.lblServerHttpPort_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServerHttpPort_value.Location = new System.Drawing.Point(315, 149);
-            this.lblServerHttpPort_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblServerHttpPort_value.Location = new System.Drawing.Point(236, 121);
             this.lblServerHttpPort_value.Name = "lblServerHttpPort_value";
-            this.lblServerHttpPort_value.Size = new System.Drawing.Size(0, 23);
+            this.lblServerHttpPort_value.Size = new System.Drawing.Size(0, 21);
             this.lblServerHttpPort_value.TabIndex = 30;
             // 
             // lblAgentAddr_value
             // 
             this.lblAgentAddr_value.AutoSize = true;
             this.lblAgentAddr_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgentAddr_value.Location = new System.Drawing.Point(315, 108);
-            this.lblAgentAddr_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAgentAddr_value.Location = new System.Drawing.Point(236, 88);
             this.lblAgentAddr_value.Name = "lblAgentAddr_value";
-            this.lblAgentAddr_value.Size = new System.Drawing.Size(0, 23);
+            this.lblAgentAddr_value.Size = new System.Drawing.Size(0, 21);
             this.lblAgentAddr_value.TabIndex = 29;
             // 
             // lblAgentBuild_value
             // 
             this.lblAgentBuild_value.AutoSize = true;
             this.lblAgentBuild_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgentBuild_value.Location = new System.Drawing.Point(315, 64);
-            this.lblAgentBuild_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAgentBuild_value.Location = new System.Drawing.Point(236, 52);
             this.lblAgentBuild_value.Name = "lblAgentBuild_value";
-            this.lblAgentBuild_value.Size = new System.Drawing.Size(0, 23);
+            this.lblAgentBuild_value.Size = new System.Drawing.Size(0, 21);
             this.lblAgentBuild_value.TabIndex = 28;
             // 
             // lblAgentVersion_value
             // 
             this.lblAgentVersion_value.AutoSize = true;
             this.lblAgentVersion_value.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgentVersion_value.Location = new System.Drawing.Point(315, 23);
-            this.lblAgentVersion_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAgentVersion_value.Location = new System.Drawing.Point(236, 19);
             this.lblAgentVersion_value.Name = "lblAgentVersion_value";
-            this.lblAgentVersion_value.Size = new System.Drawing.Size(0, 23);
+            this.lblAgentVersion_value.Size = new System.Drawing.Size(0, 21);
             this.lblAgentVersion_value.TabIndex = 27;
             // 
             // lblAgentLocation
             // 
             this.lblAgentLocation.AutoSize = true;
             this.lblAgentLocation.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgentLocation.Location = new System.Drawing.Point(871, 23);
-            this.lblAgentLocation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAgentLocation.Location = new System.Drawing.Point(653, 19);
             this.lblAgentLocation.Name = "lblAgentLocation";
-            this.lblAgentLocation.Size = new System.Drawing.Size(165, 23);
+            this.lblAgentLocation.Size = new System.Drawing.Size(137, 21);
             this.lblAgentLocation.TabIndex = 26;
             this.lblAgentLocation.Text = "Agent Location:";
             // 
@@ -652,10 +618,9 @@
             // 
             this.lblSmartScanPatternVer.AutoSize = true;
             this.lblSmartScanPatternVer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSmartScanPatternVer.Location = new System.Drawing.Point(871, 149);
-            this.lblSmartScanPatternVer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSmartScanPatternVer.Location = new System.Drawing.Point(653, 121);
             this.lblSmartScanPatternVer.Name = "lblSmartScanPatternVer";
-            this.lblSmartScanPatternVer.Size = new System.Drawing.Size(279, 23);
+            this.lblSmartScanPatternVer.Size = new System.Drawing.Size(225, 21);
             this.lblSmartScanPatternVer.TabIndex = 25;
             this.lblSmartScanPatternVer.Text = "Smart Scan Pattern Version:";
             // 
@@ -663,10 +628,9 @@
             // 
             this.lblConvenPtnVer.AutoSize = true;
             this.lblConvenPtnVer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConvenPtnVer.Location = new System.Drawing.Point(871, 105);
-            this.lblConvenPtnVer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblConvenPtnVer.Location = new System.Drawing.Point(653, 85);
             this.lblConvenPtnVer.Name = "lblConvenPtnVer";
-            this.lblConvenPtnVer.Size = new System.Drawing.Size(301, 23);
+            this.lblConvenPtnVer.Size = new System.Drawing.Size(243, 21);
             this.lblConvenPtnVer.TabIndex = 24;
             this.lblConvenPtnVer.Text = "Conventional Pattern Version:";
             // 
@@ -674,10 +638,9 @@
             // 
             this.lblEngineVersion.AutoSize = true;
             this.lblEngineVersion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEngineVersion.Location = new System.Drawing.Point(871, 64);
-            this.lblEngineVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEngineVersion.Location = new System.Drawing.Point(653, 52);
             this.lblEngineVersion.Name = "lblEngineVersion";
-            this.lblEngineVersion.Size = new System.Drawing.Size(155, 23);
+            this.lblEngineVersion.Size = new System.Drawing.Size(126, 21);
             this.lblEngineVersion.TabIndex = 23;
             this.lblEngineVersion.Text = "Engine Version:";
             // 
@@ -685,10 +648,9 @@
             // 
             this.lblUpdateAgentPort.AutoSize = true;
             this.lblUpdateAgentPort.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdateAgentPort.Location = new System.Drawing.Point(27, 332);
-            this.lblUpdateAgentPort.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUpdateAgentPort.Location = new System.Drawing.Point(20, 270);
             this.lblUpdateAgentPort.Name = "lblUpdateAgentPort";
-            this.lblUpdateAgentPort.Size = new System.Drawing.Size(200, 23);
+            this.lblUpdateAgentPort.Size = new System.Drawing.Size(165, 21);
             this.lblUpdateAgentPort.TabIndex = 22;
             this.lblUpdateAgentPort.Text = "Update Agent Port:";
             // 
@@ -696,10 +658,9 @@
             // 
             this.lblServerHttpsPort.AutoSize = true;
             this.lblServerHttpsPort.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServerHttpsPort.Location = new System.Drawing.Point(27, 194);
-            this.lblServerHttpsPort.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblServerHttpsPort.Location = new System.Drawing.Point(20, 158);
             this.lblServerHttpsPort.Name = "lblServerHttpsPort";
-            this.lblServerHttpsPort.Size = new System.Drawing.Size(178, 23);
+            this.lblServerHttpsPort.Size = new System.Drawing.Size(145, 21);
             this.lblServerHttpsPort.TabIndex = 21;
             this.lblServerHttpsPort.Text = "Server HTTPS Port:";
             // 
@@ -707,10 +668,9 @@
             // 
             this.lblServerHttpPort.AutoSize = true;
             this.lblServerHttpPort.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServerHttpPort.Location = new System.Drawing.Point(27, 149);
-            this.lblServerHttpPort.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblServerHttpPort.Location = new System.Drawing.Point(20, 121);
             this.lblServerHttpPort.Name = "lblServerHttpPort";
-            this.lblServerHttpPort.Size = new System.Drawing.Size(168, 23);
+            this.lblServerHttpPort.Size = new System.Drawing.Size(137, 21);
             this.lblServerHttpPort.TabIndex = 20;
             this.lblServerHttpPort.Text = "Server HTTP Port:";
             // 
@@ -718,10 +678,9 @@
             // 
             this.lblUpdateAgentAddr.AutoSize = true;
             this.lblUpdateAgentAddr.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdateAgentAddr.Location = new System.Drawing.Point(27, 377);
-            this.lblUpdateAgentAddr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUpdateAgentAddr.Location = new System.Drawing.Point(20, 306);
             this.lblUpdateAgentAddr.Name = "lblUpdateAgentAddr";
-            this.lblUpdateAgentAddr.Size = new System.Drawing.Size(240, 23);
+            this.lblUpdateAgentAddr.Size = new System.Drawing.Size(196, 21);
             this.lblUpdateAgentAddr.TabIndex = 19;
             this.lblUpdateAgentAddr.Text = "Update Agent Address:";
             // 
@@ -729,10 +688,9 @@
             // 
             this.lblUpdateAgent.AutoSize = true;
             this.lblUpdateAgent.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdateAgent.Location = new System.Drawing.Point(27, 284);
-            this.lblUpdateAgent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUpdateAgent.Location = new System.Drawing.Point(20, 231);
             this.lblUpdateAgent.Name = "lblUpdateAgent";
-            this.lblUpdateAgent.Size = new System.Drawing.Size(156, 23);
+            this.lblUpdateAgent.Size = new System.Drawing.Size(130, 21);
             this.lblUpdateAgent.TabIndex = 18;
             this.lblUpdateAgent.Text = "Update Agent:";
             // 
@@ -740,10 +698,9 @@
             // 
             this.lblAgentPort.AutoSize = true;
             this.lblAgentPort.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgentPort.Location = new System.Drawing.Point(27, 241);
-            this.lblAgentPort.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAgentPort.Location = new System.Drawing.Point(20, 196);
             this.lblAgentPort.Name = "lblAgentPort";
-            this.lblAgentPort.Size = new System.Drawing.Size(119, 23);
+            this.lblAgentPort.Size = new System.Drawing.Size(100, 21);
             this.lblAgentPort.TabIndex = 17;
             this.lblAgentPort.Text = "Agent Port:";
             // 
@@ -751,10 +708,9 @@
             // 
             this.lblAgentVersion.AutoSize = true;
             this.lblAgentVersion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgentVersion.Location = new System.Drawing.Point(27, 23);
-            this.lblAgentVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAgentVersion.Location = new System.Drawing.Point(20, 19);
             this.lblAgentVersion.Name = "lblAgentVersion";
-            this.lblAgentVersion.Size = new System.Drawing.Size(146, 23);
+            this.lblAgentVersion.Size = new System.Drawing.Size(120, 21);
             this.lblAgentVersion.TabIndex = 16;
             this.lblAgentVersion.Text = "Agent Version";
             // 
@@ -762,10 +718,9 @@
             // 
             this.lblAgentBuild.AutoSize = true;
             this.lblAgentBuild.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgentBuild.Location = new System.Drawing.Point(27, 64);
-            this.lblAgentBuild.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAgentBuild.Location = new System.Drawing.Point(20, 52);
             this.lblAgentBuild.Name = "lblAgentBuild";
-            this.lblAgentBuild.Size = new System.Drawing.Size(126, 23);
+            this.lblAgentBuild.Size = new System.Drawing.Size(105, 21);
             this.lblAgentBuild.TabIndex = 15;
             this.lblAgentBuild.Text = "Agent Build:";
             // 
@@ -773,10 +728,9 @@
             // 
             this.lblAgentAddr.AutoSize = true;
             this.lblAgentAddr.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgentAddr.Location = new System.Drawing.Point(27, 108);
-            this.lblAgentAddr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAgentAddr.Location = new System.Drawing.Point(20, 88);
             this.lblAgentAddr.Name = "lblAgentAddr";
-            this.lblAgentAddr.Size = new System.Drawing.Size(160, 23);
+            this.lblAgentAddr.Size = new System.Drawing.Size(128, 21);
             this.lblAgentAddr.TabIndex = 14;
             this.lblAgentAddr.Text = "Server Address:";
             // 
@@ -785,14 +739,12 @@
             this.tabKnownError.Controls.Add(this.pnlErrorGrid);
             this.tabKnownError.Controls.Add(this.pnlSelectedError);
             this.tabKnownError.Controls.Add(this.btn_OffAnalyze);
-            this.tabKnownError.Location = new System.Drawing.Point(4, 25);
-            this.tabKnownError.Margin = new System.Windows.Forms.Padding(4);
+            this.tabKnownError.Location = new System.Drawing.Point(4, 22);
             this.tabKnownError.Name = "tabKnownError";
-            this.tabKnownError.Size = new System.Drawing.Size(1136, 737);
+            this.tabKnownError.Size = new System.Drawing.Size(949, 597);
             this.tabKnownError.TabIndex = 2;
             this.tabKnownError.Text = "Known Error";
             this.tabKnownError.UseVisualStyleBackColor = true;
-            this.tabKnownError.Click += new System.EventHandler(this.tabKnownError_Click);
             // 
             // pnlErrorGrid
             // 
@@ -800,9 +752,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlErrorGrid.Controls.Add(this.grid_KnownError);
-            this.pnlErrorGrid.Location = new System.Drawing.Point(3, 12);
+            this.pnlErrorGrid.Location = new System.Drawing.Point(2, 10);
+            this.pnlErrorGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlErrorGrid.Name = "pnlErrorGrid";
-            this.pnlErrorGrid.Size = new System.Drawing.Size(902, 423);
+            this.pnlErrorGrid.Size = new System.Drawing.Size(776, 341);
             this.pnlErrorGrid.TabIndex = 3;
             // 
             // grid_KnownError
@@ -815,11 +768,10 @@
             this.colErrorCode,
             this.colDescription,
             this.colSolution});
-            this.grid_KnownError.Location = new System.Drawing.Point(4, 4);
-            this.grid_KnownError.Margin = new System.Windows.Forms.Padding(4);
+            this.grid_KnownError.Location = new System.Drawing.Point(3, 3);
             this.grid_KnownError.Name = "grid_KnownError";
             this.grid_KnownError.RowHeadersWidth = 51;
-            this.grid_KnownError.Size = new System.Drawing.Size(894, 403);
+            this.grid_KnownError.Size = new System.Drawing.Size(770, 325);
             this.grid_KnownError.TabIndex = 0;
             // 
             // colErrorCode
@@ -851,29 +803,28 @@
             this.pnlSelectedError.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSelectedError.Controls.Add(this.txtResults);
-            this.pnlSelectedError.Location = new System.Drawing.Point(7, 441);
+            this.pnlSelectedError.Location = new System.Drawing.Point(5, 356);
+            this.pnlSelectedError.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlSelectedError.Name = "pnlSelectedError";
-            this.pnlSelectedError.Size = new System.Drawing.Size(898, 293);
+            this.pnlSelectedError.Size = new System.Drawing.Size(772, 238);
             this.pnlSelectedError.TabIndex = 1;
             // 
             // txtResults
             // 
             this.txtResults.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtResults.Location = new System.Drawing.Point(4, 14);
-            this.txtResults.Margin = new System.Windows.Forms.Padding(4);
+            this.txtResults.Location = new System.Drawing.Point(3, 11);
             this.txtResults.Name = "txtResults";
-            this.txtResults.Size = new System.Drawing.Size(877, 265);
+            this.txtResults.Size = new System.Drawing.Size(758, 216);
             this.txtResults.TabIndex = 2;
             this.txtResults.Text = "";
             // 
             // btn_OffAnalyze
             // 
             this.btn_OffAnalyze.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_OffAnalyze.Location = new System.Drawing.Point(933, 12);
-            this.btn_OffAnalyze.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_OffAnalyze.Location = new System.Drawing.Point(799, 10);
             this.btn_OffAnalyze.Name = "btn_OffAnalyze";
-            this.btn_OffAnalyze.Size = new System.Drawing.Size(141, 37);
+            this.btn_OffAnalyze.Size = new System.Drawing.Size(106, 30);
             this.btn_OffAnalyze.TabIndex = 1;
             this.btn_OffAnalyze.Text = "Check";
             this.btn_OffAnalyze.UseVisualStyleBackColor = true;
@@ -883,21 +834,19 @@
             // 
             this.tabUpdate.Controls.Add(this.btnUpdate);
             this.tabUpdate.Controls.Add(this.txtUpdate);
-            this.tabUpdate.Location = new System.Drawing.Point(4, 25);
-            this.tabUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.tabUpdate.Location = new System.Drawing.Point(4, 22);
             this.tabUpdate.Name = "tabUpdate";
-            this.tabUpdate.Padding = new System.Windows.Forms.Padding(4);
-            this.tabUpdate.Size = new System.Drawing.Size(1136, 737);
+            this.tabUpdate.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabUpdate.Size = new System.Drawing.Size(949, 602);
             this.tabUpdate.TabIndex = 3;
             this.tabUpdate.Text = "Update Issues";
             this.tabUpdate.UseVisualStyleBackColor = true;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(1521, 20);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUpdate.Location = new System.Drawing.Point(1141, 16);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(159, 55);
+            this.btnUpdate.Size = new System.Drawing.Size(119, 45);
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Check ";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -905,20 +854,18 @@
             // 
             // txtUpdate
             // 
-            this.txtUpdate.Location = new System.Drawing.Point(25, 20);
-            this.txtUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUpdate.Location = new System.Drawing.Point(19, 16);
             this.txtUpdate.Name = "txtUpdate";
-            this.txtUpdate.Size = new System.Drawing.Size(1485, 538);
+            this.txtUpdate.Size = new System.Drawing.Size(1115, 438);
             this.txtUpdate.TabIndex = 0;
             this.txtUpdate.Text = "";
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1158, 784);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Size = new System.Drawing.Size(966, 638);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "N/A";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -934,7 +881,7 @@
             this.toolsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1314, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(986, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -947,51 +894,51 @@
             this.exitToolStripMenuItem,
             this.importToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(60, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(50, 20);
             this.toolStripMenuItem1.Text = "Menu";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.saveAsToolStripMenuItem.Text = "Save as";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // importToolStripMenuItem
             // 
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.importToolStripMenuItem.Text = "Import";
             this.importToolStripMenuItem.Click += new System.EventHandler(this.ImportToolStripMenuItem_Click);
             // 
             // formatToolStripMenuItem
             // 
             this.formatToolStripMenuItem.Name = "formatToolStripMenuItem";
-            this.formatToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.formatToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.formatToolStripMenuItem.Text = "Format";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // toolsToolStripMenuItem
@@ -999,25 +946,24 @@
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.coalescerToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
             // coalescerToolStripMenuItem
             // 
             this.coalescerToolStripMenuItem.Name = "coalescerToolStripMenuItem";
-            this.coalescerToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
+            this.coalescerToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.coalescerToolStripMenuItem.Text = "Coalescer";
             this.coalescerToolStripMenuItem.Click += new System.EventHandler(this.coalescerToolStripMenuItem_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1314, 863);
+            this.ClientSize = new System.Drawing.Size(986, 701);
             this.Controls.Add(this.toolStripContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log Analyzer V1 Beta";
@@ -1112,8 +1058,12 @@
         private System.Windows.Forms.Label lblAgentAddr_value;
         private System.Windows.Forms.Label lblAgentBuild_value;
         private System.Windows.Forms.Label lblAgentVersion_value;
-        private System.Windows.Forms.ProgressBar prog_Open;
-        private System.Windows.Forms.ProgressBar prog_perFile;
+
+
+        private static System.Windows.Forms.ProgressBar prog_Open;
+        private static System.Windows.Forms.ProgressBar prog_perFile;
+
+
         private System.Windows.Forms.TabPage tabKnownError;
         private System.Windows.Forms.DataGridView grid_KnownError;
         private System.Windows.Forms.DataGridViewTextBoxColumn colErrorCode;
