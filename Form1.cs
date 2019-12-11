@@ -92,8 +92,10 @@ namespace Log_Analyzer
 
                     //Check if CDT is already loaded
                     if (NewTab.doesExist(tab_name, tabControl1))
+                    {
                         tabControl1.SelectedTab = tabControl1.TabPages[tab_name];
                         return;
+                    }
 
                     //If not, load another page
                     NewTab new_tab = new NewTab(tab_name, tabControl1, file_name);
