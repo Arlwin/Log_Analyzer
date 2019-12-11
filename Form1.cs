@@ -92,6 +92,7 @@ namespace Log_Analyzer
 
                     //Check if CDT is already loaded
                     if (NewTab.doesExist(tab_name, tabControl1))
+                        tabControl1.SelectedTab = tabControl1.TabPages[tab_name];
                         return;
 
                     //If not, load another page
@@ -111,7 +112,12 @@ namespace Log_Analyzer
         private void coalescerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Coaleser Form2 = new Coaleser();
+            //Check if a CDT is loaded
+            if (tabControl1.TabPages.Count < 1)
+                return;
+            //Get the current CDT Tab
             string current_tab = tabControl1.SelectedTab.Name;
+
             foreach (NewTab tab in tabs)
                 if (current_tab.Equals(tab.tab_name))
                     extract_path = tab.extract_path;
@@ -212,7 +218,7 @@ namespace Log_Analyzer
 
         private void tabControl1_MouseDown(object sender, MouseEventArgs e)
         {
-            for (var i = 0; i <= tabControl1.TabPages.Count; i++)
+            for (var i = 0; i <= tabControl1.TabPages.Count - 1; i++)
             {
                 var tabRect = tabControl1.GetTabRect(i);
                 tabRect.Inflate(-2, -2);
