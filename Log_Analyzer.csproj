@@ -65,7 +65,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CDTTab.cs" />
+    <Compile Include="CDT_Tab_Template.cs" />
+    <Compile Include="NewTab.cs" />
     <Compile Include="Coaleser.cs">
       <SubType>Form</SubType>
     </Compile>

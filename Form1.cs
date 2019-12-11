@@ -155,6 +155,7 @@ namespace Log_Analyzer
             }
         }
 
+
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e) // START of loading CDT
         {
             OpenFileDialog openFile = new OpenFileDialog();
@@ -171,17 +172,17 @@ namespace Log_Analyzer
                     string tab_name = file_name.Substring(file_name.LastIndexOf("\\") + 1, index - file_name.LastIndexOf("\\") - 1);
 
                     //Check if CDT is already loaded
-                    if(CDTTab.doesExist(tab_name, tabControl1))
+                    if(NewTab.doesExist(tab_name, tabControl1))
                         return;
 
                     //If not, load another page
-                    CDTTab new_tab = new CDTTab(tab_name, tabControl1);
+                    NewTab new_tab = new NewTab(tab_name, tabControl1, TabSystem);
 
                     getSysInformation gsi = new getSysInformation($"{extract_path}");
                     getAgentInformation gai = new getAgentInformation($"{extract_path}", gsi.getSysArch());
 
-                    loadSysInformation(gsi);
-                    loadAgentInformation(gai);
+                    loadSysInformation(gsi, tabControl1.TabPages[tab_name]);
+                    loadAgentInformation(gai, tabControl1.TabPages[tab_name]);
 
                 }
             }
@@ -261,8 +262,8 @@ namespace Log_Analyzer
             extract_path = extractZip(full_path);
         }
 
-        private void loadAgentInformation(getAgentInformation gai)
-        {
+        private void loadAgentInformation(getAgentInformation gai, TabPage tp)
+        {   
             lblAgentVersion_value.Text = gai.getAgentVer();
             lblAgentBuild_value.Text = gai.getAgentBuild();
             lblAgentAddr_value.Text = gai.getServer();
@@ -278,7 +279,7 @@ namespace Log_Analyzer
             lblSmartScanPatternVer_value.Text = gai.getSmartPtnVersion();
         }
 
-        private void loadSysInformation(getSysInformation gsi)
+        private void loadSysInformation(getSysInformation gsi, TabPage tp)
         {
             lblHostname_value.Text = gsi.getHostname(); //Host name
             lblIPAddress_value.Text = gsi.getIpAdd(); //Ip Address

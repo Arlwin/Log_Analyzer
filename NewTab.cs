@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Log_Analyzer
 {
-    class CDTTab
+    class NewTab
     {
         /*
          * Instantiate the name of the tab
@@ -20,21 +21,17 @@ namespace Log_Analyzer
 
         private string tab_name;
 
-        public CDTTab(string name, TabControl tc)
+        public NewTab(string name, TabControl current_tc, TabControl template)
         {
-            //Add a new TabPage to the TabControl
+            //Init new TabPage to the TabControl
             tab_name = name;
-            tc.TabPages.Add(tab_name, tab_name);
-
-            //Create all the previous elements
-            initElements();
-            initDesign();
+            current_tc.TabPages.Add(tab_name, tab_name);
 
             //Add all the previous elements to the new tab page
-            loadContent(tc, tab_name);
+            loadContent(current_tc.TabPages[tab_name]);
 
             //Set focus to the new tab page
-            tc.SelectedTab = tc.TabPages[tab_name];
+            current_tc.SelectedTab = current_tc.TabPages[tab_name];
         }
 
         public static bool doesExist(string tp_name, TabControl tc)
@@ -44,18 +41,10 @@ namespace Log_Analyzer
             return false;
         }
 
-        private void loadContent(TabControl tc, string tab_name)
+        private void loadContent(TabPage tp)
         {
+            CDT_Tab_Template new_tab = new CDT_Tab_Template(tp);
         }
-
-        private void initDesign()
-        {
-        }
-
-        private void initElements()
-        {
-
-        }
-
+        
     }
 }
