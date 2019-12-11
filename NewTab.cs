@@ -31,13 +31,17 @@ namespace Log_Analyzer
         {
             //Init new TabPage to the TabControl
             tab_name = name;
-            current_tc.TabPages.Add(tab_name, tab_name);
+
+            //Try to extract the given filepath
+            UnzipCDTAsync(file_name);
+
+            //Try to get information
+            getSysInformation gsi = new getSysInformation($"{extract_path}");
+            getAgentInformation gai = new getAgentInformation($"{extract_path}", gsi.getSysArch());
 
             //Add all the previous elements to the new tab page
+            current_tc.TabPages.Add(tab_name, tab_name);
             loadContent(current_tc.TabPages[tab_name]);
-
-            //Extract the given filepath
-            UnzipCDTAsync(file_name);
 
             //Add some default file paths to the CDT 
             new_tab.extract_path = extract_path;
@@ -46,9 +50,6 @@ namespace Log_Analyzer
             CDT_Tab_Template.imported_CSV_update = "";
 
             //Populate the tabs
-            getSysInformation gsi = new getSysInformation($"{extract_path}");
-            getAgentInformation gai = new getAgentInformation($"{extract_path}", gsi.getSysArch());
-
             loadSysInformation(gsi, current_tc.TabPages[tab_name]);
             loadAgentInformation(gai, current_tc.TabPages[tab_name]);
 
