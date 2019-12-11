@@ -316,24 +316,11 @@ namespace Log_Analyzer
             var closeImage = Properties.Resources.Close;
             e.Graphics.DrawImage(closeImage, (tabRect.Right - closeImage.Width), tabRect.Top + (tabRect.Height - closeImage.Height) / 2);
             TextRenderer.DrawText(e.Graphics, tabPage.Text, tabPage.Font,tabRect, tabPage.ForeColor, TextFormatFlags.Left);
-
-            /*
-            var tabPage = tabControlFile.SelectedTab;
-            var tabRect = tabControlFile.GetTabRect(tabControlFile.SelectedIndex);
-            tabRect.Inflate(-2, -2);
-
-            var closeImage = Properties.Resources.Close;
-            e.Graphics.DrawImage(closeImage, (tabRect.Right - closeImage.Width), tabRect.Top + (tabRect.Height - closeImage.Height) / 2);
-            TextRenderer.DrawText(e.Graphics, tabPage.Text, tabPage.Font, tabRect, tabPage.ForeColor, TextFormatFlags.Left);
-            */
         }
 
         private void tabControlFile_MouseDown(object sender, MouseEventArgs e)
         {
-            
-            var lastIndex = tabControlFile.TabCount - 1;
-
-            for(var i = 0; i < tabControlFile.TabPages.Count; i++)
+            for(var i = 0; i <= tabControlFile.TabPages.Count; i++)
                 {
                     var tabRect = tabControlFile.GetTabRect(i);
                     tabRect.Inflate(-2, -2);

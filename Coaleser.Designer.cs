@@ -105,7 +105,7 @@ namespace Log_Analyzer
             this.tabControlFile.SelectedIndex = 0;
             this.tabControlFile.Size = new System.Drawing.Size(752, 203);
             this.tabControlFile.TabIndex = 0;
-            this.tabControlFile.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControlFile_MouseDown);
+            //this.tabControlFile.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControlFile_MouseDown);
             // 
             // rtextSelectedFiles
             // 
