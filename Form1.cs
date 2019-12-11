@@ -30,6 +30,9 @@ namespace Log_Analyzer
         //For the Known Errors grid
         private List<List<string>> ErrorsList;
 
+        //List of Tabs
+        private List<NewTab> tabs = new List<NewTab>();
+
         public Form1()
         {
             InitializeComponent();
@@ -58,44 +61,7 @@ namespace Log_Analyzer
         {
         }
 
-        private string extractZip(string path)
-        {
-            string dest = "";
-
-            try
-            {
-                int index = path.IndexOf(".");
-                string filename = path.Substring(path.LastIndexOf("\\") + 1, index - path.LastIndexOf("\\") - 1);
-
-                if (index > 0)
-                {
-                    //dest = path.Substring(0, index);
-                    dest = "TEMP\\" + filename;
-                }
-
-                var dir = new DirectoryInfo(dest);
-                if (dir.Exists)
-                    dir.Delete(true);
-                
-                using (Ionic.Zip.ZipFile zip = Ionic.Zip.ZipFile.Read(path))
-                {
-                    zip.Password = "trend";
-
-                    zip.ExtractProgress += new EventHandler<ExtractProgressEventArgs>(zip_ExtractProgress);
-                    
-                    zip.ExtractAll(dest, Ionic.Zip.ExtractExistingFileAction.OverwriteSilently);
-                    
-                }
-
-            } catch (Exception ex){
-                if (ex.Message.Equals("Ionic.Zip.ZipException"))
-                    Console.WriteLine("Please upload proper ZIP");
-            }
-            
-            return dest;
-        }
-       
-        void zip_ExtractProgress(object sender, ExtractProgressEventArgs e)
+        public static void zip_ExtractProgress(object sender, ExtractProgressEventArgs e)
         {
             if (e.BytesTransferred > 0)
             {
@@ -110,51 +76,6 @@ namespace Log_Analyzer
 
         }
 
-        private void loadDir(string path, Coaleser Form2)
-        {
-            try
-            {
-                DirectoryInfo dir = new DirectoryInfo(path);
-
-                TreeNode node = Form2.c_tree_FileView.Nodes.Add(dir.Name);
-                node.Tag = dir.FullName;
-                node.StateImageIndex = 0;
-                loadFiles(path, node);
-                loadSubDir(path, node);
-            }
-            catch (Exception ex) { }
-
-        }
-
-        private void loadSubDir(string path, TreeNode node)
-        {
-            string[] subdir = Directory.GetDirectories(path);
-
-            foreach (string sub in subdir)
-            {
-                DirectoryInfo dir = new DirectoryInfo(sub);
-                TreeNode nodes = node.Nodes.Add(dir.Name);
-                nodes.StateImageIndex = 0;
-                nodes.Tag = dir.FullName;
-                loadFiles(sub, nodes);
-                loadSubDir(sub, nodes);
-
-            }
-        }
-
-        private void loadFiles(string path, TreeNode node)
-        {
-            string[] files = Directory.GetFiles(path, "*.*");
-            
-            foreach (string file in files)
-            {
-                FileInfo fi = new FileInfo(file);
-                TreeNode nodes = node.Nodes.Add(fi.Name);
-                nodes.Tag = fi.FullName;
-                nodes.StateImageIndex = 1;
-            }
-        }
-
 
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e) // START of loading CDT
         {
@@ -165,25 +86,26 @@ namespace Log_Analyzer
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
                     string file_name = openFile.FileName;
-                    UnzipCDTAsync(file_name);
 
                     //Get the tab name
                     int index = file_name.IndexOf(".");
                     string tab_name = file_name.Substring(file_name.LastIndexOf("\\") + 1, index - file_name.LastIndexOf("\\") - 1);
 
                     //Check if CDT is already loaded
-                    if(NewTab.doesExist(tab_name, tabControl1))
+                    if (NewTab.doesExist(tab_name, tabControl1))
                         return;
 
+                    //UnzipCDTAsync(file_name);
+
                     //If not, load another page
-                    NewTab new_tab = new NewTab(tab_name, tabControl1, TabSystem);
+                    NewTab new_tab = new NewTab(tab_name, tabControl1, file_name);
+                    tabs.Add(new_tab);
 
-                    getSysInformation gsi = new getSysInformation($"{extract_path}");
-                    getAgentInformation gai = new getAgentInformation($"{extract_path}", gsi.getSysArch());
+                    //getSysInformation gsi = new getSysInformation($"{extract_path}");
+                    //getAgentInformation gai = new getAgentInformation($"{extract_path}", gsi.getSysArch());
 
-                    loadSysInformation(gsi, tabControl1.TabPages[tab_name]);
-                    loadAgentInformation(gai, tabControl1.TabPages[tab_name]);
-
+                    //loadSysInformation(gsi, tabControl1.TabPages[tab_name]);
+                    //loadAgentInformation(gai, tabControl1.TabPages[tab_name]);
                 }
             }
             catch (Exception x)
@@ -255,58 +177,64 @@ namespace Log_Analyzer
             r.SelectionLength = 0;
         }
 
-        private void UnzipCDTAsync(String file)
-        {
-            full_path = file;
-
-            extract_path = extractZip(full_path);
-        }
-
-        private void loadAgentInformation(getAgentInformation gai, TabPage tp)
-        {   
-            lblAgentVersion_value.Text = gai.getAgentVer();
-            lblAgentBuild_value.Text = gai.getAgentBuild();
-            lblAgentAddr_value.Text = gai.getServer();
-            lblServerHttpPort_value.Text = gai.getServerHTTP();
-            lblServerHttpsPort_value.Text = gai.getServerHTTPS();
-            lblAgentPort_value.Text = gai.getAgentPort();
-            lblUpdateAgentAddr_value.Text = gai.getUpdateAgentAddress();
-            lblUpdateAgentPort_value.Text = gai.getUpdateAgentPort();
-            lblUpdateAgent_value.Text = gai.getUpdateAgent();
-            lblAgentLocation_value.Text = gai.getAgentLocation();
-            lblEngineVersion_value.Text = gai.getEngineVersion();
-            lblConvenPtnVer_value.Text = gai.getConPtnVersion();
-            lblSmartScanPatternVer_value.Text = gai.getSmartPtnVersion();
-        }
-
-        private void loadSysInformation(getSysInformation gsi, TabPage tp)
-        {
-            lblHostname_value.Text = gsi.getHostname(); //Host name
-            lblIPAddress_value.Text = gsi.getIpAdd(); //Ip Address
-            lblGateway_value.Text = gsi.getGateway(); //Gateway
-            lblDns_value.Text = gsi.getDNS(); //DNS
-
-            lblOperatingSystem_value.Text = gsi.getOS(); //OS
-            lblOSver_value.Text = gsi.getOSver(); //OS Version
-            lblSystemArchitecture_value.Text = gsi.getSysArch(); //System Architecture
-            lblCPU_value.Text = gsi.getCPU(); //CPU
-            lblRam_value.Text = gsi.getRAM(); //RAM
-            lblFreeDiskSpace_value.Text = gsi.getDiskSpace(); //Free Disk Space
-
-            //NOTE: Currently, disk space can only print free disk space of FIRST disk drive
-        }
-
+        //FOR COALESER
         private void coalescerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Coaleser Form2 = new Coaleser();
+            string current_tab = tabControl1.SelectedTab.Name;
+            foreach (NewTab tab in tabs)
+                if (current_tab.Equals(tab.tab_name))
+                    extract_path = tab.extract_path;
+
             loadDir(extract_path, Form2);
 
             Form2.Show();
 
         }
+        private void loadSubDir(string path, TreeNode node)
+        {
+            string[] subdir = Directory.GetDirectories(path);
 
-        private void txt_Fltr_TextChanged(object sender, EventArgs e)
-        {       }
+            foreach (string sub in subdir)
+            {
+                DirectoryInfo dir = new DirectoryInfo(sub);
+                TreeNode nodes = node.Nodes.Add(dir.Name);
+                nodes.StateImageIndex = 0;
+                nodes.Tag = dir.FullName;
+                loadFiles(sub, nodes);
+                loadSubDir(sub, nodes);
+
+            }
+        }
+
+        private void loadFiles(string path, TreeNode node)
+        {
+            string[] files = Directory.GetFiles(path, "*.*");
+
+            foreach (string file in files)
+            {
+                FileInfo fi = new FileInfo(file);
+                TreeNode nodes = node.Nodes.Add(fi.Name);
+                nodes.Tag = fi.FullName;
+                nodes.StateImageIndex = 1;
+            }
+        }
+
+        private void loadDir(string path, Coaleser Form2)
+        {
+            try
+            {
+                DirectoryInfo dir = new DirectoryInfo(path);
+
+                TreeNode node = Form2.c_tree_FileView.Nodes.Add(dir.Name);
+                node.Tag = dir.FullName;
+                node.StateImageIndex = 0;
+                loadFiles(path, node);
+                loadSubDir(path, node);
+            }
+            catch (Exception ex) { }
+
+        }
 
         private string getFullPath()
         {
@@ -365,11 +293,6 @@ namespace Log_Analyzer
             txtUpdate.Text = ua.getSummary();
         }
 
-        private void tabKnownError_Click(object sender, EventArgs e)
-        {
-
-        }
-
         //highlight keyword after typing text on Filter textbox
         //has a bug, it does not include the last character, due to Event KEYDOWN executing AFTER last character is typed
 
@@ -400,8 +323,10 @@ namespace Log_Analyzer
 
                 imported_CSV_offline = @"TEMP\Codes\offline.csv";
                 imported_CSV_update = @"TEMP\Codes\update.csv";
+                CDT_Tab_Template.imported_CSV_offline = @"TEMP\Codes\offline.csv";
+                CDT_Tab_Template.imported_CSV_update = @"TEMP\Codes\update.csv";
             }
-            
+
         }
 
     }
