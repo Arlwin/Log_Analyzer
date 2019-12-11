@@ -214,8 +214,6 @@ namespace Log_Analyzer
                     }
                 }
 
-                imported_CSV_offline = @"TEMP\Codes\offline.csv";
-                imported_CSV_update = @"TEMP\Codes\update.csv";
                 CDT_Tab_Template.imported_CSV_offline = @"TEMP\Codes\offline.csv";
                 CDT_Tab_Template.imported_CSV_update = @"TEMP\Codes\update.csv";
             }

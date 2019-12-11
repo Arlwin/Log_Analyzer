@@ -18,8 +18,8 @@ namespace Log_Analyzer
         public string extract_path { get; set; }
 
         //Imported CSVs [STATIC | For all CDTs]
-        public static string imported_CSV_offline { get; set; }
-        public static string imported_CSV_update { get; set; }
+        public static string imported_CSV_offline { get; set; } = "";
+        public static string imported_CSV_update { get; set; } = "";
 
         //For the Known Errors grid
         private List<List<string>> ErrorsList;
@@ -38,8 +38,6 @@ namespace Log_Analyzer
             //Add the tab control to the TabPage
             tp.Controls.Add(tc);
         }
-
-
 
 
         private TabControl createTabControl()

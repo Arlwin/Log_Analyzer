@@ -46,8 +46,6 @@ namespace Log_Analyzer
             //Add some default file paths to the CDT 
             new_tab.extract_path = extract_path;
             new_tab.full_path = full_path;
-            CDT_Tab_Template.imported_CSV_offline = "";
-            CDT_Tab_Template.imported_CSV_update = "";
 
             //Populate the tabs
             loadSysInformation(gsi, current_tc.TabPages[tab_name]);
