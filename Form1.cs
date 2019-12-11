@@ -17,18 +17,8 @@ namespace Log_Analyzer
 {
     public partial class Form1 : Form
     {
-        //Location of the file, accessible to anywhere 
-        private string full_path = "";
-
         //Extraction path
         private string extract_path = "";
-
-        //Imported CSVs
-        private string imported_CSV_offline = "";
-        private string imported_CSV_update = "";
-
-        //For the Known Errors grid
-        private List<List<string>> ErrorsList;
 
         //List of Tabs
         private List<NewTab> tabs = new List<NewTab>();
@@ -57,7 +47,6 @@ namespace Log_Analyzer
         {
         }
 
-
         public static void zip_ExtractProgress(object sender, ExtractProgressEventArgs e)
         {
             if (e.BytesTransferred > 0)
@@ -70,6 +59,11 @@ namespace Log_Analyzer
                 prog_Open.Value = Convert.ToInt32(100 * e.EntriesExtracted / e.EntriesTotal);
 
             }
+
+        }
+
+        public static void setMainProgressBar(int progress)
+        {
 
         }
 
@@ -102,24 +96,7 @@ namespace Log_Analyzer
                 MessageBox.Show("Error! Invalid Filetype. Make sure to import ZIP format.");
             }
         }
-        
 
-        //For highlighting the results
-        private void highlightText(RichTextBox r, string text)
-        {
-            int s_start = r.SelectionStart, startIndex = 1, index;
-
-            while ((index = r.Text.ToLower().IndexOf(text.ToLower(), startIndex)) != -1)
-            {
-                r.Select(index, text.Length);
-                r.SelectionBackColor = Color.Yellow;
-
-                startIndex = index + text.Length;
-            }
-
-            r.SelectionStart = s_start;
-            r.SelectionLength = 0;
-        }
 
         //FOR COALESER
         private void coalescerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -179,15 +156,6 @@ namespace Log_Analyzer
             catch (Exception ex) { }
 
         }
-
-        private string getFullPath()
-        {
-            getSysInformation gsi = new getSysInformation(extract_path);
-            getAgentInformation gai = new getAgentInformation(extract_path, gsi.getSysArch());
-
-            return $"{ extract_path }\\{ gai.agentfolder}\\CollectedFile\\";
-        }
-
 
         private void ImportToolStripMenuItem_Click(object sender, EventArgs e)
         {
