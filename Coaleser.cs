@@ -25,8 +25,9 @@ namespace Log_Analyzer
             InitializeComponent();
             tabControlFile.Padding = new Point(12, 4);
             tabControlFile.DrawMode = TabDrawMode.OwnerDrawFixed;
-            tabControlFile.DrawItem += tabControlFile_DrawItem_1;
+            tabControlFile.DrawItem += tabControlFile_DrawItem;
             tabControlFile.MouseDown += tabControlFile_MouseDown;
+
            // tabControlFile.Selecting += tabControlFile_Selecting;
 
         }
@@ -66,18 +67,10 @@ namespace Log_Analyzer
             }
 
             //Add new key and name
-
             tabControlFile.TabPages.Add(name, name);
             Console.WriteLine(tabControlFile.TabPages[name]);
 
             tabControlFile.SelectedTab = tabControlFile.TabPages[name];
-
-            //tab drawing initialization
-
-       
-           // tabControlFile.HandleCreated += tabControlFile_HandleCreated;
-
-
 
             //Focus on new tab key
             tabControlFile.SelectedTab = tabControlFile.TabPages[name];
@@ -100,10 +93,8 @@ namespace Log_Analyzer
             new_rtxtSearchResult.WordWrap = false;
 
 
-
             //Add the textbox to the tab
             tabControlFile.TabPages[name].Controls.Add(new_rtxtSearchResult);
-
 
             //Return the textbox created
             return new_rtxtSearchResult;
@@ -198,7 +189,7 @@ namespace Log_Analyzer
         //Search function
         private void Btn_Search_Click(object sender, EventArgs e)
         {
-           var c_rtxtSearchResult = (RichTextBox)tabControlFile.SelectedTab.Controls[0];
+           var c_rtxtSearchResult = (RichTextBox) tabControlFile.SelectedTab.Controls[0];
 
             //If textbox / search is empty, do nothing
             /*if (c_rtxtSearchResult.Text.Equals("") || txtSearch.Text.Trim().Equals(""))
@@ -294,37 +285,6 @@ namespace Log_Analyzer
             int line_number = rtextSelectedFiles.GetLineFromCharIndex(rtextSelectedFiles.SelectionStart); //Get the line index of the selected word
             string line = rtextSelectedFiles.Lines[line_number].Trim(); //removed white spaces
 
-            /** Using the Find method (Slow) */
-            /*
-            int word_index = c_rtxtSearchResult.Find(line); //find the part where the line matches
-
-            // This method has subtraction to try and focus the line below the top 
-            int view = word_index - 30;
-            if (view < 0)
-            {
-                c_rtxtSearchResult.Select(word_index, rtextSelectedFiles.Lines[line_number].Length);
-            }
-            else
-            {
-                c_rtxtSearchResult.Select(word_index - 30, rtextSelectedFiles.Lines[line_number].Length);
-            }
-            */
-
-            /** Searching lines instead of strings */
-            /* Little slow
-            int counter = 0;
-            foreach (var textbox_line in c_rtxtSearchResult.Lines)
-            {
-                if (textbox_line.Contains(line))
-                {
-                    //If a line on the textbox matches the selected line on the searchtextbox, select that line
-                    int index_of_line = c_rtxtSearchResult.GetFirstCharIndexFromLine(counter); //Get the index from the line first
-                    c_rtxtSearchResult.Select(index_of_line, line.Length);//Select the index with lenght of the line
-                }
-                counter++;
-            }
-            */
-
             //Try to use caching to get the line number immediately
             //Faster but not instant 
             string string_line_number = line.Substring(0, line.IndexOf(" ")); //Get the number from the line before the ||
@@ -335,12 +295,6 @@ namespace Log_Analyzer
                 c_rtxtSearchResult.Select(index_of_line, line.Length - 10); //Select the index with length of the line
             else
                 c_rtxtSearchResult.Select(index_of_line - 50, line.Length - 10); //Select the index with length of the line
-
-            /* Test
-            Random rand_num = new Random();
-            int random_index = rand_num.Next(0, c_rtxtSearchResult.Text.Length - 1);
-            c_rtxtSearchResult.Select(random_index, line.Length - 10); //Select the index with length of the line
-            */
 
             Console.WriteLine(line);
 
@@ -353,23 +307,30 @@ namespace Log_Analyzer
 
         }
 
-        private void tabControlFile_DrawItem_1(object sender, DrawItemEventArgs e)
+        private void tabControlFile_DrawItem(object sender, DrawItemEventArgs e)
         {
 
+            var tabPage = this.tabControlFile.TabPages[e.Index];
+            var tabRect = this.tabControlFile.GetTabRect(e.Index);
+            tabRect.Inflate(-2, -2);
+            var closeImage = Properties.Resources.Close;
+            e.Graphics.DrawImage(closeImage, (tabRect.Right - closeImage.Width), tabRect.Top + (tabRect.Height - closeImage.Height) / 2);
+            TextRenderer.DrawText(e.Graphics, tabPage.Text, tabPage.Font,tabRect, tabPage.ForeColor, TextFormatFlags.Left);
+
+            /*
             var tabPage = tabControlFile.SelectedTab;
             var tabRect = tabControlFile.GetTabRect(tabControlFile.SelectedIndex);
             tabRect.Inflate(-2, -2);
 
             var closeImage = Properties.Resources.Close;
-            e.Graphics.DrawImage(closeImage,
-                    (tabRect.Right - closeImage.Width),
-                    tabRect.Top + (tabRect.Height - closeImage.Height) / 2);
-           TextRenderer.DrawText(e.Graphics, tabPage.Text, tabPage.Font, tabRect, tabPage.ForeColor, TextFormatFlags.Left);;
-            
+            e.Graphics.DrawImage(closeImage, (tabRect.Right - closeImage.Width), tabRect.Top + (tabRect.Height - closeImage.Height) / 2);
+            TextRenderer.DrawText(e.Graphics, tabPage.Text, tabPage.Font, tabRect, tabPage.ForeColor, TextFormatFlags.Left);
+            */
         }
 
         private void tabControlFile_MouseDown(object sender, MouseEventArgs e)
         {
+            
             var lastIndex = tabControlFile.TabCount - 1;
 
             for(var i = 0; i < tabControlFile.TabPages.Count; i++)
@@ -388,18 +349,8 @@ namespace Log_Analyzer
                         break;
                     }
                 }
-            
-        }
-
-        private void pnlMain_Paint(object sender, PaintEventArgs e)
-        {
 
         }
 
-      //  private void tabControlFile_Selecting(object sender, TabControlCancelEventArgs e)
-       // {
-       //     if (e.TabPageIndex == this.tabControlFile.TabCount - 1)
-       //         e.Cancel = true;
-        //}
     }
 }

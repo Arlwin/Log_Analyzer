@@ -65,7 +65,6 @@ namespace Log_Analyzer
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1013, 497);
             this.pnlMain.TabIndex = 0;
-            this.pnlMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMain_Paint);
             // 
             // splitContainer
             // 
@@ -106,8 +105,6 @@ namespace Log_Analyzer
             this.tabControlFile.SelectedIndex = 0;
             this.tabControlFile.Size = new System.Drawing.Size(752, 203);
             this.tabControlFile.TabIndex = 0;
-            this.tabControlFile.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControlFile_DrawItem_1);
-            //this.tabControlFile.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControlFile_Selecting);
             this.tabControlFile.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabControlFile_MouseDown);
             // 
             // rtextSelectedFiles
