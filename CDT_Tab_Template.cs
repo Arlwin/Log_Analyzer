@@ -975,6 +975,8 @@ namespace Log_Analyzer
 
         //METHODS
         //FOR OFFLINE ANALYZER
+        offlineAnalyzer oa;
+
         private void Btn_OffAnalyze_Click(object sender, EventArgs e)
         {
             clearGrid(this.grid_KnownError);
@@ -989,15 +991,20 @@ namespace Log_Analyzer
             d.Refresh();
         }
 
-        private void offAnalyze(string path)
+        private async Task offAnalyze(string path)
         {
             txtResults.Text = ""; //Clear
 
             if (imported_CSV_offline.Equals(""))
                 imported_CSV_offline = "codes.csv";
 
-            offlineAnalyzer oa = new offlineAnalyzer($"{path}Event1\\", imported_CSV_offline);
+            await Task.Run(()=> initAnalyzerAsync(path));
             loadKnownError(oa.errorList, oa.errorsFound);
+        }
+
+        private async Task initAnalyzerAsync(string path)
+        {
+            oa = new offlineAnalyzer($"{path}Event1\\", imported_CSV_offline);
         }
 
         private string getFullPath()

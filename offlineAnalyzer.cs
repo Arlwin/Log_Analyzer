@@ -51,11 +51,19 @@ namespace Log_Analyzer
             //Get all the debuglogs
             FileInfo[] files = dir.GetFiles("ofcdebug.log*");
 
-            //Reset the Progress bar
-            int counter = 0;
-            int total = files.Count();
-            Form1.setMainProgressBar(counter);
+            //For testing (Check how much time)
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
 
+            fileTraversal(files, errorCodes, filepath);
+
+            sw.Stop();
+            Console.WriteLine(sw.Elapsed);
+        }
+
+        //Loop of each file
+        private void fileTraversal(FileInfo[] files, List<string[]> errorCodes, string filepath)
+        {
             foreach (var file in files)
             {
                 string filename = file.ToString();
@@ -86,12 +94,7 @@ namespace Log_Analyzer
                 {
                     analyzeAsync($"{filepath}{file}", errorCodes);
                 }
-
-                //Update the progress bar for each file done
-                //counter++;
-                //Form1.setMainProgressBar(100 * (counter / total));
             }
-
         }
 
         //Main function
@@ -119,14 +122,11 @@ namespace Log_Analyzer
                     }
 
                     counter++;
-                    //Update the sub progress bar
-                    //Form1.setSubProgressBar(100 * (counter / (errorCodes.Count())));
                 }
 
                 counter = 0;
-                //Reset the sub
-                //Form1.setSubProgressBar(counter);
             }
+
         }
 
         //Load the codes
