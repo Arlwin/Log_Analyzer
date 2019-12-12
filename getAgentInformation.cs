@@ -283,7 +283,10 @@ namespace Log_Analyzer
 
         public String getUpdateAgentPort()
         {
-            return UpdateAgentPort;
+            if (UpdateAgent.Equals("0"))
+                return "N/A";
+            else
+                return UpdateAgentPort;
         }
 
 
@@ -295,7 +298,10 @@ namespace Log_Analyzer
 
         public String getUpdateAgentAddress()
         {
-            return UpdateAgentAddress;
+            if (UpdateAgent.Equals("0"))
+                return "N/A";
+            else
+                return UpdateAgentAddress;
         }
         
 

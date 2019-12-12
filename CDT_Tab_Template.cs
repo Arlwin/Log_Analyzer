@@ -936,7 +936,7 @@ namespace Log_Analyzer
 
             return controls;
         }
-            private List<Control> UpdateIssueCreateElements()
+        private List<Control> UpdateIssueCreateElements()
         {
             List<Control> controls = new List<Control>();
 
