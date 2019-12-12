@@ -109,7 +109,7 @@
             this.prog_Open.Location = new System.Drawing.Point(-4, 814);
             this.prog_Open.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.prog_Open.Name = "prog_Open";
-            this.prog_Open.Size = new System.Drawing.Size(1211, 12);
+            this.prog_Open.Size = new System.Drawing.Size(1091, 17);
             this.prog_Open.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.prog_Open.TabIndex = 40;
             // 
@@ -118,10 +118,10 @@
             this.prog_perFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.prog_perFile.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.prog_perFile.Location = new System.Drawing.Point(1075, 814);
+            this.prog_perFile.Location = new System.Drawing.Point(1084, 814);
             this.prog_perFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.prog_perFile.Name = "prog_perFile";
-            this.prog_perFile.Size = new System.Drawing.Size(232, 12);
+            this.prog_perFile.Size = new System.Drawing.Size(223, 17);
             this.prog_perFile.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.prog_perFile.TabIndex = 41;
             // 
@@ -166,32 +166,32 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.saveAsToolStripMenuItem.Text = "Save as";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // importToolStripMenuItem
             // 
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.importToolStripMenuItem.Text = "Import";
             this.importToolStripMenuItem.Click += new System.EventHandler(this.ImportToolStripMenuItem_Click);
             // 
