@@ -21,14 +21,20 @@ namespace Log_Analyzer
          * 
          */
 
+        //The current form
+        Form1 mainform;
+
         //The tab name
         public string tab_name { get; set; }
         public string full_path { get; set; }
         public string extract_path { get; set; }
 
         CDT_Tab_Template new_tab;
-        public NewTab(string name, TabControl current_tc, string file_name)
+        public NewTab(string name, TabControl current_tc, string file_name, Form1 mainForm)
         {
+            //Get the current form
+            mainform = mainForm;
+
             //Init new TabPage to the TabControl
             tab_name = name;
 
@@ -99,7 +105,7 @@ namespace Log_Analyzer
                 {
                     zip.Password = "trend";
 
-                    zip.ExtractProgress += new EventHandler<ExtractProgressEventArgs>(Form1.zip_ExtractProgress);
+                    zip.ExtractProgress += new EventHandler<ExtractProgressEventArgs>(zip_ExtractProgress);
 
                     zip.ExtractAll(dest, Ionic.Zip.ExtractExistingFileAction.OverwriteSilently);
 
@@ -113,6 +119,21 @@ namespace Log_Analyzer
             }
 
             return dest;
+        }
+
+        private void zip_ExtractProgress(object sender, ExtractProgressEventArgs e)
+        {
+            if (e.BytesTransferred > 0)
+            {
+                //prog_perFile.Value = Convert.ToInt32(100 * e.BytesTransferred / e.TotalBytesToTransfer);
+                mainform.setSubProgressBar(Convert.ToInt32(100 * e.BytesTransferred / e.TotalBytesToTransfer));
+            }
+
+            if ((e.EntriesTotal - e.EntriesExtracted) >= 0 && (e.EntriesTotal > 0))
+            {
+                mainform.setMainProgressBar(Convert.ToInt32(100 * e.EntriesExtracted / e.EntriesTotal));
+
+            }
         }
 
 

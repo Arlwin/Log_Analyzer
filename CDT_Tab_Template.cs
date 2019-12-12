@@ -998,7 +998,7 @@ namespace Log_Analyzer
             if (imported_CSV_offline.Equals(""))
                 imported_CSV_offline = "codes.csv";
 
-            await Task.Run(()=> initAnalyzerAsync(path));
+            await Task.Run(()=> initAnalyzerAsync(path)); //For MultiThreading
             loadKnownError(oa.errorList, oa.errorsFound);
         }
 

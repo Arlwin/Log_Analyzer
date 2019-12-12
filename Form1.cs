@@ -51,27 +51,12 @@ namespace Log_Analyzer
         {
         }
 
-        public static void zip_ExtractProgress(object sender, ExtractProgressEventArgs e)
-        {
-            if (e.BytesTransferred > 0)
-            {
-                prog_perFile.Value = Convert.ToInt32(100 * e.BytesTransferred / e.TotalBytesToTransfer);
-            }
-
-            if ((e.EntriesTotal - e.EntriesExtracted) >= 0 && (e.EntriesTotal > 0))
-            {
-                prog_Open.Value = Convert.ToInt32(100 * e.EntriesExtracted / e.EntriesTotal);
-
-            }
-
-        }
-
-        public static void setMainProgressBar(int progress)
+        public void setMainProgressBar(int progress)
         {
             prog_Open.Value = progress;
         }
 
-        public static void setSubProgressBar(int progress)
+        public void setSubProgressBar(int progress)
         {
             prog_perFile.Value = progress;
         }
@@ -98,7 +83,7 @@ namespace Log_Analyzer
                     }
 
                     //If not, load another page
-                    NewTab new_tab = new NewTab(tab_name, tabControl1, file_name);
+                    NewTab new_tab = new NewTab(tab_name, tabControl1, file_name, this);
                     tabs.Add(new_tab);
 
                 }
