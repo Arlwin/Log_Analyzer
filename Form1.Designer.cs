@@ -45,11 +45,22 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.coalescerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblStartPage = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblHowTo = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.pnl_Toolbar.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -80,7 +91,7 @@
             this.pnl_Toolbar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnl_Toolbar.BackColor = System.Drawing.Color.DarkRed;
+            this.pnl_Toolbar.BackColor = System.Drawing.Color.Firebrick;
             this.pnl_Toolbar.Controls.Add(this.prog_Open);
             this.pnl_Toolbar.Controls.Add(this.prog_perFile);
             this.pnl_Toolbar.Controls.Add(this.tabControl1);
@@ -116,14 +127,13 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Location = new System.Drawing.Point(4, 4);
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1299, 813);
+            this.tabControl1.Size = new System.Drawing.Size(1307, 827);
             this.tabControl1.TabIndex = 0;
             // 
             // menuStrip1
@@ -212,6 +222,106 @@
             this.coalescerToolStripMenuItem.Text = "Coalescer";
             this.coalescerToolStripMenuItem.Click += new System.EventHandler(this.coalescerToolStripMenuItem_Click);
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.lblHowTo);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.lblStartPage);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(1299, 798);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Start Page";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // lblStartPage
+            // 
+            this.lblStartPage.AutoSize = true;
+            this.lblStartPage.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStartPage.Location = new System.Drawing.Point(21, 23);
+            this.lblStartPage.Name = "lblStartPage";
+            this.lblStartPage.Size = new System.Drawing.Size(354, 28);
+            this.lblStartPage.TabIndex = 0;
+            this.lblStartPage.Text = "Welcome to Log Analyzer V1!";
+            this.lblStartPage.Click += new System.EventHandler(this.lblStartPage_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(39, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(835, 24);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "This Tool is designed to help Customer, Partner and Support to perform Assessment" +
+    " on CDT Logs.\r\n";
+            // 
+            // lblHowTo
+            // 
+            this.lblHowTo.AutoSize = true;
+            this.lblHowTo.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHowTo.Location = new System.Drawing.Point(21, 151);
+            this.lblHowTo.Name = "lblHowTo";
+            this.lblHowTo.Size = new System.Drawing.Size(249, 28);
+            this.lblHowTo.TabIndex = 2;
+            this.lblHowTo.Text = "How to use this Tool?";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(39, 212);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(169, 24);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "1. Open a CDT file.";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(39, 245);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(201, 24);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "2. Import Code Pattern.\r\n";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(39, 280);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(633, 24);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "3. Check Known Errors Tab to generate error list based from ofcdebug log.\r\n";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(39, 317);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(625, 24);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "4. Check Upate Issues Tab to generate error list based from Tmudump txt.\r\n";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(39, 351);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(709, 24);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "5. Click Tools to access Coalescer Tab (Feature is restricted to Support Team Onl" +
+    "y).";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -232,8 +342,11 @@
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             this.pnl_Toolbar.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -257,6 +370,15 @@
 
         private System.Windows.Forms.ProgressBar prog_Open;
         private System.Windows.Forms.ProgressBar prog_perFile;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label lblStartPage;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblHowTo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 
