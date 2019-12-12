@@ -167,10 +167,11 @@ namespace Log_Analyzer
             // 
             // btn_Search
             // 
+            this.btn_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Search.Location = new System.Drawing.Point(457, 28);
             this.btn_Search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(100, 28);
+            this.btn_Search.Size = new System.Drawing.Size(88, 28);
             this.btn_Search.TabIndex = 8;
             this.btn_Search.Text = "Search";
             this.btn_Search.UseVisualStyleBackColor = true;
