@@ -17,8 +17,6 @@ namespace Log_Analyzer
 {
     public partial class Coaleser : Form
     {
-
-        private TabPage previousTabPage = new TabPage();
         private TabPage current_searchedTabPage = new TabPage();
 
         public Coaleser()
@@ -207,10 +205,7 @@ namespace Log_Analyzer
             //Highlight the words on that textbox = slow
             //highlightText(rtextSelectedFiles, searchText);
 
-            //Used in Double Click function
-            previousTabPage = tabControlFile.SelectedTab;
-
-            //Used in closing windows
+            //Used in closing windows and focusing on the textbox where searched
             current_searchedTabPage = tabControlFile.SelectedTab;
         }
 
@@ -268,9 +263,9 @@ namespace Log_Analyzer
 
         private void RtextSelectedFiles_DoubleClick(object sender, EventArgs e)
         {
-            if (!tabControlFile.SelectedTab.Text.Equals(previousTabPage.Text))
+            if (!tabControlFile.SelectedTab.Text.Equals(current_searchedTabPage.Text))
             {
-                tabControlFile.SelectedTab = previousTabPage;
+                tabControlFile.SelectedTab = current_searchedTabPage;
             }
 
             var c_rtxtSearchResult = (RichTextBox)tabControlFile.SelectedTab.Controls[0];
