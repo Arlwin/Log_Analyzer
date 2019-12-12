@@ -88,8 +88,8 @@ namespace Log_Analyzer
                 }
 
                 //Update the progress bar for each file done
-                counter++;
-                Form1.setMainProgressBar(100 * (counter / total));
+                //counter++;
+                //Form1.setMainProgressBar(100 * (counter / total));
             }
 
         }
@@ -120,12 +120,12 @@ namespace Log_Analyzer
 
                     counter++;
                     //Update the sub progress bar
-                    Form1.setSubProgressBar(100 * (counter / (errorCodes.Count())));
+                    //Form1.setSubProgressBar(100 * (counter / (errorCodes.Count())));
                 }
 
                 counter = 0;
                 //Reset the sub
-                Form1.setSubProgressBar(counter);
+                //Form1.setSubProgressBar(counter);
             }
         }
 

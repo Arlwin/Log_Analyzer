@@ -19,6 +19,7 @@ namespace Log_Analyzer
     {
 
         private TabPage previousTabPage = new TabPage();
+        private TabPage current_searchedTabPage = new TabPage();
 
         public Coaleser()
         {
@@ -28,14 +29,13 @@ namespace Log_Analyzer
             tabControlFile.DrawItem += tabControlFile_DrawItem;
             tabControlFile.MouseDown += tabControlFile_MouseDown;
 
-           // tabControlFile.Selecting += tabControlFile_Selecting;
-
+            rtextSelectedFiles.Text = "";
         }
         
         private void c_tree_FileView_AfterSelect(object sender, TreeViewEventArgs e)
         {
             string[] lines = checkIfZip(e);
-            rtextSelectedFiles.Text = "";
+            //rtextSelectedFiles.Text = "";
 
             if (lines == null)
                 lines = readText(e);
@@ -46,8 +46,6 @@ namespace Log_Analyzer
             else
             {
                 var text_box = newTabPage(e.Node.Text);
-
-             
 
                 //c_rtxtSearchResult.Clear();
                 // writeToTextBox(lines, c_rtxtSearchResult);
@@ -209,7 +207,11 @@ namespace Log_Analyzer
             //Highlight the words on that textbox = slow
             //highlightText(rtextSelectedFiles, searchText);
 
+            //Used in Double Click function
             previousTabPage = tabControlFile.SelectedTab;
+
+            //Used in closing windows
+            current_searchedTabPage = tabControlFile.SelectedTab;
         }
 
         private List<string> getLines(RichTextBox r, string search)
@@ -332,6 +334,9 @@ namespace Log_Analyzer
                         closeImage.Height);
                     if (imageRect.Contains(e.Location))
                     {
+                        if (current_searchedTabPage.Name.Equals(tabControlFile.TabPages[i].Name))
+                            rtextSelectedFiles.Text = "";
+
                         tabControlFile.TabPages.RemoveAt(i);
                         break;
                     }
