@@ -61,7 +61,8 @@ namespace Log_Analyzer
             prog_perFile.Value = progress;
         }
 
-        private void OpenToolStripMenuItem_Click(object sender, EventArgs e) // START of loading CDT
+        // START of loading CDT
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e) 
         {
             OpenFileDialog openFile = new OpenFileDialog();
 
@@ -114,6 +115,7 @@ namespace Log_Analyzer
             Form2.Show();
 
         }
+
         private void loadSubDir(string path, TreeNode node)
         {
             string[] subdir = Directory.GetDirectories(path);
@@ -189,7 +191,6 @@ namespace Log_Analyzer
             }
 
         }
-
 
 
         //Closing tabs
