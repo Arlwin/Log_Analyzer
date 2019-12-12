@@ -857,79 +857,86 @@ namespace Log_Analyzer
             // grid_KnownError
             grid_KnownError = new DataGridView();
             // Design
-            grid_KnownError.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            grid_KnownError.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+ | System.Windows.Forms.AnchorStyles.Left)
+ | System.Windows.Forms.AnchorStyles.Right)));
             grid_KnownError.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grid_KnownError.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
                 colErrorCode,
                 colDescription,
                 colSolution
             });
-            grid_KnownError.Location = new System.Drawing.Point(4, 4);
+            grid_KnownError.Location = new System.Drawing.Point(28, 64);
             grid_KnownError.Margin = new System.Windows.Forms.Padding(4);
             grid_KnownError.Name = "grid_KnownError";
             grid_KnownError.RowHeadersWidth = 51;
-            grid_KnownError.Size = new System.Drawing.Size(894, 403);
+            grid_KnownError.Size = new System.Drawing.Size(1082, 332);
             grid_KnownError.TabIndex = 0;
+            grid_KnownError.ScrollBars = ScrollBars.Both;
+            grid_KnownError.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
 
             //GRID PANEL
             // pnlErrorGrid
             Panel pnlErrorGrid = new Panel();
             // Design
-            pnlErrorGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            pnlErrorGrid.Controls.Add(grid_KnownError);
-            pnlErrorGrid.Location = new System.Drawing.Point(3, 12);
-            pnlErrorGrid.Name = "pnlErrorGrid";
-            pnlErrorGrid.Size = new System.Drawing.Size(902, 423);
-            pnlErrorGrid.TabIndex = 3;
+            //pnlErrorGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            // pnlErrorGrid.Controls.Add(grid_KnownError);
+            //  pnlErrorGrid.Location = new System.Drawing.Point(3, 12);
+            // pnlErrorGrid.Name = "pnlErrorGrid";
+            // pnlErrorGrid.Size = new System.Drawing.Size(902, 423);
+            // pnlErrorGrid.TabIndex = 3;
 
             //Add to Controls
-            controls.Add(pnlErrorGrid);
+            controls.Add(grid_KnownError);
 
 
             // txtResults
             txtResults = new RichTextBox();
             // Design
-            txtResults.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            txtResults.Location = new System.Drawing.Point(4, 14);
-            txtResults.Margin = new System.Windows.Forms.Padding(4);
+
+            txtResults.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+  | System.Windows.Forms.AnchorStyles.Right)));
+            txtResults.Location = new System.Drawing.Point(28, 431);
             txtResults.Name = "txtResults";
-            txtResults.Size = new System.Drawing.Size(877, 265);
+            txtResults.Size = new System.Drawing.Size(1082, 338);
             txtResults.TabIndex = 2;
             txtResults.Text = "";
 
             // pnlSelectedError
             Panel pnlSelectedError = new Panel();
             // Design
-            pnlSelectedError.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            pnlSelectedError.Controls.Add(txtResults);
-            pnlSelectedError.Location = new System.Drawing.Point(7, 441);
-            pnlSelectedError.Name = "pnlSelectedError";
-            pnlSelectedError.Size = new System.Drawing.Size(898, 293);
-            pnlSelectedError.TabIndex = 1;
+            // pnlSelectedError.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            //  pnlSelectedError.Controls.Add(txtResults);
+            //  pnlSelectedError.Location = new System.Drawing.Point(4, 441);
+            //  pnlSelectedError.Name = "pnlSelectedError";
+            //   pnlSelectedError.Size = new System.Drawing.Size(898, 320);
+            //   pnlSelectedError.TabIndex = 1;
 
             //Add to controls
-            controls.Add(pnlSelectedError);
+            controls.Add(txtResults);
 
 
             // btn_OffAnalyze
             Button btn_OffAnalyze = new Button();
             // Design
-            btn_OffAnalyze.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            btn_OffAnalyze.Location = new System.Drawing.Point(933, 12);
+
+            btn_OffAnalyze.Location = new System.Drawing.Point(28, 15);
             btn_OffAnalyze.Margin = new System.Windows.Forms.Padding(4);
             btn_OffAnalyze.Name = "btn_OffAnalyze";
-            btn_OffAnalyze.Size = new System.Drawing.Size(141, 37);
+            btn_OffAnalyze.Size = new System.Drawing.Size(117, 43);
             btn_OffAnalyze.TabIndex = 1;
             btn_OffAnalyze.Text = "Check";
             btn_OffAnalyze.UseVisualStyleBackColor = true;
             btn_OffAnalyze.Click += new System.EventHandler(Btn_OffAnalyze_Click);
+
+
 
             //Add to controls
             controls.Add(btn_OffAnalyze);
 
             return controls;
         }
-        private List<Control> UpdateIssueCreateElements()
+            private List<Control> UpdateIssueCreateElements()
         {
             List<Control> controls = new List<Control>();
 
