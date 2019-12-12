@@ -225,5 +225,9 @@ namespace Log_Analyzer
 
         }
 
+        private void lblStartPage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
