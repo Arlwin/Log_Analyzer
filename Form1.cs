@@ -229,5 +229,71 @@ namespace Log_Analyzer
         {
 
         }
+
+        private void pnl_Toolbar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+        private void pictureBox1_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox1.BackColor = Color.Gray;
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox1.BackColor = Color.Firebrick;
+          
+        }
+
+        private void picMaximize_MouseHover(object sender, EventArgs e)
+        {
+            picMaximize.BackColor = Color.Gray;
+        }
+
+        private void picMaximize_MouseLeave(object sender, EventArgs e)
+        {
+            picMaximize.BackColor = Color.Firebrick;
+        }
+
+        private void picMinimize_MouseHover(object sender, EventArgs e)
+        {
+            picMinimize.BackColor = Color.Gray;
+        }
+
+        private void picMinimize_MouseLeave(object sender, EventArgs e)
+        {
+            picMinimize.BackColor = Color.Firebrick;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+            var msgexit = MessageBox.Show("Are you sure you want to Exit?", "WARNING", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (msgexit == DialogResult.Yes)
+            {
+                System.Environment.Exit(0);
+            }
+            
+        }
+
+        private void picMaximize_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void picMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

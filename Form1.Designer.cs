@@ -30,11 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.pnl_Toolbar = new System.Windows.Forms.Panel();
-            this.prog_Open = new System.Windows.Forms.ProgressBar();
-            this.prog_perFile = new System.Windows.Forms.ProgressBar();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblStartPage = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblHowTo = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.prog_perFile = new System.Windows.Forms.ProgressBar();
+            this.pnlTop = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.prog_Open = new System.Windows.Forms.ProgressBar();
+            this.pnl_Toolbar = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,22 +56,21 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.coalescerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.lblStartPage = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblHowTo = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.picMaximize = new System.Windows.Forms.PictureBox();
+            this.picMinimize = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
-            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
-            this.pnl_Toolbar.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.pnlTop.SuspendLayout();
+            this.pnl_Toolbar.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMaximize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -69,158 +79,33 @@
             // 
             // toolStripContainer1.ContentPanel
             // 
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.panel1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.pnl_Toolbar);
-            this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1315, 835);
+            this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1458, 863);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.LeftToolStripPanelVisible = false;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
-            this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.RightToolStripPanelVisible = false;
-            this.toolStripContainer1.Size = new System.Drawing.Size(1315, 863);
+            this.toolStripContainer1.Size = new System.Drawing.Size(1458, 863);
             this.toolStripContainer1.TabIndex = 0;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
-            // toolStripContainer1.TopToolStripPanel
-            // 
-            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
-            // 
-            // pnl_Toolbar
-            // 
-            this.pnl_Toolbar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnl_Toolbar.BackColor = System.Drawing.Color.Firebrick;
-            this.pnl_Toolbar.Controls.Add(this.prog_Open);
-            this.pnl_Toolbar.Controls.Add(this.prog_perFile);
-            this.pnl_Toolbar.Controls.Add(this.tabControl1);
-            this.pnl_Toolbar.Location = new System.Drawing.Point(4, 4);
-            this.pnl_Toolbar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pnl_Toolbar.Name = "pnl_Toolbar";
-            this.pnl_Toolbar.Size = new System.Drawing.Size(1307, 827);
-            this.pnl_Toolbar.TabIndex = 1;
-            // 
-            // prog_Open
-            // 
-            this.prog_Open.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.prog_Open.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.prog_Open.Location = new System.Drawing.Point(-4, 814);
-            this.prog_Open.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.prog_Open.Name = "prog_Open";
-            this.prog_Open.Size = new System.Drawing.Size(1091, 17);
-            this.prog_Open.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.prog_Open.TabIndex = 40;
-            // 
-            // prog_perFile
-            // 
-            this.prog_perFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.prog_perFile.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.prog_perFile.Location = new System.Drawing.Point(1084, 814);
-            this.prog_perFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.prog_perFile.Name = "prog_perFile";
-            this.prog_perFile.Size = new System.Drawing.Size(223, 17);
-            this.prog_perFile.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.prog_perFile.TabIndex = 41;
-            // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(0, 86);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1307, 827);
+            this.tabControl1.Size = new System.Drawing.Size(1462, 764);
             this.tabControl1.TabIndex = 0;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.formatToolStripMenuItem,
-            this.helpToolStripMenuItem,
-            this.toolsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1315, 28);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem,
-            this.exitToolStripMenuItem,
-            this.importToolStripMenuItem});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(60, 24);
-            this.toolStripMenuItem1.Text = "Menu";
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.openToolStripMenuItem.Text = "Open";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.saveToolStripMenuItem.Text = "Save";
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.saveAsToolStripMenuItem.Text = "Save as";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // importToolStripMenuItem
-            // 
-            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.importToolStripMenuItem.Text = "Import";
-            this.importToolStripMenuItem.Click += new System.EventHandler(this.ImportToolStripMenuItem_Click);
-            // 
-            // formatToolStripMenuItem
-            // 
-            this.formatToolStripMenuItem.Name = "formatToolStripMenuItem";
-            this.formatToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
-            this.formatToolStripMenuItem.Text = "Format";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // toolsToolStripMenuItem
-            // 
-            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.coalescerToolStripMenuItem});
-            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
-            this.toolsToolStripMenuItem.Text = "Tools";
-            // 
-            // coalescerToolStripMenuItem
-            // 
-            this.coalescerToolStripMenuItem.Name = "coalescerToolStripMenuItem";
-            this.coalescerToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
-            this.coalescerToolStripMenuItem.Text = "Coalescer";
-            this.coalescerToolStripMenuItem.Click += new System.EventHandler(this.coalescerToolStripMenuItem_Click);
             // 
             // tabPage1
             // 
@@ -232,9 +117,11 @@
             this.tabPage1.Controls.Add(this.lblHowTo);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.lblStartPage);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 27);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1299, 798);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(0, 0, 18, 0);
+            this.tabPage1.Size = new System.Drawing.Size(1454, 733);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Start Page";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -322,31 +209,257 @@
             this.label6.Text = "5. Click Tools to access Coalescer Tab (Feature is restricted to Support Team Onl" +
     "y).";
             // 
+            // prog_perFile
+            // 
+            this.prog_perFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.prog_perFile.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.prog_perFile.Location = new System.Drawing.Point(1084, 846);
+            this.prog_perFile.Margin = new System.Windows.Forms.Padding(4);
+            this.prog_perFile.Name = "prog_perFile";
+            this.prog_perFile.Size = new System.Drawing.Size(374, 17);
+            this.prog_perFile.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.prog_perFile.TabIndex = 41;
+            // 
+            // pnlTop
+            // 
+            this.pnlTop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlTop.BackColor = System.Drawing.Color.Firebrick;
+            this.pnlTop.Controls.Add(this.picMaximize);
+            this.pnlTop.Controls.Add(this.picMinimize);
+            this.pnlTop.Controls.Add(this.pictureBox1);
+            this.pnlTop.Controls.Add(this.lblTitle);
+            this.pnlTop.Location = new System.Drawing.Point(-4, 0);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(1463, 47);
+            this.pnlTop.TabIndex = 8;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Firebrick;
+            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(16, 9);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(200, 28);
+            this.lblTitle.TabIndex = 8;
+            this.lblTitle.Text = "Log Analyzer V1";
+            // 
+            // prog_Open
+            // 
+            this.prog_Open.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.prog_Open.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.prog_Open.Location = new System.Drawing.Point(-4, 846);
+            this.prog_Open.Margin = new System.Windows.Forms.Padding(4);
+            this.prog_Open.Name = "prog_Open";
+            this.prog_Open.Size = new System.Drawing.Size(1242, 17);
+            this.prog_Open.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.prog_Open.TabIndex = 40;
+            // 
+            // pnl_Toolbar
+            // 
+            this.pnl_Toolbar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_Toolbar.BackColor = System.Drawing.Color.Firebrick;
+            this.pnl_Toolbar.Controls.Add(this.prog_Open);
+            this.pnl_Toolbar.Controls.Add(this.pnlTop);
+            this.pnl_Toolbar.Controls.Add(this.prog_perFile);
+            this.pnl_Toolbar.Controls.Add(this.tabControl1);
+            this.pnl_Toolbar.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Toolbar.Margin = new System.Windows.Forms.Padding(4);
+            this.pnl_Toolbar.Name = "pnl_Toolbar";
+            this.pnl_Toolbar.Size = new System.Drawing.Size(1464, 865);
+            this.pnl_Toolbar.TabIndex = 1;
+            this.pnl_Toolbar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Toolbar_Paint);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.Firebrick;
+            this.panel1.Controls.Add(this.menuStrip1);
+            this.panel1.Location = new System.Drawing.Point(-4, 49);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1472, 37);
+            this.panel1.TabIndex = 42;
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.BackColor = System.Drawing.Color.Gray;
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripMenuItem,
+            this.saveToolStripMenuItem,
+            this.saveAsToolStripMenuItem,
+            this.exitToolStripMenuItem,
+            this.importToolStripMenuItem});
+            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.White;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(60, 33);
+            this.toolStripMenuItem1.Text = "Menu";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.saveAsToolStripMenuItem.Text = "Save as";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.exitToolStripMenuItem.Text = "Exit";
+            // 
+            // importToolStripMenuItem
+            // 
+            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.importToolStripMenuItem.Text = "Import";
+            this.importToolStripMenuItem.Click += new System.EventHandler(this.ImportToolStripMenuItem_Click);
+            // 
+            // formatToolStripMenuItem
+            // 
+            this.formatToolStripMenuItem.BackColor = System.Drawing.Color.Gray;
+            this.formatToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.formatToolStripMenuItem.Name = "formatToolStripMenuItem";
+            this.formatToolStripMenuItem.Size = new System.Drawing.Size(70, 33);
+            this.formatToolStripMenuItem.Text = "Format";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.BackColor = System.Drawing.Color.Gray;
+            this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 33);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.BackColor = System.Drawing.Color.Gray;
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.coalescerToolStripMenuItem});
+            this.toolsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(58, 33);
+            this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // coalescerToolStripMenuItem
+            // 
+            this.coalescerToolStripMenuItem.Name = "coalescerToolStripMenuItem";
+            this.coalescerToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
+            this.coalescerToolStripMenuItem.Text = "Coalescer";
+            this.coalescerToolStripMenuItem.Click += new System.EventHandler(this.coalescerToolStripMenuItem_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Gray;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.formatToolStripMenuItem,
+            this.helpToolStripMenuItem,
+            this.toolsToolStripMenuItem});
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1472, 37);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // picMaximize
+            // 
+            this.picMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picMaximize.Image = ((System.Drawing.Image)(resources.GetObject("picMaximize.Image")));
+            this.picMaximize.Location = new System.Drawing.Point(1372, 0);
+            this.picMaximize.Name = "picMaximize";
+            this.picMaximize.Padding = new System.Windows.Forms.Padding(12, 6, 12, 6);
+            this.picMaximize.Size = new System.Drawing.Size(45, 33);
+            this.picMaximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMaximize.TabIndex = 9;
+            this.picMaximize.TabStop = false;
+            this.picMaximize.Click += new System.EventHandler(this.picMaximize_Click);
+            this.picMaximize.MouseLeave += new System.EventHandler(this.picMaximize_MouseLeave);
+            this.picMaximize.MouseHover += new System.EventHandler(this.picMaximize_MouseHover);
+            // 
+            // picMinimize
+            // 
+            this.picMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picMinimize.BackColor = System.Drawing.Color.Firebrick;
+            this.picMinimize.Image = ((System.Drawing.Image)(resources.GetObject("picMinimize.Image")));
+            this.picMinimize.Location = new System.Drawing.Point(1328, 0);
+            this.picMinimize.Name = "picMinimize";
+            this.picMinimize.Padding = new System.Windows.Forms.Padding(12, 6, 12, 6);
+            this.picMinimize.Size = new System.Drawing.Size(45, 33);
+            this.picMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMinimize.TabIndex = 10;
+            this.picMinimize.TabStop = false;
+            this.picMinimize.Click += new System.EventHandler(this.picMinimize_Click);
+            this.picMinimize.MouseLeave += new System.EventHandler(this.picMinimize_MouseLeave);
+            this.picMinimize.MouseHover += new System.EventHandler(this.picMinimize_MouseHover);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1417, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(12, 6, 12, 6);
+            this.pictureBox1.Size = new System.Drawing.Size(45, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1315, 863);
+            this.ClientSize = new System.Drawing.Size(1458, 863);
             this.Controls.Add(this.toolStripContainer1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log Analyzer V1 Beta";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
-            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
-            this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
-            this.pnl_Toolbar.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
+            this.pnl_Toolbar.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMaximize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -354,31 +467,36 @@
         #endregion
 
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
-        private System.Windows.Forms.Panel pnl_Toolbar;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem formatToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem coalescerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
-
+        private System.Windows.Forms.Panel pnl_Toolbar;
         private System.Windows.Forms.ProgressBar prog_Open;
+        private System.Windows.Forms.Panel pnlTop;
+        private System.Windows.Forms.PictureBox picMinimize;
+        private System.Windows.Forms.PictureBox picMaximize;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.ProgressBar prog_perFile;
+        private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Label lblStartPage;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblHowTo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblStartPage;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

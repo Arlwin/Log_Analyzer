@@ -62,9 +62,9 @@ namespace Log_Analyzer
             this.pnlMain.Controls.Add(this.pnlSearch);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1351, 612);
+            this.pnlMain.Size = new System.Drawing.Size(1478, 754);
             this.pnlMain.TabIndex = 0;
             // 
             // splitContainer
@@ -84,16 +84,16 @@ namespace Log_Analyzer
             this.splitContainer.Panel1.AutoScroll = true;
             this.splitContainer.Panel1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.splitContainer.Panel1.Controls.Add(this.tabControlFile);
-            this.splitContainer.Panel1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer.Panel1.Padding = new System.Windows.Forms.Padding(4);
             // 
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.AutoScroll = true;
             this.splitContainer.Panel2.BackColor = System.Drawing.Color.DarkSlateGray;
             this.splitContainer.Panel2.Controls.Add(this.rtextSelectedFiles);
-            this.splitContainer.Panel2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.splitContainer.Size = new System.Drawing.Size(1013, 455);
-            this.splitContainer.SplitterDistance = 259;
+            this.splitContainer.Panel2.Padding = new System.Windows.Forms.Padding(4);
+            this.splitContainer.Size = new System.Drawing.Size(1140, 597);
+            this.splitContainer.SplitterDistance = 339;
             this.splitContainer.TabIndex = 1;
             // 
             // tabControlFile
@@ -103,7 +103,7 @@ namespace Log_Analyzer
             this.tabControlFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControlFile.Name = "tabControlFile";
             this.tabControlFile.SelectedIndex = 0;
-            this.tabControlFile.Size = new System.Drawing.Size(1003, 249);
+            this.tabControlFile.Size = new System.Drawing.Size(1130, 329);
             this.tabControlFile.TabIndex = 0;
             // 
             // rtextSelectedFiles
@@ -111,11 +111,11 @@ namespace Log_Analyzer
             this.rtextSelectedFiles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtextSelectedFiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtextSelectedFiles.Location = new System.Drawing.Point(4, 4);
-            this.rtextSelectedFiles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtextSelectedFiles.Margin = new System.Windows.Forms.Padding(4);
             this.rtextSelectedFiles.Name = "rtextSelectedFiles";
             this.rtextSelectedFiles.ReadOnly = true;
             this.rtextSelectedFiles.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
-            this.rtextSelectedFiles.Size = new System.Drawing.Size(1003, 182);
+            this.rtextSelectedFiles.Size = new System.Drawing.Size(1130, 244);
             this.rtextSelectedFiles.TabIndex = 0;
             this.rtextSelectedFiles.Text = "";
             this.rtextSelectedFiles.WordWrap = false;
@@ -128,9 +128,9 @@ namespace Log_Analyzer
             this.pnlFiles.BackColor = System.Drawing.Color.DarkSlateGray;
             this.pnlFiles.Controls.Add(this.c_tree_FileView);
             this.pnlFiles.Location = new System.Drawing.Point(4, 143);
-            this.pnlFiles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlFiles.Margin = new System.Windows.Forms.Padding(4);
             this.pnlFiles.Name = "pnlFiles";
-            this.pnlFiles.Size = new System.Drawing.Size(312, 465);
+            this.pnlFiles.Size = new System.Drawing.Size(312, 607);
             this.pnlFiles.TabIndex = 2;
             // 
             // c_tree_FileView
@@ -139,9 +139,9 @@ namespace Log_Analyzer
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.c_tree_FileView.Location = new System.Drawing.Point(4, 4);
-            this.c_tree_FileView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.c_tree_FileView.Margin = new System.Windows.Forms.Padding(4);
             this.c_tree_FileView.Name = "c_tree_FileView";
-            this.c_tree_FileView.Size = new System.Drawing.Size(304, 457);
+            this.c_tree_FileView.Size = new System.Drawing.Size(304, 599);
             this.c_tree_FileView.TabIndex = 0;
             this.c_tree_FileView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.c_tree_FileView_AfterSelect);
             // 
@@ -160,16 +160,16 @@ namespace Log_Analyzer
             this.pnlSearch.Controls.Add(this.dateStart);
             this.pnlSearch.Controls.Add(this.txtSearch);
             this.pnlSearch.Location = new System.Drawing.Point(4, 4);
-            this.pnlSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlSearch.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(1343, 132);
+            this.pnlSearch.Size = new System.Drawing.Size(1470, 132);
             this.pnlSearch.TabIndex = 0;
             // 
             // btn_Search
             // 
             this.btn_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Search.Location = new System.Drawing.Point(457, 28);
-            this.btn_Search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Search.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(88, 28);
             this.btn_Search.TabIndex = 8;
@@ -237,7 +237,7 @@ namespace Log_Analyzer
             "Performance",
             "DLP"});
             this.cboCategory.Location = new System.Drawing.Point(116, 71);
-            this.cboCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboCategory.Margin = new System.Windows.Forms.Padding(4);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(331, 32);
             this.cboCategory.TabIndex = 3;
@@ -248,7 +248,7 @@ namespace Log_Analyzer
             this.dateEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateEnd.Location = new System.Drawing.Point(741, 71);
-            this.dateEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateEnd.Margin = new System.Windows.Forms.Padding(4);
             this.dateEnd.Name = "dateEnd";
             this.dateEnd.Size = new System.Drawing.Size(196, 29);
             this.dateEnd.TabIndex = 2;
@@ -258,7 +258,7 @@ namespace Log_Analyzer
             this.dateStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateStart.Location = new System.Drawing.Point(741, 25);
-            this.dateStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateStart.Margin = new System.Windows.Forms.Padding(4);
             this.dateStart.Name = "dateStart";
             this.dateStart.Size = new System.Drawing.Size(196, 29);
             this.dateStart.TabIndex = 1;
@@ -267,7 +267,7 @@ namespace Log_Analyzer
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(116, 27);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(331, 29);
             this.txtSearch.TabIndex = 0;
@@ -276,9 +276,10 @@ namespace Log_Analyzer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1351, 612);
+            this.ClientSize = new System.Drawing.Size(1478, 754);
             this.Controls.Add(this.pnlMain);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Coaleser";
             this.Text = "Coaleser";
             this.pnlMain.ResumeLayout(false);
