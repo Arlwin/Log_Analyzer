@@ -52,6 +52,7 @@ namespace Log_Analyzer
             setEngineVersion(path + "\\" + agentfolder + "\\ProductInfo.txt");
             setConPtnVersion(path + "\\" + agentfolder + "\\ProductInfo.txt");
             setSmartPtnVersion(path + "\\" + agentfolder + "\\ProductInfo.txt");
+
         }
 
         //Check the folder of agent (osce_14agent or osce_12agent, etc.)
@@ -132,7 +133,6 @@ namespace Log_Analyzer
             f.Close();
             return value;
         }
-
 
         
         //Search for Agent Build

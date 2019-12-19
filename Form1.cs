@@ -74,8 +74,7 @@ namespace Log_Analyzer
         {
             OpenFileDialog openFile = new OpenFileDialog();
 
-            try
-            {
+          
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
                     string file_name = openFile.FileName;
@@ -96,11 +95,8 @@ namespace Log_Analyzer
                     tabs.Add(new_tab);
 
                 }
-            }
-            catch (Exception x)
-            {
-                MessageBox.Show("Error! Invalid Filetype. Make sure to import ZIP format.");
-            }
+            
+
         }
 
 

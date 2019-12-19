@@ -23,13 +23,18 @@ namespace Log_Analyzer
         String CPU;
         String RAM;
         String DiskSpace;
-      
+
+        //For getting agent values
+        String reg;
+        public String agentfolder { get; set; }
+
         public getSysInformation(String path)
         {
             setHostname(path + "\\System_Info\\SystemInfo_NetworkStatus.txt");
-            setIpAdd(path + "\\System_Info\\SystemInfo_NetworkStatus.txt");
-            setGateway(path + "\\System_Info\\SystemInfo_NetworkStatus.txt");
-            setDNS(path + "\\System_Info\\SystemInfo_NetworkStatus.txt");
+            //setIpAdd(path + "\\" + agentfolder + "\\CollectedFile\\Event1\\" + reg);
+            //setIpAdd(path + "\\System_Info\\SystemInfo_NetworkStatus.txt");
+            //setGateway(path + "\\System_Info\\SystemInfo_NetworkStatus.txt");
+            //setDNS(path + "\\System_Info\\SystemInfo_NetworkStatus.txt");
 
             setOS(path + "\\System_Info\\msinfo.nfo");
             setOSver(path + "\\System_Info\\msinfo.nfo");
@@ -37,6 +42,43 @@ namespace Log_Analyzer
             setCPU(path + "\\System_Info\\msinfo.nfo");
             setRAM(path + "\\System_Info\\msinfo.nfo");
             setDiskSpace(path + "\\System_Info\\msinfo.nfo");
+
+            if (getSysArch().Contains("x64"))
+                reg = "REG-2.reg";
+            else
+                reg = "REG-1.reg";
+
+            agentfolder = checkAgent(path);
+
+            setIpAdd(path + "\\" + agentfolder + "\\CollectedFile\\Event1\\" + reg);
+            //setIpAdd(path + "\\System_Info\\SystemInfo_NetworkStatus.txt");
+            setGateway(path + "\\System_Info\\SystemInfo_NetworkStatus.txt");
+            setDNS(path + "\\System_Info\\SystemInfo_NetworkStatus.txt");
+        }
+
+        //Check the folder of agent (osce_14agent or osce_12agent, etc.)
+        String checkAgent(String path)
+        {
+            String value = null;
+            String line;
+
+            //Load a file
+            StreamReader f = new StreamReader(path + "\\ReadmeFirst.txt");
+
+            //Iterate through the file
+            while ((line = f.ReadLine()) != null)
+            {
+                if (line.Contains("Product diagnosed:"))
+                {
+                    line = f.ReadLine();
+                    line = f.ReadLine();
+
+                    value = line.Trim();
+                }
+            }
+
+            f.Close();
+            return value;
         }
 
         String Search (String file, String text)
@@ -62,7 +104,15 @@ namespace Log_Analyzer
 
                         int colon = line.LastIndexOf(":") + 2;
 
+                        //If blank
+                        if (colon >= line.Length)
+                        {
+                            value = "N/A";
+                            break;
+                        }
+
                         value = line.Substring(colon);
+
                         break;
                     }
 
@@ -91,11 +141,79 @@ namespace Log_Analyzer
                     counter++;
                 }
             }
+            else if (file.Contains(".reg")) {
+
+                //Read each line
+                while ((line = f.ReadLine()) != null)
+                {
+                    //If the line contains text, get the line > break
+                    if (line.Contains(text))
+                    {
+                        //Get the value after : on the line
+                        line = line.Trim(); //Removes most whitespaces
+
+                        int equal = line.LastIndexOf("=") + 2;
+
+                        if (line.Contains("dword"))
+                            value = line.Substring(equal, line.Length - equal);
+                        else
+                            value = line.Substring(equal, line.Length - equal - 1);
+                        break;
+                    }
+                }
+            }
 
             //Close files for memory optimization
             f.Close();
             
             //Return value
+            return value;
+        }
+
+        //Search after a string
+        String SearchWithStart(String file, String text, String first)
+        {
+            String value = "";
+            bool found = false;
+
+            String line;
+            int counter = 0;
+
+            //Load the file
+            StreamReader f = new StreamReader(file);
+
+            while ((line = f.ReadLine()) != null)
+            {
+                //Find the starting point first
+                if (line.Contains(first))
+                    found = true;
+
+                //If starting point was found, proceed with normal search
+                if (found)
+                {
+                    if (line.Contains(text))
+                    {
+                        //Get the value after : on the line
+                        line = line.Trim(); //Removes most whitespaces
+
+                        int colon = line.LastIndexOf(":") + 2;
+
+                        //If blank
+                        if (colon >= line.Length)
+                        {
+                            value = "N/A";
+                            break;
+                        }
+
+                        value = line.Substring(colon);
+
+                        break;
+                    }
+                }
+
+            }
+
+            f.Close();
             return value;
         }
 
@@ -114,9 +232,12 @@ namespace Log_Analyzer
         //For Ip Address
         void setIpAdd(String filedir)
         {
+            /*
             IpAdd = Search(filedir, "IPv4 Address");
             if (IpAdd.Equals(""))
                 IpAdd = Search(filedir, "IP Address");
+            */
+            IpAdd = Search(filedir, "\"IP\"");
         }
 
         public string getIpAdd()
@@ -128,7 +249,9 @@ namespace Log_Analyzer
         //For Default Gateway
         void setGateway(String filedir)
         {
-            Gateway = Search(filedir, "Default Gateway");
+
+            Gateway = SearchWithStart(filedir, "Default Gateway", IpAdd);
+            //Gateway = Search(filedir, "Default Gateway");
         }
 
         public string getGateway()
@@ -140,7 +263,8 @@ namespace Log_Analyzer
         //For DNS Server
         void setDNS(String filedir)
         {
-            DNS = Search(filedir, "DNS Servers");
+            //DNS = Search(filedir, "DNS Servers");
+            DNS = SearchWithStart(filedir, "DNS Servers", IpAdd);
         }
 
         public string getDNS()
