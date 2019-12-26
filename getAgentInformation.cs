@@ -83,10 +83,16 @@ namespace Log_Analyzer
         //Original Search
         String Search (String file, String text)
         {
-            String value = null;
+            String value = "N/A";
             String line;
 
-            //Load a file
+            //Check if the file exists 
+            if (!File.Exists(file))
+            {
+                return value;
+            }
+
+            //Load the file
             StreamReader f = new StreamReader(file);
 
             //Determine the file type
@@ -134,41 +140,6 @@ namespace Log_Analyzer
             return value;
         }
 
-        
-        //Search for Agent Build
-        String SearchBuild (String file, String version)
-        {
-            String value = null;
-            String line;
-
-            //Load a file
-            StreamReader f = new StreamReader(file);
-            {
-                //Read each line
-                while ((line = f.ReadLine()) != null)
-                {
-                    //If the line contains text, get the line > break
-                    if (line.Contains("HotfixHistory\\" + version + "]"))
-                    {
-                        //Get value below (HotfixHistory)
-                        line = f.ReadLine();
-
-                        //Get the value after : on the line
-                        line = line.Trim(); //Removes most whitespaces
-
-                        int equal = line.LastIndexOf("=") + 2;
-
-                        if (line.Contains("dword"))
-                            value = line.Substring(equal, line.Length - equal);
-                        else
-                            value = line.Substring(equal, line.Length - equal - 1);
-                        break;
-                    }
-                }
-            }
-            return value;
-        }
-
         //Agent Version
         void setAgentVer(String filedir)
         {
@@ -190,10 +161,9 @@ namespace Log_Analyzer
         //Agent Build
         void setAgentBuild(String filedir)
         {
-            /*String builds = Search (filedir, "BuildNum");
-            int charlength = builds.Length - builds.LastIndexOf(";") - 1;
-            AgentBuild = builds.Substring(builds.LastIndexOf(";") + 1);*/
             AgentBuild = Search(filedir, "\"BuildNum\"");
+            if (AgentBuild.Equals("N/A"))
+                return;
             AgentBuild = AgentBuild.Substring(AgentBuild.IndexOf(":") + 1);
             AgentBuild = (Convert.ToInt32(AgentBuild, 16)).ToString();
         }
@@ -220,6 +190,9 @@ namespace Log_Analyzer
         void setServerHTTP(String filedir)
         {
             ServerHTTP = Search(filedir, "\"ServerPort\"");
+            if (ServerHTTP.Equals("N/A"))
+                return;
+
             ServerHTTP = ServerHTTP.Substring(ServerHTTP.IndexOf(":") + 1);
             ServerHTTP = (Convert.ToInt32(ServerHTTP, 16)).ToString();
         }
@@ -234,6 +207,9 @@ namespace Log_Analyzer
         void setServerHTTPS(String filedir)
         {
             ServerHTTPS = Search(filedir, "\"ServerSSLPort\"");
+            if (ServerHTTPS.Equals("N/A"))
+                return;
+
             ServerHTTPS = ServerHTTPS.Substring(ServerHTTPS.IndexOf(":") + 1);
             ServerHTTPS = (Convert.ToInt32(ServerHTTPS, 16)).ToString();
         }
@@ -248,6 +224,9 @@ namespace Log_Analyzer
         void setAgentPort(String filedir)
         {
             AgentPort = Search(filedir, "\"LocalServerPort\"");
+            if (AgentPort.Equals("N/A"))
+                return;
+
             AgentPort = AgentPort.Substring(AgentPort.IndexOf(":") + 1);
             AgentPort = (Convert.ToInt32(AgentPort, 16)).ToString();
         }
@@ -262,12 +241,18 @@ namespace Log_Analyzer
         void setUpdateAgent(String filedir)
         {
             UpdateAgent = Search(filedir, "\"UpdateAgent\"");
+            if (UpdateAgent.Equals("N/A"))
+                return;
+
             UpdateAgent = UpdateAgent.Substring(UpdateAgent.IndexOf(":") + 1);
             UpdateAgent = (Convert.ToInt32(UpdateAgent, 16)).ToString();
         }
 
         public String getUpdateAgent()
         {
+            if (UpdateAgent.Equals("N/A"))
+                return "N/A";
+
             if (UpdateAgent.Equals("0"))
                 return "No";
             else
@@ -278,6 +263,9 @@ namespace Log_Analyzer
         //Update Agent Port
         void setUpdateAgentPort(String filedir)
         {
+            if (UpdateAgentAddress.Equals("N/A"))
+                UpdateAgentPort = "N/A";
+
             UpdateAgentPort = UpdateAgentAddress.Substring(UpdateAgentAddress.LastIndexOf(":") + 1, UpdateAgentAddress.LastIndexOf("/") - UpdateAgentAddress.LastIndexOf(":") - 1);
         }
 
@@ -309,12 +297,18 @@ namespace Log_Analyzer
         void setAgentLocation(String filedir)
         {
             AgentLocation = Search(filedir, "\"CurrentLocation\"");
+            if (AgentLocation.Equals("N/A"))
+                return;
+
             AgentLocation = AgentLocation.Substring(AgentLocation.IndexOf(":") + 1);
             AgentLocation = (Convert.ToInt32(AgentLocation, 16)).ToString();
         }
 
         public String getAgentLocation()
         {
+            if (AgentLocation.Equals("N/A"))
+                AgentLocation = "N/A";
+
             if (AgentLocation.Equals("1"))
                 return "Internal";
             return "External";

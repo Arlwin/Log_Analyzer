@@ -83,11 +83,17 @@ namespace Log_Analyzer
 
         String Search (String file, String text)
         {
-            String value = "";
+            String value = "N/A";
             String line;
             int counter = 0;
 
-            //Load a file
+            //Check if the file exists 
+            if (!File.Exists(file))
+            {
+                return value;
+            }
+
+            //Load the file
             StreamReader f = new StreamReader(file);
 
             //Determine the file type
@@ -173,7 +179,7 @@ namespace Log_Analyzer
         //Search after a string
         String SearchWithStart(String file, String text, String first)
         {
-            String value = "";
+            String value = "N/A";
             bool found = false;
 
             String line;
