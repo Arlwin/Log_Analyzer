@@ -80,6 +80,13 @@ namespace Log_Analyzer
             full_path = file;
 
             extract_path = extractZip(full_path);
+
+            //If sobrang isang folder sa loob
+            if (Directory.GetDirectories(extract_path).Length < 2)
+            {
+                string[] directories = Directory.GetDirectories(extract_path);
+                extract_path = directories[0];
+            }
         }
 
         private string extractZip(string path)
@@ -88,7 +95,7 @@ namespace Log_Analyzer
 
             try
             {
-                int index = path.IndexOf(".");
+                int index = path.LastIndexOf(".");
                 string filename = path.Substring(path.LastIndexOf("\\") + 1, index - path.LastIndexOf("\\") - 1);
 
                 if (index > 0)
